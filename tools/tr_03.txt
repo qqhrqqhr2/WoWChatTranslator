@@ -1,0 +1,360 @@
+hehe|嘿嘿|хе-хе
+rip|凉了|RIP
+oof|哎呀|ой
+my bad|我的锅|моя ошибка
+no worries|没事|не страшно
+all good|没事|всё норм
+of course|当然|конечно
+sure|好啊|конечно
+ok thanks|好的谢谢|ок, спасибо
+yup|嗯|ага
+nah|不了|не-а
+somebody/shadow bolt|有人/暗影箭|кто-то/стрела Тьмы
+somebody|有人|кто-то
+age/sex/location|年龄/性别/地区|возраст/пол/место
+who's|谁是|кто
+going to|要|собираюсь
+want to|想|хочу
+got to|得|надо
+kind of|有点|вроде
+sort of|有点|типа
+because|因为|потому что
+though|不过|хотя
+through|通过|через
+picture|图片|картинка
+please help|请帮忙|помогите пожалуйста
+need help|需要帮助|нужна помощь
+can someone|谁能|может кто-нибудь
+can anyone|有人能|может кто
+does anyone|有没有人|есть у кого
+anyone know|有人知道吗|кто знает
+anyone have|谁有|у кого есть
+anyone selling|有人卖吗|кто продаёт
+anyone got|谁有|у кого есть
+where can I|哪里可以|где можно
+how do I|怎么弄|как мне
+how to|怎么|как
+what's|什么是|что
+won't|不会|не буду
+isn't|不是|не является
+didn't|没有|не сделал
+I'll|我来|я сделаю
+I've|我已经|я уже
+it's|这是|это
+that's|那是|это
+there's|有|есть
+I'm looking for|我在找|я ищу
+I need|我需要|мне нужно
+I have|我有|у меня есть
+we need|我们需要|нам нужно
+we have|我们有|у нас есть
+need more|还需要|нужно ещё
+need 1|缺1个|нужен 1
+need 2|缺2个|нужно 2
+need 3|缺3个|нужно 3
+need all|都缺|нужны все
+1 more|再来1个|ещё 1
+2 more|再来2个|ещё 2
+3 more|再来3个|ещё 3
+one more|再来一个|ещё один
+two more|再来两个|ещё два
+spot open|有空位|есть место
+spots open|有空位|есть места
+open spots|空位|свободные места
+filled|满了|набрано
+closed|已满|закрыто
+still looking|还在找|ещё ищем
+looking for work|接活|ищу работу (крафт)
+looking for dungeon|找副本队|ищу подземелье
+looking for raid|找团|ищу рейд
+looking for party|找队伍|ищу пати
+looking for all|全缺|нужны все
+looking for tank and healer|缺坦克和治疗|ищем танка и хила
+LFG quest|求组做任务|ищу группу на квест
+LFG dungeon|求组下本|ищу группу в данж
+selling boosts|出售代练|продаю буст
+buying boost|求代练|куплю буст
+selling|卖|продаю
+buying|收|покупаю
+sold|已售|продано
+trading|交易中|обмениваю
+paying|付钱|плачу
+pay|付|платить
+will pay|会付钱|заплачу
+tipping|给小费|дам чаевые
+tip thanks|感谢小费|спасибо за чаевые
+tips appreciated|欢迎打赏|чаевые приветствуются
+for free|免费|бесплатно
+free summons|免费召唤|бесплатный призыв
+free ports|免费传送|бесплатные порталы
+free enchants|免费附魔|бесплатные чары
+free crafting|免费制作|бесплатный крафт
+no tip|不用小费|без чаевых
+no tips|不要小费|чаевые не нужны
+your own mats|自带材料|свои маты
+mats provided|提供材料|маты есть
+have mats|有材料|маты есть
+offer|报价|предложение
+offers|出价|предложения
+best offer|最高出价|лучшее предложение
+or best offer|或最高出价|или лучшее предложение
+negotiable|可议价|торг уместен
+firm price|一口价|цена окончательная
+price check|问价|проверка цены
+how much for|多少钱|сколько за
+cheaper|更便宜|дешевле
+discount|打折|скидка
+cash|现金|наличные
+scam|骗局|развод
+scammer|骗子|мошенник
+ninja looter|黑装备的人|ниндзя-лутер
+ninjaed|被黑了|сниндзили
+reported|已举报|зарепорчен
+report|举报|репорт
+think|觉得|думаю
+thought|以为|думал
+that|那个|то
+this|这个|это
+these|这些|эти
+those|那些|те
+was|是|был
+were|是|были
+be|是|быть
+been|已经|был
+so|所以|так
+just|只是|просто
+again|再|снова
+maybe|也许|может
+already|已经|уже
+then|然后|тогда
+there|那里|там
+here|这里|здесь
+every|每|каждый
+all of|全部|все
+other|其他|другой
+others|其他人|другие
+same|一样|тот же
+different|不同|другой
+new|新|новый
+old|旧|старый
+big|大|большой
+small|小|маленький
+long|长|долго
+fast|快|быстро
+better|更好|лучше
+worse|更差|хуже
+worst|最差|худший
+right|对|верно
+wrong|错|неправильно
+true|真的|правда
+sure thing|当然|конечно
+like|喜欢|нравится
+love|爱|люблю
+hate|讨厌|ненавижу
+feel|感觉|чувствую
+looks|看起来|выглядит
+see|看到|вижу
+saw|看到了|видел
+watch|看|смотри
+say|说|сказать
+said|说了|сказал
+ask|问|спросить
+asked|问了|спросил
+answer|回答|ответ
+try|试试|попробуй
+trying|在试|пытаюсь
+tried|试过了|пробовал
+use|用|использовать
+used|用过|использовал
+using|在用|использую
+found|找到了|нашёл
+lost|输了/丢了|проиграл/потерял
+win|赢|победить
+won|赢了|победил
+lose|输|проиграть
+started|开始了|начал
+finish|完成|закончить
+finished|完成了|закончил
+work|工作|работа
+works|有用|работает
+working|在工作|работаю
+broken|坏了|сломано
+fix|修|починить
+fixed|修好了|починил
+restart|重启|перезапуск
+restarting|正在重启|перезапускается
+internet|网络|интернет
+connection|连接|соединение
+game|游戏|игра
+games|游戏|игры
+play|玩|играть
+playing|在玩|играю
+played|玩过|играл
+day|天|день
+days|天|дни
+night|晚上|ночь
+week|周|неделя
+month|月|месяц
+year|年|год
+yesterday|昨天|вчера
+morning|早上|утро
+home|家|дом
+work tomorrow|明天上班|завтра на работу
+sleep|睡觉|спать
+bed|床|кровать
+eat|吃|есть
+dinner|晚饭|ужин
+lunch|午饭|обед
+funny|好笑|смешно
+crazy|疯了|безумие
+weird|奇怪|странно
+strange|奇怪|странно
+boring|无聊|скучно
+amazing|太棒了|потрясающе
+beautiful|漂亮|красиво
+nice one|漂亮|красава
+well done|干得好|отлично сделано
+thank god|谢天谢地|слава богу
+finally|终于|наконец
+almost|差不多|почти
+enough|够了|достаточно
+nothing|没什么|ничего
+something|某些东西|что-то
+anything|什么都|что угодно
+everything|一切|всё
+nobody|没人|никто
+everybody|大家|все
+problem|问题|проблема
+issue|问题|проблема
+question|问题|вопрос
+idea|主意|идея
+way|方法|способ
+place|地方|место
+thing|东西|вещь
+things|东西|вещи
+friends|朋友们|друзья
+team|队伍|команда
+country|国家|страна
+Koreans|韩国人|корейцы
+English|英语|английский
+speak|说|говорить
+language|语言|язык
+pickup group|野队|рандом группа
+pickup groups|野队|рандом группы
+premade|预组队伍|премейд
+guild run|公会团|гильдейский забег
+alt run|小号团|забег на альтах
+alt|小号|альт
+alts|小号|альты
+main character|大号|основа
+twink|小号PvP角色|твинк
+puller|拉怪的|пуллер
+pulling|拉怪中|пулю
+pulls|拉怪|пулы
+patrol|巡逻怪|патруль
+patrols|巡逻怪|патрули
+add|小怪|адд
+adds|小怪|адды
+trash mobs|小怪|трэш
+skip|跳过|пропустить
+skip trash|跳过小怪|пропустить трэш
+cleared|通关了|зачищено
+flag carrier/full clear|扛旗者/全通|флагоносец/полная зачистка
+boss only|只打首领|только боссы
+bosses|首领们|боссы
+end boss|尾王|финальный босс
+resetting|重置中|сбрасываю
+lockout|副本CD|сохранение
+saved|有CD|сохранён
+raid ID|副本ID|ID рейда
+instance|副本|инстанс
+dungeons|副本|подземелья
+raids|团本|рейды
+wipes|团灭|вайпы
+wipe it|灭了吧|вайпаемся
+corpse run|跑尸|бег к трупу
+run back|跑尸|бегу обратно
+release spirit|释放灵魂|отпустить дух
+release|释放|отпустить
+spirit healer|灵魂医者|целитель душ
+resurrection sickness|复活虚弱|слабость после воскрешения
+battle res|战复|боевой рес
+soulstone me|给我绑石头|дай камень души
+healthstone/hearthstone|治疗石/炉石|камень здоровья/возвращения
+healthstone|治疗石|камень здоровья
+healthstones|治疗石|камни здоровья
+hearth|回城|вернуться камнем
+hearthing|正在回城|возвращаюсь камнем
+summons|召唤|призыв
+summoning|召唤中|призываю
+need summon|需要拉人|нужен призыв
+summon please|求拉|призовите пожалуйста
+click the portal|点门|кликните портал
+click|点|клик
+clicks|帮忙点|нужны клики
+help click|帮忙点门|помогите кликнуть
+port to|传送到|портал в
+port please|求传送|портал пожалуйста
+portal to|去往…的传送门|портал в
+water please|求水|воды пожалуйста
+mage water|法师水|вода мага
+mage table|法师餐桌|стол мага
+food please|求面包|еды пожалуйста
+drink|喝水|пить
+drinking|喝水中|пью
+eating|吃东西|ем
+meditate|回蓝|медитировать
+mana break|等回蓝|перерыв на ману
+almost out of mana|快没蓝了|мана почти кончилась
+low mana|蓝少|мало маны
+low health|残血|мало здоровья
+heals please|求治疗|хил пожалуйста
+heal me|加我血|хильни меня
+buff please|求buff|бафф пожалуйста
+buffs please|求buff|баффы пожалуйста
+rebuff|重新上buff|перебафать
+debuff|减益|дебафф
+debuffs|减益|дебаффы
+damage over time|持续伤害|урон со временем
+DoTs|DOT|доты
+heal over time|持续治疗|исцеление со временем
+HoTs|HOT|хоты
+aggro|仇恨|агро
+threat|仇恨值|угроза
+pulled aggro|OT了|сагрил
+taunt|嘲讽|таунт
+taunted|嘲讽了|затаунтил
+tanking|坦怪|танкую
+healing|治疗|исцеление
+healer please|求治疗|нужен хил
+damage|伤害|урон
+burst|爆发|бурст
+interrupt|打断|прерывание
+interrupts|打断|прерывания
+kick it|打断它|кикни
+silence|沉默|молчание
+stun|眩晕|оглушение
+stuns|眩晕|оглушения
+slow|减速|замедление
+root|定身|обездвиживание
+snare|减速|замедление
+dispel|驱散|рассеивание
+decurse|解诅咒|снять проклятие
+cleanse|净化|очищение
+cure|解除|излечение
+poison|毒|яд
+curse|诅咒|проклятие
+disease|疾病|болезнь
+magic|魔法|магия
+line of sight|卡视角|линия обзора
+kite|风筝|кайт
+kiting|放风筝|кайтю
+range|距离|дальность
+behind|背后|сзади
+stack up|集中|соберитесь в кучу
+spread out|散开|разойдитесь
+move|移动|двигайтесь
+back up|后退|отойдите
+follow|跟随|следуй
+follow me|跟我来|за мной
+wait for me|等等我|подождите меня

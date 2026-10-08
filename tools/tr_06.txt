@@ -1,0 +1,340 @@
+strong|强|сильный
+cute|可爱|милый
+pretty|漂亮|красивая
+wtf|卧槽|wtf
+whoa|哇|ого
+damn|靠|блин
+speechless|无语|нет слов
+awkward|尴尬|неловко
+heh|呵呵|хех
+herb/lol|草药/笑|трава/лол
+lmao|笑死|ору
+get lost|滚|отвали
+stupid|傻|тупой
+noob|菜鸟|нуб
+pro|大神|профи
+expert|高手|эксперт
+rich guy|土豪|богач
+young man|小哥|парень
+girl|小姐姐|девушка
+handsome guy|帅哥|красавчик
+pretty girl|美女|красотка
+male|男的|мужчина
+female|女的|женщина
+buddies|小伙伴|друзья
+teammate|队友|сокомандник
+raid member|团员|участник рейда
+vice guild master|副会长|зам. главы гильдии
+admin|管理|админ
+join party|组队来|заходи в пати
+forming group|组队中|собираю группу
+group started|开组了|группа собрана
+leave when full|满人就走|выходим, как наберёмся
+all here|人齐|все на месте
+everyone's here|人齐了|все в сборе
+need two|缺两个|нужно двое
+need mage|缺法师|нужен маг
+need priest|缺牧师|нужен жрец
+need warrior|缺战士|нужен воин
+LF tank|找坦克|ищу танка
+LF healer|找治疗|ищу хила
+kind soul needed|求好心人|нужен добрый человек
+help carry|带一下|помогите провести
+take me|带我|возьмите меня
+send 1|密1|напиши 1
+group formed|组好了|группа готова
+no longer needed|不要了|уже не нужно
+no longer recruiting|不收了|набор закрыт
+go go go|冲冲冲|го го го
+start fighting|开打|начинаем бой
+go dungeon|下本|идём в данж
+enter dungeon|进本|заходим в данж
+leave dungeon|出本|выходим из данжа
+at the stone|在石头那|у камня
+fly here|飞过来|лети сюда
+run here|跑过来|беги сюда
+tank spot|坦克位|место танка
+healer spot|治疗位|место хила
+dps spot|输出位|место ДД
+caster|法系|кастер
+physical|物理|физический
+bear druid|熊德|друид-медведь
+feral druid|野德|ферал-друид
+boomkin|鸟德|совух
+resto druid|奶德|рестор-друид
+resto shaman|奶萨|рестор-шаман
+arcane mage|奥法|аркан-маг
+affliction warlock|痛苦术|афли-лок
+demonology warlock|恶魔术|демо-лок
+destruction warlock|毁灭术|дестро-лок
+BM hunter|兽王猎|БМ-хант
+MM hunter|射击猎|ММ-хант
+survival hunter|生存猎|сурв-хант
+assassination rogue|刺杀贼|ликвидация-рога
+subtlety rogue|敏锐贼|саб-рога
+talent points|天赋点|очки талантов
+dual spec|双天赋|двойная специализация
+pull/invite|拉怪/拉人|пул/инвайт
+don't pull|别拉|не пулить
+slow down|慢点|помедленнее
+hurry|快点|быстрее
+take it slow|慢慢来|не спеши
+CC broke|破控了|контроль слетел
+CC|控制|контроль
+sheep|羊|овца
+shackle|束缚|сковывание
+cure poison|解毒|снять яд
+heal up|抬血|подлечиться
+regen health|回血|восстановить здоровье
+regen mana|回蓝|восстановить ману
+oom|没蓝|нет маны
+full health|满血|полное здоровье
+summoner|拉人的|призыватель
+portal mage|开门的法师|маг с порталами
+mage portal|法师传送门|портал мага
+bread|面包|хлеб
+conjure water|做水|сотворить воду
+buff up|上buff|забафаться
+fortitude|耐力|стойкость
+might/strength|力量|сила
+wisdom|智慧|мудрость
+salvation|拯救|спасение
+dragon head|龙头|голова дракона
+DMF buff|暗月buff|бафф Ярмарки Новолуния
+good gear|好装备|хороший шмот
+godly item|极品|имба-шмотка
+off-set piece|散件|вещь не из комплекта
+legendary weapon|橙武|легендарное оружие
+big hammer|大锤|большой молот
+stats|属性|характеристики
+resistance|抗性|сопротивление
+bound|绑定|персональный
+BoE|装绑|при надевании
+BoP|拾绑|при поднятии
+got loot|出货了|получил лут
+no drop|没出|не выпало
+lucky guy|欧皇|везунчик
+unlucky guy|非酋|неудачник
+nothing at all|毛都没有|вообще ничего
+wasted trip|白跑|зря сходили
+rolled|ROLL了|сроллил
+needed|需求了|нажал «нужно»
+pass|放弃|пас
+loot distribution|装备分配|распределение добычи
+split|分|делёж
+starting bid|起拍价|стартовая ставка
+raise bid|加价|поднять ставку
+minimum|底价|минимум
+buyout|一口价|выкуп
+total pot|总包|общий банк
+per person|人均|на человека
+split evenly|平分|поровну
+10k|万|10 тыс.
+thousand|千|тысяча
+hundred|百|сотня
+mail included|包邮|почта включена
+mail me|邮给我|пришли почтой
+trade me|交易我|кинь трейд
+open trade|点交易|открой обмен
+gold farm studio|工作室|голдфарм-студия
+hack|外挂|чит
+ban|封号|бан
+main|大号|основа
+character|角色|персонаж
+gathering|采集|сбор
+tailor|裁缝|портной
+linen|亚麻布|лён
+wool|毛料|шерсть
+copper ore|铜矿|медная руда
+tin ore|锡矿|оловянная руда
+iron ore|铁矿|железная руда
+mithril ore|秘银矿|мифриловая руда
+thorium ore|瑟银矿|ториевая руда
+gold ore|金矿|золотая руда
+silver ore|银矿|серебряная руда
+box|箱子|ящик
+mongoose|猫鼬|мангуст
+giants|巨人|великаны
+major healing potion|特效治疗药水|превосходное зелье исцеления
+major mana potion|特效法力药水|превосходное зелье маны
+got killed|被杀了|убили
+ambush|偷袭|засада
+Grand Marshal|大元帅|Великий маршал
+capture the flag|夺旗|захват флага
+carry flag|扛旗|нести флаг
+gold mine|金矿|золотой рудник
+CN server|国服|китайский сервер
+TW server|台服|тайваньский сервер
+KR server|韩服|корейский сервер
+US server|美服|американский сервер
+EU server|欧服|европейский сервер
+classic server|怀旧服|классический сервер
+private server|私服|частный сервер
+new server|新服|новый сервер
+server launch|开服|запуск сервера
+login queue|排队进游戏|очередь на вход
+latency|延迟|задержка
+lagging|卡了|лагает
+ticket|门票|билет
+accept quest|接任务|взять квест
+turned in|交了|сдал
+double|双倍|двойной
+double XP|双倍经验|двойной опыт
+flight point|飞行点|точка полёта
+tram|地铁|поезд
+Razorfen|剃刀|Иглошкурые
+Majordomo|管家|Мажордом
+Rend Blackhand|雷德·黑手|Ренд Чернорук
+Drakkisath|达基萨斯|Драккисат
+paladin/mount|圣骑士/坐骑|паладин/маунт
+good afternoon|下午好|добрый день
+bye all|大家再见|всем пока
+uh-huh|嗯|угу
+exactly|没错|точно
+probably|大概|наверное
+maybe/can|可能/能|может
+no idea|不知道|без понятия
+P.S.|附言|P.S.
+IMHO|个人觉得|имхо
+dude|哥们|чувак
+noobs|菜鸟们|нубы
+overpowered|超强|имба
+nerf|削弱|нерф
+top|顶级|топ
+excellent|很好|отлично
+super|超棒|супер
+in the evening|晚上|вечером
+one minute|一分钟|минуту
+sec|秒|сек
+a couple minutes|几分钟|пару минут
+where to go|去哪|куда идти
+how to get to|怎么去|как пройти
+where to find|在哪找|где найти
+who knows|谁知道|кто знает
+please tell me|请告诉我|подскажите
+tell me|告诉我|подскажи
+who can|谁能|кто может
+our|我们的|наш
+few|少|мало
+less|更少|меньше
+only|只|только
+and/but|而|а
+come on|拜托|да ладно
+we're looking for|我们在找|мы ищем
+need group|需要队伍|нужна группа
+one more tank|再来一个坦克|ещё один танк
+let's go to|去…吧|пошли в
+let's go BRD|去黑石深渊|го в ГЧГ
+who's going to|谁去|кто идёт в
+who's up for|谁想去|кто хочет в
+to party|进队|в пати
+have party|有队伍|есть пати
+party full|队伍满了|пати фулл
+send invite|发邀请|кинь инвайт
+will accept|会接受|приму
+I'll take|我带|возьму
+PM me|私聊我|пиши в лс
+guild recruiting|公会招人|гильдия набирает
+have tank|有坦克|танк есть
+have healer|有治疗|хил есть
+damage dealer|输出|дамагер
+rogues looking for|找盗贼|ищем разбойников
+prot warrior|防战|прот-вар
+ret paladin|惩戒骑|ретрик
+CC/soulstone|控制/灵魂石|контроль/камень души
+banish/ban|放逐/封号|изгнание/бан
+kick him|踢了他|кикни его
+buff me|给我buff|бафни меня
+HP|血量|ХП
+res|复活|рес
+stone|石头|камень
+stone summon|集合石召唤|призыв камнем
+summon me|拉我|призови меня
+port|传送|портал
+tank died|坦克死了|танк умер
+running|跑着|бегу
+back off|后退|отходим
+gear up|配装备|одеться
+two-hander|双手武器|двуручник
+one-hander|单手武器|одноручник
+T1|T1套装|T1
+T2|T2套装|T2
+blue|蓝装|синий
+green|绿装|зелёный
+let's roll|掷骰吧|роллим
+bank/pot|银行/总包|банк
+ninja|黑装备|ниндзя
+didn't drop|没掉|не выпало
+chance|几率|шанс
+per stack|一组|за стак
+piece|件|штука
+buying high|高价收|куплю дорого
+for sale|出售|продаётся
+by mail|邮寄|по почте
+mail it|邮寄吧|отправь почтой
+will trade|可以换|обменяю
+got scammed|被骗了|меня кинули
+disconnect|掉线|дисконнект
+crashed|崩了|вылетел
+quest for|…的任务|квест на
+share it|共享一下|поделись
+rested|休息|отдых
+AH closed|拍卖行关了|аукцион закрыт
+flight|飞行|полёт
+gryphon|狮鹫|грифон
+BRD run|黑石深渊跑|забег в ГЧГ
+LBRS|黑石塔下层|НПЧГ
+UBRS|黑石塔上层|ВПЧГ
+DM North|厄运北|Забытый город: север
+DM East|厄运东|Забытый город: восток
+DM West|厄运西|Забытый город: запад
+LFM|招人|ищем ещё
+static|固定队|статик
+farm runs|刷本|фарм-забеги
+gold making|赚金|заработок золота
+guildmate|会友|согильдиец
+gj|干得好|молодец
+logging off|下线了|выхожу
+logout|下线|выход
+see you tomorrow|明天见|до завтра
+won't drop|不掉|не падает
+help with quest|帮忙做任务|помогите с квестом
+I'll help|我来帮忙|я помогу
+enemy|敌人|враг
+any Japanese|有日本人吗|есть японцы?
+Japanese players|日本玩家|японские игроки
+I don't understand|我不明白|я не понимаю
+got it|知道了|понял
+sad|难过|грустно
+agreed|同意|согласен
+just a bit|一点点|чуть-чуть
+recommend|推荐|рекомендую
+for real|真的|серьёзно
+please wait|请稍等|подождите пожалуйста
+congratulations|恭喜|поздравляю
+slowly|慢慢|медленно
+by any chance|请问|случайно
+please give|请给|дайте пожалуйста
+please do|请|пожалуйста
+foreigner|外国人|иностранец
+party member|队友|член группы
+anyone going|有人去吗|кто идёт
+anyone want to go|有人一起去吗|кто хочет пойти
+anyone want to|有人想|кто хочет
+anyone coming|有人来吗|кто придёт
+anyone join|有人一起吗|кто с нами
+please come|请过来|приходите
+full party|满队|полная группа
+one spot|一个位置|одно место
+three more|再来三个|ещё трое
+I'll invite you|我邀请你|я тебя приглашу
+warrior tank|战士坦克|воин-танк
+please pull|请拉怪|пулите
+please roll|请掷骰|роллим, пожалуйста
+trade request|交易请求|запрос обмена
+gather up|集合|собираемся
+east|东|восток
+west|西|запад
+north|北|север
+valley|山谷|долина
+Alterac|奥特兰克|Альтерак

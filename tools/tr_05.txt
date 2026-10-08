@@ -1,0 +1,360 @@
+ghost mushroom|幽灵菇|призрачный гриб
+rugged leather|硬甲皮|грубая кожа
+thick leather|厚皮|толстая кожа
+heavy leather|重皮|тяжёлая кожа
+devilsaur leather|魔暴龙皮|кожа дьявозавра
+gems|宝石|самоцветы
+essence of fire|火焰精华|сущность огня
+essence of earth|大地精华|сущность земли
+essence of water|水之精华|сущность воды
+essence of air|空气精华|сущность воздуха
+essence of undeath|不灭精华|сущность нежити
+living essence|生命精华|живая сущность
+righteous orb|正义宝珠|сфера праведности
+epic mount|史诗坐骑|эпический маунт
+riding|骑术|верховая езда
+gold farmer|工作室|голдфармер
+gold seller|卖金的|продавец золота
+bot|脚本|бот
+bots|脚本|боты
+botter|开脚本的|ботовод
+banned|被封号|забанен
+money|钱|деньги
+broke|没钱|без денег
+rich|有钱|богатый
+PvP|PvP|ПвП
+PvE|PvE|ПвЕ
+world PvP|野外PvP|мировое ПвП
+gank|抓人|ганк
+ganked|被抓了|заганкали
+ganking|在抓人|ганкаю
+ganker|抓人的|ганкер
+camp|蹲点|кемпить
+camping|蹲点|кемпят
+camped|被蹲了|закемпили
+corpse camping|守尸|кемп трупа
+flagged|已开PvP|в ПвП-режиме
+honorable kill|荣誉击杀|почётное убийство
+honorable kills|荣誉击杀|почётные убийства
+dishonorable kill|不荣誉击杀|бесчестное убийство
+rank|军衔|ранг
+ranking|冲军衔|ранжирование
+rank 14|14级军衔|14 ранг
+High Warlord|大将军|Верховный вождь
+battlegrounds|战场|поля боя
+queue|排队|очередь
+queued|在排队|в очереди
+queue up|排战场|встать в очередь
+queue pop|排到了|очередь подошла
+flag|旗帜|флаг
+enemy flag carrier|敌方扛旗者|вражеский флагоносец
+middle|中间|центр
+lumber mill|伐木场|лесопилка
+stables|兽栏|стойла
+duel|决斗|дуэль
+duels|决斗|дуэли
+duel me|来决斗|дуэль?
+arena|竞技场|арена
+realm|服务器|игровой мир
+server time|服务器时间|серверное время
+reset time|重置时间|время сброса
+maintenance|维护|техобслуживание
+patch|补丁|патч
+phase|阶段|фаза
+layer|位面|слой
+layering|位面|слои
+lag spike|卡顿|скачок лага
+crash|崩溃|вылет
+relog|重新登录|перезайти
+reload|重载|перезагрузка
+addon|插件|аддон
+addons|插件|аддоны
+macro|宏|макрос
+bug|BUG|баг
+bugged|卡BUG了|забагалось
+glitch|BUG|глюк
+exploit|利用BUG|эксплойт
+GM ticket|GM工单|тикет ГМу
+reputation|声望|репутация
+exalted|崇拜|превознесение
+revered|崇敬|почтение
+honored|尊敬|уважение
+neutral|中立|равнодушие
+hostile|敌对|враждебность
+attunement|进本任务|допуск
+attuned|有进本资格|допуск есть
+key|钥匙|ключ
+UBRS key|黑上钥匙(晋升印章)|ключ ВПЧГ (печать восхождения)
+seal of ascension|晋升印章|печать восхождения
+Dire Maul key|厄运钥匙(月牙钥匙)|ключ Забытого города
+crescent key|月牙钥匙|ключ-полумесяц
+skeleton key|骷髅钥匙|ключ-скелет
+shadowforge key|暗炉钥匙|ключ Тёмного Горна
+MC attunement|熔火之心进本|допуск в Огненные Недра
+Onyxia attunement|黑龙任务|допуск к Ониксии
+BWL attunement|黑翼进本|допуск в Логово Крыла Тьмы
+questline|任务线|цепочка заданий
+turn in|交任务|сдать
+share|共享|поделиться
+share quest|共享任务|поделиться квестом
+share please|求共享|поделись пожалуйста
+escort quest|护送任务|квест сопровождения
+group quest|组队任务|групповой квест
+daily|日常任务|ежедневный квест
+dailies|日常|ежедневки
+drop rate|掉率|шанс дропа
+dropped|掉了|выпало
+RNG|随机|рандом
+luck|运气|удача
+lucky|运气好|повезло
+unlucky|运气差|не повезло
+rares|稀有怪|рары
+rare spawn|稀有怪|редкий моб
+spawn|刷新|появление
+respawn|刷新|респаун
+respawns|刷新|респауны
+tagged|抢到怪|тапнул
+tag|抢怪|тап
+grey mob|灰名怪|серый моб
+named mob|精英怪|именной моб
+world boss|世界首领|мировой босс
+Emerald dragons|翡翠龙|изумрудные драконы
+Kazzak|卡扎克|Каззак
+Azuregos|艾索雷苟斯|Азурегос
+Ysondre|伊森德雷|Исондра
+Lethon|莱索恩|Летон
+Emeriss|艾莫莉丝|Эмерисс
+Taerar|泰拉尔|Таэрар
+XP buff|经验加成|бафф опыта
+rested XP|休息经验|бонус отдыха
+inn|旅店|таверна
+bank|银行|банк
+banker|银行职员|банкир
+guild bank|公会银行|банк гильдии
+mailbox|邮箱|почтовый ящик
+auctions|拍卖|аукционы
+AH price|拍卖行价格|цена на аукционе
+undercut|压价|сбить цену
+flight master|飞行管理员|распорядитель полётов
+flight path|飞行点|маршрут полёта
+fly|飞|лететь
+boat|船|корабль
+zeppelin|飞艇|дирижабль
+deeprun tram|矿道地铁|подземный поезд
+graveyard|墓地|кладбище
+outside|外面|снаружи
+inside|里面|внутри
+meeting stone|集合石|камень встреч
+summoning stone|集合石|камень призыва
+guildies|公会成员|согильдийцы
+guildie|公会成员|согильдиец
+good luck have fun|祝好运玩得开心|удачи и веселья
+raid days|团本日|дни рейдов
+raid time|团本时间|время рейда
+raiding|打团|рейдим
+raider|团员|рейдер
+raiders|团员|рейдеры
+core|核心|основной состав
+officer|官员|офицер
+guild master|会长|глава гильдии
+lead|带队|лидер
+party leader|队长|лидер группы
+promote|提升|повысить
+assist|助理|помощник
+mount up|上坐骑|по коням
+AFK farm|挂机刷|АФК-фарм
+Elwynn Forest|艾尔文森林|Элвиннский лес
+Goldshire|闪金镇|Златоземье
+Westfall|西部荒野|Западный Край
+Redridge Mountains|赤脊山|Красногорье
+Duskwood|暮色森林|Сумеречный лес
+Dun Morogh|丹莫罗|Дун Морог
+Loch Modan|洛克莫丹|Лок Модан
+Wetlands|湿地|Болотина
+Arathi Highlands|阿拉希高地|Нагорье Арати
+Hillsbrad Foothills|希尔斯布莱德丘陵|Предгорья Хилсбрада
+Alterac Mountains|奥特兰克山脉|Альтеракские горы
+Silverpine Forest|银松森林|Серебряный бор
+Tirisfal Glades|提瑞斯法林地|Тирисфальские леса
+Badlands|荒芜之地|Бесплодные земли
+Searing Gorge|灼热峡谷|Тлеющее ущелье
+Burning Steppes|燃烧平原|Пылающие степи
+Swamp of Sorrows|悲伤沼泽|Болото Печали
+Blasted Lands|诅咒之地|Выжженные земли
+Deadwind Pass|逆风小径|Перевал Мёртвого Ветра
+Hinterlands|辛特兰|Внутренние земли
+Plaguelands|瘟疫之地|Чумные земли
+Durotar|杜隆塔尔|Дуротар
+Mulgore|莫高雷|Мулгор
+The Barrens|贫瘠之地|Степи
+Teldrassil|泰达希尔|Тельдрассил
+Darkshore|黑海岸|Тёмные берега
+Ashenvale|灰谷|Ясеневый лес
+Stonetalon Mountains|石爪山脉|Когтистые горы
+Desolace|凄凉之地|Пустоши
+Thousand Needles|千针石林|Тысяча Игл
+Dustwallow Marsh|尘泥沼泽|Пылевые топи
+Feralas|菲拉斯|Фералас
+Tanaris|塔纳利斯|Танарис
+Un'Goro Crater|安戈洛环形山|Кратер Ун'Горо
+Azshara|艾萨拉|Азшара
+Felwood|费伍德森林|Оскверненный лес
+Winterspring|冬泉谷|Зимние Ключи
+Moonglade|月光林地|Лунная поляна
+Silithus|希利苏斯|Силитус
+Ratchet|棘齿城|Кабестан
+Everlook|永望镇|Круговзор
+Southshore|南海镇|Южнобережье
+Tarren Mill|塔伦米尔|Мельница Таррен
+Menethil Harbor|米奈希尔港|Гавань Менетилов
+Theramore|塞拉摩|Терамор
+Astranaar|阿斯特兰纳|Астранаар
+Splintertree Post|碎木岗哨|Застава Расщепленного Дерева
+Light's Hope Chapel|圣光之愿礼拜堂|Часовня Последней Надежды
+Chillwind Camp|冰风岗|Лагерь Промозглого Ветра
+Cenarion Hold|塞纳里奥要塞|Крепость Кенарийцев
+library|图书馆|библиотека
+armory|武器库|оружейная
+cathedral|大教堂|собор
+SM run|血色修道院跑|забег в Монастырь
+SM runs|血色修道院跑|забеги в Монастырь
+temple|神庙|храм
+Blackrock|黑石|Чёрная гора
+Blackrock Mountain|黑石山|Чёрная гора
+Dire Maul East|厄运之槌东|Забытый город: восток
+Dire Maul West|厄运之槌西|Забытый город: запад
+Dire Maul North|厄运之槌北|Забытый город: север
+Dire Maul tribute|厄运贡品|трибьют Забытого города
+tribute run|贡品跑|забег за трибьютом
+jump run|跳本|прыжковый забег
+Stratholme Undead|斯坦索姆天灾区|Стратхольм: нежить
+Stratholme Live|斯坦索姆血色区|Стратхольм: живая сторона
+Baron Rivendare|瑞文戴尔男爵|Барон Ривендер
+Baron run|男爵速刷|забег на барона
+Onyxia's Lair|奥妮克希亚的巢穴|Логово Ониксии
+Ragnaros|拉格纳罗斯|Рагнарос
+Majordomo Executus|管理者埃克索图斯|Мажордом Экзекутус
+Lucifron|鲁西弗隆|Люцифрон
+Magmadar|玛格曼达|Магмадар
+Garr|加尔|Гарр
+Baron Geddon|迦顿男爵|Барон Геддон
+Golemagg|焚化者古雷曼格|Големагг
+Sulfuron Harbinger|萨弗隆先驱者|Предвестник Сульфурон
+Shazzrah|沙斯拉尔|Шаззрах
+Gehennas|基赫纳斯|Гееннас
+Nefarian|奈法利安|Нефариан
+Razorgore|狂野的拉佐格尔|Бритвосмерт
+Vaelastrasz|堕落的瓦拉斯塔兹|Валестраз
+Broodlord Lashlayer|勒什雷尔|Предводитель драконов Разящий Бич
+Chromaggus|克洛玛古斯|Хромаггус
+Hakkar|哈卡|Хаккар
+Jin'do|妖术师金度|Джин'до
+Bloodlord Mandokir|血领主曼多基尔|Мандокир Повелитель Крови
+C'Thun|克苏恩|К'Тун
+Twin Emperors|双子皇帝|Императоры-близнецы
+Ouro|奥罗|Оуро
+Princess Huhuran|哈霍兰公主|Принцесса Хухуран
+Prophet Skeram|预言者斯克拉姆|Пророк Скерам
+Ossirian|无疤者奥斯里安|Оссириан Неуязвимый
+Kel'Thuzad|克尔苏加德|Кел'Тузад
+Sapphiron|萨菲隆|Сапфирон
+Patchwerk|帕奇维克|Лоскутик
+Loatheb|洛欧塞布|Лотхиб
+Thaddius|塔迪乌斯|Таддиус
+Four Horsemen|四骑士|Четыре Всадника
+Edwin VanCleef|艾德温·范克里夫|Эдвин ван Клиф
+Archmage Arugal|大法师阿鲁高|Верховный маг Аругал
+Mutanus the Devourer|吞噬者穆坦努斯|Мутанус Пожиратель
+Herod|赫洛德|Ирод
+Mograine|莫格莱尼|Могрейн
+Whitemane|怀特迈恩|Вайтмейн
+Archaedas|阿扎达斯|Архедас
+Gahz'rilla|加兹瑞拉|Газ'рилла
+Princess Theradras|瑟莱德丝公主|Принцесса Терадрас
+Shade of Eranikus|伊兰尼库斯的阴影|Тень Эраникуса
+Emperor Thaurissan|达格兰·索瑞森大帝|Император Тауриссан
+Lord Roccor|洛考尔|Лорд Роккор
+Golem Lord Argelmach|傀儡统帅阿格曼奇|Повелитель големов Аргелмах
+General Angerforge|安格弗将军|Генерал Кузня Гнева
+ring of law|法律之环|Круг Закона
+lyceum|讲学厅|Лицей
+dark keepers|黑暗守卫者|Тёмные Хранители
+Warchief Rend Blackhand|大酋长雷德·黑手|Вождь Ренд Чернорук
+General Drakkisath|达基萨斯将军|Генерал Драккисат
+The Beast|比斯巨兽|Зверь
+Darkmaster Gandling|黑暗院长加丁|Тёмный магистр Гандлинг
+Rattlegore|血骨傀儡|Громоклин
+Ras Frostwhisper|莱斯·霜语|Рас Ледяной Шёпот
+Gordok|戈多克|Гордок
+King Gordok|戈多克大王|Король Гордок
+Immol'thar|伊莫塔尔|Бессмер'тер
+Tendris Warpwood|特迪斯·扭木|Тендрис Хмурнодрев
+Alzzin the Wildshaper|奥兹恩|Алззин Перевертень
+Ramstein|吞咽者拉姆斯登|Рамштайн Ненасытный
+Balnazzar|巴纳扎尔|Бальназзар
+Timmy the Cruel|残忍的蒂米|Тимми Жестокий
+?|?|?
+Monday|周一|понедельник
+Tuesday|周二|вторник
+Wednesday|周三|среда
+Thursday|周四|четверг
+Friday|周五|пятница
+Saturday|周六|суббота
+Sunday|周日|воскресенье
+every night|每晚|каждый вечер
+noon|中午|полдень
+afternoon|下午|день
+early morning|凌晨|рано утром
+herbalist|采药的|травник
+no choice|没办法|ничего не поделаешь
+method|方法|способ
+skill|技术|навык
+Japan|日本|Япония
+basic|基本|базовый
+myself|我自己|сам
+come out|出来|выйди
+received|收到了|получил
+enemy side|对面|враги
+phone|手机|телефон
+map|地图|карта
+she|她|она
+above|上面|сверху
+below|下面|снизу
+front|前面|спереди
+a moment|一下子|момент
+what to do|怎么办|что делать
+how about|怎么样|как насчёт
+what are you doing|你在干嘛|что делаешь
+how long|多久|как долго
+what time|几点|во сколько
+o'clock|点|час
+seconds|秒|секунд
+hours|小时|часов
+just now|刚才|только что
+in a bit|一会儿|чуть позже
+wait a sec|等下|секунду
+wait a moment|等一下|минутку
+coming now|马上来|уже иду
+arrive|到|прибыть
+return|回|вернуться
+back to town|回城|в город
+logged off|下线了|вышел из игры
+going to sleep|睡了|иду спать
+bathroom|厕所|туалет
+away|离开|отошёл
+I'm back|回来了|я вернулся
+are you there|在不在|ты тут?
+busy|忙|занят
+tired|累了|устал
+correct|对的|верно
+it's okay|没关系|всё в порядке
+no need|不用|не нужно
+no thanks|不用了|нет, спасибо
+whatever|随便|без разницы
+either is fine|都行|любой вариант
+fake|假的|фейк
+nice person|好人|хороший человек
+bless you|好人一生平安|благослови тебя
+thanks pro|谢谢大佬|спасибо, профи
+thanks boss|谢谢老板|спасибо, босс
+happy new year|新年快乐|с Новым годом

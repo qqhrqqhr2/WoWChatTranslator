@@ -1,0 +1,14 @@
+package-as: WoWChatTranslator
+
+manual-changelog:
+  filename: CHANGELOG.md
+  markup-type: markdown
+
+ignore:
+  - README.md
+  - CURSEFORGE_DESCRIPTION.md
+  - CLAUDE.md
+  - .github
+  - tools
+  - assets
+  - .gitignore

@@ -1,0 +1,2140 @@
+long-term	장기간
+active	활발한
+long-term active	장기간 활발한
+WoW	와우
+World of Warcraft	월드 오브 워크래프트
+community	커뮤니티
+pro players	고수
+veterans help newbies	고수가 뉴비를 도와줌
+help newbies	뉴비 도와줌
+newbie	초보
+veteran	고인물
+dungeon	던전/인던
+raid	공격대 던전
+GDKP raid	골드팟(입찰 공대)
+payout	분배금
+gold split	골드 분배
+auction	경매
+achievement	업적
+fight	싸움(PvP)
+no pressure	부담 없는
+casual	캐주얼
+chill casual	부담 없는 캐주얼
+chill	느긋한
+join group chat	단톡방 입장
+group chat	단톡방
+add on WeChat	위챗 친구추가
+WeChat	위챗
+backup	보조/예비
+backup WeChat	예비 위챗
+QQ group	QQ 단톡방
+YY voice	YY(음성채팅)
+voice chat	음성채팅
+guild	길드
+recruiting	인원 모집
+welcome	환영
+welcome to join	가입 환영
+join	가입
+join guild	길드 가입
+LFG	파티 구함
+group	파티
+need people	사람 구함
+need	부족(구함)
+still need	아직 부족
+need one	한 명 와
+come	와요(구함)
+come fast	빨리 와
+quick	빨리
+whisper me	귓말 줘
+whisper	귓말
+full	꽉 참
+starting group	파티 시작
+starting	출발(파티 시작)
+leaving now	출발
+buyer	버스 고객
+carry	버스/캐리
+boosting	대리 육성
+carry run	버스 캐리
+farm	반복 사냥
+dungeon farming	던전 반복
+gold farming	골드 파밍
+grinding	몹 사냥
+leveling	레벨업
+max level	만렙
+level	레벨
+XP	경험치
+quest	퀘스트
+turn in quest	퀘스트 완료
+questing	퀘스트 진행
+gear	장비
+BiS done	졸업(BiS 완성)
+BiS gear	졸업 장비
+weapon	무기
+ring	반지
+necklace	목걸이
+trinket	장신구
+cloak	망토
+armor	방어구
+greed	차비(주사위)
+roll	주사위
+loot	분배
+leader	파티장
+raid leader	공대장
+raid lead	지휘
+tank	탱커
+main tank	메인 탱커
+healer	힐러
+DPS	딜러(DPS)
+melee	근접
+ranged	원거리
+Warrior	전사
+Mage	마법사
+Priest	사제
+Warlock	흑마법사
+Hunter	사냥꾼
+Rogue	도적
+Druid	드루이드
+Paladin	성기사
+Shaman	주술사
+class	직업
+talents	특성
+profession	전문기술
+Alchemy	연금술
+Blacksmithing	대장기술
+Enchanting	마법부여
+Engineering	기계공학
+Leatherworking	가죽세공
+Tailoring	재봉술
+Mining	채광
+Herbalism	약초채집
+Skinning	무두질
+Fishing	낚시
+Cooking	요리
+First Aid	응급치료
+WTB	삽니다
+buy	구매
+WTS	팝니다
+trade	교환
+price	가격
+cheap	싼
+gold	골드
+silver	실버
+how much	얼마예요
+how many	얼마/몇
+Alliance	얼라이언스
+Horde	호드
+world	월드(전체) 채널
+world channel	월드 채널
+channel	채널
+yell	외침
+capital city	수도
+Stormwind	스톰윈드
+Ironforge	아이언포지
+Darnassus	다르나서스
+Orgrimmar	오그리마
+Thunder Bluff	썬더 블러프
+Undercity	언더시티
+Booty Bay	무법항
+Gadgetzan	가젯잔
+Deadmines	죽음의 폐광
+Ragefire Chasm	성난불길 협곡
+Wailing Caverns	통곡의 동굴
+Shadowfang Keep	그림자송곳니 성채
+Stockade	스톰윈드 지하감옥
+Blackfathom Deeps	검은심연의 나락
+Gnomeregan	놈리건
+Razorfen Kraul	가시덩굴 우리
+Razorfen Downs	가시덩굴 구릉
+Scarlet Monastery	붉은십자군 수도원
+Uldaman	울다만
+Zul'Farrak	줄파락
+Maraudon	마라우돈
+Sunken Temple	아탈학카르 신전
+Blackrock Depths	검은바위 나락
+Blackrock Spire	검은바위 첨탑
+upper	상층
+lower	하층
+Stratholme	스트라솔름
+Scholomance	스칼로맨스
+Dire Maul	혈투의 전장
+Molten Core	화산 심장부
+Blackwing Lair	검은날개 둥지
+Onyxia	오닉시아
+Zul'Gurub	줄구룹
+Ahn'Qiraj	안퀴라즈
+Naxxramas	낙스라마스
+battleground	전장
+Alterac Valley	알터랙 계곡
+Warsong Gulch	전쟁노래 협곡
+Arathi Basin	아라시 분지
+honor	명예
+open world	필드
+flag PvP	PvP 켜기
+kill	죽이다
+can't win	못 이김
+help	살려줘
+thanks	고마워요
+you're welcome	천만에요
+hello	안녕하세요
+hi all	모두 안녕하세요
+good evening	좋은 저녁
+bye	잘 가요
+okay	좋아요
+good	좋아
+can/ok	가능/좋아
+no	안 돼
+don't want	필요 없어
+want	필요해/원해
+anyone	누구 있나요
+is there any	있나요
+have	있다
+don't have	없다
+where	어디
+where is	어디 있어요
+at	~에 있다
+what	무엇
+how	어떻게
+why	왜
+who	누구
+now	지금
+right away	곧/바로
+wait	기다려
+one moment	잠시만요
+together	같이
+go	가다
+let's go	가자
+leaving	간다
+come back	돌아와
+online	접속
+offline	접속 종료
+people	사람
+friend	친구
+bro	형제(친구)
+buddy	친구
+haha	하하
+lol	ㅋㅋㅋ
+nice	잘한다(대박)
+awesome	대박
+trash	쓰레기
+troll	트롤
+server	서버
+lag	렉
+disconnected	튕김
+China	중국
+Chinese	중국인
+Korea	한국
+Korean	한국인
+don't understand	모르겠어요
+translate	번역
+casual guild	캐주얼 길드
+PvP guild	PvP 길드
+event	이벤트/활동
+every day	매일
+every week	매주
+evening	저녁
+weekend	주말
+time	시간
+play time	접속 시간
+no limit	제한 없음
+any class	직업 무관
+any level	레벨 무관
+or higher	이상
+or lower	이하
+level+	레벨 이상
+headcount	인원
+need tank	탱커 구함
+need healer	힐러 구함
+need DPS	딜러 구함
+carrying	버스 태움
+carry newbies	뉴비 버스
+free	무료
+free carry	무료 버스
+paid	유료
+selling cheap	싸게 팝니다
+bulk	대량
+in stock	재고 있음
+good price	가격 착함
+price in whisper	가격은 귓말
+anyone who needs	필요한 분
+whisper if needed	필요하면 귓말
+materials	재료
+bring mats	재료 지참
+mats included	재료 포함
+craft	제작
+crafting service	대신 제작
+enchanter	마법부여사
+inscription	주문각인
+potion	물약
+flask	영약
+food	음식
+bandage	붕대
+bag	가방
+mount	탈것
+pet	애완동물
+plans	도안
+recipe	제조법
+scroll	두루마리
+gem	보석
+ore	광석
+leather	가죽
+cloth	천
+runecloth	룬매듭 천
+mageweave	마법매듭 천
+silk	비단
+arcanite bar	아케이나이트 주괴
+thorium	토륨
+truesilver	진은
+mithril	미스릴
+arcane crystal	비전 수정
+black lotus	검은 연꽃
+quest item	퀘스트 아이템
+elite	정예
+rare	희귀
+epic gear	영웅 장비
+epic	영웅(보라)
+blue gear	희귀 장비
+green gear	고급 장비
+legendary	전설
+boss	보스
+first boss	첫 보스
+second boss	두 번째 보스
+last boss	막보
+full clear	전체 클리어
+clear	클리어
+progression	첫 공략
+speed run	빠른 반복
+reset	초기화
+wipe	전멸
+wiped	전멸했다
+resurrect	부활
+summon	소환
+portal	차원문
+open portal	차원문 열기
+teleport	순간이동
+hearthstone	귀환석
+gather	집합
+meeting point	집합 장소
+entrance	입구
+dungeon entrance	던전 입구
+at the entrance	입구에 있음
+on the way	가는 중
+arrived	도착
+almost there	거의 도착
+be right there	곧 도착
+start	시작
+end	끝
+done	완료
+quest chain	연계 퀘스트
+elite quest	정예 퀘스트
+do together	같이 하자
+group up for	파티 모아서 진행
+need a carry	버스 구함
+looking for	구함/부탁
+excuse me	실례지만
+please	부탁
+guys	여러분
+everyone	여러분
+newcomer	신입
+newcomers welcome	신입 환영
+returning	복귀
+returning players	복귀 유저
+workers	직장인
+student	학생
+female players	여성 유저
+girls	여성 유저
+atmosphere	분위기
+good vibe	분위기 좋음
+harmonious	화목한
+friendly	친절한
+help each other	서로 도움
+united	단합
+stable	안정적인
+static raid	고정 공대
+static group	고정 파티
+pug	공팟
+DKP	DKP
+free for all	자유 획득
+master loot	파티장 분배
+all	전부
+some	약간
+a lot	많이
+a little	조금
+lots	아주 많이
+too	너무
+expensive	비싼
+really	정말
+very	매우
+most	가장
+best	최고
+more	더
+don't	하지 마
+not	없다/안
+can	할 수 있다
+know	알다
+don't know	모르다
+look	보다
+find	찾다
+looking for people	사람 찾음
+looking for guild	길드 찾음
+you there?	있어요?
+coming?	올래요?
+going?	갈래요?
+anyone?	누구 있나요?
+how to get there	어떻게 가요
+where is it	어디예요
+what is it	뭐예요
+what level	몇 레벨
+one	1
+two	2
+three	3
+four	4
+five	5
+people now	명 됐어
+and	와/과
+with	~와 함께
+I	나
+you	너
+he	그
+we	우리
+you all	너희
+let's	~하자
+also	~도
+still	아직/또
+is	~이다
+a bit	좀/한번
+can I?	돼요?
+(counter)	개/명
+recruiting members	멤버 모집
+guild member	길드원
+party	파티
+beginner	초보
+very welcome	대환영
+Japanese	일본인
+nice to meet you	잘 부탁합니다
+thank you	감사합니다
+sorry/excuse me	죄송합니다/저기요
+good morning	좋은 아침
+good work	수고했어요
+good night	잘 자요
+help me	도와줘
+sell	팔다
+yes	네
+roger	알겠습니다
+can't	불가능합니다
+looking for group	파티 구함
+looking for more	인원 구함
+need 1 more	1명 구함
+need 2 more	2명 구함
+need 3 more	3명 구함
+need 4 more	4명 구함
+want to sell	팝니다
+want to buy	삽니다
+want to trade	교환합니다
+please send tell	귓말 주세요
+private message	귓말
+message me	귓말 주세요
+message	메시지
+invite	초대
+invite please	초대 부탁
+no problem	천만에
+good game	수고했어요
+good job	잘했어
+well played	잘했어
+be right back	금방 올게
+away from keyboard	자리 비움
+on my way	가는 중
+I don't know	모르겠어
+in my opinion	내 생각엔
+by the way	그런데
+laughing	ㅋㅋ
+what the	뭐야
+never mind	신경 쓰지 마
+ok	ㅇㅋ
+sorry	미안
+good luck	행운을
+have fun	즐겜
+congrats	축하해
+hi	안녕
+see you	또 봐
+any	아무나/있나요
+engineer	기계공학자
+blacksmith	대장장이
+leatherworker	가죽세공사
+alchemist	연금술사
+crafter	제작자
+crafting	제작
+make	만들기
+for	~용
+someone	누군가
+my	내
+me	나
+shotgun	샷건(총)
+gun	총
+bow	활
+guy	사람
+player	플레이어
+players	플레이어들
+looking for tank	탱커 구함
+looking for healer	힐러 구함
+looking for DPS	딜러 구함
+all quests	퀘스트 전부
+quest run	퀘스트 런
+full run	풀런
+farming	파밍 중
+grind	사냥
+level up!	레벨업!
+bags	가방
+herb	약초
+herbs	약초
+bar	주괴
+bars	주괴
+stack	묶음(한 칸)
+stacks	묶음
+x	개(수량)
+cash on delivery	착불 우편
+mail	우편
+tip	팁
+tips	팁
+your mats	재료 지참
+my mats	내 재료
+your	너의
+are	~이다(are)
+I'm	나는
+they	그들
+to	~로
+in	~에서
+on	~에
+of	~의
+from	~에서
+or	또는
+but	하지만
+if	만약
+yeah	응
+yep	응
+nope	아니
+wants	원하다
+going	가는 중
+coming	가는 중
+get	얻다
+got	얻었다
+has	가지다
+when	언제
+much	많이
+many	많은
+last	마지막
+first	처음
+as soon as possible	최대한 빨리
+soon	곧
+later	나중에
+today	오늘
+tonight	오늘 밤
+tomorrow	내일
+second	잠깐
+minute	분
+minutes	분
+hour	시간
+please invite	초대 부탁
+invite me	초대해줘
+add me	추가해줘
+leave	나가기
+left	나갔다
+kick	추방
+pull	풀링
+drop	드랍
+drops	드랍
+mob	몹
+mobs	몹
+killed	잡음
+dead	죽음
+die	죽다
+corpse	시체
+rez please	부활 부탁
+water	물
+mana	마나
+out of mana	마나 없음
+health	생명력
+heal please	힐 부탁
+bad	나쁜
+great	훌륭해
+cool	멋져
+fun	재밌다
+easy	쉬움
+hard	어려움
+social	친목
+recruit	모집
+members	멤버
+new players	신규 유저
+Discord	디스코드
+voice	음성 채팅
+soft reserve	찜(소프트 예약)
+main spec	주 특성(우선)
+off spec	보조 특성
+reserve/resurrect	예약/부활
+heal	힐
+melee DPS	근접 딜러
+ranged DPS	원거리 딜러
+off tank	보조 탱커
+portals	순간이동
+bind on equip	착용 시 귀속
+auction house	경매장
+GDKP	골드팟
+gold bid	골드팟
+best in slot	최고 장비(BiS)
+AoE	광역
+crowd control	군중 제어
+cooldown	쿨다운
+buff	버프
+buffs	버프
+potions	물약
+enchant	마부
+run	판/런
+runs	판
+boost	버스
+spot	자리
+spots	자리
+last spot	마지막 자리
+heroic	영웅
+SM Graveyard	붉은수도원 묘지
+SM Library	붉은수도원 도서관
+SM Armory	붉은수도원 무기고
+SM Cathedral	붉은수도원 대성당
+Deadmines/Dire Maul	죽음의 폐광/혈투의 전장
+Lower Blackrock Spire	검은바위 첨탑 하층
+Upper Blackrock Spire	검은바위 첨탑 상층
+Ruins of Ahn'Qiraj	안퀴라즈 폐허
+Temple of Ahn'Qiraj	안퀴라즈 사원
+Crossroads	크로스로드
+Stranglethorn Vale	가시덤불 골짜기
+Western Plaguelands	서부 역병지대
+Eastern Plaguelands	동부 역병지대
+each	개당
+per	당
+thx	고마워
+pls	부탁해
+alright	알았어
+is there	있나요
+in/to	~에/~로
+on/to	~에
+to the group	파티에
+quests	퀘스트
+items	아이템
+in whisper	귓말로
+PM	귓말
+who can help	누가 도와줄래요
+quickly	빨리
+waiting	기다려요
+one sec	잠깐
+fine	괜찮아
+Russian	러시아어/러시아인
+Russians	러시아인들
+RU	러시아
+understand	이해해요
+healers	힐러들
+tanks	탱커들
+in group	파티에
+I'll go	갈게
+where to	어디로
+from where	어디서
+what for	뭐 하러
+may I	해도 돼요?/가능
+I can	할 수 있어
+can you	할 수 있어?
+I want	원해요
+need to	해야 해
+I know	알아
+who's going	누가 가요
+who's with me	나랑 갈 사람
+with me	나와 함께
+with us	우리와 함께
+us	우리를
+anyone here	누구 있어요
+person	사람
+one person	한 명
+to farm	파밍하다
+to level	레벨업하다
+to clear	클리어하다
+run dungeon	던전 돌기
+died	죽었다
+rez me	부활시켜 줘
+to craft	제작하다
+mats	재료
+pcs	개
+copper	코퍼
+do	하다
+doing	하는 중
+thank you very much	정말 고마워요
+gg	수고했어요
+afk	자리 비움
+decent	정상적인(매너 있는)
+decent people	매너 있는 분
+we invite	초대합니다
+invites	초대합니다
+to join	가입하다
+will	~할게
+will tip	팁 드릴게
+him	그를
+her	그녀
+DM tribute	혈투의 전장 공물 런
+DM tribute run	혈투의 전장 공물 런
+soulstone	영혼석
+whisper x for invite	초대 원하면 x 귓말
+shadow bolt	어둠의 화살
+tell	귓말
+send a tell	귓말 주세요
+send me a tell	귓말 주세요
+hit me up	연락 줘
+let me know	알려줘
+reinvite	재초대
+thank you so much	정말 고마워
+thanks all	모두 고마워
+appreciate it	고마워요
+much appreciated	정말 고마워요
+congrats all	모두 축하
+welcome back	다시 온 걸 환영
+good morning/GM	좋은 아침/GM
+talk to you later	나중에 얘기해
+bye/Booty Bay	잘 가/무법항
+be back later	나중에 올게
+bio break	화장실
+back	돌아옴
+ready	준비됨
+are you ready	준비됐어?
+ready check	준비 확인
+go go	가자 가자
+oh my god	헐
+what the hell	뭐야
+for f's sake	아 진짜
+shaking my head	어이없네
+to be honest	솔직히
+not gonna lie	솔직히
+in my humble opinion	내 생각엔
+in real life	현실에서
+for your information	참고로
+just kidding	농담이야
+I don't care	상관없어
+I know right	그러니까
+if I recall correctly	내 기억이 맞다면
+as far as I know	내가 알기론
+rolling on the floor laughing	빵 터짐
+XD	ㅋㅋ
+hahaha	하하하
+hehe	헤헤
+rip	망했네
+oof	아이고
+my bad	내 실수
+no worries	괜찮아요
+all good	괜찮아
+of course	물론
+sure	그래
+ok thanks	알았어 고마워
+yup	응
+nah	아니
+somebody/shadow bolt	누군가/어둠의 화살
+somebody	누군가
+age/sex/location	나이/성별/지역
+who's	누구
+going to	~할 거야
+want to	~하고 싶어
+got to	~해야 해
+kind of	좀
+sort of	약간
+because	왜냐면
+though	그런데
+through	통해
+picture	사진
+please help	도와주세요
+need help	도움 필요
+can someone	누가 좀
+can anyone	누구 좀
+does anyone	누구 ~있어?
+anyone know	누구 아는 사람
+anyone have	누구 가진 사람
+anyone selling	파는 사람 있나요
+anyone got	누구 있나요
+where can I	어디서 ~할 수 있어?
+how do I	어떻게 해?
+how to	어떻게
+what's	뭐야
+won't	안 할 거야
+isn't	아니다
+didn't	안 했다
+I'll	내가 할게
+I've	나는 ~했다
+it's	그건
+that's	그건
+there's	~있어
+I'm looking for	나 ~ 구함
+I need	나 ~ 필요해
+I have	나 ~ 있어
+we need	우리 ~ 필요해
+we have	우리 ~ 있어
+need more	더 필요
+need 1	1명 필요
+need 2	2명 필요
+need 3	3명 필요
+need all	모두 구함
+1 more	1명 더
+2 more	2명 더
+3 more	3명 더
+one more	1명 더
+two more	2명 더
+spot open	자리 있음
+spots open	자리 있음
+open spots	빈자리
+filled	마감
+closed	마감
+still looking	아직 구하는 중
+looking for work	일 구함(제작)
+looking for dungeon	던전 구함
+looking for raid	공격대 구함
+looking for party	파티 구함
+looking for all	모두 구함
+looking for tank and healer	탱커·힐러 구함
+LFG quest	퀘스트 파티 구함
+LFG dungeon	던전 파티 구함
+selling boosts	버스 팝니다
+buying boost	버스 삽니다
+selling	팝니다
+buying	삽니다
+sold	팔림
+trading	교환 중
+paying	지불합니다
+pay	지불
+will pay	돈 드림
+tipping	팁 드림
+tip thanks	팁 감사
+tips appreciated	팁 환영
+for free	무료로
+free summons	무료 소환
+free ports	무료 순간이동
+free enchants	무료 마부
+free crafting	무료 제작
+no tip	팁 없음
+no tips	팁 필요 없음
+your own mats	재료 지참
+mats provided	재료 제공
+have mats	재료 있음
+offer	제안
+offers	가격 제안
+best offer	최고가 제안
+or best offer	또는 최고가 제안
+negotiable	흥정 가능
+firm price	가격 고정
+price check	시세 확인
+how much for	얼마예요
+cheaper	더 싸게
+discount	할인
+cash	현금
+scam	사기
+scammer	사기꾼
+ninja looter	닌자(무단 루팅)
+ninjaed	닌자당함
+reported	신고함
+report	신고
+think	생각해
+thought	생각했다
+that	그거
+this	이거
+these	이것들
+those	저것들
+was	~였다
+were	~였다
+be	~이다
+been	~였다
+so	그래서/너무
+just	그냥/방금
+again	다시
+maybe	아마
+already	이미
+then	그러면
+there	거기
+here	여기
+every	모든
+all of	모두
+other	다른
+others	다른 사람들
+same	같은
+different	다른
+new	새로운
+old	오래된
+big	큰
+small	작은
+long	긴/오래
+fast	빠른
+better	더 좋은
+worse	더 나쁜
+worst	최악
+right	맞아/오른쪽
+wrong	틀린
+true	사실
+sure thing	물론
+like	좋아해/~처럼
+love	좋아해
+hate	싫어
+feel	느껴
+looks	~처럼 보여
+see	보다
+saw	봤다
+watch	봐
+say	말하다
+said	말했다
+ask	물어보다
+asked	물어봤다
+answer	대답
+try	해보다
+trying	해보는 중
+tried	해봤다
+use	사용
+used	사용했다
+using	사용 중
+found	찾았다
+lost	잃었다/졌다
+win	이기다
+won	이겼다
+lose	지다
+started	시작했다
+finish	끝내다
+finished	끝났다
+work	일/작동
+works	작동해
+working	일하는 중
+broken	고장남
+fix	고치다
+fixed	고쳤다
+restart	재시작
+restarting	재시작 중
+internet	인터넷
+connection	연결
+game	게임
+games	게임
+play	플레이
+playing	하는 중
+played	했다
+day	날
+days	날들
+night	밤
+week	주
+month	달
+year	년
+yesterday	어제
+morning	아침
+home	집
+work tomorrow	내일 출근
+sleep	자다
+bed	잠자리
+eat	먹다
+dinner	저녁 식사
+lunch	점심
+funny	웃기다
+crazy	미쳤다
+weird	이상해
+strange	이상해
+boring	지루해
+amazing	놀라워
+beautiful	아름다워
+nice one	잘했어
+well done	잘했어
+thank god	다행이다
+finally	드디어
+almost	거의
+enough	충분해
+nothing	아무것도
+something	뭔가
+anything	아무거나
+everything	전부
+nobody	아무도
+everybody	모두
+problem	문제
+issue	문제
+question	질문
+idea	생각
+way	길/방법
+place	장소
+thing	것
+things	것들
+friends	친구들
+team	팀
+country	나라
+Koreans	한국인들
+English	영어
+speak	말하다
+language	언어
+pickup group	공팟
+pickup groups	공팟
+premade	프리메이드(미리 짠 팀)
+guild run	길드 런
+alt run	부캐 런
+alt	부캐
+alts	부캐
+main character	본캐
+twink	트윙크(저렙 PvP 캐릭)
+puller	풀러
+pulling	풀링 중
+pulls	풀링
+patrol	순찰몹
+patrols	순찰몹
+add	추가 몹
+adds	추가 몹
+trash mobs	잡몹
+skip	건너뛰기
+skip trash	잡몹 건너뛰기
+cleared	클리어 완료
+flag carrier/full clear	깃발 운반자/전체 클리어
+boss only	보스만
+bosses	보스들
+end boss	막보
+resetting	초기화 중
+lockout	귀속
+saved	귀속됨
+raid ID	귀속 ID
+instance	인스턴스(던전)
+dungeons	던전
+raids	공격대
+wipes	전멸
+wipe it	전멸시키자
+corpse run	시체 찾으러 감
+run back	시체 찾으러 감
+release spirit	영혼 해방
+release	영혼 해방
+spirit healer	영혼의 치유사
+resurrection sickness	부활 후유증
+battle res	전투 부활
+soulstone me	영혼석 걸어줘
+healthstone/hearthstone	생명석/귀환석
+healthstone	생명석
+healthstones	생명석
+hearth	귀환
+hearthing	귀환 중
+summons	소환
+summoning	소환 중
+need summon	소환 필요
+summon please	소환 부탁
+click the portal	소환진 클릭
+click	클릭
+clicks	클릭 부탁
+help click	소환 클릭 도와줘
+port to	~로 순간이동
+port please	순간이동 부탁
+portal to	~행 차원문
+water please	물 부탁
+mage water	마법사 물
+mage table	마법사 식탁
+food please	음식 부탁
+drink	마시기
+drinking	마나 회복 중
+eating	먹는 중
+meditate	명상(마나 회복)
+mana break	마나 회복 대기
+almost out of mana	곧 마나 없음
+low mana	마나 부족
+low health	생명력 낮음
+heals please	힐 부탁
+heal me	힐 줘
+buff please	버프 부탁
+buffs please	버프 부탁
+rebuff	버프 다시
+debuff	디버프
+debuffs	디버프
+damage over time	지속 피해
+DoTs	지속 피해
+heal over time	지속 치유
+HoTs	지속 치유
+aggro	어그로
+threat	위협 수준
+pulled aggro	어그로 끌림
+taunt	도발
+taunted	도발함
+tanking	탱킹
+healing	치유
+healer please	힐러 부탁
+damage	피해량
+burst	순간 딜
+interrupt	차단
+interrupts	차단
+kick it	차단해
+silence	침묵
+stun	기절
+stuns	기절
+slow	감속
+root	속박
+snare	이동 방해
+dispel	해제
+decurse	저주 해제
+cleanse	정화
+cure	치료(해제)
+poison	독
+curse	저주
+disease	질병
+magic	마법
+line of sight	시야 끊기
+kite	카이팅
+kiting	카이팅
+range	사거리
+behind	뒤에서
+stack up	뭉쳐
+spread out	흩어져
+move	이동해
+back up	뒤로 빠져
+follow	따라와
+follow me	따라와
+wait for me	기다려줘
+wait up	잠깐 기다려
+hold	대기
+stop	멈춰
+careful	조심
+watch out	조심해
+incoming	몰려온다
+sap	혼절시키기
+sapped	혼절당함
+polymorph	변이(양)
+fear	공포
+feared	공포에 걸림
+banish	추방
+shackle undead	언데드 속박
+trap	덫
+freezing trap	얼음의 덫
+hibernate	겨울잠
+seduction	유혹
+mind control	정신 지배
+mind controlled	정신 지배당함
+blind	실명
+gouge	후려치기
+kidney shot	급소 가격
+hammer of justice	심판의 망치
+divine shield	천상의 보호막
+bubble hearth	무적 귀환
+bind on pickup/blessing of protection	획득 시 귀속/보호의 축복
+lay on hands	신의 축복
+feign death	죽은 척하기
+vanish	소멸
+stealth	은신
+prowl	숨기
+innervate	정신 자극
+rebirth	환생
+power word: shield	신의 권능: 보호막
+shield	보호막/방패
+renew	소생
+flash heal	순간 치유
+greater heal	상급 치유
+chain heal	연쇄 치유
+healing wave	치유의 물결
+lesser healing wave	하급 치유의 물결
+holy light	성스러운 빛
+flash of light	빛의 섬광
+rejuvenation	회복
+regrowth	재생
+healing touch	치유의 손길
+tranquility	평온
+shadow word: pain	어둠의 권능: 고통
+frostbolt	얼음 화살
+fireball	화염구
+blizzard	눈보라
+AoE farming	광역 사냥
+AoE grinding	광역 사냥
+AoE pull	광역 풀링
+execute	마무리 일격
+whirlwind	소용돌이
+sunder armor	방어구 가르기
+shout	외침
+cleave	회전베기
+totem	토템
+totems	토템
+windfury totem	질풍의 토템
+windfury	질풍
+tremor totem	진동의 토템
+grounding totem	마법흡수 토템
+aspect	상
+pet tank	펫 탱
+power word: fortitude	신의 권능: 인내
+stamina buff	체력 버프
+intellect buff	지능 버프
+arcane intellect	신비한 지능
+arcane brilliance	신비한 총명함
+mark of the wild	야생의 징표
+gift of the wild	야생의 선물
+blessing of kings	왕의 축복
+blessing of might/might	힘의 축복/아마
+blessing of might	힘의 축복
+blessing of wisdom	지혜의 축복
+blessing of salvation	구원의 축복
+blessing of sanctuary	성역의 축복
+blessing	축복
+blessings	축복
+thorns	가시
+spirit buff	정신력 버프
+shadow protection	어둠의 보호
+Onyxia buff	오닉시아 버프(용사의 외침)
+Rend buff	렌드 버프(용사의 외침)
+Darkmoon buff	다크문 버프
+songflower	노래꽃 버프
+world buffs	월드 버프
+ZG buff	줄구룹 버프
+DM tribute buffs	혈투 공물 버프
+classes	직업
+spec	특성
+specs	특성
+respec	특성 초기화
+build	특성 빌드
+protection	방어
+protection warrior	방어 전사
+protection paladin	보호 성기사
+fury	분노 전사
+fury warrior	분노 전사
+arms	무기 전사
+arms warrior	무기 전사
+holy	신성
+holy paladin	신성 성기사
+holy priest	신성 사제
+retribution	징벌 성기사
+retribution paladin	징벌 성기사
+shockadin	신성 충격 성기사
+discipline	수양 사제
+discipline priest	수양 사제
+shadow	암흑
+shadow priest	암흑 사제
+restoration	회복
+restoration druid	회복 드루이드
+restoration shaman	복원 주술사
+feral	야성 드루이드
+bear	곰(야성 탱)
+bear tank	곰 탱커
+cat	표범(야성 딜)
+cat druid	표범 드루이드
+balance druid	조화 드루이드(달빛야수)
+moonkin	조화 드루이드(달빛야수)
+balance	조화
+tree	나무(회복 드루이드)
+elemental	정기 주술사
+elemental shaman	정기 주술사
+enhancement	고양 주술사
+enhancement shaman	고양 주술사
+combat	전투 도적
+combat rogue	전투 도적
+subtlety	잠행 도적
+assassination	암살 도적
+marksmanship	사격 사냥꾼
+beast mastery	야수 사냥꾼
+survival	생존 사냥꾼
+affliction	고통 흑마법사
+demonology	악마 흑마법사
+destruction	파괴 흑마법사
+SM/Ruin warlock	악마 파괴 흑마
+frost	냉기
+frost mage	냉기 마법사
+fire	화염
+fire mage	화염 마법사
+arcane	비전
+PoM pyro	냉정 불덩이 폭발
+warriors	전사
+mages	마법사
+priests	사제
+warlocks	흑마법사
+hunters	사냥꾼
+bad hunter	초보 사냥꾼(조롱)
+rogues	도적
+druids	드루이드
+paladins	성기사
+shamans	주술사
+hunter pet	사냥꾼 펫
+lockpicking	자물쇠 따기
+lockbox	잠긴 상자
+lockboxes	잠긴 상자
+open lockbox	상자 따기
+Horde player	호드 유저
+Human	인간
+Dwarf	드워프
+Gnome	노움
+Night Elf	나이트 엘프
+Orc	오크
+Tauren	타우렌
+Undead	언데드
+Forsaken	포세이큰
+strength	힘
+agility	민첩
+stamina	체력
+intellect	지능
+spirit	정신력
+attack power	전투력
+crit	치명타
+hit	적중
+hit cap	적중 상한
+haste	가속
+mana per 5	5초당 마나
+defense	방어도(방어 숙련)
+dodge	회피
+parry	무기 막기
+block	방패 막기
+resist	저항
+resistances	저항
+fire resistance	화염 저항
+nature resistance	자연 저항
+frost resistance	냉기 저항
+shadow resistance	암흑 저항
+spell power	주문력
+spell damage	주문 공격력
+healing power	치유량
+DPS check	딜 체크
+item level	아이템 레벨
+gear score	장비 점수
+geared	장비 갖춤
+undergeared	장비 부족
+pre-BiS	준 최고 장비
+upgrade	업그레이드
+upgrades	업그레이드
+sidegrade	비슷한 템
+item	아이템
+epics	영웅 템
+blues	희귀 템
+uncommon	고급(초록)
+greens	초록 템
+grey	잡템(회색)
+gray	잡템(회색)
+vendor	상인
+vendor trash	잡템
+set	세트
+set bonus	세트 효과
+tier	티어
+tier 0	던전 세트(T0)
+dungeon set 1	던전 세트 1
+dungeon set 2	던전 세트 2
+tier 0.5	던전 세트 2(T0.5)
+tier 1	T1 세트
+tier 2	T2 세트
+tier 2.5	T2.5 세트
+tier 3	T3 세트
+one-hand	한손
+two-hand	양손
+main hand	주장비
+off hand	보조장비
+weapons	무기
+helm	머리
+head	머리
+neck	목걸이
+shoulder	어깨
+shoulders	어깨
+chest	가슴
+robe	로브
+wrist	손목
+bracers	손목 보호구
+gloves	장갑
+hands	손
+belt	허리띠
+waist	허리
+legs	다리
+pants	다리 방어구
+boots	신발
+feet	발
+rings	반지
+trinkets	장신구
+relic	성물
+libram	성서
+idol	우상
+wand	마법봉
+staff	지팡이
+dagger	단검
+daggers	단검
+sword	도검
+axe	도끼
+mace	둔기
+polearm	장창
+fist weapon	장착 무기
+crossbow	석궁
+thrown	투척 무기
+ammo	탄약
+arrows	화살
+bullets	탄환
+quiver	화살통
+plate	판금
+enchants	마법부여
+crusader enchant	성전사 마부
+fiery weapon	불꽃 마부
+disenchant	분해
+shard	결정
+shards	결정/조각
+soul shard	영혼의 조각
+dust	가루
+essence	정수
+loot rules	분배 규칙
+group loot	그룹 획득
+need before greed	입찰 전 차비 금지(필요 우선)
+greed all	전부 차비
+rolling	주사위 굴리는 중
+rolls	주사위
+roll for	~ 주사위
+hard reserve	확정 예약
+reserved	예약됨
+soft reserved	찜해둠
+plus one	+1 시스템
+bid	입찰
+bids	입찰
+minimum bid	최소 입찰가
+cut	분배금
+cuts	분배금
+buyers	구매자
+booster	버스 기사
+boost run	버스 런
+boostee	버스 손님
+health potion	치유 물약
+mana potion	마나 물약
+mana potions	마나 물약
+flasks	영약
+elixir	비약
+elixirs	비약
+consumables	소모품
+elixir of the mongoose	몽구스의 비약
+elixir of giants	거인의 비약
+flask of the titans	거인의 영약
+flask of supreme power	최상의 마력의 영약
+flask of distilled wisdom	증류된 지혜의 영약
+free action potion	자유 행동의 물약
+limited invulnerability potion	제한적 무적의 물약
+greater fire protection potion	상급 화염 보호 물약
+fire protection potion	화염 보호 물약
+greater shadow protection potion	상급 암흑 보호 물약
+restorative potion	회복의 물약
+juju	주주
+jujus	주주
+scrolls	두루마리
+bandages	붕대
+runecloth bandage	룬매듭 붕대
+wizard oil	마술사 오일
+mana oil	마나 오일
+sharpening stone	숫돌
+weightstone	무게추
+herbing	약초 채집 중
+miner	광부
+skinner	무두질 기술자
+professions	전문기술
+crafted	제작템
+recipes	제조법
+pattern	도안
+patterns	도안
+formula	마법부여 문서
+schematic	설계도
+reagent	재료
+reagents	재료
+mat	재료
+material	재료
+linen cloth	리넨 천
+wool cloth	양모 천
+silk cloth	비단
+felcloth	악마매듭 천
+mooncloth	달빛매듭 천
+tin	주석
+bronze	청동
+iron	철
+steel	강철
+arcanite	아케이나이트
+dark iron	검은무쇠
+elementium	엘레멘티움
+peacebloom	평온초
+silverleaf	은엽수잎
+mageroyal	마법초
+briarthorn	찔레가시
+kingsblood	왕꽃잎풀
+goldthorn	황금가시
+sungrass	태양풀
+dreamfoil	꿈풀
+plaguebloom	역병초
+mountain silversage	은초롱이
+gromsblood	그롬의 피
+ghost mushroom	유령버섯
+rugged leather	질긴 가죽
+thick leather	두꺼운 가죽
+heavy leather	거친 가죽
+devilsaur leather	데빌사우루스 가죽
+gems	보석
+essence of fire	불의 정수
+essence of earth	대지의 정수
+essence of water	물의 정수
+essence of air	바람의 정수
+essence of undeath	죽음의 정수
+living essence	생명의 정수
+righteous orb	정의의 보주
+epic mount	전문 탈것
+riding	탈것 숙련
+gold farmer	작업장
+gold seller	골드 판매 업자
+bot	봇
+bots	봇
+botter	봇 사용자
+banned	정지당함
+money	돈
+broke	돈 없음
+rich	부자
+PvP	PvP
+PvE	PvE
+world PvP	필드 PvP
+gank	학살(저렙 사냥)
+ganked	학살당함
+ganking	학살 중
+ganker	학살자
+camp	죽치고 잡기
+camping	죽치고 잡기
+camped	계속 잡힘
+corpse camping	시체 지키기
+flagged	PvP 활성
+honorable kill	명예 처치
+honorable kills	명예 처치
+dishonorable kill	불명예 처치
+rank	계급
+ranking	계급 올리기
+rank 14	최고 계급(14)
+High Warlord	대장군
+battlegrounds	전장
+queue	대기열
+queued	대기 중
+queue up	대기열 신청
+queue pop	대기열 열림
+flag	깃발
+enemy flag carrier	적 깃발 운반자
+middle	중앙
+lumber mill	벌목장
+stables	마구간
+duel	결투
+duels	결투
+duel me	결투하자
+arena	투기장
+realm	서버
+server time	서버 시간
+reset time	초기화 시간
+maintenance	점검
+patch	패치
+phase	페이즈
+layer	레이어
+layering	레이어링
+lag spike	렉 튐
+crash	튕김
+relog	재접속
+reload	리로드
+addon	애드온
+addons	애드온
+macro	매크로
+bug	버그
+bugged	버그 걸림
+glitch	버그
+exploit	버그 악용
+GM ticket	GM 문의
+reputation	평판
+exalted	확고한 동맹
+revered	매우 우호적
+honored	우호적
+neutral	중립
+hostile	적대적
+attunement	입장 퀘스트
+attuned	입장 조건 완료
+key	열쇠
+UBRS key	상층 열쇠(승천의 인장)
+seal of ascension	승천의 인장
+Dire Maul key	혈투의 전장 열쇠(초승달 열쇠)
+crescent key	초승달 열쇠
+skeleton key	스칼로맨스 열쇠(해골 열쇠)
+shadowforge key	어둠괴철로 열쇠
+MC attunement	화산 심장부 입장
+Onyxia attunement	오닉시아 입장 퀘스트
+BWL attunement	검은날개 둥지 입장
+questline	연계 퀘스트
+turn in	퀘스트 완료
+share	공유
+share quest	퀘스트 공유
+share please	공유 부탁
+escort quest	호위 퀘스트
+group quest	파티 퀘스트
+daily	일일 퀘스트
+dailies	일일 퀘스트
+drop rate	드랍률
+dropped	드랍됨
+RNG	운빨
+luck	운
+lucky	운 좋음
+unlucky	운 없음
+rares	희귀몹
+rare spawn	희귀몹
+spawn	리젠/등장
+respawn	리젠
+respawns	리젠
+tagged	선점함
+tag	선점
+grey mob	회색몹
+named mob	네임드
+world boss	필드 보스
+Emerald dragons	에메랄드 용
+Kazzak	카자크
+Azuregos	아주어고스
+Ysondre	이손드레
+Lethon	레손
+Emeriss	에메리스
+Taerar	타에라
+XP buff	경험치 버프
+rested XP	휴식 경험치
+inn	여관
+bank	은행
+banker	은행원
+guild bank	길드 은행
+mailbox	우체통
+auctions	경매
+AH price	경매장 시세
+undercut	최저가 내림
+flight master	비행 조련사
+flight path	비행 경로
+fly	날아가다
+boat	배
+zeppelin	비행선
+deeprun tram	지하 철도
+graveyard	무덤
+outside	밖
+inside	안
+meeting stone	집결의 돌
+summoning stone	집결의 돌
+guildies	길드원
+guildie	길드원
+good luck have fun	행운을, 즐겜
+raid days	공대 요일
+raid time	공대 시간
+raiding	공대 진행
+raider	공대원
+raiders	공대원
+core	핵심 멤버
+officer	길드 임원
+guild master	길드장
+lead	리더/이끌다
+party leader	파티장
+promote	승급
+assist	부공대장
+mount up	탈것 타
+AFK farm	잠수 파밍
+Elwynn Forest	엘윈 숲
+Goldshire	골드샤이어
+Westfall	서부 몰락지대
+Redridge Mountains	붉은마루 산맥
+Duskwood	그늘숲
+Dun Morogh	던 모로
+Loch Modan	모단 호수
+Wetlands	저습지
+Arathi Highlands	아라시 고원
+Hillsbrad Foothills	힐스브래드 구릉지
+Alterac Mountains	알터랙 산맥
+Silverpine Forest	은빛소나무 숲
+Tirisfal Glades	티리스팔 숲
+Badlands	황야의 땅
+Searing Gorge	이글거리는 협곡
+Burning Steppes	불타는 평원
+Swamp of Sorrows	슬픔의 늪
+Blasted Lands	저주받은 땅
+Deadwind Pass	죽음의 고개
+Hinterlands	동부 내륙지
+Plaguelands	역병지대
+Durotar	듀로타
+Mulgore	멀고어
+The Barrens	불모의 땅
+Teldrassil	텔드랏실
+Darkshore	어둠의 해안
+Ashenvale	잿빛 골짜기
+Stonetalon Mountains	돌발톱 산맥
+Desolace	잊혀진 땅
+Thousand Needles	버섯구름 봉우리
+Dustwallow Marsh	먼지진흙 습지대
+Feralas	페랄라스
+Tanaris	타나리스
+Un'Goro Crater	운고로 분화구
+Azshara	아즈샤라
+Felwood	악령의 숲
+Winterspring	여명의 설원
+Moonglade	달의 숲
+Silithus	실리더스
+Ratchet	톱니항
+Everlook	눈망루 마을
+Southshore	사우스쇼어
+Tarren Mill	타렌 밀농장
+Menethil Harbor	메네실 항구
+Theramore	테라모어
+Astranaar	아스트라나르
+Splintertree Post	쪼개진나무 초소
+Light's Hope Chapel	희망의 빛 예배당
+Chillwind Camp	서늘바람 야영지
+Cenarion Hold	세나리온 요새
+library	도서관
+armory	무기고
+cathedral	대성당
+SM run	붉은수도원 런
+SM runs	붉은수도원 런
+temple	신전
+Blackrock	검은바위 산
+Blackrock Mountain	검은바위 산
+Dire Maul East	혈투의 전장 동쪽
+Dire Maul West	혈투의 전장 서쪽
+Dire Maul North	혈투의 전장 북쪽
+Dire Maul tribute	혈투의 전장 공물 런
+tribute run	공물 런
+jump run	점프 런
+Stratholme Undead	스트라솔름 언데드 구역
+Stratholme Live	스트라솔름 살아있는 구역
+Baron Rivendare	리븐데어 남작
+Baron run	남작 런
+Onyxia's Lair	오닉시아의 둥지
+Ragnaros	라그나로스
+Majordomo Executus	청지기 이그젝큐투스
+Lucifron	루시프론
+Magmadar	마그마다르
+Garr	가르
+Baron Geddon	남작 게돈
+Golemagg	골레마그
+Sulfuron Harbinger	설퍼론 사자
+Shazzrah	샤즈라
+Gehennas	게헨나스
+Nefarian	네파리안
+Razorgore	폭군 서슬송곳니
+Vaelastrasz	밸라스트라즈
+Broodlord Lashlayer	용기대장 래쉬레이어
+Chromaggus	크로마구스
+Hakkar	학카르
+Jin'do	주술사 진도
+Bloodlord Mandokir	혈군주 만도키르
+C'Thun	쑨
+Twin Emperors	쌍둥이 황제
+Ouro	아우로
+Princess Huhuran	공주 후후란
+Prophet Skeram	예언자 스케람
+Ossirian	무적의 오시리안
+Kel'Thuzad	켈투자드
+Sapphiron	사피론
+Patchwerk	패치워크
+Loatheb	로데브
+Thaddius	타디우스
+Four Horsemen	4기사단
+Edwin VanCleef	에드윈 반클리프
+Archmage Arugal	대마법사 아루갈
+Mutanus the Devourer	게걸먹보 무타누스
+Herod	헤로드
+Mograine	모그레인
+Whitemane	화이트메인
+Archaedas	아카에다스
+Gahz'rilla	가즈릴라
+Princess Theradras	테라드라스 공주
+Shade of Eranikus	에라니쿠스의 사령
+Emperor Thaurissan	황제 다그란 타우릿산
+Lord Roccor	군주 로코르
+Golem Lord Argelmach	골렘 군주 아고마고스
+General Angerforge	장군 앵거포지
+ring of law	투기장 이벤트
+lyceum	리세움
+dark keepers	어둠의 문지기
+Warchief Rend Blackhand	대족장 렌드 블랙핸드
+General Drakkisath	대군주 드라키사스
+The Beast	짐승
+Darkmaster Gandling	암흑스승 간들링
+Rattlegore	덜그럭뼈
+Ras Frostwhisper	라스 서리속삭임
+Gordok	고르독
+King Gordok	고르독 왕
+Immol'thar	이몰타르
+Tendris Warpwood	텐드리스 워프우드
+Alzzin the Wildshaper	알진 와일드쉐이퍼
+Ramstein	램스타인
+Balnazzar	발나자르
+Timmy the Cruel	티미
+?	?
+Monday	월요일
+Tuesday	화요일
+Wednesday	수요일
+Thursday	목요일
+Friday	금요일
+Saturday	토요일
+Sunday	일요일
+every night	매일 밤
+noon	점심
+afternoon	오후
+early morning	새벽
+herbalist	약초채집가
+no choice	어쩔 수 없어
+method	방법
+skill	실력
+Japan	일본
+basic	기본
+myself	본인
+come out	나와
+received	받았어
+enemy side	상대 진영
+phone	휴대폰
+map	지도
+she	그녀
+above	위
+below	아래
+front	앞
+a moment	잠깐
+what to do	어떡해
+how about	어때
+what are you doing	뭐 해
+how long	얼마나 오래
+what time	몇 시
+o'clock	시
+seconds	초
+hours	시간
+just now	방금
+in a bit	잠시 후
+wait a sec	잠깐만
+wait a moment	잠깐만
+coming now	바로 갈게
+arrive	도착
+return	돌아가다
+back to town	마을로 귀환
+logged off	접속 종료
+going to sleep	자러 감
+bathroom	화장실
+away	자리 비움
+I'm back	돌아왔어
+are you there	있어요?
+busy	시간 없어
+tired	피곤해
+correct	맞아
+it's okay	괜찮아요
+no need	필요 없어
+no thanks	됐어요
+whatever	아무거나
+either is fine	다 괜찮아
+fake	가짜
+nice person	좋은 사람
+bless you	복 받으실 거예요
+thanks pro	고수님 감사
+thanks boss	사장님 감사
+happy new year	새해 복 많이
+strong	강하다
+cute	귀엽다
+pretty	예쁘다
+wtf	헐 대박
+whoa	헐
+damn	헐
+speechless	어이없네
+awkward	식은땀(난감)
+heh	허허(비꼼)
+herb/lol	약초/ㅋㅋ(웃음)
+lmao	웃겨 죽겠네
+get lost	꺼져
+stupid	바보
+noob	초보
+pro	고수
+expert	고수
+rich guy	부자
+young man	청년
+girl	누나(여성)
+handsome guy	훈남
+pretty girl	미녀
+male	남자
+female	여자
+buddies	동료
+teammate	파티원
+raid member	공대원
+vice guild master	부길드장
+admin	관리자
+join party	파티 와요
+forming group	파티 구하는 중
+group started	파티 시작
+leave when full	인원 차면 출발
+all here	인원 다 모임
+everyone's here	다 모였어
+need two	두 명 부족
+need mage	마법사 와요
+need priest	사제 와요
+need warrior	전사 와요
+LF tank	탱커 구함
+LF healer	힐러 구함
+kind soul needed	친절한 분 구함
+help carry	좀 도와줘(버스)
+take me	날 데려가 줘
+send 1	1 보내줘(초대용)
+group formed	파티 완료
+no longer needed	필요 없어요
+no longer recruiting	모집 끝
+go go go	가자가자
+start fighting	시작
+go dungeon	던전 가기
+enter dungeon	던전 입장
+leave dungeon	던전 나가기
+at the stone	돌 앞
+fly here	날아와
+run here	뛰어와
+tank spot	탱커 자리
+healer spot	힐러 자리
+dps spot	딜러 자리
+caster	주문 딜러
+physical	물리
+bear druid	곰 드루이드
+feral druid	야성 드루이드
+boomkin	조화 드루이드(달빛야수)
+resto druid	회복 드루이드
+resto shaman	복원 주술사
+arcane mage	비전 마법사
+affliction warlock	고통 흑마법사
+demonology warlock	악마 흑마법사
+destruction warlock	파괴 흑마법사
+BM hunter	야수 사냥꾼
+MM hunter	사격 사냥꾼
+survival hunter	생존 사냥꾼
+assassination rogue	암살 도적
+subtlety rogue	잠행 도적
+talent points	특성 포인트
+dual spec	이중 특성
+pull/invite	풀링/초대
+don't pull	풀링하지 마
+slow down	천천히
+hurry	빨리
+take it slow	천천히 해
+CC broke	CC 풀림
+CC	군중 제어
+sheep	변이(양)
+shackle	언데드 속박
+cure poison	해독
+heal up	힐 올리기
+regen health	생명력 회복
+regen mana	마나 회복
+oom	마나 없음
+full health	피 가득
+summoner	소환해 줄 사람
+portal mage	차원문 열어줄 사람
+mage portal	마법사 차원문
+bread	빵
+conjure water	물 만들기
+buff up	버프 걸기
+fortitude	인내/체력
+might/strength	힘
+wisdom	지혜
+salvation	구원의 축복
+dragon head	용 머리(월드 버프)
+DMF buff	다크문 버프
+good gear	좋은 장비
+godly item	최상급
+off-set piece	세트 외 장비
+legendary weapon	전설 무기
+big hammer	대형 망치
+stats	능력치
+resistance	저항
+bound	귀속
+BoE	착용 시 귀속
+BoP	획득 시 귀속
+got loot	득템
+no drop	안 나왔어
+lucky guy	운 좋은 사람
+unlucky guy	운 없는 사람
+nothing at all	하나도 없음
+wasted trip	헛걸음
+rolled	주사위 굴렸어
+needed	입찰했어
+pass	포기
+loot distribution	장비 분배
+split	분배
+starting bid	시작가
+raise bid	호가 올리기
+minimum	최저가
+buyout	즉시 구매가
+total pot	총 금액
+per person	1인당
+split evenly	균등 분배
+10k	만(10,000)
+thousand	천
+hundred	백
+mail included	우편 포함
+mail me	우편 보내줘
+trade me	거래 걸어줘
+open trade	거래 클릭
+gold farm studio	작업장
+hack	핵
+ban	계정 정지
+main	본캐
+character	캐릭터
+gathering	채집
+tailor	재봉사
+linen	리넨 천
+wool	양모 천
+copper ore	구리 광석
+tin ore	주석 광석
+iron ore	철광석
+mithril ore	미스릴 광석
+thorium ore	토륨 광석
+gold ore	금광석
+silver ore	은광석
+box	상자
+mongoose	몽구스의 비약
+giants	거인의 비약
+major healing potion	상급 치유 물약
+major mana potion	상급 마나 물약
+got killed	죽었다
+ambush	기습
+Grand Marshal	대원수
+capture the flag	깃발 탈취
+carry flag	깃발 운반
+gold mine	금광
+CN server	중국 서버
+TW server	대만 서버
+KR server	한국 서버
+US server	미국 서버
+EU server	유럽 서버
+classic server	클래식 서버
+private server	사설 서버
+new server	신규 서버
+server launch	서버 오픈
+login queue	접속 대기
+latency	지연(핑)
+lagging	렉 걸렸어
+ticket	입장권
+accept quest	퀘스트 받기
+turned in	완료했어
+double	2배
+double XP	경험치 2배
+flight point	비행 조련사
+tram	지하 철도
+Razorfen	가시덩굴(우리/구릉)
+Majordomo	청지기 이그젝큐투스
+Rend Blackhand	렌드 블랙핸드
+Drakkisath	대군주 드라키사스
+paladin/mount	성기사/탈것
+good afternoon	안녕하세요
+bye all	모두 안녕
+uh-huh	응
+exactly	확실해
+probably	아마
+maybe/can	아마/할 수 있다
+no idea	몰라
+P.S.	추신
+IMHO	내 생각엔
+dude	사람(녀석)
+noobs	못하는 놈들
+overpowered	사기급
+nerf	너프
+top	최고
+excellent	아주 좋아
+super	최고
+in the evening	저녁에
+one minute	잠깐
+sec	잠깐
+a couple minutes	몇 분
+where to go	어디로 가?
+how to get to	어떻게 가?
+where to find	어디서 찾아?
+who knows	아는 사람?
+please tell me	알려주세요
+tell me	알려줘
+who can	누가 할 수 있어?
+our	우리의
+few	적다
+less	덜
+only	~만
+and/but	그런데
+come on	에이 설마
+we're looking for	구함
+need group	파티 필요
+one more tank	탱커 한 명 더
+let's go to	~로 가자
+let's go BRD	검은바위 나락 가자
+who's going to	누가 ~ 갈래
+who's up for	누가 ~ 갈래
+to party	파티로
+have party	파티 있어
+party full	파티 꽉 참
+send invite	초대해 줘
+will accept	받아줄게
+I'll take	데려갈게
+PM me	귓말 줘
+guild recruiting	길드 모집 중
+have tank	탱커 있음
+have healer	힐러 있음
+damage dealer	딜러
+rogues looking for	도적 구함
+prot warrior	방어 전사
+ret paladin	징벌 성기사
+CC/soulstone	군중 제어/영혼석
+banish/ban	추방/정지
+kick him	추방해
+buff me	버프 줘
+HP	생명력
+res	부활
+stone	돌/생명석
+stone summon	집결의 돌 소환
+summon me	소환해 줘
+port	순간이동
+tank died	탱커 죽음
+running	가는 중
+back off	뒤로 빠져
+gear up	장비 맞추기
+two-hander	양손 무기
+one-hander	한손 무기
+T1	T1 세트
+T2	T2 세트
+blue	희귀 템
+green	초록 템
+let's roll	주사위 굴리자
+bank/pot	은행/분배금
+ninja	닌자(무단 루팅)
+didn't drop	안 나왔다
+chance	확률
+per stack	한 묶음에
+piece	개
+buying high	비싸게 삽니다
+for sale	판매 중
+by mail	우편으로
+mail it	우편 보내줘
+will trade	교환합니다
+got scammed	사기당했다
+disconnect	튕김
+crashed	튕겼다
+quest for	~ 퀘스트
+share it	공유해 줘
+rested	휴식 경험치
+AH closed	경매장 닫힘
+flight	비행
+gryphon	그리폰
+BRD run	검은바위 나락 런
+LBRS	검은바위 첨탑 하층
+UBRS	검은바위 첨탑 상층
+DM North	혈투의 전장 북쪽
+DM East	혈투의 전장 동쪽
+DM West	혈투의 전장 서쪽
+LFM	파티 모집
+static	고정팟
+farm runs	반복 런
+gold making	골드 벌이
+guildmate	길드원
+gj	수고
+logging off	로그아웃합니다
+logout	로그아웃
+see you tomorrow	내일 봐
+won't drop	안 나와
+help with quest	퀘스트 도와줘
+I'll help	도와드릴게요
+enemy	적
+any Japanese	일본인 있나요
+Japanese players	일본인 분
+I don't understand	모르겠습니다
+got it	알았어
+sad	ㅠㅠ
+agreed	인정
+just a bit	조금만
+recommend	추천
+for real	진짜
+please wait	기다려 주세요
+congratulations	축하드립니다
+slowly	천천히
+by any chance	혹시
+please give	주세요
+please do	해 주세요
+foreigner	외국인
+party member	파티원
+anyone going	가실 분
+anyone want to go	가실 분 구해요
+anyone want to	하실 분
+anyone coming	오실 분
+anyone join	같이 하실 분
+please come	와 주세요
+full party	풀파티
+one spot	한 자리
+three more	세 명
+I'll invite you	초대해 드릴게요
+warrior tank	전사 탱커
+please pull	풀링해 주세요
+please roll	주사위 굴려 주세요
+trade request	거래 요청
+gather up	모여 주세요
+east	동쪽
+west	서쪽
+north	북쪽
+valley	골짜기
+Alterac	알터랙

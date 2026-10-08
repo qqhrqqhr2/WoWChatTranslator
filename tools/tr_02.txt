@@ -1,0 +1,360 @@
+a little|一点|немного
+lots|好多|очень много
+too|太|слишком
+expensive|贵|дорого
+really|真的|правда
+very|非常|очень
+most|最|самый
+best|最好|лучший
+more|更多|больше
+don't|别|не
+not|不|не
+can|能|могу
+know|知道|знаю
+don't know|不知道|не знаю
+look|看|смотри
+find|找|найти
+looking for people|找人|ищу людей
+looking for guild|找公会|ищу гильдию
+you there?|在吗|ты тут?
+coming?|来吗|идёшь?
+going?|去吗|пойдёшь?
+anyone?|有人吗|есть кто?
+how to get there|怎么去|как туда попасть
+where is it|在哪里|где это
+what is it|是什么|что это
+what level|几级|какой уровень
+one|一|один
+two|二|два
+three|三|три
+four|四|четыре
+five|五|пять
+people now|人了|человек сейчас
+and|和|и
+with|跟|с
+I|我|я
+you|你|ты
+he|他|он
+we|我们|мы
+you all|你们|вы
+let's|吧|давай
+also|也|тоже
+still|还|ещё
+is|是|есть
+a bit|一下|немного
+can I?|可以吗|можно?
+(counter)|个|шт.
+recruiting members|招募成员|набираем людей
+guild member|公会成员|член гильдии
+party|队伍|пати
+beginner|新手|новичок
+very welcome|非常欢迎|очень рады
+Japanese|日本人|японец
+nice to meet you|请多关照|приятно познакомиться
+thank you|谢谢|спасибо
+sorry/excuse me|抱歉|извините
+good morning|早上好|доброе утро
+good work|辛苦了|хорошо поработали
+good night|晚安|спокойной ночи
+help me|帮帮我|помоги мне
+sell|卖|продать
+yes|是|да
+roger|了解|понял
+can't|不能|не могу
+looking for group|求组|ищу группу
+looking for more|还缺人|ищем ещё
+need 1 more|缺1人|нужен ещё 1
+need 2 more|缺2人|нужно ещё 2
+need 3 more|缺3人|нужно ещё 3
+need 4 more|缺4人|нужно ещё 4
+want to sell|出售|продам
+want to buy|收购|куплю
+want to trade|交换|обменяю
+please send tell|请密我|пишите в лс
+private message|私聊|личное сообщение
+message me|私聊我|напиши мне
+message|消息|сообщение
+invite|邀请|приглашение
+invite please|求邀请|пригласите
+no problem|没问题|без проблем
+good game|打得好|хорошая игра
+good job|干得好|молодец
+well played|打得漂亮|хорошо сыграно
+be right back|马上回来|скоро вернусь
+away from keyboard|暂离|отошёл
+on my way|在路上了|уже иду
+I don't know|我不知道|я не знаю
+in my opinion|我觉得|по-моему
+by the way|顺便说|кстати
+laughing|笑|смеюсь
+what the|什么鬼|что за
+never mind|算了|неважно
+ok|好|ок
+sorry|抱歉|извини
+good luck|祝好运|удачи
+have fun|玩得开心|веселитесь
+congrats|恭喜|поздравляю
+hi|嗨|привет
+see you|回见|увидимся
+any|任何|любой
+engineer|工程师|инженер
+blacksmith|铁匠|кузнец
+leatherworker|制皮师|кожевник
+alchemist|炼金师|алхимик
+crafter|制作者|крафтер
+crafting|制作|крафт
+make|做|сделать
+for|为了|для
+someone|有人|кто-то
+my|我的|мой
+me|我|мне
+shotgun|霰弹枪|дробовик
+gun|枪|ружьё
+bow|弓|лук
+guy|人|парень
+player|玩家|игрок
+players|玩家们|игроки
+looking for tank|找坦克|ищем танка
+looking for healer|找治疗|ищем хила
+looking for DPS|找输出|ищем ДД
+all quests|所有任务|все квесты
+quest run|任务本|квестовый забег
+full run|全通|полный забег
+farming|刷|фармлю
+grind|刷怪|гринд
+level up!|升级了!|новый уровень!
+bags|背包|сумки
+herb|草药|трава
+herbs|草药|травы
+bar|锭|слиток
+bars|锭|слитки
+stack|一组|стак
+stacks|组|стаки
+x|个|шт.
+cash on delivery|货到付款|наложенный платёж
+mail|邮件|почта
+tip|小费|чаевые
+tips|小费|чаевые
+your mats|你的材料|ваши маты
+my mats|我的材料|мои маты
+your|你的|твой
+are|是|есть
+I'm|我|я
+they|他们|они
+to|去|в
+in|在|в
+on|在|на
+of|的|из
+from|从|из
+or|或|или
+but|但是|но
+if|如果|если
+yeah|嗯|ага
+yep|对|ага
+nope|不|неа
+wants|想要|хочет
+going|去|иду
+coming|来了|иду
+get|得到|получить
+got|拿到了|получил
+has|有|есть
+when|什么时候|когда
+much|多|много
+many|很多|много
+last|最后|последний
+first|第一|первый
+as soon as possible|尽快|как можно скорее
+soon|很快|скоро
+later|待会|позже
+today|今天|сегодня
+tonight|今晚|сегодня вечером
+tomorrow|明天|завтра
+second|秒|секунда
+minute|分钟|минута
+minutes|分钟|минут
+hour|小时|час
+please invite|请邀请|пригласите пожалуйста
+invite me|邀请我|пригласи меня
+add me|加我|добавь меня
+leave|离开|выйти
+left|离开了|вышел
+kick|踢|кик
+pull|拉怪|пул
+drop|掉落|дроп
+drops|掉落|дроп
+mob|怪|моб
+mobs|怪|мобы
+killed|杀了|убит
+dead|死了|мёртв
+die|死|умереть
+corpse|尸体|труп
+rez please|求复活|ресни пожалуйста
+water|水|вода
+mana|蓝|мана
+out of mana|没蓝|нет маны
+health|血|здоровье
+heal please|求加血|хильни пожалуйста
+bad|差|плохо
+great|很棒|отлично
+cool|酷|круто
+fun|好玩|весело
+easy|简单|легко
+hard|难|сложно
+social|社交|общение
+recruit|招募|набор
+members|成员|участники
+new players|新玩家|новые игроки
+Discord|Discord|Discord
+voice|语音|голос
+soft reserve|软预约|софт-резерв
+main spec|主天赋|основной спек
+off spec|副天赋|офф-спек
+reserve/resurrect|预约/复活|резерв/рес
+heal|治疗|хил
+melee DPS|近战输出|мили ДД
+ranged DPS|远程输出|рейндж ДД
+off tank|副坦|второй танк
+portals|传送门|порталы
+bind on equip|装备绑定|при надевании
+auction house|拍卖行|аукцион
+GDKP|金团|ГДКП
+gold bid|金团|ставки золотом
+best in slot|最佳装备|лучший в слот
+AoE|AOE|АоЕ
+crowd control|控制|контроль
+cooldown|冷却|кулдаун
+buff|增益|бафф
+buffs|增益|баффы
+potions|药水|зелья
+enchant|附魔|чары
+run|跑|забег
+runs|趟|забеги
+boost|代练|буст
+spot|位置|место
+spots|位置|места
+last spot|最后一个位置|последнее место
+heroic|英雄|героик
+SM Graveyard|血色墓地|Монастырь: кладбище
+SM Library|血色图书馆|Монастырь: библиотека
+SM Armory|血色武器库|Монастырь: оружейная
+SM Cathedral|血色教堂|Монастырь: собор
+Deadmines/Dire Maul|死亡矿井/厄运之槌|Мёртвые копи/Забытый город
+Lower Blackrock Spire|黑石塔下层|Нижний пик Чёрной горы
+Upper Blackrock Spire|黑石塔上层|Верхний пик Чёрной горы
+Ruins of Ahn'Qiraj|安其拉废墟|Руины Ан'Киража
+Temple of Ahn'Qiraj|安其拉神殿|Храм Ан'Киража
+Crossroads|十字路口|Перекрёсток
+Stranglethorn Vale|荆棘谷|Тернистая долина
+Western Plaguelands|西瘟疫之地|Западные Чумные земли
+Eastern Plaguelands|东瘟疫之地|Восточные Чумные земли
+each|每个|за штуку
+per|每|за
+thx|谢|спс
+pls|请|плз
+alright|好吧|ладно
+is there|有吗|есть ли
+in/to|在/去|в
+on/to|在|на
+to the group|进组|в группу
+quests|任务|квесты
+items|物品|вещи
+in whisper|私聊|в личку
+PM|私聊|ЛС
+who can help|谁能帮忙|кто поможет
+quickly|快点|быстро
+waiting|等着|жду
+one sec|稍等|секунду
+fine|还行|нормально
+Russian|俄罗斯人|русский
+Russians|俄罗斯人|русские
+RU|俄服|RU
+understand|明白|понимаю
+healers|治疗们|хилы
+tanks|坦克们|танки
+in group|在队伍里|в группе
+I'll go|我去|я пойду
+where to|去哪|куда
+from where|从哪|откуда
+what for|干嘛|зачем
+may I|可以吗|можно
+I can|我可以|я могу
+can you|你能吗|можешь
+I want|我想要|я хочу
+need to|需要|нужно
+I know|我知道|я знаю
+who's going|谁去|кто идёт
+who's with me|谁跟我|кто со мной
+with me|跟我|со мной
+with us|跟我们|с нами
+us|我们|нас
+anyone here|有人在吗|есть кто тут
+person|人|человек
+one person|一个人|один человек
+to farm|刷|фармить
+to level|练级|качаться
+to clear|通关|пройти
+run dungeon|打本|пройти данж
+died|死了|умер
+rez me|复活我|ресни меня
+to craft|制作|скрафтить
+mats|材料|маты
+pcs|个|шт.
+copper|铜|медь
+do|做|делать
+doing|在做|делаем
+thank you very much|非常感谢|большое спасибо
+gg|GG|ГГ
+afk|暂离|АФК
+decent|正常|адекватный
+decent people|靠谱的人|адекватные люди
+we invite|我们邀请|приглашаем
+invites|邀请|приглашает
+to join|加入|вступить
+will|会|буду
+will tip|会给小费|дам чаевые
+him|他|его
+her|她|её
+DM tribute|厄运贡品|Забытый город: трибьют
+DM tribute run|厄运贡品跑|забег за трибьютом в Забытый город
+soulstone|灵魂石|камень души
+whisper x for invite|密x进组|напиши x для инвайта
+shadow bolt|暗影箭|стрела Тьмы
+tell|私聊|личка
+send a tell|私聊|напиши в лс
+send me a tell|私聊我|напиши мне в лс
+hit me up|找我|пиши мне
+let me know|告诉我|дай знать
+reinvite|重新邀请|переинвайт
+thank you so much|太感谢了|огромное спасибо
+thanks all|谢谢大家|всем спасибо
+appreciate it|感激|ценю
+much appreciated|非常感谢|очень благодарен
+congrats all|恭喜大家|всех поздравляю
+welcome back|欢迎回来|с возвращением
+good morning/GM|早上好/GM|доброе утро/ГМ
+talk to you later|回头聊|поговорим позже
+bye/Booty Bay|拜/藏宝海湾|пока/Пиратская Бухта
+be back later|晚点回来|вернусь позже
+bio break|上厕所|отошёл по нужде
+back|回来了|вернулся
+ready|准备好了|готов
+are you ready|准备好了吗|готовы?
+ready check|就位确认|проверка готовности
+go go|冲冲冲|го го
+oh my god|天哪|о боже
+what the hell|搞什么|какого чёрта
+for f's sake|我去|да блин
+shaking my head|无语|нет слов
+to be honest|说实话|честно говоря
+not gonna lie|说真的|честно
+in my humble opinion|个人觉得|имхо
+in real life|现实中|в реале
+for your information|告诉你一下|к сведению
+just kidding|开玩笑的|шучу
+I don't care|无所谓|мне всё равно
+I know right|就是说啊|вот именно
+if I recall correctly|如果我没记错|если я правильно помню
+as far as I know|据我所知|насколько я знаю
+rolling on the floor laughing|笑死|ржу не могу
+XD|XD|XD
+hahaha|哈哈哈|хахаха

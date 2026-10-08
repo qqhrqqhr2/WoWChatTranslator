@@ -1,0 +1,27 @@
+## Interface: 16001
+## Title: WoW Chat Translator
+## Title-koKR: WoW Chat Translator (채팅 번역기)
+## Notes: Translates Korean/Chinese/Japanese/Russian/English chat into your local language (Korean, English, Simplified/Traditional Chinese, Russian) with a built-in gamer slang and WoW term dictionary.
+## Notes-zhCN: 将韩语/中文/日语/俄语/英语聊天翻译成本地语言（内置游戏俚语和魔兽术语词典）。
+## Notes-zhTW: 將韓語/中文/日語/俄語/英語聊天翻譯成本地語言（內建遊戲俚語和魔獸術語詞典）。
+## Notes-ruRU: Переводит чат на корейском/китайском/японском/русском/английском на ваш язык с помощью встроенного словаря игрового сленга и терминов WoW.
+## Notes-koKR: 한국어·중국어·일본어·러시아어·영어 채팅을 현지 언어(한국어/영어/간체/번체/러시아어)로 풀어 줍니다. 게임 은어·약어·와우 용어 사전 내장.
+## Author: qqhrqqhr2
+## Version: @project-version@
+## Category: Chat & Communication
+## IconTexture: Interface\AddOns\WoWChatTranslator\Media\icon
+## X-License: MIT
+## X-Website: https://github.com/qqhrqqhr2/WoWChatTranslator
+## SavedVariables: WoWChatTranslatorDB
+
+Locale.lua
+TradMap.lua
+Glossary.lua
+GlossaryEN.lua
+GlossaryZH.lua
+GlossaryRU.lua
+GlossaryKO.lua
+Translations.lua
+Core.lua
+Chat.lua
+Options.lua

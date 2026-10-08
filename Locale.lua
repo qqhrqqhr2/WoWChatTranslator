@@ -1,0 +1,188 @@
+-- WoW Chat Translator: 기본 설정, 현지 언어, 화면 문구
+local ADDON, ns = ...
+
+ns.DONATE_URL = "https://buymeacoffee.com/qqhrqqhr2"
+
+------------------------------------------------------------------------
+-- 현지 언어 (번역 결과와 화면 문구에 쓰는 언어)
+------------------------------------------------------------------------
+ns.TARGETS = { "ko", "en", "zhCN", "zhTW", "ru" }
+ns.TARGET_NAME = {
+	ko = "한국어", en = "English", zhCN = "简体中文", zhTW = "繁體中文", ru = "Русский",
+}
+
+-- 게임 클라이언트 언어 → 현지 언어 (지원하지 않는 언어는 영어)
+local CLIENT_TO_TARGET = { koKR = "ko", zhCN = "zhCN", zhTW = "zhTW", ruRU = "ru" }
+ns.CLIENT_TARGET = CLIENT_TO_TARGET[GetLocale()] or "en"
+
+-- 원문 언어 중 현지 언어와 같은 것 (같은 언어끼리는 번역하지 않음)
+ns.SAME_SOURCE = { ko = "ko", en = "en", zhCN = "zh", zhTW = "zh", ru = "ru" }
+
+ns.DEFAULTS = {
+	target = "auto",        -- "auto" = 게임 클라이언트 언어
+	chat = {
+		enabled = true,     -- 채팅 번역 사용
+		inline = true,      -- 메시지 뒤에 대략적인 뜻을 바로 붙이기
+		minCover = 40,      -- 뒤에 붙이는 최소 풀이 비율(%) - 너무 조금 풀린 문장은 붙이지 않음
+		tag = true,         -- 메시지 앞에 [中] 같은 언어 표시
+		hoverAll = true,    -- 메시지 전체에 마우스를 올려도 풀이 표시
+		skipSelf = true,    -- 내가 보낸 메시지는 표시하지 않음
+		langs = { ko = true, zh = true, ja = true, ru = true, en = true },
+	},
+}
+
+------------------------------------------------------------------------
+-- 화면 문구
+------------------------------------------------------------------------
+local STR = {}
+
+STR.ko = {
+	title = "채팅 번역기 (WoW Chat Translator)",
+	tag = { ko = "韓", zh = "中", ja = "日", ru = "RU", en = "EN" },
+	langName = { ko = "한국어", zh = "중국어", ja = "일본어", ru = "러시아어", en = "영어" },
+	glossTitle = "%s → 한국어",
+	rough = "대략적인 뜻",
+	terms = "찾은 표현",
+	noTerms = "사전에 있는 표현이 없습니다.",
+	clickHint = "클릭: 복사창 열기 (번역기에 붙여넣기)",
+	copyTitle = "Ctrl+C로 복사한 뒤 번역기에 붙여넣으세요",
+	copyDonate = "Ctrl+C로 복사해서 브라우저에 붙여넣으세요",
+	close = "닫기",
+	secTarget = "현지 언어 (번역 결과 언어)",
+	auto = "자동 - 게임 언어 (%s)",
+	targetNote = "다른 언어 채팅을 모두 이 언어로 풀어 줍니다. 화면 문구도 이 언어로 바뀝니다.",
+	secChat = "채팅 번역",
+	optEnabled = "채팅 번역 사용",
+	optInline = "메시지 뒤에 대략적인 뜻 바로 붙이기",
+	optCover = "뜻을 붙일 최소 풀이 비율: %d%%",
+	optTag = "메시지 앞에 언어 표시 붙이기 ([中] [RU] 등)",
+	optHover = "메시지 전체에 마우스를 올려도 풀이 보기",
+	optSelf = "내가 보낸 메시지는 제외",
+	langs = "번역할 언어 (현지 언어와 같은 언어는 제외)",
+	chatNote = "설정은 새로 들어오는 메시지부터 바로 적용됩니다. 상태 확인: /wct 상태",
+	donate = "후원하기",
+}
+
+STR.en = {
+	title = "WoW Chat Translator",
+	tag = { ko = "KO", zh = "ZH", ja = "JA", ru = "RU", en = "EN" },
+	langName = { ko = "Korean", zh = "Chinese", ja = "Japanese", ru = "Russian", en = "English" },
+	glossTitle = "%s → English",
+	rough = "Rough meaning",
+	terms = "Known terms",
+	noTerms = "No known terms found.",
+	clickHint = "Click: open copy box (paste into a translator)",
+	copyTitle = "Press Ctrl+C, then paste into a translator",
+	copyDonate = "Press Ctrl+C and paste into your browser",
+	close = "Close",
+	secTarget = "Local language (translate into)",
+	auto = "Auto - game language (%s)",
+	targetNote = "All other languages are translated into this language. The interface switches to it too.",
+	secChat = "Chat translation",
+	optEnabled = "Enable chat translation",
+	optInline = "Append the rough meaning after the message",
+	optCover = "Minimum glossary coverage to append: %d%%",
+	optTag = "Add a language tag before messages ([ZH] [RU] ...)",
+	optHover = "Show glossary when hovering the whole message",
+	optSelf = "Skip my own messages",
+	langs = "Languages to translate (your local language is skipped)",
+	chatNote = "Changes apply to new messages immediately. Status: /wct status",
+	donate = "Donate",
+}
+
+STR.zhCN = {
+	title = "聊天翻译器 (WoW Chat Translator)",
+	tag = { ko = "韩", zh = "中", ja = "日", ru = "俄", en = "英" },
+	langName = { ko = "韩语", zh = "中文", ja = "日语", ru = "俄语", en = "英语" },
+	glossTitle = "%s → 中文",
+	rough = "大致意思",
+	terms = "识别到的词",
+	noTerms = "词典中没有找到相关词语。",
+	clickHint = "点击：打开复制框（粘贴到翻译器）",
+	copyTitle = "按 Ctrl+C 复制后粘贴到翻译器",
+	copyDonate = "按 Ctrl+C 复制后粘贴到浏览器",
+	close = "关闭",
+	secTarget = "本地语言（翻译成）",
+	auto = "自动 - 游戏语言 (%s)",
+	targetNote = "其他语言的聊天都会翻译成这个语言，界面文字也会切换。",
+	secChat = "聊天翻译",
+	optEnabled = "启用聊天翻译",
+	optInline = "在消息后面直接显示大致意思",
+	optCover = "显示意思的最低识别比例：%d%%",
+	optTag = "在消息前显示语言标记（[韩] [俄] 等）",
+	optHover = "鼠标悬停在整条消息上也显示解释",
+	optSelf = "不处理自己发送的消息",
+	langs = "要翻译的语言（与本地语言相同的除外）",
+	chatNote = "设置对新消息立即生效。状态检查：/wct status",
+	donate = "赞助",
+}
+
+STR.zhTW = {
+	title = "聊天翻譯器 (WoW Chat Translator)",
+	tag = { ko = "韓", zh = "中", ja = "日", ru = "俄", en = "英" },
+	langName = { ko = "韓語", zh = "中文", ja = "日語", ru = "俄語", en = "英語" },
+	glossTitle = "%s → 中文",
+	rough = "大致意思",
+	terms = "辨識到的詞",
+	noTerms = "詞典中沒有找到相關詞語。",
+	clickHint = "點擊：開啟複製框（貼到翻譯器）",
+	copyTitle = "按 Ctrl+C 複製後貼到翻譯器",
+	copyDonate = "按 Ctrl+C 複製後貼到瀏覽器",
+	close = "關閉",
+	secTarget = "本地語言（翻譯成）",
+	auto = "自動 - 遊戲語言 (%s)",
+	targetNote = "其他語言的聊天都會翻譯成這個語言，介面文字也會切換。",
+	secChat = "聊天翻譯",
+	optEnabled = "啟用聊天翻譯",
+	optInline = "在訊息後面直接顯示大致意思",
+	optCover = "顯示意思的最低辨識比例：%d%%",
+	optTag = "在訊息前顯示語言標記（[韓] [俄] 等）",
+	optHover = "滑鼠停在整條訊息上也顯示解釋",
+	optSelf = "不處理自己發送的訊息",
+	langs = "要翻譯的語言（與本地語言相同的除外）",
+	chatNote = "設定對新訊息立即生效。狀態檢查：/wct status",
+	donate = "贊助",
+}
+
+STR.ru = {
+	title = "WoW Chat Translator",
+	tag = { ko = "KO", zh = "ZH", ja = "JA", ru = "RU", en = "EN" },
+	langName = { ko = "корейский", zh = "китайский", ja = "японский", ru = "русский", en = "английский" },
+	glossTitle = "%s → русский",
+	rough = "Примерный смысл",
+	terms = "Найденные слова",
+	noTerms = "В словаре ничего не найдено.",
+	clickHint = "Клик: окно копирования (вставьте в переводчик)",
+	copyTitle = "Нажмите Ctrl+C и вставьте в переводчик",
+	copyDonate = "Нажмите Ctrl+C и вставьте в браузер",
+	close = "Закрыть",
+	secTarget = "Родной язык (переводить на)",
+	auto = "Авто - язык игры (%s)",
+	targetNote = "Сообщения на других языках переводятся на этот язык. Интерфейс тоже переключится.",
+	secChat = "Перевод чата",
+	optEnabled = "Включить перевод чата",
+	optInline = "Показывать смысл сразу после сообщения",
+	optCover = "Мин. доля распознанных слов: %d%%",
+	optTag = "Метка языка перед сообщением ([ZH] [KO] ...)",
+	optHover = "Подсказка при наведении на всё сообщение",
+	optSelf = "Не обрабатывать мои сообщения",
+	langs = "Переводить с языков (родной язык пропускается)",
+	chatNote = "Настройки действуют для новых сообщений сразу. Статус: /wct status",
+	donate = "Поддержать",
+}
+
+ns.STR = STR
+
+-- 지금 쓰는 현지 언어
+function ns.GetTarget()
+	local t = ns.db and ns.db.target
+	if not t or t == "auto" or not STR[t] then return ns.CLIENT_TARGET end
+	return t
+end
+
+-- 현지 언어를 적용 (화면 문구 교체)
+function ns.ApplyTarget()
+	ns.L = STR[ns.GetTarget()] or STR.en
+end
+
+ns.L = STR[ns.CLIENT_TARGET] or STR.en

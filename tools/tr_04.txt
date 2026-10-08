@@ -1,0 +1,360 @@
+wait up|等一下|подождите
+hold|等等|ждём
+stop|停|стоп
+careful|小心|осторожно
+watch out|注意|берегись
+incoming|来了|идут
+sap|闷棍|ошеломление
+sapped|被闷了|ошеломлён
+polymorph|变羊|превращение
+fear|恐惧|страх
+feared|被恐惧了|в страхе
+banish|放逐|изгнание
+shackle undead|束缚亡灵|сковывание нежити
+trap|陷阱|ловушка
+freezing trap|冰冻陷阱|замораживающая ловушка
+hibernate|休眠|спячка
+seduction|诱惑|соблазн
+mind control|精神控制|контроль над разумом
+mind controlled|被精神控制|под контролем разума
+blind|致盲|ослепление
+gouge|凿击|парализующий удар
+kidney shot|肾击|удар по почкам
+hammer of justice|制裁之锤|молот правосудия
+divine shield|圣盾术|божественный щит
+bubble hearth|无敌炉石|бабл + камень
+bind on pickup/blessing of protection|拾取绑定/保护祝福|при поднятии/благословение защиты
+lay on hands|圣疗术|возложение рук
+feign death|假死|притвориться мёртвым
+vanish|消失|исчезновение
+stealth|潜行|незаметность
+prowl|潜行|крадущийся зверь
+innervate|激活|озарение
+rebirth|复生|возрождение
+power word: shield|真言术：盾|слово силы: щит
+shield|盾|щит
+renew|恢复|обновление
+flash heal|快速治疗|быстрое исцеление
+greater heal|强效治疗术|великое исцеление
+chain heal|治疗链|цепное исцеление
+healing wave|治疗波|волна исцеления
+lesser healing wave|次级治疗波|малая волна исцеления
+holy light|圣光术|свет небес
+flash of light|圣光闪现|вспышка Света
+rejuvenation|回春术|омоложение
+regrowth|愈合|восстановление
+healing touch|治疗之触|целительное прикосновение
+tranquility|宁静|спокойствие
+shadow word: pain|暗言术：痛|слово Тьмы: Боль
+frostbolt|寒冰箭|ледяная стрела
+fireball|火球术|огненный шар
+blizzard|暴风雪|снежная буря
+AoE farming|AOE刷怪|АоЕ-фарм
+AoE grinding|AOE刷怪|АоЕ-гринд
+AoE pull|AOE拉怪|АоЕ-пул
+execute|斩杀|казнь
+whirlwind|旋风斩|вихрь
+sunder armor|破甲攻击|раскол брони
+shout|怒吼|крик
+cleave|顺劈斩|рассекающий удар
+totem|图腾|тотем
+totems|图腾|тотемы
+windfury totem|风怒图腾|тотем неистовства ветра
+windfury|风怒|неистовство ветра
+tremor totem|战栗图腾|тотем трепета
+grounding totem|根基图腾|тотем заземления
+aspect|守护|дух
+pet tank|宝宝坦|танк-питомец
+power word: fortitude|真言术：韧|слово силы: стойкость
+stamina buff|耐力buff|бафф выносливости
+intellect buff|智力buff|бафф интеллекта
+arcane intellect|奥术智慧|чародейский интеллект
+arcane brilliance|奥术光辉|чародейская гениальность
+mark of the wild|野性印记|знак дикой природы
+gift of the wild|野性赐福|дар дикой природы
+blessing of kings|王者祝福|благословение королей
+blessing of might/might|力量祝福/可能|благословение могущества/может быть
+blessing of might|力量祝福|благословение могущества
+blessing of wisdom|智慧祝福|благословение мудрости
+blessing of salvation|拯救祝福|благословение спасения
+blessing of sanctuary|庇护祝福|благословение неприкосновенности
+blessing|祝福|благословение
+blessings|祝福|благословения
+thorns|荆棘术|шипы
+spirit buff|精神buff|бафф духа
+shadow protection|暗影防护|защита от тёмной магии
+Onyxia buff|黑龙头buff|бафф Ониксии
+Rend buff|酋长祝福|бафф Ренда
+Darkmoon buff|暗月buff|бафф Ярмарки Новолуния
+songflower|风歌夜曲|серенада песнецвета
+world buffs|世界buff|мировые баффы
+ZG buff|赞达拉之魂|бафф Зул'Гуруба
+DM tribute buffs|厄运贡品buff|баффы трибьюта Забытого города
+classes|职业|классы
+spec|天赋|спек
+specs|天赋|спеки
+respec|洗天赋|респек
+build|天赋配置|билд
+protection|防护|защита
+protection warrior|防战|воин-танк
+protection paladin|防骑|паладин-танк
+fury|狂暴|неистовство
+fury warrior|狂暴战|воин-фури
+arms|武器|оружие
+arms warrior|武器战|воин-армс
+holy|神圣|свет
+holy paladin|奶骑|холи-пал
+holy priest|神牧|холи-прист
+retribution|惩戒|воздаяние
+retribution paladin|惩戒骑|ретри-пал
+shockadin|震击骑|шокадин
+discipline|戒律|послушание
+discipline priest|戒律牧|диск-прист
+shadow|暗影|тьма
+shadow priest|暗牧|шадоу-прист
+restoration|恢复|исцеление
+restoration druid|奶德|рестор-друид
+restoration shaman|奶萨|рестор-шаман
+feral|野性|сила зверя
+bear|熊|медведь
+bear tank|熊坦|друид-танк
+cat|猫|кошка
+cat druid|猫德|друид-кошка
+balance druid|鸟德|друид-баланс
+moonkin|枭兽|совух
+balance|平衡|баланс
+tree|树|дерево
+elemental|元素|стихии
+elemental shaman|元素萨|элем-шаман
+enhancement|增强|совершенствование
+enhancement shaman|增强萨|энх-шаман
+combat|战斗|бой
+combat rogue|战斗贼|комбат-рога
+subtlety|敏锐|скрытность
+assassination|刺杀|ликвидация
+marksmanship|射击|стрельба
+beast mastery|兽王|повелитель зверей
+survival|生存|выживание
+affliction|痛苦|колдовство
+demonology|恶魔学识|демонология
+destruction|毁灭|разрушение
+SM/Ruin warlock|恶魔毁灭术|СМ/Руин лок
+frost|冰霜|лёд
+frost mage|冰法|фрост-маг
+fire|火焰|огонь
+fire mage|火法|фаер-маг
+arcane|奥术|тайная магия
+PoM pyro|气定炎爆|ПоМ-пиро
+warriors|战士|воины
+mages|法师|маги
+priests|牧师|жрецы
+warlocks|术士|чернокнижники
+hunters|猎人|охотники
+bad hunter|猎人新手|хантер-нуб
+rogues|盗贼|разбойники
+druids|德鲁伊|друиды
+paladins|圣骑士|паладины
+shamans|萨满|шаманы
+hunter pet|猎人宝宝|питомец охотника
+lockpicking|开锁|взлом замков
+lockbox|锁住的箱子|запертый ящик
+lockboxes|锁住的箱子|запертые ящики
+open lockbox|开箱子|вскрыть ящик
+Horde player|部落玩家|ордынец
+Human|人类|человек
+Dwarf|矮人|дворф
+Gnome|侏儒|гном
+Night Elf|暗夜精灵|ночной эльф
+Orc|兽人|орк
+Tauren|牛头人|таурен
+Undead|亡灵|нежить
+Forsaken|被遗忘者|Отрекшийся
+strength|力量|сила
+agility|敏捷|ловкость
+stamina|耐力|выносливость
+intellect|智力|интеллект
+spirit|精神|дух
+attack power|攻击强度|сила атаки
+crit|暴击|крит
+hit|命中|меткость
+hit cap|命中上限|кап меткости
+haste|急速|скорость
+mana per 5|5秒回蓝|мана за 5 сек
+defense|防御|защита
+dodge|躲闪|уклонение
+parry|招架|парирование
+block|格挡|блок
+resist|抗性|сопротивление
+resistances|抗性|сопротивления
+fire resistance|火焰抗性|сопротивление огню
+nature resistance|自然抗性|сопротивление силам природы
+frost resistance|冰霜抗性|сопротивление магии льда
+shadow resistance|暗影抗性|сопротивление тёмной магии
+spell power|法术强度|сила заклинаний
+spell damage|法术伤害|урон от заклинаний
+healing power|治疗效果|сила исцеления
+DPS check|输出检测|проверка урона
+item level|物品等级|уровень предмета
+gear score|装备评分|гирскор
+geared|装备好|одет
+undergeared|装备不够|плохо одет
+pre-BiS|准毕业|пре-BiS
+upgrade|提升|апгрейд
+upgrades|提升|апгрейды
+sidegrade|平替|равноценная замена
+item|物品|предмет
+epics|紫装|эпики
+blues|蓝装|синие вещи
+uncommon|绿色|необычный
+greens|绿装|зелёные вещи
+grey|灰色|серый
+gray|灰色|серый
+vendor|商人|торговец
+vendor trash|垃圾物品|хлам
+set|套装|комплект
+set bonus|套装效果|бонус комплекта
+tier|T套|тир
+tier 0|T0套装|T0
+dungeon set 1|D1套装|D1
+dungeon set 2|D2套装|D2
+tier 0.5|T0.5套装|T0.5
+tier 1|T1套装|T1
+tier 2|T2套装|T2
+tier 2.5|T2.5套装|T2.5
+tier 3|T3套装|T3
+one-hand|单手|одноручное
+two-hand|双手|двуручное
+main hand|主手|правая рука
+off hand|副手|левая рука
+weapons|武器|оружие
+helm|头盔|шлем
+head|头部|голова
+neck|项链|шея
+shoulder|肩膀|плечо
+shoulders|护肩|наплечники
+chest|胸甲|грудь
+robe|长袍|мантия
+wrist|手腕|запястья
+bracers|护腕|наручи
+gloves|手套|перчатки
+hands|手|кисти рук
+belt|腰带|пояс
+waist|腰部|пояс
+legs|腿部|ноги
+pants|裤子|штаны
+boots|靴子|сапоги
+feet|脚|ступни
+rings|戒指|кольца
+trinkets|饰品|аксессуары
+relic|圣物|реликвия
+libram|圣契|манускрипт
+idol|神像|идол
+wand|魔杖|жезл
+staff|法杖|посох
+dagger|匕首|кинжал
+daggers|匕首|кинжалы
+sword|剑|меч
+axe|斧|топор
+mace|锤|дробящее
+polearm|长柄武器|древковое
+fist weapon|拳套|кистевое
+crossbow|弩|арбалет
+thrown|投掷武器|метательное
+ammo|弹药|боеприпасы
+arrows|箭|стрелы
+bullets|子弹|пули
+quiver|箭袋|колчан
+plate|板甲|латы
+enchants|附魔|чары
+crusader enchant|十字军附魔|чары Рыцаря
+fiery weapon|烈焰武器|огненное оружие
+disenchant|分解|распыление
+shard|碎片|осколок
+shards|碎片|осколки
+soul shard|灵魂碎片|осколок души
+dust|粉尘|пыль
+essence|精华|сущность
+loot rules|分配规则|правила лута
+group loot|队伍分配|групповая добыча
+need before greed|需求优先|приоритет нужды
+greed all|全部贪婪|всем не откажусь
+rolling|在掷骰|роллю
+rolls|掷骰|роллы
+roll for|掷骰争|ролл на
+hard reserve|硬预约|хард-резерв
+reserved|已预约|зарезервировано
+soft reserved|已软预约|в софт-резерве
+plus one|+1制度|система +1
+bid|出价|ставка
+bids|出价|ставки
+minimum bid|起拍价|минимальная ставка
+cut|分成|доля
+cuts|分成|доли
+buyers|老板们|покупатели
+booster|带队的|бустер
+boost run|代练本|бустовый забег
+boostee|老板|клиент буста
+health potion|治疗药水|зелье исцеления
+mana potion|法力药水|зелье маны
+mana potions|法力药水|зелья маны
+flasks|合剂|настои
+elixir|药剂|эликсир
+elixirs|药剂|эликсиры
+consumables|消耗品|расходники
+elixir of the mongoose|猫鼬药剂|эликсир мангуста
+elixir of giants|巨人药剂|эликсир великанов
+flask of the titans|泰坦合剂|настой титанов
+flask of supreme power|超级能量合剂|настой величайшей силы
+flask of distilled wisdom|精炼智慧合剂|настой дистиллированной мудрости
+free action potion|自由行动药水|зелье свободы действий
+limited invulnerability potion|有限无敌药水|зелье ограниченной неуязвимости
+greater fire protection potion|强效防护火焰药水|сильное зелье защиты от огня
+fire protection potion|防护火焰药水|зелье защиты от огня
+greater shadow protection potion|强效防护暗影药水|сильное зелье защиты от тёмной магии
+restorative potion|恢复药水|восстанавливающее зелье
+juju|符咒|джуджу
+jujus|符咒|джуджу
+scrolls|卷轴|свитки
+bandages|绷带|бинты
+runecloth bandage|符文布绷带|бинт из руноткани
+wizard oil|巫师之油|волшебное масло
+mana oil|法力之油|масло маны
+sharpening stone|磨刀石|точильный камень
+weightstone|平衡石|грузик
+herbing|采药中|собираю травы
+miner|矿工|шахтёр
+skinner|剥皮师|скорняк
+professions|专业|профессии
+crafted|制作的|сделанный
+recipes|配方|рецепты
+pattern|图样|выкройка
+patterns|图样|выкройки
+formula|附魔公式|формула
+schematic|设计图|схема
+reagent|材料|реагент
+reagents|材料|реагенты
+mat|材料|мат
+material|材料|материал
+linen cloth|亚麻布|льняная ткань
+wool cloth|毛料|шерсть
+silk cloth|丝绸|шёлк
+felcloth|恶魔布|ткань Скверны
+mooncloth|月布|луноткань
+tin|锡|олово
+bronze|青铜|бронза
+iron|铁|железо
+steel|钢|сталь
+arcanite|奥金|арканит
+dark iron|黑铁|чёрное железо
+elementium|源质|элементий
+peacebloom|宁神花|мироцвет
+silverleaf|银叶草|сребролист
+mageroyal|魔皇草|магороза
+briarthorn|石南草|остротёрн
+kingsblood|皇血草|королевская кровь
+goldthorn|金棘草|златошип
+sungrass|太阳草|солнечник
+dreamfoil|梦叶草|снолист
+plaguebloom|瘟疫花|чумоцвет
+mountain silversage|山鼠草|горный серебряный шалфей
+gromsblood|格罗姆之血|кровь Грома

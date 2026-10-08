@@ -1,0 +1,360 @@
+long-term|长期|давно
+active|活跃|активный
+long-term active|长期活跃|давно активный
+WoW|魔兽|WoW
+World of Warcraft|魔兽世界|World of Warcraft
+community|社区|сообщество
+pro players|大佬|профи
+veterans help newbies|大佬带新人|опытные помогают новичкам
+help newbies|带新人|помощь новичкам
+newbie|新手|новичок
+veteran|老玩家|ветеран
+dungeon|副本|подземелье
+raid|团队副本|рейд
+GDKP raid|金团|ГДКП рейд
+payout|工资|выплата
+gold split|分金|делёж золота
+auction|拍卖|аукцион
+achievement|成就|достижение
+fight|打架|драка
+no pressure|无压力|без напряга
+casual|休闲|казуально
+chill casual|无压力休闲|спокойно, казуально
+chill|佛系|спокойно
+join group chat|进群|вступить в чат группы
+group chat|群聊|групповой чат
+add on WeChat|加微信|добавить в WeChat
+WeChat|微信|WeChat
+backup|备用|запасной
+backup WeChat|备用微信|запасной WeChat
+QQ group|QQ群|группа QQ
+YY voice|YY语音|голос YY
+voice chat|语音|голосовой чат
+guild|公会|гильдия
+recruiting|招人|набор
+welcome|欢迎|добро пожаловать
+welcome to join|欢迎加入|ждём вас
+join|加入|вступить
+join guild|加入公会|вступить в гильдию
+LFG|求组|ищу группу
+group|队伍|группа
+need people|缺人|нужны люди
+need|需要|нужен
+still need|还缺|ещё нужен
+need one|缺一个|нужен один
+come|来|приходи
+come fast|速来|быстрее сюда
+quick|快|быстро
+whisper me|密我|пишите в лс
+whisper|密语|личка
+full|满了|фулл
+starting group|开组|собираем группу
+starting|开始|начинаем
+leaving now|发车|выходим
+buyer|老板|покупатель
+carry|带|прокачка (кэрри)
+boosting|代练|буст
+carry run|带刷|кэрри-забег
+farm|刷|фарм
+dungeon farming|刷本|фарм подземелий
+gold farming|刷金|фарм золота
+grinding|刷怪|гринд
+leveling|练级|прокачка
+max level|满级|макс. уровень
+level|等级|уровень
+XP|经验|опыт
+quest|任务|квест
+turn in quest|交任务|сдать квест
+questing|做任务|квестинг
+gear|装备|шмот
+BiS done|毕业|BiS собран
+BiS gear|毕业装|BiS шмот
+weapon|武器|оружие
+ring|戒指|кольцо
+necklace|项链|ожерелье
+trinket|饰品|аксессуар
+cloak|披风|плащ
+armor|护甲|броня
+greed|贪婪|не откажусь
+roll|掷骰|ролл
+loot|分配|лут
+leader|队长|лидер
+raid leader|团长|рейд-лидер
+raid lead|指挥|РЛ
+tank|坦克|танк
+main tank|主坦|главный танк
+healer|治疗|хил
+DPS|输出|ДД
+melee|近战|ближний бой
+ranged|远程|дальний бой
+Warrior|战士|воин
+Mage|法师|маг
+Priest|牧师|жрец
+Warlock|术士|чернокнижник
+Hunter|猎人|охотник
+Rogue|盗贼|разбойник
+Druid|德鲁伊|друид
+Paladin|圣骑士|паладин
+Shaman|萨满|шаман
+class|职业|класс
+talents|天赋|таланты
+profession|专业|профессия
+Alchemy|炼金术|алхимия
+Blacksmithing|锻造|кузнечное дело
+Enchanting|附魔|наложение чар
+Engineering|工程学|инженерное дело
+Leatherworking|制皮|кожевничество
+Tailoring|裁缝|портняжное дело
+Mining|采矿|горное дело
+Herbalism|草药学|травничество
+Skinning|剥皮|снятие шкур
+Fishing|钓鱼|рыбная ловля
+Cooking|烹饪|кулинария
+First Aid|急救|первая помощь
+WTB|收|куплю
+buy|买|купить
+WTS|出售|продам
+trade|交易|обмен
+price|价格|цена
+cheap|便宜|дёшево
+gold|金币|золото
+silver|银币|серебро
+how much|多少钱|сколько стоит
+how many|多少|сколько
+Alliance|联盟|Альянс
+Horde|部落|Орда
+world|世界|мир
+world channel|世界频道|мировой канал
+channel|频道|канал
+yell|大喊|крик
+capital city|主城|столица
+Stormwind|暴风城|Штормград
+Ironforge|铁炉堡|Стальгорн
+Darnassus|达纳苏斯|Дарнас
+Orgrimmar|奥格瑞玛|Оргриммар
+Thunder Bluff|雷霆崖|Громовой Утёс
+Undercity|幽暗城|Подгород
+Booty Bay|藏宝海湾|Пиратская Бухта
+Gadgetzan|加基森|Прибамбасск
+Deadmines|死亡矿井|Мёртвые копи
+Ragefire Chasm|怒焰裂谷|Огненная пропасть
+Wailing Caverns|哀嚎洞穴|Пещеры Стенаний
+Shadowfang Keep|影牙城堡|Крепость Тёмного Клыка
+Stockade|暴风城监狱|Тюрьма
+Blackfathom Deeps|黑暗深渊|Непроглядная Пучина
+Gnomeregan|诺莫瑞根|Гномреган
+Razorfen Kraul|剃刀沼泽|Лабиринты Иглошкурых
+Razorfen Downs|剃刀高地|Курганы Иглошкурых
+Scarlet Monastery|血色修道院|Монастырь Алого ордена
+Uldaman|奥达曼|Ульдаман
+Zul'Farrak|祖尔法拉克|Зул'Фаррак
+Maraudon|玛拉顿|Мародон
+Sunken Temple|阿塔哈卡神庙|Затонувший храм
+Blackrock Depths|黑石深渊|Глубины Чёрной горы
+Blackrock Spire|黑石塔|Пик Чёрной горы
+upper|上层|верхний
+lower|下层|нижний
+Stratholme|斯坦索姆|Стратхольм
+Scholomance|通灵学院|Некроситет
+Dire Maul|厄运之槌|Забытый город
+Molten Core|熔火之心|Огненные Недра
+Blackwing Lair|黑翼之巢|Логово Крыла Тьмы
+Onyxia|奥妮克希亚|Ониксия
+Zul'Gurub|祖尔格拉布|Зул'Гуруб
+Ahn'Qiraj|安其拉|Ан'Кираж
+Naxxramas|纳克萨玛斯|Наксрамас
+battleground|战场|поле боя
+Alterac Valley|奥特兰克山谷|Альтеракская долина
+Warsong Gulch|战歌峡谷|Ущелье Песни Войны
+Arathi Basin|阿拉希盆地|Низина Арати
+honor|荣誉|честь
+open world|野外|открытый мир
+flag PvP|开PvP|включить PvP
+kill|杀|убить
+can't win|打不过|не победить
+help|帮忙|помощь
+thanks|谢谢|спасибо
+you're welcome|不客气|не за что
+hello|你好|привет
+hi all|大家好|всем привет
+good evening|晚上好|добрый вечер
+bye|再见|пока
+okay|好的|окей
+good|好|хорошо
+can/ok|可以|можно
+no|不|нет
+don't want|不要|не надо
+want|要|хочу
+anyone|有人吗|кто-нибудь
+is there any|有没有|есть ли
+have|有|есть
+don't have|没有|нет
+where|哪里|где
+where is|在哪|где находится
+at|在|в
+what|什么|что
+how|怎么|как
+why|为什么|почему
+who|谁|кто
+now|现在|сейчас
+right away|马上|сразу
+wait|等|подожди
+one moment|稍等|минутку
+together|一起|вместе
+go|去|идти
+let's go|走|пошли
+leaving|走了|ухожу
+come back|回来|вернись
+online|在线|онлайн
+offline|下线|оффлайн
+people|人|люди
+friend|朋友|друг
+bro|兄弟|бро
+buddy|老铁|дружище
+haha|哈哈|хаха
+lol|哈哈哈|лол
+nice|666|круто
+awesome|厉害|отлично
+trash|垃圾|мусор
+troll|坑|тролль
+server|服务器|сервер
+lag|卡|лаг
+disconnected|掉线|дисконнект
+China|中国|Китай
+Chinese|中国人|китаец
+Korea|韩国|Корея
+Korean|韩国人|кореец
+don't understand|听不懂|не понимаю
+translate|翻译|перевод
+casual guild|休闲公会|казуальная гильдия
+PvP guild|PvP公会|ПвП гильдия
+event|活动|событие
+every day|每天|каждый день
+every week|每周|каждую неделю
+evening|晚上|вечер
+weekend|周末|выходные
+time|时间|время
+play time|在线时间|время игры
+no limit|不限|без ограничений
+any class|不限职业|любой класс
+any level|不限等级|любой уровень
+or higher|以上|и выше
+or lower|以下|и ниже
+level+|级以上|ур.+
+headcount|人数|кол-во людей
+need tank|缺坦克|нужен танк
+need healer|缺治疗|нужен хил
+need DPS|缺输出|нужен ДД
+carrying|带人|провожу
+carry newbies|带新人|провожу новичков
+free|免费|бесплатно
+free carry|免费带|бесплатный кэрри
+paid|收费|платно
+selling cheap|便宜卖|продам дёшево
+bulk|大量|оптом
+in stock|有货|в наличии
+good price|价格美丽|хорошая цена
+price in whisper|价格私聊|цена в лс
+anyone who needs|需要的|кому нужно
+whisper if needed|需要的密|кому нужно - в лс
+materials|材料|материалы
+bring mats|自备材料|свои маты
+mats included|包材料|маты включены
+craft|制作|крафт
+crafting service|代做|крафт на заказ
+enchanter|附魔师|зачарователь
+inscription|铭文|начертание
+potion|药水|зелье
+flask|合剂|фласка
+food|食物|еда
+bandage|绷带|бинт
+bag|背包|сумка
+mount|坐骑|маунт
+pet|宠物|питомец
+plans|图纸|чертёж
+recipe|配方|рецепт
+scroll|卷轴|свиток
+gem|宝石|камень
+ore|矿石|руда
+leather|皮|кожа
+cloth|布|ткань
+runecloth|符文布|руническая ткань
+mageweave|魔纹布|магическая ткань
+silk|丝绸|шёлк
+arcanite bar|奥金锭|арканитовый слиток
+thorium|瑟银|ториевый
+truesilver|真银|истинное серебро
+mithril|秘银|мифрил
+arcane crystal|奥术水晶|магический кристалл
+black lotus|黑莲花|чёрный лотос
+quest item|任务物品|квестовый предмет
+elite|精英|элитный
+rare|稀有|редкий
+epic gear|紫装|эпик шмот
+epic|紫色|эпик
+blue gear|蓝装|синий шмот
+green gear|绿装|зелёный шмот
+legendary|橙色|легендарный
+boss|首领|босс
+first boss|老一|первый босс
+second boss|老二|второй босс
+last boss|尾王|последний босс
+full clear|全通|полная зачистка
+clear|通关|зачистка
+progression|开荒|прогресс
+speed run|速刷|спидран
+reset|重置|сброс
+wipe|团灭|вайп
+wiped|灭了|вайпнулись
+resurrect|复活|воскресить
+summon|召唤|призыв
+portal|传送门|портал
+open portal|开门|открыть портал
+teleport|传送|телепорт
+hearthstone|炉石|камень возвращения
+gather|集合|сбор
+meeting point|集合点|место сбора
+entrance|门口|вход
+dungeon entrance|副本门口|вход в подземелье
+at the entrance|在门口|у входа
+on the way|路上|в пути
+arrived|到了|на месте
+almost there|快到了|почти пришёл
+be right there|马上到|сейчас буду
+start|开始|начало
+end|结束|конец
+done|完成|готово
+quest chain|任务链|цепочка квестов
+elite quest|精英任务|элитный квест
+do together|一起做|сделаем вместе
+group up for|组人做|собираю группу на
+need a carry|求带|нужен кэрри
+looking for|找|ищу
+excuse me|请问|извините
+please|请|пожалуйста
+guys|兄弟们|ребята
+everyone|大家|все
+newcomer|新人|новичок
+newcomers welcome|欢迎新人|новичкам рады
+returning|回归|вернувшийся
+returning players|回归玩家|вернувшиеся игроки
+workers|上班族|работающие
+student|学生|студент
+female players|女玩家|девушки-игроки
+girls|妹子|девушки
+atmosphere|氛围|атмосфера
+good vibe|氛围好|хорошая атмосфера
+harmonious|和谐|дружно
+friendly|友好|дружелюбный
+help each other|互帮互助|помогаем друг другу
+united|团结|сплочённые
+stable|稳定|стабильный
+static raid|固定团|статик рейд
+static group|固定队|статик группа
+pug|野团|рандом
+DKP|DKP|ДКП
+free for all|自由拾取|свободная добыча
+master loot|队长分配|ответственный за добычу
+all|全部|все
+some|一些|немного
+a lot|很多|много
