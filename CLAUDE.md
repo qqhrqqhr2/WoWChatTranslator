@@ -1,7 +1,7 @@
 # WoW Chat Translator
 
 WoW Forever addon (Interface 16001). Translates foreign chat into the local language with a built-in dictionary.
-Release: put a new `## vX.Y.Z` heading at the top of `CHANGELOG.md` and push it to main (the workflow tags the commit and runs BigWigsMods/packager), or push a `v*` tag. Uploads go to CurseForge only (set `## X-Curse-Project-ID` in the toc and the `CF_API_KEY` secret).
+Release: put a new `## vX.Y.Z` heading at the top of `CHANGELOG.md` and push it to main (the workflow tags the commit and runs BigWigsMods/packager), or push a `v*` tag. Uploads go to CurseForge 1733319 only (`CF_API_KEY` secret).
 
 ## Rules
 

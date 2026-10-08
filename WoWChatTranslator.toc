@@ -12,6 +12,7 @@
 ## IconTexture: Interface\AddOns\WoWChatTranslator\Media\icon
 ## X-License: MIT
 ## X-Website: https://github.com/qqhrqqhr2/WoWChatTranslator
+## X-Curse-Project-ID: 1733319
 ## SavedVariables: WoWChatTranslatorDB
 
 Locale.lua
