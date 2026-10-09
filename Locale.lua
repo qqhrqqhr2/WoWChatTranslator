@@ -20,6 +20,10 @@ ns.SAME_SOURCE = { ko = "ko", en = "en", zhCN = "zh", zhTW = "zh", ru = "ru" }
 
 ns.DEFAULTS = {
 	target = "auto",        -- "auto" = 게임 클라이언트 언어
+	tooltip = {
+		enabled = true,     -- 툴팁의 영어 문장 번역
+		collect = true,     -- 번역 못 한 문장을 저장 파일에 모으기
+	},
 	chat = {
 		enabled = true,     -- 채팅 번역 사용
 		inline = true,      -- 메시지 뒤에 대략적인 뜻을 바로 붙이기
@@ -37,6 +41,14 @@ ns.DEFAULTS = {
 local STR = {}
 
 STR.ko = {
+	tipUse = "사용 효과:", tipEquip = "착용 효과:", tipProc = "적중 시 발동:",
+	secTooltip = "툴팁 번역",
+	optTooltip = "아이템·주문 툴팁의 영어 문장 번역",
+	optCollect = "번역 못 한 문장 모으기 (/wct 수집)",
+	tooltipNote = "포에버 신규 아이템처럼 번역이 없는 설명을 툴팁 아래 WoW Chat Translator 칸에 보여 줍니다.",
+	collectCount = "모은 미번역 문장: %d개",
+	collectHow = "게임을 끄면 WTF\\Account\\(계정)\\SavedVariables\\WoWChatTranslator.lua 에 저장됩니다. 이 파일을 보내 주시면 사전에 추가합니다. (/wct 수집 초기화)",
+	collectCleared = "모은 문장을 비웠습니다.",
 	title = "채팅 번역기 (WoW Chat Translator)",
 	tag = { ko = "韓", zh = "中", ja = "日", ru = "RU", en = "EN" },
 	langName = { ko = "한국어", zh = "중국어", ja = "일본어", ru = "러시아어", en = "영어" },
@@ -64,6 +76,14 @@ STR.ko = {
 }
 
 STR.en = {
+	tipUse = "Use:", tipEquip = "Equip:", tipProc = "Chance on hit:",
+	secTooltip = "Tooltip translation",
+	optTooltip = "Translate English text in item and spell tooltips",
+	optCollect = "Collect untranslated sentences (/wct collect)",
+	tooltipNote = "Untranslated descriptions (e.g. new Forever items) are shown in a WoW Chat Translator section at the bottom of the tooltip.",
+	collectCount = "Collected untranslated sentences: %d",
+	collectHow = "They are saved to WTF\\Account\\(account)\\SavedVariables\\WoWChatTranslator.lua when you log out. Send that file to the author to add them. (/wct collect clear)",
+	collectCleared = "Collected sentences cleared.",
 	title = "WoW Chat Translator",
 	tag = { ko = "KO", zh = "ZH", ja = "JA", ru = "RU", en = "EN" },
 	langName = { ko = "Korean", zh = "Chinese", ja = "Japanese", ru = "Russian", en = "English" },
@@ -91,6 +111,14 @@ STR.en = {
 }
 
 STR.zhCN = {
+	tipUse = "使用：", tipEquip = "装备：", tipProc = "击中时可能：",
+	secTooltip = "鼠标提示翻译",
+	optTooltip = "翻译物品和法术提示中的英文",
+	optCollect = "收集未翻译的句子 (/wct collect)",
+	tooltipNote = "没有翻译的说明（如怀旧新物品）会显示在鼠标提示底部的 WoW Chat Translator 栏中。",
+	collectCount = "已收集未翻译句子：%d 条",
+	collectHow = "退出游戏后保存在 WTF\\Account\\(账号)\\SavedVariables\\WoWChatTranslator.lua。把文件发给作者即可加入词典。(/wct collect clear)",
+	collectCleared = "已清空收集的句子。",
 	title = "聊天翻译器 (WoW Chat Translator)",
 	tag = { ko = "韩", zh = "中", ja = "日", ru = "俄", en = "英" },
 	langName = { ko = "韩语", zh = "中文", ja = "日语", ru = "俄语", en = "英语" },
@@ -118,6 +146,14 @@ STR.zhCN = {
 }
 
 STR.zhTW = {
+	tipUse = "使用：", tipEquip = "裝備：", tipProc = "擊中時可能：",
+	secTooltip = "滑鼠提示翻譯",
+	optTooltip = "翻譯物品和法術提示中的英文",
+	optCollect = "收集未翻譯的句子 (/wct collect)",
+	tooltipNote = "沒有翻譯的說明（如懷舊新物品）會顯示在滑鼠提示底部的 WoW Chat Translator 欄中。",
+	collectCount = "已收集未翻譯句子：%d 條",
+	collectHow = "離開遊戲後儲存在 WTF\\Account\\(帳號)\\SavedVariables\\WoWChatTranslator.lua。把檔案傳給作者即可加入詞典。(/wct collect clear)",
+	collectCleared = "已清空收集的句子。",
 	title = "聊天翻譯器 (WoW Chat Translator)",
 	tag = { ko = "韓", zh = "中", ja = "日", ru = "俄", en = "英" },
 	langName = { ko = "韓語", zh = "中文", ja = "日語", ru = "俄語", en = "英語" },
@@ -145,6 +181,14 @@ STR.zhTW = {
 }
 
 STR.ru = {
+	tipUse = "Использование:", tipEquip = "Если на персонаже:", tipProc = "Вероятность при попадании:",
+	secTooltip = "Перевод подсказок",
+	optTooltip = "Переводить английский текст в подсказках предметов и заклинаний",
+	optCollect = "Собирать непереведённые фразы (/wct collect)",
+	tooltipNote = "Описания без перевода (например, новые предметы Forever) показываются внизу подсказки в разделе WoW Chat Translator.",
+	collectCount = "Собрано непереведённых фраз: %d",
+	collectHow = "Сохраняются при выходе в WTF\\Account\\(аккаунт)\\SavedVariables\\WoWChatTranslator.lua. Отправьте файл автору, чтобы их добавить. (/wct collect clear)",
+	collectCleared = "Собранные фразы очищены.",
 	title = "WoW Chat Translator",
 	tag = { ko = "KO", zh = "ZH", ja = "JA", ru = "RU", en = "EN" },
 	langName = { ko = "корейский", zh = "китайский", ja = "японский", ru = "русский", en = "английский" },

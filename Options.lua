@@ -185,6 +185,13 @@ local function Build()
 	Note(frame, "chatNote", y)
 	y = y - 34
 
+	-- 툴팁 번역 ----------------------------------------------------------
+	Header(frame, "secTooltip", y); y = y - 26
+	Check(frame, function() return L.optTooltip end, 22, y, function() return db.tooltip.enabled end, function(v) db.tooltip.enabled = v end, FRAME_W - 80); y = y - 26
+	Check(frame, function() return L.optCollect end, 22, y, function() return db.tooltip.collect end, function(v) db.tooltip.collect = v end, FRAME_W - 80); y = y - 30
+	Note(frame, "tooltipNote", y)
+	y = y - 40
+
 	-- 창 높이를 내용에 맞춤 (아래 버튼 자리 포함)
 	frame:SetHeight(-y + 56)
 
@@ -220,6 +227,11 @@ SlashCmdList.WOWCHATTRANSLATOR = function(msg)
 	msg = (msg or ""):lower():gsub("^%s+", ""):gsub("%s+$", "")
 	if msg == "status" or msg == "상태" or msg == "debug" then
 		if ns.PrintStatus then ns.PrintStatus() end
+		return
+	end
+	local cmd, rest = msg:match("^(%S+)%s*(.-)$")
+	if cmd == "collect" or cmd == "수집" then
+		if ns.CollectCommand then ns.CollectCommand(rest) end
 		return
 	end
 	ns.ToggleOptions()

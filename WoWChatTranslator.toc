@@ -23,6 +23,8 @@ GlossaryZH.lua
 GlossaryRU.lua
 GlossaryKO.lua
 Translations.lua
+TooltipText.lua
 Core.lua
 Chat.lua
+Tooltip.lua
 Options.lua
