@@ -1,0 +1,10 @@
+Azeroth|艾泽拉斯|Азерот
+echo|回响|эхо
+guild recruiting|公会招人|гильдия набирает
+brothers and sisters|兄弟姐妹|братья и сёстры
+come back|回来|вернуться
+the original feeling|最初的感觉|то самое чувство
+feeling|感觉|чувство
+original|最初|изначальный
+type 1|打1|напишите 1
+old friends|老朋友|старые друзья

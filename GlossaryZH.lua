@@ -23,6 +23,22 @@ ns.RawGlossary.zh = (ns.RawGlossary.zh or "") .. [[
 吗=?=?
 么=?=?
 -- 대화·일상 -----------------------------------------------------------
+艾泽拉斯=아제로스=Azeroth
+回响=메아리=echo
+公会收人=길드원 모집=guild recruiting
+收人=인원 모집=recruiting
+萌新=초보=newbie
+兄弟姐妹=형제자매(여러분)=brothers and sisters
+一块儿=함께=together
+一块=함께=together
+回国=돌아오다(복귀)=come back
+最初的感觉=처음 그 느낌=the original feeling
+感觉=느낌=feeling
+最初=처음=original
+进会=길드 가입=join guild
+打1=1 입력=type 1
+欢迎回来=다시 온 걸 환영=welcome back
+老兄弟=오랜 친구=old friends
 有人要=~할 사람=anyone want to
 有人要一起=같이 할 사람=anyone want to join
 一起吗=같이 할래요?=together?

@@ -385,8 +385,24 @@ local function Gloss(text, lang, target)
 		end
 		prev, prevS = p.kind, p.s
 	end
+	-- 한자·가나를 뺀 풀이 (한 줄에 한자와 한글이 섞이면 게임 글꼴에서 한글이 깨지므로)
+	local alt, prevAlt = {}, nil
+	for _, p in ipairs(pieces) do
+		local s2, k = p.s, p.kind
+		if k == "miss" and s2:find("[\227-\233]") then s2, k = "…", "hit" end
+		if k == "space" then
+			if prevAlt and prevAlt ~= "space" then alt[#alt + 1] = " " end
+		elseif not (s2 == "…" and alt[#alt] == "…") and not (s2 == "…" and alt[#alt] == " " and alt[#alt - 1] == "…") then
+			if prevAlt and prevAlt ~= "space" and prevAlt ~= "other" and k ~= "other" and not (cjkOut and k == "hit" and prevAlt == "hit") then
+				alt[#alt + 1] = " "
+			end
+			alt[#alt + 1] = s2
+		end
+		prevAlt = k
+	end
 	local total = coverHit + coverMiss
 	return {
+		plainNoCJK = table.concat(alt),
 		rough = table.concat(out),
 		plain = table.concat(plain),
 		terms = terms,
@@ -471,13 +487,21 @@ local function Process(msg, author)
 	if db.chat.tag or not wrapped then
 		tag = ("|cff%s|Hwct:%d|h[%s]|h|r "):format(TAG_COLOR[lang], id, L.tag[lang])
 	end
-	local suffix = ""
+	local suffix, separate = "", nil
 	if db.chat.inline and g.found > 0 and g.cover >= (db.chat.minCover or 40) then
-		local meaning = g.plain:gsub("|", "||")
-		suffix = (" |cff88dd88(%s)|r"):format(meaning)
+		-- 원문이 한자·가나인데 뜻이 한글(또는 그 반대)이면 한 줄에 섞지 않고 다음 줄에 따로 보여 준다
+		local hanSource = (lang == "zh" or lang == "ja")
+		local conflict = (hanSource and target == "ko") or (lang == "ko" and (target == "zhCN" or target == "zhTW"))
+		if conflict then
+			local meaning = (hanSource and g.plainNoCJK or g.plain):gsub("|", "||")
+			separate = ("    |cff88dd88↳ %s|r"):format(meaning)
+		else
+			local meaning = g.plain:gsub("|", "||")
+			suffix = (" |cff88dd88(%s)|r"):format(meaning)
+		end
 	end
 	ns.status.tagged = ns.status.tagged + 1
-	return tag .. body .. suffix
+	return tag .. body .. suffix, separate
 end
 
 local function NoteError(err)
@@ -487,16 +511,26 @@ end
 -- 방법 1: 채팅 메시지 필터 (권장)
 local function Filter(self, event, msg, author, ...)
 	local lineID = select(9, ...)
+	local out, separate
 	if lineID and lineCache[lineID] ~= nil then
 		local cached = lineCache[lineID]
-		if cached then return false, cached, author, ... end
-		return false
+		if not cached then return false end
+		out, separate = cached[1], cached[2]
+	else
+		local ok, o, sep = pcall(Process, msg, author)
+		if not ok then NoteError(o) o, sep = nil, nil end
+		out, separate = o, sep
+		CacheLine(lineID, out and { out, separate } or false)
 	end
-	local ok, out = pcall(Process, msg, author)
-	if not ok then NoteError(out) out = nil end
-	CacheLine(lineID, out or false)
-	if out then return false, out, author, ... end
-	return false
+	if not out then return false end
+	if separate and self and self.AddMessage and C_Timer then
+		-- 원래 메시지가 채팅창에 찍힌 바로 뒤에 같은 색으로 한 줄 더
+		local info = ChatTypeInfo and ChatTypeInfo[(event or ""):sub(10)]
+		C_Timer.After(0, function()
+			pcall(self.AddMessage, self, separate, info and info.r, info and info.g, info and info.b)
+		end)
+	end
+	return false, out, author, ...
 end
 
 local EVENTS = {
@@ -539,9 +573,9 @@ local function ProcessLine(text)
 	local rest = text:sub(e + 1)
 	local sep, body = rest:match("^(.-:%s*)(.+)$")
 	if not sep or #sep > 40 then return nil end
-	local out = Process(body, nil)
+	local out, separate = Process(body, nil)
 	if not out then return nil end
-	return text:sub(1, e) .. sep .. out
+	return text:sub(1, e) .. sep .. out, separate
 end
 
 local function HookAddMessage(frame)
@@ -550,8 +584,15 @@ local function HookAddMessage(frame)
 	frame.wctOrigAddMessage = orig
 	frame.AddMessage = function(self, text, ...)
 		if type(text) == "string" and text:find("|Hplayer:", 1, true) then
-			local ok, out = pcall(ProcessLine, text)
-			if ok and out then text = out elseif not ok then NoteError(out) end
+			local ok, out, separate = pcall(ProcessLine, text)
+			if ok and out then
+				text = out
+				if separate then
+					local r = orig(self, text, ...)
+					orig(self, separate, ...)
+					return r
+				end
+			elseif not ok then NoteError(out) end
 		end
 		return orig(self, text, ...)
 	end

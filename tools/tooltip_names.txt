@@ -11,3 +11,9 @@ Travel Form|치타 변신|旅行形态|Походный облик
 Aquatic Form|바다표범 변신|水栖形态|Водный облик
 Moonkin Form|달빛야수 변신|枭兽形态|Облик лунного совуха
 Shapeshifting|변신|变形|Смена облика
+Improved Shifting Power|변신의 힘 연마|强化变形之力|Улучшенная сила смены облика
+Natural Instinct|자연의 본능|自然本能|Природный инстинкт
+Primal Bite|원시의 물어뜯기|原始撕咬|Первобытный укус
+Omen of Clarity|청명의 전조|清晰预兆|Ясность мысли
+Leader of the Pack|무리의 우두머리|兽群领袖|Вожак стаи
+Furor|광란|狂暴|Неистовство

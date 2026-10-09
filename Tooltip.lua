@@ -130,13 +130,12 @@ local function TranslatePiece(piece, target)
 		end
 	end
 
-	-- 3) 단어 사전 풀이 (단어 3개 이상만)
+	-- 3) 단어 사전 풀이: 아는 단어가 하나라도 있으면 보여 준다 (연한 색으로 표시)
 	local words = 0
 	for _ in canon:gmatch("%a+") do words = words + 1 end
-	if words >= 3 and ns.Gloss then
+	if words >= 2 and ns.Gloss then
 		local g = ns.Gloss(piece, "en", target)
-		local min = (ns.db and ns.db.chat and ns.db.chat.minCover) or 40
-		if g and g.found > 0 and g.cover >= min then return g.plain, "gloss" end
+		if g and g.found > 0 then return g.plain, "gloss" end
 	end
 	return nil
 end
@@ -232,14 +231,14 @@ local function TranslateLine(text, target)
 			else
 				full = false
 				Collect(piece)
-				-- 줄 전체가 번역이 안 되면 결과 없음, 일부만 안 되면 원문 그대로 둠
-				parts[#parts + 1] = false
+				-- 번역이 전혀 안 되는 문장은 원문 그대로 둔다
+				parts[#parts + 1] = { raw = trim(piece) }
 			end
 		end
 	end
 	local any = false
 	for i, p in ipairs(parts) do
-		if p then any = true else parts[i] = "…" end
+		if type(p) == "table" then parts[i] = p.raw else any = true end
 	end
 	local result = false
 	if any then
@@ -247,7 +246,7 @@ local function TranslateLine(text, target)
 		if #parts > 1 then
 			-- 문장 사이에 마침표가 빠지지 않게
 			for i = 1, #parts - 1 do
-				if not parts[i]:find("[%.!%?。！？…]$") and not parts[i]:find("\227\128\130$") then
+				if not parts[i]:find("[%.!%?。！？…%)]$") and not parts[i]:find("\227\128\130$") then
 					parts[i] = parts[i] .. (cjk and "。" or ".")
 				end
 			end
@@ -348,7 +347,8 @@ local function Setup()
 	local processor = TooltipDataProcessor and TooltipDataProcessor.AddTooltipPostCall and Enum and Enum.TooltipDataType
 	for _, tt in ipairs({ GameTooltip, ItemRefTooltip, ShoppingTooltip1, ShoppingTooltip2,
 		ItemRefShoppingTooltip1, ItemRefShoppingTooltip2, EmbeddedItemTooltip }) do
-		pcall(HookTooltip, tt, not processor)
+		-- 특성창 등 일부 툴팁은 데이터 처리기를 거치지 않아서 채우는 함수에도 항상 연결 (중복은 wctDone 으로 막음)
+		pcall(HookTooltip, tt, true)
 	end
 	if processor then
 		local function post(tt, data)
