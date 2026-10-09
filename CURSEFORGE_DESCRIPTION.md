@@ -20,6 +20,7 @@ Chat on WoW Forever is full of Chinese recruiting posts, Russian trade calls, Ko
 - **About 4,800 dictionary entries**: chat abbreviations (LFM, WTS, pst, oom ...), classes and specs, abilities and CC, buffs, stats, gear slots, consumables, materials, loot rules (SR, HR, ML, GDKP), PvP terms, and zone, dungeon, raid and boss names, including Chinese gamer slang (奶, 黑上, 金团), Russian slang and Korean shorthand (검바, 탱, 귓)
 - **Numbers too**: 30g, 1.5k, lvl40, lf2m, 8pm, 2з ...
 - Works with every chat channel, party, raid, guild and whispers. Item links in messages stay clickable.
+- **Tooltip translation**: English text left in item, spell, buff and talent tooltips (new Forever items, reworked spells) is translated into your language in a "WoW Chat Translator" section at the bottom of the tooltip, including item and spell names.
 
 ![Hover for details](03_tooltip.png)
 
@@ -56,6 +57,7 @@ If the addon helps you: https://buymeacoffee.com/qqhrqqhr2 (also in the options 
 - **약 4,800개 사전**: 채팅 약어(LFM, WTS, pst, oom 등), 직업·특성, 스킬·군중 제어, 버프, 스탯, 장비 부위, 소모품, 재료, 전리품 규칙(SR, HR, ML, GDKP), PvP 용어, 지역·던전·공격대·보스 이름. 중국어 게임 은어(奶, 黑上, 金团), 러시아어 은어, 한국어 줄임말(검바, 탱, 귓)까지
 - **숫자 표현**: 30g, 1.5k, lvl40, lf2m, 8pm, 2з 등
 - 모든 채널, 파티, 공격대, 길드, 귓속말에서 동작. 메시지 안의 아이템 링크도 그대로 클릭됩니다.
+- **툴팁 번역**: 아이템·주문·버프·특성 툴팁에 남아 있는 영어 문장(포에버 신규 아이템, 바뀐 주문)과 이름을 툴팁 아래 "WoW Chat Translator" 칸에 현지 언어로 보여 줍니다.
 
 ### 알아둘 점
 - 애드온은 인터넷에 접속할 수 없어서 **사전 기반**으로 동작합니다. 게임 은어·약어·와우 용어를 풀어 주며, 문장 전체를 번역하지는 않습니다. 사전에 없는 단어는 원문 그대로 나옵니다.
