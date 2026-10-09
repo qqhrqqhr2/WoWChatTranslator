@@ -784,6 +784,65 @@ undead=언데드=Undead
 ud=언데드=Undead
 forsaken=포세이큰=Forsaken
 -- 스탯·장비 -----------------------------------------------------------
+gauntlets=건틀릿=gauntlets
+greaves=경갑=greaves
+sabatons=철장화=sabatons
+pauldrons=견갑=pauldrons
+spaulders=어깨보호구=spaulders
+mantle=어깨걸이=mantle
+breastplate=흉갑=breastplate
+tunic=튜닉=tunic
+vest=조끼=vest
+jerkin=가죽 조끼=jerkin
+leggings=각반=leggings
+trousers=바지=trousers
+kilt=킬트=kilt
+girdle=벨트=girdle
+cord=허리끈=cord
+sash=장식띠=sash
+wristguards=손목 보호대=wristguards
+bindings=손목띠=bindings
+cuffs=소매=cuffs
+handguards=손보호구=handguards
+grips=손아귀=grips
+mitts=벙어리장갑=mitts
+cowl=두건=cowl
+hood=두건=hood
+crown=왕관=crown
+circlet=머리띠=circlet
+cap=모자=cap
+cape=망토=cape
+shroud=수의=shroud
+band=반지=band
+signet=인장 반지=signet
+loop=고리=loop
+amulet=부적=amulet
+pendant=펜던트=pendant
+choker=목걸이=choker
+charm=부적=charm
+blade=칼날=blade
+cleaver=큰 칼=cleaver
+hammer=망치=hammer
+maul=큰 망치=maul
+rod=막대=rod
+spear=창=spear
+rifle=소총=rifle
+buckler=원형 방패=buckler
+ward=수호물=ward
+robe=로브=robe
+rack=선반=rack
+bowl=그릇=bowl
+fishing=낚시=fishing
+bear=곰=bear
+monkey=원숭이=monkey
+tiger=호랑이=tiger
+eagle=독수리=eagle
+owl=올빼미=owl
+whale=고래=whale
+falcon=매=falcon
+wolf=늑대=wolf
+boar=멧돼지=boar
+gorilla=고릴라=gorilla
 str=힘=strength
 strength=힘=strength
 agi=민첩=agility

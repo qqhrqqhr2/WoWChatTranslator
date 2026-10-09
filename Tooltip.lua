@@ -56,6 +56,39 @@ local function Fill(tpl, nums)
 end
 
 ------------------------------------------------------------------------
+-- 이름 번역 (아이템·주문 이름): 이름표 → 단어 사전(모든 단어를 알 때만)
+------------------------------------------------------------------------
+local function TranslateName(name, target)
+	local n = trim(name):gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "")
+	local e = ns.TipNames and ns.TipNames[n:lower()]
+	if e and e[target] then return e[target], true end
+	if not (ns.Gloss and n:find("%a")) then return nil end
+	local function full(x)
+		local g = ns.Gloss(x, "en", target)
+		if g and g.found > 0 and g.cover >= 100 then
+			-- 중국어 이름은 띄어쓰기 없이
+			if target == "zhCN" or target == "zhTW" then return (g.plain:gsub(" ", "")) end
+			return g.plain
+		end
+	end
+	-- "X of the Bear" → 한국어 "곰의 X", 중국어 "熊之X"
+	local head, tail = n:match("^(.+) of the (.+)$")
+	if not head then head, tail = n:match("^(.+) of (.+)$") end
+	if head then
+		local h, t = full(head), full(tail)
+		if h and t then
+			if target == "ko" then return t .. "의 " .. h, false end
+			if target == "zhCN" or target == "zhTW" then return t .. "之" .. h, false end
+			return h .. " " .. t, false
+		end
+	end
+	local g = full(n)
+	if g then return g, false end
+	return nil
+end
+ns.TranslateName = TranslateName
+
+------------------------------------------------------------------------
 -- 한 문장 번역
 -- 반환: 번역문, 방식("exact"/"pattern"/"gloss"), 또는 nil
 ------------------------------------------------------------------------
@@ -78,7 +111,9 @@ local function TranslatePiece(piece, target)
 				local raw = p[2][target]:gsub("%%=(%d)", function(i)
 					local c = caps[tonumber(i)] or ""
 					local st = low:find(c, 1, true)
-					return st and trim(piece):sub(st, st + #c - 1) or c
+					local orig = st and trim(piece):sub(st, st + #c - 1) or c
+					local e = ns.TipNames and ns.TipNames[c]
+					return (e and e[target]) or orig
 				end)
 				local out = raw:gsub("%%(%d)", function(i)
 					local c = caps[tonumber(i)] or ""
@@ -118,6 +153,11 @@ local function EnglishWords(text)
 		if #w >= 2 then n = n + 1 end
 	end
 	return n
+end
+
+-- 이름이 영어인지 (한글·한자가 하나도 없을 것)
+local function LooksEnglishName(text)
+	return not text:find("[\228-\239][\128-\191][\128-\191]") and text:find("%a%a") ~= nil
 end
 
 -- 영어 문장으로 볼 만한지 (모으기 기준): 영어 글자가 한글·한자보다 충분히 많을 것
@@ -241,7 +281,18 @@ local function Process(tooltip)
 	for i = 1, n do
 		local fs = _G[name .. "TextLeft" .. i]
 		local ok, text = pcall(function() return fs and fs:GetText() end)
-		if ok and Readable(text) and text ~= "" and text ~= HEADER then
+		if i == 1 and ok and Readable(text) and text ~= "" then
+			-- 첫 줄은 이름: 영어 이름이면 번역해서 "번역 (원문)" 으로
+			local okc, cnt = pcall(EnglishWords, text)
+			if okc and cnt > 0 and LooksEnglishName(text) then
+				local okn, tr, full = pcall(TranslateName, text, target)
+				if okn and tr then
+					out[#out + 1] = { text = tr .. " |cff999999(" .. trim(text) .. ")|r", full = full, name = true }
+				else
+					pcall(Collect, text)
+				end
+			end
+		elseif ok and Readable(text) and text ~= "" and text ~= HEADER then
 			local okc, cnt = pcall(EnglishWords, text)
 			if okc and cnt > 0 then
 				local okt, r = pcall(TranslateLine, text, target)
@@ -254,7 +305,9 @@ local function Process(tooltip)
 	tooltip:AddLine(" ")
 	tooltip:AddLine(HEADER, 0.4, 0.8, 1)
 	for _, r in ipairs(out) do
-		if r.full then
+		if r.name then
+			tooltip:AddLine(r.text, 1, 0.82, 0, true)
+		elseif r.full then
 			tooltip:AddLine(r.text, 0.6, 1, 0.6, true)
 		else
 			tooltip:AddLine(r.text, 0.62, 0.8, 0.62, true)

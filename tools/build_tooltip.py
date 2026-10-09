@@ -42,6 +42,12 @@ for en, ko, zh, ru in rows("tooltip_text.txt"):
     seen.add(k)
     out.append(f"\t[{lua(k)}] = {{ ko = {lua(ko)}, zhCN = {lua(zh)}, zhTW = {lua(cc.convert(zh))}, ru = {lua(ru)} }},")
 out.append("}")
+out.append("ns.TipNames = {")
+nnames = 0
+for en, ko, zh, ru in rows("tooltip_names.txt"):
+    out.append(f"\t[{lua(en.lower())}] = {{ ko = {lua(ko)}, zhCN = {lua(zh)}, zhTW = {lua(cc.convert(zh))}, ru = {lua(ru)} }},")
+    nnames += 1
+out.append("}")
 out.append("ns.TipPatterns = {")
 npat = 0
 for pat, ko, zh, ru in rows("tooltip_patterns.txt"):
@@ -49,4 +55,4 @@ for pat, ko, zh, ru in rows("tooltip_patterns.txt"):
     npat += 1
 out.append("}")
 open(os.path.join(ROOT, "TooltipText.lua"), "w", encoding="utf-8").write("\n".join(out) + "\n")
-print(f"문장 {len(seen)}개, 패턴 {npat}개 -> TooltipText.lua")
+print(f"문장 {len(seen)}개, 이름 {nnames}개, 패턴 {npat}개 -> TooltipText.lua")

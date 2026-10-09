@@ -44,6 +44,19 @@ ns.TipText = {
 	["the act of shapeshifting frees the caster of polymorph and movement impairing effects"] = { ko = "변신하는 순간 변이 효과와 이동 방해 효과가 풀립니다.", zhCN = "变形的同时解除施法者身上的变形术和移动限制效果。", zhTW = "變形的同時解除施法者身上的變形術和移動限制效果。", ru = "При смене облика снимаются эффекты превращения и замедления." },
 	["also protects the caster from polymorph effects"] = { ko = "또한 변이 효과에 걸리지 않습니다.", zhCN = "同时使施法者免疫变形术效果。", zhTW = "同時使施法者免疫變形術效果。", ru = "Также защищает от эффектов превращения." },
 }
+ns.TipNames = {
+	["shifting power"] = { ko = "변신의 힘", zhCN = "变形之力", zhTW = "變形之力", ru = "Сила смены облика" },
+	["fishing rack"] = { ko = "낚시 선반", zhCN = "钓鱼架", zhTW = "釣魚架", ru = "Рыболовная стойка" },
+	["fish bowl"] = { ko = "물고기 그릇", zhCN = "鱼碗", zhTW = "魚碗", ru = "Рыбная чаша" },
+	["campfire"] = { ko = "모닥불", zhCN = "篝火", zhTW = "篝火", ru = "Костёр" },
+	["cat form"] = { ko = "표범 변신", zhCN = "猎豹形态", zhTW = "獵豹形態", ru = "Облик кошки" },
+	["bear form"] = { ko = "곰 변신", zhCN = "熊形态", zhTW = "熊形態", ru = "Облик медведя" },
+	["dire bear form"] = { ko = "광포한 곰 변신", zhCN = "巨熊形态", zhTW = "巨熊形態", ru = "Облик лютого медведя" },
+	["travel form"] = { ko = "치타 변신", zhCN = "旅行形态", zhTW = "旅行形態", ru = "Походный облик" },
+	["aquatic form"] = { ko = "바다표범 변신", zhCN = "水栖形态", zhTW = "水棲形態", ru = "Водный облик" },
+	["moonkin form"] = { ko = "달빛야수 변신", zhCN = "枭兽形态", zhTW = "梟獸形態", ru = "Облик лунного совуха" },
+	["shapeshifting"] = { ko = "변신", zhCN = "变形", zhTW = "變形", ru = "Смена облика" },
+}
 ns.TipPatterns = {
 	{ "^increases damage and healing done by magical spells and effects by up to (%d+)$", { ko = "모든 주문 및 효과에 의한 피해와 치유량이 최대 %1만큼 증가합니다", zhCN = "提高所有法术和魔法效果所造成的伤害和治疗效果，最多%1点", zhTW = "提高所有法術和魔法效果所造成的傷害和治療效果，最多%1點", ru = "Увеличивает урон и объём исцеления от заклинаний и эффектов максимум на %1" } },
 	{ "^increases healing done by spells and effects by up to (%d+)$", { ko = "주문 및 효과에 의한 치유량이 최대 %1만큼 증가합니다", zhCN = "使法术和魔法效果所造成的治疗效果提高最多%1点", zhTW = "使法術和魔法效果所造成的治療效果提高最多%1點", ru = "Увеличивает объём исцеления от заклинаний и эффектов максимум на %1" } },
