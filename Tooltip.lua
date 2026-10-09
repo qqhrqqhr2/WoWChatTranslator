@@ -26,6 +26,13 @@ end
 ------------------------------------------------------------------------
 local function trim(s) return (s:gsub("^%s+", ""):gsub("%s+$", "")) end
 
+-- 색상(|cff..|r), 아이콘(|T..|t, |A..|a), 링크(|H..|h) 코드를 지운다
+local function StripCodes(s)
+	s = s:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "")
+	s = s:gsub("|T.-|t", ""):gsub("|A.-|a", ""):gsub("|H.-|h(.-)|h", "%1")
+	return s
+end
+
 -- 게임이 현지화해 끼워 넣은 시간 단위("1 시간", "1시간")와 영어 단위를 hr/min/sec 로 맞춘다
 local UNIT_FIX = {
 	{ "(%d+)%s*시간", "%1 hr" }, { "(%d+)%s*분", "%1 min" }, { "(%d+)%s*초", "%1 sec" },
@@ -294,6 +301,9 @@ local function TranslateLine(text, target)
 	if cacheTarget ~= target then cache, cacheTarget = {}, target end
 	local c = cache[text]
 	if c ~= nil then return c or nil end
+	local original = text
+	text = trim(StripCodes(text))
+	if EnglishWords(text) == 0 then cache[original] = false return nil end
 
 	local prefix, body = SplitPrefix(text)
 	local parts, full = {}, true
@@ -341,7 +351,7 @@ local function TranslateLine(text, target)
 		end
 		result = { text = joined, full = full }
 	end
-	cache[text] = result
+	cache[original] = result
 	return result or nil
 end
 ns.TranslateTooltipLine = TranslateLine
@@ -355,6 +365,11 @@ local function Process(tooltip)
 	local target = ns.GetTarget()
 	if target == "en" then return end  -- 원문이 영어라 영어 사용자는 번역할 필요 없음
 	if tooltip.wctDone then return end
+	-- 캐릭터·NPC(유닛) 툴팁은 번역하지 않는다
+	if tooltip.GetUnit then
+		local ok, _, unit = pcall(tooltip.GetUnit, tooltip)
+		if ok and unit then return end
+	end
 	local name = tooltip.GetName and tooltip:GetName()
 	if not name then return end
 	local n = tooltip.NumLines and tooltip:NumLines() or 0
@@ -362,6 +377,7 @@ local function Process(tooltip)
 	for i = 1, n do
 		local fs = _G[name .. "TextLeft" .. i]
 		local ok, text = pcall(function() return fs and fs:GetText() end)
+		if ok and Readable(text) then text = trim(StripCodes(text)) end
 		if i == 1 and ok and Readable(text) and text ~= "" then
 			-- 첫 줄은 이름: 영어 이름이면 번역해서 "번역 (원문)" 으로
 			local okc, cnt = pcall(EnglishWords, text)
