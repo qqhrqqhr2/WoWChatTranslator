@@ -555,6 +555,26 @@ incoming=몰려온다=incoming
 inc=몰려온다=incoming
 help me=도와줘=help me
 -- 군중 제어·주요 스킬 -------------------------------------------------
+shapeshift=변신=shapeshift
+shapeshifting=변신=shapeshifting
+caster=시전자=caster
+abilities=기술=abilities
+ability=기술=ability
+various=여러=various
+movement impairing=이동 방해=movement impairing
+effects=효과=effects
+effect=효과=effect
+protects=보호=protects
+increasing=증가시키며=increasing
+plus=더하기=plus
+frees=풀어 줌=frees
+spell=주문=spell
+spells=주문=spells
+target=대상=target
+enemy=적=enemy
+enemies=적들=enemies
+nearby=근처의=nearby
+party members=파티원=party members
 sap=혼절시키기=sap
 sapped=혼절당함=sapped
 sheep=변이(양)=polymorph

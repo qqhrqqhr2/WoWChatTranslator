@@ -105,7 +105,7 @@ end
 local function EnglishWords(text)
 	-- 다른 애드온이 붙인 "Item ID 12345", "아이템ID: 123" 같은 줄은 제외
 	local low = text:lower()
-	if low:find("%f[%a]id%f[%A]") and low:find("%d") then return 0 end
+	if low:find("id[%s:]*%d") then return 0 end
 	local n = 0
 	for w in text:gmatch("%a+") do
 		if #w >= 2 then n = n + 1 end
@@ -139,7 +139,8 @@ end
 local function Sentences(text)
 	local out, buf = {}, text
 	while true do
-		local s, e = buf:find("[%.!%?]%s+%u")
+		-- 한국어 문장 뒤에 영어가 이어지는 경우도 나눈다 (소수점 1.5 는 공백이 없어서 안 나뉨)
+		local s, e = buf:find("[%.!%?]%s+[^%s%d]")
 		if not s then break end
 		out[#out + 1] = buf:sub(1, s)
 		buf = buf:sub(e)
@@ -256,25 +257,54 @@ local function Process(tooltip)
 end
 
 local hooked = {}
-local function HookTooltip(tt)
+-- 툴팁 내용을 채우는 함수들 (TooltipDataProcessor 가 없는 클라이언트용)
+local SETTERS = {
+	"SetAction", "SetBagItem", "SetInventoryItem", "SetHyperlink", "SetItemByID", "SetSpellByID",
+	"SetSpellBookItem", "SetShapeshift", "SetPetAction", "SetTalent", "SetUnitAura", "SetUnitBuff",
+	"SetUnitDebuff", "SetTotem", "SetTrainerService", "SetCraftSpell", "SetCraftItem", "SetTradeSkillItem",
+	"SetMerchantItem", "SetBuybackItem", "SetLootItem", "SetLootRollItem", "SetQuestItem", "SetQuestLogItem",
+	"SetQuestRewardSpell", "SetQuestLogRewardSpell", "SetAuctionItem", "SetInboxItem", "SetSendMailItem",
+	"SetTradePlayerItem", "SetTradeTargetItem", "SetMountBySpellID", "SetToyByItemID", "SetCompanionPet",
+}
+
+local function HookTooltip(tt, useSetters)
 	if not tt or hooked[tt] then return end
 	hooked[tt] = true
 	tt:HookScript("OnTooltipCleared", function(self) self.wctDone = nil end)
-	if not (TooltipDataProcessor and TooltipDataProcessor.AddTooltipPostCall) then
+	-- 마지막 안전망: 툴팁이 보일 때 한 번 더 확인
+	tt:HookScript("OnShow", function(self) pcall(Process, self) end)
+	if useSetters then
 		pcall(tt.HookScript, tt, "OnTooltipSetItem", Process)
 		pcall(tt.HookScript, tt, "OnTooltipSetSpell", Process)
+		for _, fn in ipairs(SETTERS) do
+			if type(tt[fn]) == "function" then
+				pcall(hooksecurefunc, tt, fn, function(self) pcall(Process, self) end)
+			end
+		end
 	end
 end
 
 local function Setup()
+	local processor = TooltipDataProcessor and TooltipDataProcessor.AddTooltipPostCall and Enum and Enum.TooltipDataType
 	for _, tt in ipairs({ GameTooltip, ItemRefTooltip, ShoppingTooltip1, ShoppingTooltip2,
-		ItemRefShoppingTooltip1, ItemRefShoppingTooltip2 }) do
-		pcall(HookTooltip, tt)
+		ItemRefShoppingTooltip1, ItemRefShoppingTooltip2, EmbeddedItemTooltip }) do
+		pcall(HookTooltip, tt, not processor)
 	end
-	if TooltipDataProcessor and TooltipDataProcessor.AddTooltipPostCall and Enum and Enum.TooltipDataType then
-		local function post(tt) pcall(Process, tt) end
-		if Enum.TooltipDataType.Item then TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, post) end
-		if Enum.TooltipDataType.Spell then TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Spell, post) end
+	if processor then
+		local function post(tt, data)
+			-- 유닛(캐릭터·NPC 이름) 툴팁은 제외
+			if data and Enum.TooltipDataType.Unit and data.type == Enum.TooltipDataType.Unit then return end
+			pcall(Process, tt)
+		end
+		if TooltipDataProcessor.AllTypes then
+			TooltipDataProcessor.AddTooltipPostCall(TooltipDataProcessor.AllTypes, post)
+		else
+			for name, id in pairs(Enum.TooltipDataType) do
+				if name ~= "Unit" and type(id) == "number" then
+					pcall(TooltipDataProcessor.AddTooltipPostCall, id, post)
+				end
+			end
+		end
 	end
 end
 

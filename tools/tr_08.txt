@@ -1,0 +1,18 @@
+shapeshift|变形|смена облика
+shapeshifting|变形|смена облика
+abilities|技能|способности
+ability|技能|способность
+various|各种|различные
+movement impairing|移动限制|замедляющий
+effects|效果|эффекты
+effect|效果|эффект
+protects|保护|защищает
+increasing|提高|увеличивая
+plus|加上|плюс
+frees|解除|освобождает
+spell|法术|заклинание
+spells|法术|заклинания
+target|目标|цель
+enemies|敌人们|враги
+nearby|附近的|поблизости
+party members|队友|члены группы
