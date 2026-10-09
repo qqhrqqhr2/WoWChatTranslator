@@ -30,6 +30,8 @@ local function trim(s) return (s:gsub("^%s+", ""):gsub("%s+$", "")) end
 local function StripCodes(s)
 	s = s:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "")
 	s = s:gsub("|T.-|t", ""):gsub("|A.-|a", ""):gsub("|H.-|h(.-)|h", "%1")
+	-- 붙지 않는 공백(NBSP)·줄바꿈 문자는 보통 공백으로
+	s = s:gsub("\194\160", " "):gsub("\r", ""):gsub("\n", " ")
 	return s
 end
 
@@ -45,7 +47,8 @@ local UNIT_FIX = {
 
 local function Canon(s)
 	s = s:lower():gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "")
-	s = s:gsub("%s+", " ")
+	-- 줄바꿈·겹친 공백·붙지 않는 공백(NBSP)을 한 칸으로
+	s = s:gsub("\194\160", " "):gsub("\\n", " "):gsub("%s+", " ")
 	for _, u in ipairs(UNIT_FIX) do s = s:gsub(u[1], u[2]) end
 	s = trim(s)
 	s = trim(s:gsub('^"', ""):gsub('"$', ""))
@@ -313,9 +316,30 @@ local function TranslateLine(text, target)
 	if whole and whole[target] then
 		parts[1] = Fill(whole[target], wholeNums)
 		pieces = {}
+	elseif #pieces > 1 then
+		-- 문단 전체가 조금 다른 경우: 비슷한 문단 찾기
+		local fz = ns.FindSimilar and ns.FindSimilar(wholeKey, target)
+		if fz then
+			local out = Fill(fz, wholeNums)
+			if not out:find("?", 1, true) then parts[1] = out; pieces = {} end
+		end
 	end
-	for _, piece in ipairs(pieces) do
-		if EnglishWords(piece) > 0 then
+	-- 이어지는 문장 몇 개를 묶어야 표에 있는 경우 (게임 데이터는 문단 단위로 들어 있는 것이 많다)
+	local merged, i = {}, 1
+	while i <= #pieces do
+		local hit
+		for j = #pieces, i + 1, -1 do
+			local k, nums = KeyOf(Canon(table.concat(pieces, " ", i, j)))
+			local e = (ns.TipText and ns.TipText[k]) or (ns.TipDBText and ns.TipDBText[k])
+			if e and e[target] then hit = { done = Fill(e[target], nums) }; i = j + 1; break end
+		end
+		if not hit then hit = pieces[i]; i = i + 1 end
+		merged[#merged + 1] = hit
+	end
+	for _, piece in ipairs(merged) do
+		if type(piece) == "table" then
+			parts[#parts + 1] = piece.done
+		elseif EnglishWords(piece) > 0 then
 			local tr, how = TranslatePiece(piece, target)
 			if tr then
 				parts[#parts + 1] = tr
