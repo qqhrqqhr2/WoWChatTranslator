@@ -24,6 +24,7 @@ GlossaryRU.lua
 GlossaryKO.lua
 Translations.lua
 TooltipText.lua
+TooltipDB.lua
 Core.lua
 Chat.lua
 Tooltip.lua

@@ -1,7 +1,7 @@
 -- WoW Chat Translator: 툴팁 번역
 -- 아이템·주문 툴팁에 남아 있는 영어 문장(포에버 신규 아이템 등)을 현지 언어로 옮겨
 -- 툴팁 아래 "WoW Chat Translator" 칸에 보여준다.
--- 번역 순서: 1) 문장표(완전한 번역)  2) 문장 패턴  3) 단어 사전 풀이
+-- 번역 순서: 1) 문장표(직접 만든 표 → 게임 데이터 표)  2) 비슷한 문장  3) 문장 패턴  4) 단어 사전 풀이
 -- 1)·2)로 번역하지 못한 문장은 저장 파일에 모아 두었다가 문장표에 추가한다.
 local ADDON, ns = ...
 local L = setmetatable({}, { __index = function(_, k) return ns.L[k] end })
@@ -40,7 +40,9 @@ local function Canon(s)
 	s = s:lower():gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "")
 	s = s:gsub("%s+", " ")
 	for _, u in ipairs(UNIT_FIX) do s = s:gsub(u[1], u[2]) end
-	s = trim(s):gsub("[%.!]+$", "")
+	s = trim(s)
+	s = trim(s:gsub('^"', ""):gsub('"$', ""))
+	s = s:gsub("[%.!]+$", "")
 	return s
 end
 
@@ -56,11 +58,75 @@ local function Fill(tpl, nums)
 end
 
 ------------------------------------------------------------------------
+-- 비슷한 문장 찾기: 겹치는 단어 비율(Jaccard)이 높은 게임 데이터 문장
+------------------------------------------------------------------------
+local STOP = {}
+for w in ("a an the of to and or in on by for with your you is are be it its this that from as at into"):gmatch("%S+") do STOP[w] = true end
+local fuzzyIndex, fuzzySize
+-- 이 단어가 한쪽에만 있으면 뜻이 달라지므로 비슷한 문장으로 치지 않는다
+local KEYWORD = {}
+for w in ([[attack healing heal spell spells stamina strength agility intellect spirit mana health energy rage
+	fire frost nature shadow arcane holy physical damage armor critical crit hit dodge parry block speed movement
+	defense resistance haste power ranged melee weapon shield bear cat moonkin travel aquatic party raid enemy
+	enemies friendly target targets increases increased decreases decreased reduces reduced]]):gmatch("%S+") do KEYWORD[w] = true end
+
+local function BuildFuzzy()
+	fuzzyIndex, fuzzySize = {}, {}
+	for i, e in ipairs(ns.TipDBFuzzy or {}) do
+		local n = 0
+		for w in e[1]:gmatch("%S+") do
+			n = n + 1
+			local list = fuzzyIndex[w]
+			if not list then list = {}; fuzzyIndex[w] = list end
+			list[#list + 1] = i
+		end
+		fuzzySize[i] = n
+	end
+end
+
+function ns.FindSimilar(key, target)
+	if not ns.TipDBFuzzy then return nil end
+	if not fuzzyIndex then BuildFuzzy() end
+	local words, nq = {}, 0
+	for w in key:gmatch("[%a']+") do
+		if #w > 1 and not STOP[w] and not words[w] then words[w] = true; nq = nq + 1 end
+	end
+	if nq < 4 then return nil end
+	local sigParts = {}
+	for pct in key:gmatch("#(%%?)") do sigParts[#sigParts + 1] = (pct == "%") and "p" or "n" end
+	local sig = table.concat(sigParts, ",")
+	local count = {}
+	for w in pairs(words) do
+		local list = fuzzyIndex[w]
+		if list and #list <= 600 then
+			for _, i in ipairs(list) do count[i] = (count[i] or 0) + 1 end
+		end
+	end
+	local best, bestScore = nil, 0
+	for i, c in pairs(count) do
+		if c >= 4 then
+			local score = c / (nq + fuzzySize[i] - c)
+			local e = ns.TipDBFuzzy[i]
+			if score > bestScore and e[2][target] and (e[3] or "") == sig then best, bestScore = i, score end
+		end
+	end
+	if not best or bestScore < 0.85 then return nil end
+	-- 서로 다른 단어 중에 핵심 단어가 있으면 버린다
+	local cand = {}
+	for w in ns.TipDBFuzzy[best][1]:gmatch("%S+") do cand[w] = true end
+	for w in pairs(words) do if not cand[w] and KEYWORD[w] then return nil end end
+	for w in pairs(cand) do if not words[w] and KEYWORD[w] then return nil end end
+	return ns.TipDBFuzzy[best][2][target]
+end
+
+------------------------------------------------------------------------
 -- 이름 번역 (아이템·주문 이름): 이름표 → 단어 사전(모든 단어를 알 때만)
 ------------------------------------------------------------------------
 local function TranslateName(name, target)
 	local n = trim(name):gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "")
 	local e = ns.TipNames and ns.TipNames[n:lower()]
+	if e and e[target] then return e[target], true end
+	e = ns.TipDBNames and ns.TipDBNames[n:lower()]
 	if e and e[target] then return e[target], true end
 	if not (ns.Gloss and n:find("%a")) then return nil end
 	local function full(x)
@@ -97,11 +163,20 @@ local function TranslatePiece(piece, target)
 	if canon == "" then return nil end
 	local key, nums = KeyOf(canon)
 
-	-- 1) 문장표
+	-- 1) 문장표 (직접 만든 표 → 게임 데이터 표)
 	local e = ns.TipText and ns.TipText[key]
 	if e and e[target] then return Fill(e[target], nums), "exact" end
+	e = ns.TipDBText and ns.TipDBText[key]
+	if e and e[target] then return Fill(e[target], nums), "exact" end
 
-	-- 2) 패턴
+	-- 2) 비슷한 문장 찾기 (게임 데이터 표, 표현이 조금 다른 경우)
+	local fz = ns.FindSimilar and ns.FindSimilar(key, target)
+	if fz then
+		local out = Fill(fz, nums)
+		if not out:find("?", 1, true) then return out, "similar" end
+	end
+
+	-- 3) 패턴
 	if ns.TipPatterns then
 		for _, p in ipairs(ns.TipPatterns) do
 			local caps = { canon:match(p[1]) }
@@ -112,7 +187,7 @@ local function TranslatePiece(piece, target)
 					local c = caps[tonumber(i)] or ""
 					local st = low:find(c, 1, true)
 					local orig = st and trim(piece):sub(st, st + #c - 1) or c
-					local e = ns.TipNames and ns.TipNames[c]
+					local e = (ns.TipNames and ns.TipNames[c]) or (ns.TipDBNames and ns.TipDBNames[c])
 					return (e and e[target]) or orig
 				end)
 				local out = raw:gsub("%%(%d)", function(i)
@@ -130,7 +205,7 @@ local function TranslatePiece(piece, target)
 		end
 	end
 
-	-- 3) 단어 사전 풀이: 아는 단어가 하나라도 있으면 보여 준다 (연한 색으로 표시)
+	-- 4) 단어 사전 풀이: 아는 단어가 하나라도 있으면 보여 준다 (연한 색으로 표시)
 	local words = 0
 	for _ in canon:gmatch("%a+") do words = words + 1 end
 	if words >= 2 and ns.Gloss then
@@ -222,7 +297,14 @@ local function TranslateLine(text, target)
 
 	local prefix, body = SplitPrefix(text)
 	local parts, full = {}, true
-	for _, piece in ipairs(Sentences(body)) do
+	local wholeKey, wholeNums = KeyOf(Canon(body))
+	local whole = (ns.TipText and ns.TipText[wholeKey]) or (ns.TipDBText and ns.TipDBText[wholeKey])
+	local pieces = Sentences(body)
+	if whole and whole[target] then
+		parts[1] = Fill(whole[target], wholeNums)
+		pieces = {}
+	end
+	for _, piece in ipairs(pieces) do
 		if EnglishWords(piece) > 0 then
 			local tr, how = TranslatePiece(piece, target)
 			if tr then
