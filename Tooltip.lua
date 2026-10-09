@@ -73,7 +73,14 @@ local function TranslatePiece(piece, target)
 		for _, p in ipairs(ns.TipPatterns) do
 			local caps = { canon:match(p[1]) }
 			if caps[1] ~= nil and p[2][target] then
-				local out = p[2][target]:gsub("%%(%d)", function(i)
+				-- %=1 처럼 쓰면 잡은 부분을 번역하지 않고 원문 대소문자 그대로 둔다 (주문 이름 등)
+				local low = trim(piece):lower()
+				local raw = p[2][target]:gsub("%%=(%d)", function(i)
+					local c = caps[tonumber(i)] or ""
+					local st = low:find(c, 1, true)
+					return st and trim(piece):sub(st, st + #c - 1) or c
+				end)
+				local out = raw:gsub("%%(%d)", function(i)
 					local c = caps[tonumber(i)] or ""
 					if c:find("%a") and ns.Gloss then
 						-- 글자로 된 부분은 사전으로 다시 풀어 준다

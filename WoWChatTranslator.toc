@@ -27,4 +27,5 @@ TooltipText.lua
 Core.lua
 Chat.lua
 Tooltip.lua
+Scan.lua
 Options.lua

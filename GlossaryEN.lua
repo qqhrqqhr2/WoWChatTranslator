@@ -556,6 +556,14 @@ inc=몰려온다=incoming
 help me=도와줘=help me
 -- 군중 제어·주요 스킬 -------------------------------------------------
 shapeshift=변신=shapeshift
+shifting=변신=shifting
+power=힘=power
+energy=기력=energy
+rage=분노=rage
+cost=소모량=cost
+convert=전환=convert
+reduced=감소=reduced
+instantly=즉시=instantly
 shapeshifting=변신=shapeshifting
 caster=시전자=caster
 abilities=기술=abilities

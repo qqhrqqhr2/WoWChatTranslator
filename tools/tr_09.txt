@@ -1,0 +1,8 @@
+shifting|变形|смена облика
+power|能量|сила
+energy|能量|энергия
+rage|怒气|ярость
+cost|消耗|стоимость
+convert|转化|превратить
+reduced|降低|снижено
+instantly|立即|мгновенно
