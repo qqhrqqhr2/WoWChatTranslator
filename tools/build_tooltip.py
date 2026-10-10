@@ -21,6 +21,10 @@ def canon(s):
 def lua(s):
     return '"' + s.replace("\\", "\\\\").replace('"', '\\"') + '"'
 
+def localized(ko, zh, ru):
+    pairs = [("ko", ko), ("zhCN", zh), ("zhTW", cc.convert(zh)), ("ru", ru)]
+    return "{ " + ", ".join(k + " = " + lua(v) for k, v in pairs if v) + " }"
+
 def rows(name):
     for n, line in enumerate(open(os.path.join(HERE, name), encoding="utf-8"), 1):
         line = line.rstrip("\n")
@@ -40,18 +44,18 @@ for en, ko, zh, ru in rows("tooltip_text.txt"):
     if k in seen:
         print("중복:", en, file=sys.stderr)
     seen.add(k)
-    out.append(f"\t[{lua(k)}] = {{ ko = {lua(ko)}, zhCN = {lua(zh)}, zhTW = {lua(cc.convert(zh))}, ru = {lua(ru)} }},")
+    out.append(f"\t[{lua(k)}] = {localized(ko, zh, ru)},")
 out.append("}")
 out.append("ns.TipNames = {")
 nnames = 0
 for en, ko, zh, ru in rows("tooltip_names.txt"):
-    out.append(f"\t[{lua(en.lower())}] = {{ ko = {lua(ko)}, zhCN = {lua(zh)}, zhTW = {lua(cc.convert(zh))}, ru = {lua(ru)} }},")
+    out.append(f"\t[{lua(en.lower())}] = {localized(ko, zh, ru)},")
     nnames += 1
 out.append("}")
 out.append("ns.TipPatterns = {")
 npat = 0
 for pat, ko, zh, ru in rows("tooltip_patterns.txt"):
-    out.append(f"\t{{ {lua(pat)}, {{ ko = {lua(ko)}, zhCN = {lua(zh)}, zhTW = {lua(cc.convert(zh))}, ru = {lua(ru)} }} }},")
+    out.append(f"\t{{ {lua(pat)}, {localized(ko, zh, ru)} }},")
     npat += 1
 out.append("}")
 open(os.path.join(ROOT, "TooltipText.lua"), "w", encoding="utf-8").write("\n".join(out) + "\n")

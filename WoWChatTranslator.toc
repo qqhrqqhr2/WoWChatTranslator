@@ -7,7 +7,7 @@
 ## Notes-ruRU: Переводит чат на корейском/китайском/японском/русском/английском на ваш язык с помощью встроенного словаря игрового сленга и терминов WoW.
 ## Notes-koKR: 한국어·중국어·일본어·러시아어·영어 채팅을 현지 언어(한국어/영어/간체/번체/러시아어)로 풀어 줍니다. 게임 은어·약어·와우 용어 사전 내장.
 ## Author: qqhrqqhr2
-## Version: @project-version@
+## Version: 1.4.1
 ## Category: Chat & Communication
 ## IconTexture: Interface\AddOns\WoWChatTranslator\Media\icon
 ## X-License: MIT

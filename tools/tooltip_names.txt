@@ -31,3 +31,19 @@ Strength|힘|力量|Сила
 Agility|민첩성|敏捷|Ловкость
 Intellect|지능|智力|Интеллект
 Spirit|정신력|精神|Дух
+first aid kit|응급치료 도구||
+incense candle|향기 나는 양초||
+power word: fortitude|신의 권능: 인내||
+arcane intellect|신비한 지능||
+alchemy|연금술||
+blacksmithing|대장기술||
+enchanting|마법부여||
+engineering|기계공학||
+tailoring|재봉술||
+leatherworking|가죽세공||
+herbalism|약초채집||
+mining|채광||
+skinning|무두질||
+cooking|요리||
+first aid|응급치료||
+fishing|낚시||

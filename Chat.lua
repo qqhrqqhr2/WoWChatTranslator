@@ -105,15 +105,25 @@ local function Tokenize(text)
 				k = k + 1
 			end
 			tokens[#tokens + 1] = { kind = "word", text = table.concat(raw), key = table.concat(key) }
-		elseif nc == 32 or nc == 9 or nc == 0x3000 then
-			tokens[#tokens + 1] = { kind = "space", text = " ", key = " " }
+		elseif nc == 32 or nc == 9 or nc == 10 or nc == 13 or nc == 0xA0 or nc == 0x3000 then
+			if not tokens[#tokens] or tokens[#tokens].kind ~= "space" then
+				tokens[#tokens + 1] = { kind = "space", text = " ", key = " " }
+			end
 			k = k + 1
 		else
 			tokens[#tokens + 1] = { kind = "other", text = (nc < 128) and char(nc) or c.s, key = encode(nc) }
 			k = k + 1
 		end
 	end
-	return tokens
+	-- 채팅 명령어 /w를 한 토큰으로 보존해 if의 첫 글자와 혼동하지 않는다.
+	local merged, j = {}, 1
+	while j <= #tokens do
+		local t, nx = tokens[j], tokens[j + 1]
+		if t.key == "/" and nx and nx.kind == "word" and (nx.key == "w" or nx.key == "whisper") then
+			merged[#merged + 1] = {kind="word",text=t.text..nx.text,key="/"..nx.key};j=j+2
+		else merged[#merged + 1] = t;j=j+1 end
+	end
+	return merged
 end
 
 ------------------------------------------------------------------------
@@ -270,6 +280,28 @@ local function Gloss(text, lang, target)
 	target = target or ns.GetTarget()
 	if lang == "ko" then text = CollapseKo(text) end
 	local tokens = Tokenize(text)
+	-- 글자마다 띄어 쓴 러시아어는 완성 단어가 사전에 있을 때만 합친다.
+	if lang == "ru" then
+		local merged, i = {}, 1
+		while i <= #tokens do
+			local keys, raw, j = {}, {}, i
+			while tokens[j] and tokens[j].kind == "word" do
+				local cp, nextByte = decode(tokens[j].key, 1)
+				if not cp or not isCyr(cp) or nextByte <= #tokens[j].key then break end
+				keys[#keys + 1] = tokens[j].key; raw[#raw + 1] = tokens[j].text
+				if not tokens[j + 1] or tokens[j + 1].kind ~= "space" then j = j + 1; break end
+				raw[#raw + 1] = " "; j = j + 2
+			end
+			local key = table.concat(keys)
+			if #keys >= 3 and Dict.ru and Dict.ru[key] then
+				merged[#merged + 1] = { kind = "word", key = key, text = table.concat(raw):gsub(" $", "") }
+				-- 마지막 공백은 다음 단어와의 구분을 위해 유지한다.
+				if raw[#raw] == " " then merged[#merged + 1] = {kind="space",text=" ",key=" "} end
+				i = j
+			else merged[#merged + 1] = tokens[i]; i = i + 1 end
+		end
+		tokens = merged
+	end
 	local cjkMode = (lang == "zh" or lang == "ja" or lang == "ko")
 	local cjkOut = (target == "zhCN" or target == "zhTW")
 	local mainDicts
@@ -431,7 +463,7 @@ end
 
 local function DetectText(msg)
 	-- 아이템·퀘스트 링크 이름은 내 클라이언트 언어로 보이므로 감지에서 뺀다
-	return (StripCodes(msg):gsub("|H.-|h.-|h", ""))
+	return (StripCodes(msg):gsub("|H.-|h.-|h", " "))
 end
 
 local function NewEntry(text, lang, author)
@@ -478,13 +510,15 @@ local function Process(msg, author)
 	-- 아이템·퀘스트 링크 이름은 게임이 알아서 내 언어로 보여주므로 번역에서 뺀다
 	local g = Gloss(DetectText(msg):gsub("||", "|"), lang, target)
 	entries[id].gloss = g
+	entries[id].glossTarget = target
+	entries[id].glossText = DetectText(msg):gsub("||", "|")
 	local body, wrapped = msg, false
 	if db.chat.hoverAll and not msg:find("|", 1, true) then
 		body = ("|Hwct:%d|h%s|h"):format(id, msg)
 		wrapped = true
 	end
 	local tag = ""
-	if db.chat.tag or not wrapped then
+	if db.chat.tag then
 		tag = ("|cff%s|Hwct:%d|h[%s]|h|r "):format(TAG_COLOR[lang], id, L.tag[lang])
 	end
 	local suffix, separate = "", nil
@@ -511,16 +545,21 @@ end
 -- 방법 1: 채팅 메시지 필터 (권장)
 local function Filter(self, event, msg, author, ...)
 	local lineID = select(9, ...)
+	-- 0/누락 ID는 메시지 식별자가 아니므로 캐시하지 않는다.
+	if type(lineID) ~= "number" or lineID <= 0 then lineID = nil end
 	local out, separate
-	if lineID and lineCache[lineID] ~= nil then
-		local cached = lineCache[lineID]
-		if not cached then return false end
+	local cfg = ns.db and ns.db.chat
+	local settings = cfg and table.concat({tostring(ns.GetTarget()), tostring(cfg.enabled), tostring(cfg.inline),
+		tostring(cfg.minCover), tostring(cfg.tag), tostring(cfg.hoverAll), tostring(cfg.skipSelf),
+		tostring(cfg.langs.ko), tostring(cfg.langs.zh), tostring(cfg.langs.ja), tostring(cfg.langs.ru), tostring(cfg.langs.en)}, ":")
+	local cached = lineID and lineCache[lineID]
+	if cached and cached.msg == msg and cached.author == author and cached.event == event and cached.settings == settings then
 		out, separate = cached[1], cached[2]
 	else
 		local ok, o, sep = pcall(Process, msg, author)
 		if not ok then NoteError(o) o, sep = nil, nil end
 		out, separate = o, sep
-		CacheLine(lineID, out and { out, separate } or false)
+		CacheLine(lineID, { out, separate, msg = msg, author = author, event = event, settings = settings })
 	end
 	if not out then return false end
 	if separate and self and self.AddMessage and C_Timer then
@@ -573,7 +612,8 @@ local function ProcessLine(text)
 	local rest = text:sub(e + 1)
 	local sep, body = rest:match("^(.-:%s*)(.+)$")
 	if not sep or #sep > 40 then return nil end
-	local out, separate = Process(body, nil)
+	local author = text:match("|Hplayer:([^:|]+)")
+	local out, separate = Process(body, author)
 	if not out then return nil end
 	return text:sub(1, e) .. sep .. out, separate
 end
@@ -611,7 +651,11 @@ end
 local function ShowGloss(owner, id)
 	local e = entries[id]
 	if not e then return end
-	e.gloss = e.gloss or Gloss(e.text, e.lang)
+	local target = ns.GetTarget()
+	if not e.gloss or e.glossTarget ~= target then
+		e.gloss = Gloss(e.glossText or e.text, e.lang, target)
+		e.glossTarget = target
+	end
 	local g = e.gloss
 	GameTooltip:SetOwner(owner, "ANCHOR_CURSOR")
 	GameTooltip:ClearLines()
@@ -633,6 +677,12 @@ local function ShowGloss(owner, id)
 	end
 	GameTooltip:AddLine(" ")
 	GameTooltip:AddLine(L.clickHint, 0.5, 0.5, 0.5)
+	if ns.GetTarget() == "ko" then
+		local cfg = ns.db.chat
+		local reason = not cfg.inline and "풀이 표시 꺼짐" or (g.found == 0 and "인식한 표현 없음")
+			or (g.cover < (cfg.minCover or 40) and "인식률이 표시 기준보다 낮음") or "풀이 표시 조건 충족"
+		GameTooltip:AddLine(("현재 설정: 인식률 %d%% / 기준 %d%% · %s"):format(g.cover, cfg.minCover or 40, reason), 0.6, 0.7, 0.8, true)
+	end
 	GameTooltip:Show()
 end
 
@@ -759,6 +809,9 @@ function ns.PrintStatus()
 	local p = function(s) DEFAULT_CHAT_FRAME:AddMessage("|cff66ccff[WCT]|r " .. s) end
 	p("db=" .. tostring(ns.db ~= nil) .. "  enabled=" .. tostring(ns.db and ns.db.chat.enabled)
 		.. "  method=" .. st.method .. "  filterEvents=" .. st.filterEvents)
+	local cfg = ns.db and ns.db.chat
+	p("version=" .. tostring(GetAddOnMetadata and GetAddOnMetadata(ADDON, "Version") or "1.4.1")
+		.. " inline=" .. tostring(cfg and cfg.inline) .. " minCover=" .. tostring(cfg and cfg.minCover))
 	p("seen=" .. st.seen .. "  tagged=" .. st.tagged .. "  target=" .. tostring(ns.GetTarget())
 		.. " (setting=" .. tostring(ns.db and ns.db.target) .. ", client=" .. tostring(GetLocale()) .. ")")
 	p("ChatFrame_AddMessageEventFilter=" .. type(ChatFrame_AddMessageEventFilter)
@@ -766,4 +819,19 @@ function ns.PrintStatus()
 	local sample = "lfg RF Quest"
 	p("test: \"" .. sample .. "\" -> " .. tostring(Detect(sample)))
 	if st.lastError then p("|cffff6666error:|r " .. st.lastError) end
+end
+
+-- /wct test 문장: 네트워크 요청 없이 현재 사전과 표시 조건 점검
+function ns.TestChat(text)
+	local p = function(s) DEFAULT_CHAT_FRAME:AddMessage("|cff66ccff[WCT]|r " .. s:gsub("|", "||")) end
+	local lang = Detect(DetectText(text))
+	if not lang then p("언어를 감지하지 못했습니다.");return end
+	local g = Gloss(DetectText(text), lang, ns.GetTarget())
+	local cfg = ns.db.chat
+	local reason = not cfg.enabled and "채팅 번역 꺼짐" or not cfg.langs[lang] and "원문 언어 제외"
+		or ns.SAME_SOURCE[ns.GetTarget()] == lang and "번역 대상과 같은 언어"
+		or not cfg.inline and "풀이 표시 꺼짐" or g.found == 0 and "인식한 표현 없음"
+		or g.cover < (cfg.minCover or 40) and "인식률 부족" or "풀이 표시 조건 충족"
+	p(("감지=%s / 인식률=%d%% / 기준=%d%% / %s"):format(lang,g.cover,cfg.minCover or 40,reason))
+	p(g.plain)
 end

@@ -6,6 +6,9 @@ local ADDON, ns = ...
 local scanTip
 local queue, running = {}, false
 local PER_TICK = 8
+local function Enabled()
+	return ns.db and ns.db.tooltip and ns.db.tooltip.collect
+end
 
 local function Readable(v)
 	if type(v) ~= "string" then return false end
@@ -35,6 +38,7 @@ local function ReadTip(setter)
 	for i = 1, tt:NumLines() do
 		local fs = _G["WoWChatTranslatorScanTipTextLeft" .. i]
 		local ok, text = pcall(function() return fs and fs:GetText() end)
+		if ok and ns.IsTooltipBoundary and ns.IsTooltipBoundary(text) then break end
 		if ok and Readable(text) and text ~= "" and ns.TranslateTooltipLine then
 			pcall(ns.TranslateTooltipLine, text, target)
 		end
@@ -42,6 +46,7 @@ local function ReadTip(setter)
 end
 
 local function Pump()
+	if not Enabled() then queue, running = {}, false; return end
 	if #queue == 0 then running = false return end
 	for _ = 1, PER_TICK do
 		local job = table.remove(queue, 1)
@@ -52,6 +57,7 @@ local function Pump()
 end
 
 local function Enqueue(job)
+	if not Enabled() then return end
 	queue[#queue + 1] = job
 	if not running and C_Timer then
 		running = true
@@ -63,6 +69,7 @@ end
 -- 주문책
 ------------------------------------------------------------------------
 local function ScanSpellbook()
+	if not Enabled() then return end
 	local seen = {}
 	local function addSpell(id)
 		if type(id) == "number" and id > 0 and not seen[id] then
@@ -95,6 +102,7 @@ end
 -- 특성
 ------------------------------------------------------------------------
 local function ScanTalents()
+	if not Enabled() then return end
 	if not (GetNumTalentTabs and GetNumTalents) then return end
 	for tab = 1, GetNumTalentTabs() or 0 do
 		for i = 1, GetNumTalents(tab) or 0 do
@@ -108,6 +116,7 @@ end
 ------------------------------------------------------------------------
 local scannedItems = {}
 local function ScanBags()
+	if not Enabled() then return end
 	local numSlots = (C_Container and C_Container.GetContainerNumSlots) or GetContainerNumSlots
 	local itemID = (C_Container and C_Container.GetContainerItemID) or GetContainerItemID
 	if not (numSlots and itemID) then return end
@@ -125,11 +134,11 @@ end
 ------------------------------------------------------------------------
 -- 이벤트
 ------------------------------------------------------------------------
-local function Enabled()
-	return ns.db and ns.db.tooltip and ns.db.tooltip.collect
+local pendingBags, pendingSpells = false, false
+function ns.ResetScan()
+	queue = {}
+	scannedItems = {}
 end
-
-local pendingBags = false
 local ev = CreateFrame("Frame")
 ev:SetScript("OnEvent", function(self, event)
 	if not Enabled() then return end
@@ -137,7 +146,10 @@ ev:SetScript("OnEvent", function(self, event)
 		self:UnregisterEvent("PLAYER_ENTERING_WORLD")
 		C_Timer.After(5, function() pcall(ScanSpellbook); pcall(ScanTalents); pcall(ScanBags) end)
 	elseif event == "SPELLS_CHANGED" or event == "LEARNED_SPELL_IN_TAB" then
-		C_Timer.After(2, function() pcall(ScanSpellbook) end)
+		if not pendingSpells then
+			pendingSpells = true
+			C_Timer.After(2, function() pendingSpells = false; pcall(ScanSpellbook) end)
+		end
 	elseif event == "BAG_UPDATE_DELAYED" or event == "BAG_UPDATE" then
 		if not pendingBags then
 			pendingBags = true

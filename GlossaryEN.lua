@@ -1542,3 +1542,76 @@ ramstein=램스타인=Ramstein
 balnazzar=발나자르=Balnazzar
 timmy=티미=Timmy the Cruel
 ]]
+
+-- 실제 모집·거래 채팅 보강 (test5)
+ns.RawGlossary.en = ns.RawGlossary.en .. [[
+enchanter is at your service=마법부여 해드립니다=enchanting services available
+enchanting services=마법부여 서비스=enchanting services
+enchanting service=마법부여 서비스=enchanting service
+at your service=도와드립니다=at your service
+available now=지금 가능합니다=available now
+is available now=지금 가능합니다=available now
+need enchant=마법부여 필요하신 분=enchanting needed
+need enchants=마법부여 필요하신 분=enchanting needed
+need enchanting=마법부여 필요하신 분=enchanting needed
+if you need anything=필요한 것이 있으면=if you need anything
+if you need=필요하시면=if you need
+please /w=귓속말 주세요=please whisper
+please whisper=귓속말 주세요=please whisper
+/w=귓속말=whisper
+/whisper=귓속말=whisper
+thanks you=감사합니다=thank you
+thank you=감사합니다=thank you
+thanks everyone=모두 감사합니다=thanks everyone
+tips appreciated=팁 주시면 감사합니다=tips appreciated
+tips welcome=팁 환영=tips welcome
+bring your own mats=재료는 직접 가져오세요=bring your own materials
+your mats=재료 지참=your materials
+my mats=제 재료 사용=my materials
+free with your mats=재료 지참 시 무료=free with your materials
+no fee=수수료 없음=no fee
+last spot=마지막 한 자리=last spot
+last slot=마지막 한 자리=last slot
+one more=한 명 더=one more
+need tank=탱커 구함=tank needed
+need a tank=탱커 구함=tank needed
+need healer=힐러 구함=healer needed
+need a healer=힐러 구함=healer needed
+need dps=딜러 구함=damage dealer needed
+need heals=힐러 구함=healer needed
+tank and healer=탱커와 힐러=tank and healer
+tank and heals=탱커와 힐러=tank and healer
+tank dps=탱커와 딜러=tank and damage dealers
+quest run=퀘스트 진행 파티=quest run
+quests run=퀘스트 진행 파티=quest run
+full run=전체 진행=full run
+fresh run=처음부터 진행=fresh run
+already started=이미 시작함=already started
+summon available=소환 가능=summon available
+can summon=소환 가능=can summon
+ready to go=출발 준비 완료=ready to go
+and go=모이면 출발=then go
+available=가능=available
+service=서비스=service
+anything=필요한 것=anything
+]]
+
+-- 확인된 전문기술·아이템·주문 한국어 명칭
+ns.RawGlossary.en = ns.RawGlossary.en .. [[
+first aid kit=응급치료 도구=first aid kit
+incense candle=향기 나는 양초=incense candle
+power word: fortitude=신의 권능: 인내=power word: fortitude
+arcane intellect=신비한 지능=arcane intellect
+alchemy=연금술=alchemy
+blacksmithing=대장기술=blacksmithing
+enchanting=마법부여=enchanting
+engineering=기계공학=engineering
+tailoring=재봉술=tailoring
+leatherworking=가죽세공=leatherworking
+herbalism=약초채집=herbalism
+mining=채광=mining
+skinning=무두질=skinning
+cooking=요리=cooking
+first aid=응급치료=first aid
+fishing=낚시=fishing
+]]

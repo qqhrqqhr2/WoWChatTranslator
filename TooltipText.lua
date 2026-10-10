@@ -51,6 +51,8 @@ ns.TipText = {
 	["bite the target, dealing #% normal damage plus # and generating a high amount of threat"] = { ko = "대상을 물어뜯어 무기 피해의 {1}% + {2}의 피해를 주고 위협 수준을 크게 높입니다.", zhCN = "撕咬目标，造成{1}%的普通伤害外加{2}点伤害，并产生大量威胁值。", zhTW = "撕咬目標，造成{1}%的普通傷害外加{2}點傷害，併產生大量威脅值。", ru = "Кусает цель, нанося {1}% обычного урона плюс {2} ед. и создавая большой уровень угрозы." },
 	["shapeshift into moonkin form, increasing omen of clarity's chance to trigger by #%, armor contribution from items by #%, and all party members within # yards have their critical strike chance increased by #%, exclusive with leader of the pack"] = { ko = "달빛야수 변신을 합니다. 청명의 전조 발동 확률이 {1}%, 아이템 방어도가 {2}% 증가하고, {3}미터 내 모든 파티원의 치명타율이 {4}% 증가합니다. (무리의 우두머리와 중복되지 않음)", zhCN = "变形为枭兽形态，使清晰预兆的触发几率提高{1}%，物品提供的护甲值提高{2}%，并使{3}码范围内所有队友的致命一击几率提高{4}%，与兽群领袖效果不叠加。", zhTW = "變形為梟獸形態，使清晰預兆的觸發機率提高{1}%，物品提供的護甲值提高{2}%，並使{3}碼範圍內所有隊友的致命一擊機率提高{4}%，與獸群領袖效果不疊加。", ru = "Превращает в облик лунного совуха: шанс срабатывания «Ясности мысли» +{1}%, броня от предметов +{2}%, у всех членов группы в радиусе {3} м шанс критического удара +{4}% (не суммируется с «Вожаком стаи»)." },
 	["also protects the caster from polymorph effects and prevents the use of healing spells"] = { ko = "또한 변이 효과에 걸리지 않지만 치유 주문은 사용할 수 없습니다.", zhCN = "同时使施法者免疫变形术效果，但无法使用治疗法术。", zhTW = "同時使施法者免疫變形術效果，但無法使用治療法術。", ru = "Также защищает от эффектов превращения, но не позволяет использовать исцеляющие заклинания." },
+	["unpacks a first aid kit that allows you and others sitting nearby to gain # increased stamina, mutually exclusive with power word: fortitude"] = { ko = "응급치료 도구를 펼칩니다. 근처에 앉은 자신과 다른 플레이어의 체력이 {1}만큼 증가합니다. 신의 권능: 인내와 동시에 적용되지 않습니다." },
+	["ignites an incense candle that allows you and others sitting nearby to gain # increased intellect, mutually exclusive with arcane intellect"] = { ko = "향초를 켭니다. 근처에 앉은 자신과 다른 플레이어의 지능이 {1}만큼 증가합니다. 신비한 지능과 동시에 적용되지 않습니다." },
 }
 ns.TipNames = {
 	["shifting power"] = { ko = "변신의 힘", zhCN = "变形之力", zhTW = "變形之力", ru = "Сила смены облика" },
@@ -83,6 +85,22 @@ ns.TipNames = {
 	["agility"] = { ko = "민첩성", zhCN = "敏捷", zhTW = "敏捷", ru = "Ловкость" },
 	["intellect"] = { ko = "지능", zhCN = "智力", zhTW = "智力", ru = "Интеллект" },
 	["spirit"] = { ko = "정신력", zhCN = "精神", zhTW = "精神", ru = "Дух" },
+	["first aid kit"] = { ko = "응급치료 도구" },
+	["incense candle"] = { ko = "향기 나는 양초" },
+	["power word: fortitude"] = { ko = "신의 권능: 인내" },
+	["arcane intellect"] = { ko = "신비한 지능" },
+	["alchemy"] = { ko = "연금술" },
+	["blacksmithing"] = { ko = "대장기술" },
+	["enchanting"] = { ko = "마법부여" },
+	["engineering"] = { ko = "기계공학" },
+	["tailoring"] = { ko = "재봉술" },
+	["leatherworking"] = { ko = "가죽세공" },
+	["herbalism"] = { ko = "약초채집" },
+	["mining"] = { ko = "채광" },
+	["skinning"] = { ko = "무두질" },
+	["cooking"] = { ko = "요리" },
+	["first aid"] = { ko = "응급치료" },
+	["fishing"] = { ko = "낚시" },
 }
 ns.TipPatterns = {
 	{ "^increases damage and healing done by magical spells and effects by up to (%d+)$", { ko = "모든 주문 및 효과에 의한 피해와 치유량이 최대 %1만큼 증가합니다", zhCN = "提高所有法术和魔法效果所造成的伤害和治疗效果，最多%1点", zhTW = "提高所有法術和魔法效果所造成的傷害和治療效果，最多%1點", ru = "Увеличивает урон и объём исцеления от заклинаний и эффектов максимум на %1" } },

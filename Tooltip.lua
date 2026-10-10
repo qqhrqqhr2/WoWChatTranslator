@@ -253,7 +253,7 @@ end
 
 -- 게임이 붙인 머리말("사용 효과:", "착용 효과:")은 떼고 번역한 뒤 다시 붙인다
 local function SplitPrefix(text)
-	local kinds = { ITEM_SPELL_TRIGGER_ONUSE = "use", ITEM_SPELL_TRIGGER_ONEQUIP = "equip", ITEM_SPELL_TRIGGER_ONPROC = "proc" }
+	local kinds = { ["ITEM_SPELL_TRIGGER_ONUSE"] = "use", ["ITEM_SPELL_TRIGGER_ONEQUIP"] = "equip", ["ITEM_SPELL_TRIGGER_ONPROC"] = "proc" }
 	for g, kind in pairs(kinds) do
 		local p = _G[g]
 		if type(p) == "string" and p ~= "" and text:sub(1, #p) == p then
@@ -290,18 +290,25 @@ local function Collect(piece)
 	db.collected = db.collected or {}
 	local key = KeyOf(Canon(piece))
 	if db.collected[key] then return end
-	db.collectedCount = (db.collectedCount or 0) + 1
-	if db.collectedCount > COLLECT_MAX then return end
+	if not db.collectedCount or db.collectedCount > COLLECT_MAX then
+		local n = 0; for _ in pairs(db.collected) do n = n + 1 end
+		db.collectedCount = n
+	end
+	if db.collectedCount >= COLLECT_MAX then return end
 	db.collected[key] = trim(piece)
+	db.collectedCount = db.collectedCount + 1
 end
 
 ------------------------------------------------------------------------
 -- 한 줄 번역 (결과 캐시)
 ------------------------------------------------------------------------
-local cache, cacheTarget = {}, nil
+local cache, cacheTarget, cacheCollect = {}, nil, nil
 
 local function TranslateLine(text, target)
-	if cacheTarget ~= target then cache, cacheTarget = {}, target end
+	local collecting = ns.db and ns.db.tooltip and ns.db.tooltip.collect or false
+	if cacheTarget ~= target or cacheCollect ~= collecting then
+		cache, cacheTarget, cacheCollect = {}, target, collecting
+	end
 	local c = cache[text]
 	if c ~= nil then return c or nil end
 	local original = text
@@ -383,6 +390,30 @@ ns.TranslateTooltipLine = TranslateLine
 ------------------------------------------------------------------------
 -- 툴팁에 붙이기
 ------------------------------------------------------------------------
+-- 기본 설명의 요구 레벨/가격 아래는 다른 애드온의 정보 영역으로 취급한다.
+function ns.IsTooltipBoundary(text)
+	if not Readable(text) then return false end
+	text = trim(StripCodes(text))
+	local lower = text:lower()
+	for _, key in ipairs({ "ITEM_MIN_LEVEL", "SELL_PRICE", "SELL_PRICE_COLON", "ITEM_SELL_PRICE", "ITEM_REQ_SKILL", "ITEM_REQ_SKILL_RANK" }) do
+		local fmt = _G[key]
+		if Readable(fmt) then
+			local prefix = trim(StripCodes(fmt)):match("^(.-)%%") or trim(StripCodes(fmt))
+			prefix = trim(prefix):lower()
+			if prefix ~= "" and lower:sub(1, #prefix) == prefix then return true end
+		end
+	end
+	for _, prefix in ipairs({ "최소 요구 레벨", "요구 레벨", "판매 가격", "판매가격",
+		"requires level", "required level", "sell price", "selling price", "요구 사항:", "요구사항:",
+		"需要等级", "需要等級", "售价", "售價", "требуется уровень", "цена продажи" }) do
+		if lower:sub(1, #prefix) == prefix then return true end
+	end
+	-- 요구 레벨이나 가격이 없는 툴팁도 애드온 구역에 들어가면 중단한다.
+	return lower:match("^att%s*>") ~= nil or lower:match("^all the things") ~= nil
+		or lower:match("^best gear finder") ~= nil or lower:match("^item%s*id") ~= nil
+		or lower:match("^icon%s*id") ~= nil or lower:match("^itemlevel") ~= nil or text == HEADER
+end
+
 local function Process(tooltip)
 	local db = ns.db
 	if not db or not db.tooltip or not db.tooltip.enabled then return end
@@ -402,6 +433,7 @@ local function Process(tooltip)
 		local fs = _G[name .. "TextLeft" .. i]
 		local ok, text = pcall(function() return fs and fs:GetText() end)
 		if ok and Readable(text) then text = trim(StripCodes(text)) end
+		if ok and ns.IsTooltipBoundary(text) then break end
 		if i == 1 and ok and Readable(text) and text ~= "" then
 			-- 첫 줄은 이름: 영어 이름이면 번역해서 "번역 (원문)" 으로
 			local okc, cnt = pcall(EnglishWords, text)
@@ -431,7 +463,8 @@ local function Process(tooltip)
 		elseif r.full then
 			tooltip:AddLine(r.text, 0.6, 1, 0.6, true)
 		else
-			tooltip:AddLine(r.text, 0.62, 0.8, 0.62, true)
+			local label = target == "ko" and "용어 풀이: " or ""
+			tooltip:AddLine(label .. r.text, 0.62, 0.8, 0.62, true)
 		end
 	end
 	tooltip:Show()
@@ -499,6 +532,8 @@ function ns.CollectCommand(arg)
 	local p = function(s) DEFAULT_CHAT_FRAME:AddMessage("|cff66ccff[WCT]|r " .. s) end
 	if arg == "clear" or arg == "초기화" or arg == "reset" then
 		db.collected, db.collectedCount = {}, 0
+		cache = {}
+		if ns.ResetScan then ns.ResetScan() end
 		p(L.collectCleared)
 		return
 	end
