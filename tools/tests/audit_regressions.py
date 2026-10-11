@@ -55,7 +55,7 @@ print("수집 제한 초과 후 내부 개수 유지: 통과")
 """)
 run('''
 -- 실제 사전을 로드해 화면의 러시아어 사례와 글자 사이 공백 사례 비교
-for _,name in ipairs({"Glossary","GlossaryEN","GlossaryZH","GlossaryRU","GlossaryKO"}) do
+for _,name in ipairs({"Glossary","GlossaryEN","GlossaryZH","GlossaryRU","GlossaryKO","GlossaryJA","GlossaryES"}) do
  assert(loadfile(""..name..".lua"))("WoWChatTranslator",ns)
 end
 assert(loadfile("Chat.lua"))("WoWChatTranslator",ns)
