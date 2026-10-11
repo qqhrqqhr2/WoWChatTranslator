@@ -34,6 +34,7 @@ end
 local function norm(cp)
 	if cp >= 0xFF01 and cp <= 0xFF5E then cp = cp - 0xFEE0 end
 	if cp >= 65 and cp <= 90 then return cp + 32 end
+	if cp >= 0xC0 and cp <= 0xDE and cp ~= 0xD7 then return cp + 32 end
 	if cp >= 0x0410 and cp <= 0x042F then return cp + 32 end
 	if cp == 0x0401 or cp == 0x0451 then return 0x0435 end
 	if cp == 0x3001 then return 44 end  -- 、
@@ -194,9 +195,25 @@ local function Detect(text)
 	end
 	if hangul > 0 and hangul >= han + kana + cyr then return "ko" end
 	if kana > 0 then return "ja" end
-	if han > 0 then return "zh" end
+	if han > 0 then
+        local key = NormKey(text)
+        if Dict.ja and Dict.ja[key] and not (Dict.zh and Dict.zh[key]) then return "ja" end
+        return "zh"
+    end
 	if cyr > 0 then return "ru" end
-	if lat >= 2 and hangul == 0 then return "en" end
+	if lat >= 2 and hangul == 0 then
+        local key = NormKey(text)
+        if Dict.es and Dict.es[key] and not Dict.en[key] then return "es" end
+        local strong = {busco=true,buscamos=true,vendo=true,compro=true,necesito=true,necesitamos=true,puedes=true,tienes=true,tenemos=true,quiero=true,queremos=true,invitarme=true,["invítame"]=true,sanador=true,sanadores=true,tanque=true,mazmorra=true,hermandad=true,gracias=true,hola=true}
+        local markers = {para=true,quiero=true,con=true,por=true,favor=true,grupo=true,["misión"]=true,misiones=true,["maná"]=true,["raíz"]=true,terrenal=true,alguien=true,puedo=true}
+        local score = 0
+        for _, token in ipairs(Tokenize(text)) do
+            if strong[token.key] then return "es" end
+            if markers[token.key] then score = score + 1 end
+        end
+        if score >= 2 then return "es" end
+        return "en"
+    end
 	return nil
 end
 ns.Detect = Detect
@@ -207,7 +224,8 @@ ns.Detect = Detect
 -- 숫자가 붙은 표현 (30g, 1.5k, lvl40, lf2m, x5, 9pm ...)
 -- { 패턴, { 현지 언어별 결과 }, 원문 언어 제한(없으면 전부) }
 local function P(pat, ko, en, zhCN, zhTW, ru, src)
-	return { pat, { ko = ko, en = en, zhCN = zhCN, zhTW = zhTW, ru = ru }, src }
+	local extra = ns.PatternLocales and ns.PatternLocales[en] or {}
+	return { pat, { ko = ko, en = en, zhCN = zhCN, zhTW = zhTW, ru = ru, ja = extra.ja, es = extra.es }, src }
 end
 local PATTERNS = {
 	P("^(%d[%d%.]*)g$", "%1골드", "%1 gold", "%1金", "%1金", "%1 золотых"),
@@ -316,6 +334,7 @@ local function Gloss(text, lang, target)
 
 	local pieces, terms, seen, found = {}, {}, {}, 0
 	local coverHit, coverMiss = 0, 0
+	local unknown = {}
 	local function isNumber(tok) return tok.kind == "word" and tok.key:find("^[%d%p]+$") ~= nil end
 	local function emit(kind, s) pieces[#pieces + 1] = { kind = kind, s = s } end
 	local function addTerm(term, meaning, len)
@@ -338,10 +357,9 @@ local function Gloss(text, lang, target)
 			while j <= n and used < maxLen do
 				local tj = tokens[j]
 				if tj.kind == "space" then
-					if cjkMode then break end
-					-- 영어·러시아어: 단어 사이 공백 하나는 구절로 이어 붙임
+					-- Match explicitly registered names across spaces, including Korean names.
 					local nx = tokens[j + 1]
-					if not nx or nx.kind ~= "word" then break end
+					if not nx or (nx.kind ~= "word" and nx.key ~= "(" and not (cjkMode and nx.kind == "cjk")) then break end
 					keys[#keys + 1] = " "
 				elseif tj.kind == "cjk" or tj.kind == "word" then
 					if cjkMode and tj.kind == "word" and last == "word" then break end
@@ -351,6 +369,12 @@ local function Gloss(text, lang, target)
 					local key = table.concat(keys)
 					local e = lookup(mainDicts, key)
 					if not e and used == 1 and tj.kind == "word" then e = lookup(wordDicts, key) end
+					if e then best, bestJ = e, j end
+				elseif tj.kind == "other" and (tj.key:match("^[%p]$")) then
+					-- Punctuation belongs to a match only when the dictionary contains it.
+					keys[#keys + 1] = tj.key
+					used = used + 1
+					local e = lookup(mainDicts, table.concat(keys))
 					if e then best, bestJ = e, j end
 				else
 					break
@@ -389,7 +413,10 @@ local function Gloss(text, lang, target)
 			elseif t.kind == "other" then emit("other", t.text)
 			else
 				emit("miss", t.text)
-				if not isNumber(t) then coverMiss = coverMiss + 1 end
+				if not isNumber(t) then
+                    coverMiss = coverMiss + 1
+                    unknown[#unknown + 1] = t.key
+                end
 			end
 			i = i + 1
 		end
@@ -438,6 +465,7 @@ local function Gloss(text, lang, target)
 		rough = table.concat(out),
 		plain = table.concat(plain),
 		terms = terms,
+        unknown = unknown,
 		found = found,
 		cover = total > 0 and floor(coverHit * 100 / total) or 0,
 	}
@@ -484,7 +512,33 @@ local function CacheLine(lineID, value)
 	lineCache[lineID] = value
 end
 
-local TAG_COLOR = { ko = "a0e8a0", zh = "ffcc66", ja = "ff99cc", ru = "99ccff", en = "cccccc" }
+-- Make visible text clickable without nesting existing item/player links.
+local function WrapCopyText(msg, id)
+    local out, i = {}, 1
+    while i <= #msg do
+        local rest = msg:sub(i)
+        local code = rest:match("^|H.-|h.-|h") or rest:match("^|T.-|t")
+            or rest:match("^|A.-|a") or rest:match("^|c%x%x%x%x%x%x%x%x") or rest:match("^|r")
+        if code then
+            out[#out + 1] = code
+            i = i + #code
+        else
+            local start = i
+            repeat
+                if msg:sub(i, i + 1) == "||" then i = i + 2 else i = i + 1 end
+            until i > #msg or (msg:sub(i, i) == "|" and msg:sub(i, i + 1) ~= "||")
+            local text = msg:sub(start, i - 1)
+            if text:find("%S") then
+                out[#out + 1] = ("|Hwctcopy:%d|h%s|h"):format(id, text)
+            else
+                out[#out + 1] = text
+            end
+        end
+    end
+    return table.concat(out)
+end
+
+local TAG_COLOR = { es = "ffbb88", ko = "a0e8a0", zh = "ffcc66", ja = "ff99cc", ru = "99ccff", en = "cccccc" }
 local myName
 
 -- 상태 확인용 (/wct 상태)
@@ -494,7 +548,7 @@ ns.status = { method = "none", seen = 0, tagged = 0, lastError = nil, filterEven
 local function Process(msg, author)
 	local db = ns.db
 	if not db or not db.chat.enabled or type(msg) ~= "string" or msg == "" then return nil end
-	if msg:find("|Hwct:", 1, true) then return nil end
+	if msg:find("|Hwct:", 1, true) or msg:find("|Hwctcopy:", 1, true) then return nil end
 	ns.status.seen = ns.status.seen + 1
 	if db.chat.skipSelf and type(author) == "string" and author ~= "" then
 		myName = myName or UnitName("player")
@@ -512,7 +566,8 @@ local function Process(msg, author)
 	entries[id].gloss = g
 	entries[id].glossTarget = target
 	entries[id].glossText = DetectText(msg):gsub("||", "|")
-	local body, wrapped = msg, false
+	if ns.RecordUnknownChat then ns.RecordUnknownChat(plainText, lang, g) end
+	local body, wrapped = WrapCopyText(msg, id), true
 	if db.chat.hoverAll and not msg:find("|", 1, true) then
 		body = ("|Hwct:%d|h%s|h"):format(id, msg)
 		wrapped = true
@@ -528,10 +583,10 @@ local function Process(msg, author)
 		local conflict = (hanSource and target == "ko") or (lang == "ko" and (target == "zhCN" or target == "zhTW"))
 		if conflict then
 			local meaning = (hanSource and g.plainNoCJK or g.plain):gsub("|", "||")
-			separate = ("    |cff88dd88↳ %s|r"):format(meaning)
+			separate = WrapCopyText(("    |cff88dd88↳ %s|r"):format(meaning), id)
 		else
 			local meaning = g.plain:gsub("|", "||")
-			suffix = (" |cff88dd88(%s)|r"):format(meaning)
+			suffix = WrapCopyText((" |cff88dd88(%s)|r"):format(meaning), id)
 		end
 	end
 	ns.status.tagged = ns.status.tagged + 1
@@ -551,7 +606,7 @@ local function Filter(self, event, msg, author, ...)
 	local cfg = ns.db and ns.db.chat
 	local settings = cfg and table.concat({tostring(ns.GetTarget()), tostring(cfg.enabled), tostring(cfg.inline),
 		tostring(cfg.minCover), tostring(cfg.tag), tostring(cfg.hoverAll), tostring(cfg.skipSelf),
-		tostring(cfg.langs.ko), tostring(cfg.langs.zh), tostring(cfg.langs.ja), tostring(cfg.langs.ru), tostring(cfg.langs.en)}, ":")
+		tostring(cfg.langs.ko), tostring(cfg.langs.zh), tostring(cfg.langs.ja), tostring(cfg.langs.ru), tostring(cfg.langs.en), tostring(cfg.langs.es)}, ":")
 	local cached = lineID and lineCache[lineID]
 	if cached and cached.msg == msg and cached.author == author and cached.event == event and cached.settings == settings then
 		out, separate = cached[1], cached[2]
@@ -692,10 +747,19 @@ local function HookFrame(frame)
 	hooked[frame] = true
 	frame:HookScript("OnHyperlinkEnter", function(self, link)
 		local id = type(link) == "string" and link:match("^wct:(%d+)")
-		if id then ShowGloss(self, tonumber(id)) end
+		local copyID = type(link) == "string" and link:match("^wctcopy:(%d+)")
+		if copyID then
+			local e = entries[tonumber(copyID)]
+			if e and e.lang then ShowGloss(self, tonumber(copyID)) end
+		elseif id then
+			ShowGloss(self, tonumber(id))
+		elseif ns.ShowPlayerTooltip then
+			ns.ShowPlayerTooltip(self, link)
+		end
 	end)
 	frame:HookScript("OnHyperlinkLeave", function(self)
 		if GameTooltip:GetOwner() == self then GameTooltip:Hide() end
+		if ns.HidePlayerTooltip then ns.HidePlayerTooltip(self) end
 	end)
 end
 
@@ -757,7 +821,11 @@ function ns.ShowCopy(text, title)
 
 		tinsert(UISpecialFrames, "WoWChatTranslatorCopy")
 	end
-	copy.text = text
+	local multiline = text:find("\n", 1, true) ~= nil
+    copy:SetSize(540, multiline and 360 or 96)
+    copy.eb:SetMultiLine(multiline)
+    copy.eb:SetSize(480, multiline and 280 or 24)
+    copy.text = text
 	copy.title:SetText(title or L.copyTitle)
 	copy:Show()
 	copy.eb:SetText(text)
@@ -773,11 +841,15 @@ end
 local function HookItemRef()
 	local orig = SetItemRef
 	SetItemRef = function(link, text, button, chatFrame, ...)
-		if type(link) == "string" and link:sub(1, 4) == "wct:" then
-			local e = entries[tonumber(link:match("^wct:(%d+)"))]
+		if type(link) == "string" and (link:sub(1, 4) == "wct:" or link:sub(1, 8) == "wctcopy:") then
+			local e = entries[tonumber(link:match("^wct:(%d+)") or link:match("^wctcopy:(%d+)"))]
 			if e then ns.ShowCopy(e.text) end
 			return
 		end
+        if type(link) == "string" and link:match("^player:") and button == "LeftButton"
+            and IsShiftKeyDown and IsShiftKeyDown() and ns.RequestPlayerInfo then
+            if ns.RequestPlayerInfo(link) then return end
+        end
 		return orig(link, text, button, chatFrame, ...)
 	end
 end
@@ -806,19 +878,48 @@ end
 -- 상태 출력 (/wct 상태)
 function ns.PrintStatus()
 	local st = ns.status
-	local p = function(s) DEFAULT_CHAT_FRAME:AddMessage("|cff66ccff[WCT]|r " .. s) end
+	local lines = {}
+    local p = function(s)
+        lines[#lines + 1] = StripCodes(s)
+        DEFAULT_CHAT_FRAME:AddMessage("|cff66ccff[WCT]|r " .. s)
+    end
+    p("version=" .. tostring(GetAddOnMetadata and GetAddOnMetadata(ADDON, "Version") or "1.4.2"))
+    if GetBuildInfo then
+        local version, build, _, interface = GetBuildInfo()
+        p("clientVersion=" .. tostring(version) .. " build=" .. tostring(build) .. " interface=" .. tostring(interface))
+    end
 	p("db=" .. tostring(ns.db ~= nil) .. "  enabled=" .. tostring(ns.db and ns.db.chat.enabled)
 		.. "  method=" .. st.method .. "  filterEvents=" .. st.filterEvents)
-	local cfg = ns.db and ns.db.chat
-	p("version=" .. tostring(GetAddOnMetadata and GetAddOnMetadata(ADDON, "Version") or "1.4.1")
-		.. " inline=" .. tostring(cfg and cfg.inline) .. " minCover=" .. tostring(cfg and cfg.minCover))
 	p("seen=" .. st.seen .. "  tagged=" .. st.tagged .. "  target=" .. tostring(ns.GetTarget())
 		.. " (setting=" .. tostring(ns.db and ns.db.target) .. ", client=" .. tostring(GetLocale()) .. ")")
 	p("ChatFrame_AddMessageEventFilter=" .. type(ChatFrame_AddMessageEventFilter)
 		.. "  ChatFrameUtil=" .. type(ChatFrameUtil) .. "  SetItemRef=" .. type(SetItemRef))
 	local sample = "lfg RF Quest"
 	p("test: \"" .. sample .. "\" -> " .. tostring(Detect(sample)))
-	if st.lastError then p("|cffff6666error:|r " .. st.lastError) end
+	if ns.playerLookupStatus then
+        p("who=" .. tostring(ns.playerLookupStatus.state) .. "  detail=" .. tostring(ns.playerLookupStatus.detail))
+        p("SendWho=" .. type(SendWho) .. "  C_FriendList=" .. type(C_FriendList)
+            .. "  GetWhoInfo=" .. type(GetWhoInfo))
+    end
+    if ns.playerLookupStatus then
+        local who = ns.playerLookupStatus
+        p("whoMode=" .. tostring(who.mode) .. " requestSource=" .. tostring(who.requestSource)
+            .. " clicks=" .. tostring(who.clicks or 0))
+        p("whoPending=" .. tostring(who.pending)
+            .. " pendingAge=" .. tostring(who.pendingAge) .. " nextDelay=" .. tostring(who.nextDelay))
+        p("whoQuery=" .. tostring(who.query) .. " whoEvents=" .. tostring(who.events or 0)
+            .. " whoResults=" .. tostring(who.resultCount))
+        p("socialLoad=" .. tostring(who.socialLoad) .. " readError=" .. tostring(who.readError))
+        if who.firstResult then p("firstWhoResult=" .. who.firstResult) end
+    end
+    if C_FriendList then
+        p("C.SendWho=" .. type(C_FriendList.SendWho) .. " C.GetWhoInfo=" .. type(C_FriendList.GetWhoInfo)
+            .. " C.GetNumWhoResults=" .. type(C_FriendList.GetNumWhoResults))
+        p("SetWhoToUI=" .. type(SetWhoToUI) .. " C.SetWhoToUI=" .. type(C_FriendList.SetWhoToUI)
+            .. " C.SetWhoToUi=" .. type(C_FriendList.SetWhoToUi))
+    end
+    if st.lastError then p("|cffff6666error:|r " .. st.lastError) end
+    ns.ShowCopy(table.concat(lines, "\n"), GetLocale() == "koKR" and "상태 정보 전체 복사: Ctrl+C" or "Copy all status information: Ctrl+C")
 end
 
 -- /wct test 문장: 네트워크 요청 없이 현재 사전과 표시 조건 점검

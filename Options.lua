@@ -86,7 +86,7 @@ end
 
 local function Build()
 	frame = CreateFrame("Frame", "WoWChatTranslatorOptions", UIParent, BackdropTemplateMixin and "BackdropTemplate" or nil)
-	frame:SetSize(FRAME_W, 600)
+	frame:SetSize(FRAME_W, 630)
 	frame:SetPoint("CENTER")
 	frame:SetFrameStrata("DIALOG")
 	frame:SetBackdrop({
@@ -136,7 +136,8 @@ local function Build()
 	end
 	radio("auto", COL[1], y, FRAME_W - 80); y = y - 26
 	radio("ko", COL[1], y, COL_W - 30); radio("en", COL[2], y, COL_W - 30); radio("zhCN", COL[3], y, COL_W - 30); y = y - 26
-	radio("zhTW", COL[1], y, COL_W - 30); radio("ru", COL[2], y, COL_W - 30); y = y - 30
+	radio("zhTW", COL[1], y, COL_W - 30); radio("ru", COL[2], y, COL_W - 30); radio("ja", COL[3], y, COL_W - 30); y = y - 26
+	radio("es", COL[1], y, COL_W - 30); y = y - 30
 	Note(frame, "targetNote", y); y = y - 38
 
 	-- 채팅 번역 ----------------------------------------------------------
@@ -172,7 +173,7 @@ local function Build()
 	lt:SetPoint("TOPLEFT", 26, y)
 	Track(lt, function() return L.langs end)
 	y = y - 22
-	for i, lang in ipairs({ "ko", "zh", "ja", "ru", "en" }) do
+	for i, lang in ipairs({ "ko", "zh", "ja", "ru", "en", "es" }) do
 		local col = (i - 1) % 3 + 1
 		local row = math.floor((i - 1) / 3)
 		local cb = Check(frame, function() return L.langName[lang] end, COL[col], y - row * 26,
@@ -232,6 +233,10 @@ SlashCmdList.WOWCHATTRANSLATOR = function(msg)
 		if ns.PrintStatus then ns.PrintStatus() end
 		return
 	end
+	if msg == "미등록" or msg == "unknown" then
+        if ns.ShowUnknownChat then ns.ShowUnknownChat() end
+        return
+    end
 	local cmd, rest = msg:match("^(%S+)%s*(.-)$")
 	if cmd == "test" or cmd == "테스트" then
 		if ns.TestChat and rest ~= "" then ns.TestChat(rest) end
