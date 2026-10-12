@@ -1,7 +1,7 @@
 -- ru source dictionary; term=Korean=English.
 local ADDON, ns = ...
 ns.RawGlossary.ru = [=[
-10 тыс.=만(10,000)=10k
+110 тыс.=만(10,000)=10k
 14 ранг=최고 계급(14)=rank 14
 2 секунды=2초=2 seconds
 40-пользователь=40인=40-player
@@ -708,6 +708,7 @@ XD=ㅋㅋ=XD
 дружище=친구=buddy
 дружная=화목한=friendly
 дружно=화목한=harmonious
+друзей=친구들=friends
 друзья=친구들=friends
 Друзья и ветераны WoW=친구들과 와우 베테랑=friends and WoW veterans
 друид=드루이드=druid
@@ -758,6 +759,7 @@ XD=ㅋㅋ=XD
 есть места=자리 있음=spots open
 есть место=자리 있나요?=is there a spot?
 Есть место?=자리 있나요?=is there a spot?
+есть наши=우리나라 사람 있나요=anyone from our country here
 есть пати=파티 있어=have party
 есть у кого=누구 ~있어?=does anyone
 есть японцы?=일본인 있나요=any Japanese
@@ -779,6 +781,7 @@ XD=ㅋㅋ=XD
 Жгучая боль=불타는 고통=Searing Pain
 ждём=대기=hold
 ждём вас=가입 환영=welcome to join
+ждёт=기다립니다=waits
 жди=기다려=wait
 ждите=기다리세요=wait
 ждите меня=저를 기다려주세요=wait for me
@@ -829,6 +832,7 @@ XD=ㅋㅋ=XD
 задание=퀘스트=quest
 задание выполнено=퀘스트 완료=quest complete
 задержка=지연(핑)=latency
+задержку=지연=delay
 закемпили=계속 잡힘=camped
 заклинание=주문=spell
 заклинания=주문=spells
@@ -1013,6 +1017,8 @@ XD=ㅋㅋ=XD
 ищем танка=탱커 구함=looking for a tank
 ищем танка и хила=탱커·힐러 구함=looking for tank and healer
 ищем хила=힐러 구함=looking for a healer
+ищешь=찾고 있나요=are you looking for
+ищешь компанию=함께할 사람을 찾고 있나요=looking for company
 ищу=구함=looking for
 ищу бойца=딜러 구함=looking for dps
 ищу гильдию=길드 구함=looking for guild
@@ -1143,6 +1149,7 @@ XD=ㅋㅋ=XD
 Кольчужные доспехи=사슬=Mail
 команда=팀=team
 комбат=전투 도적=combat
+компанию=함께할 사람들=company
 комплект=세트=set
 кому нужно=필요한 분=anyone who needs
 кому нужно - в лс=필요하면 귓말=whisper if needed
@@ -1299,6 +1306,7 @@ XD=ㅋㅋ=XD
 луноткань=달빛매듭 천=mooncloth
 лут=전리품=loot
 лучше=더 좋은=better
+лучшее=최고의=best
 лучшее предложение=최고 제시 가격=best offer
 Лучшие дилеры повреждений=최상위 딜러로=into top damage dealers
 лучший=최고=best
@@ -1377,6 +1385,7 @@ XD=ㅋㅋ=XD
 медная руда=구리 광석=copper ore
 медь=코퍼=copper
 Мельница Таррен=타렌 밀농장=Tarren Mill
+мемы=밈=memes
 Ментальный крик=영혼의 절규=Psychic Scream
 меньше=덜=less
 меня кинули=사기당했다=got scammed
@@ -1390,6 +1399,7 @@ XD=ㅋㅋ=XD
 место танка=탱커 자리=tank spot
 место хила=힐러 자리=healer spot
 месяц=달=month
+месяцев=개월=months
 метательное=투척 무기=thrown
 Метка охотника=사냥꾼의 징표=Hunter's Mark
 меткость=적중=hit
@@ -1609,6 +1619,7 @@ XD=ㅋㅋ=XD
 но=하지만=but
 новичкам рады=초보자 환영=new players welcome
 новичок=초보=beginner
+новости=소식=news
 новые игроки=신규 유저=new players
 новый=새로운=new
 новый сервер=신규 서버=new server
@@ -1973,6 +1984,9 @@ XD=ㅋㅋ=XD
 Пожирание магии=마법 삼키기=Devour Magic
 поздравляю=축하해=congrats
 позже=나중에=later
+поиск=찾기=search
+поиск друзей=친구 찾기=looking for friends
+поиском=찾기로=search
 пойдем=가자=let's go
 пойдёшь?=갈래요?=going?
 пойду=갈게=I'll go
@@ -2044,6 +2058,7 @@ XD=ㅋㅋ=XD
 потому что=왜냐면=because
 Потрошение=절개=Eviscerate
 потрясающе=놀라워=amazing
+пофиксили=수정됐나요=has it been fixed
 Похищение души=영혼 흡수=Drain Soul
 Похищение жизни=생명력 흡수=Drain Life
 Похищение маны=마나 흡수=Drain Mana
@@ -2330,6 +2345,7 @@ XD=ㅋㅋ=XD
 роги=도적들=rogues
 роги ищут=도적 구함=rogues looking for
 рогу=도적을=rogue
+розыгрыш=추첨=giveaway
 Рой насекомых=곤충 떼=Insect Swarm
 ролевая игра PvP=역할극·플레이어 간 전투=roleplay PvP
 ролл=주사위 굴리기=roll
@@ -2358,7 +2374,9 @@ XD=ㅋㅋ=XD
 с нами=우리와 함께=with us
 с Новым годом=새해 복 많이=happy new year
 с самого начала=처음부터 진행=fresh run
+с чатов=채팅에서=in chat
 саб=잠행 도적=subtlety
+сабки=정액 이용권=subscription
 саван=수의=shroud
 сагрил=어그로 끌었다=pulled aggro
 сайленс=침묵=silence
@@ -2676,6 +2694,7 @@ XD=ㅋㅋ=XD
 твой=너의=your
 те=저것들=those
 тебе=너에게=you
+тебя=당신을=you
 телепорт=순간이동=teleport
 Телепортация в Дарнасс=순간이동: 다르나서스=Teleport: Darnassus
 Телепортация: Громовой Утес=순간이동: 썬더 블러프=Teleport: Thunder Bluff
@@ -2977,6 +2996,7 @@ XD=ㅋㅋ=XD
 часть=단계/부분=part
 часть 2=2단계=part 2
 часть 3=3단계=part 3
+чаты=채팅=chats
 чаша=그릇=bowl
 чел=사람(녀석)=dude
 человек=사람=person

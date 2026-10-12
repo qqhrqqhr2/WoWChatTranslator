@@ -47,3 +47,5 @@ skinning|무두질||
 cooking|요리||
 first aid|응급치료||
 fishing|낚시||
+
+Roogug's Severed Head|루구그의 잘린 머리|鲁古格的断头|Отрубленная голова Ругуга

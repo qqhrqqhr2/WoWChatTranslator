@@ -1,6 +1,7 @@
 -- WoW Chat Translator: 툴팁 문장표·패턴 (자동 생성 - tools/build_tooltip.py)
 local ADDON, ns = ...
 ns.TipText = {
+	["raise the severed head of roogug, horrifying and silencing all swine within # yds for # sec"] = { ko = "루구그의 잘린 머리를 들어 올려 {1}미터 내 모든 가시멧돼지를 {2}초 동안 공포에 질리게 하고 침묵시킵니다.", zhCN = "举起鲁古格的断头，使{1}码内所有野猪恐惧并沉默，持续{2}秒。", zhTW = "舉起魯古格的斷頭，使{1}碼內所有野豬恐懼並沉默，持續{2}秒。", ru = "Поднимает отрубленную голову Ругуга, вызывая ужас и немоту у всех свиней в радиусе {1} м на {2} сек." },
 	["places a fishing rack that grants the ability to catch uncommon fish for # hr, provides fishing skill lures, and provides all of the benefits of a fish bowl"] = { ko = "낚시 선반을 설치합니다. {1}시간 동안 고급 물고기를 낚을 수 있고, 낚시 숙련도를 올려 주는 미끼를 제공하며, 물고기 그릇의 모든 효과를 받습니다.", zhCN = "放置一个钓鱼架，{1}小时内可以钓到优秀品质的鱼，提供提升钓鱼技能的鱼饵，并获得鱼碗的全部效果。", zhTW = "放置一個釣魚架，{1}小時內可以釣到優秀品質的魚，提供提升釣魚技能的魚餌，並獲得魚碗的全部效果。", ru = "Устанавливает рыболовную стойку: в течение {1} ч позволяет ловить необычную рыбу, даёт приманки для навыка рыбной ловли и все преимущества рыбной чаши." },
 	["requires a campfire nearby"] = { ko = "근처에 모닥불이 필요합니다.", zhCN = "需要附近有篝火。", zhTW = "需要附近有篝火。", ru = "Требуется костёр поблизости." },
 	["may be placed over a fish bowl to replace it"] = { ko = "물고기 그릇 위에 설치하면 그릇을 대체합니다.", zhCN = "可以放置在鱼碗上以替换它。", zhTW = "可以放置在魚碗上以替換它。", ru = "Можно установить поверх рыбной чаши, чтобы заменить её." },
@@ -182,3 +183,6 @@ ns.TipPatterns = {
 	{ "^increases your (.+) by (%d+)%%$", { ko = "%1 %2%% 증가", zhCN = "使你的%1提高%2%%", zhTW = "使你的%1提高%2%%", ru = "Увеличивает показатель «%1» на %2%%" } },
 	{ "^(.+), dealing (%d+)%% weapon damage$", { ko = "%1, 무기 피해의 %2%%를 줍니다", zhCN = "%1，造成%2%%的武器伤害", zhTW = "%1，造成%2%%的武器傷害", ru = "%1, нанося %2%% урона оружием" } },
 }
+
+-- Corrected item name takes priority over generated game data.
+ns.TipNames["roogug's severed head"] = { ko = "루구그의 잘린 머리", zhCN = "鲁古格的断头", zhTW = "魯古格的斷頭", ru = "Отрубленная голова Ругуга" }

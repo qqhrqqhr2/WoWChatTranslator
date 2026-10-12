@@ -1,8 +1,8 @@
 -- zh source dictionary; term=Korean=English.
 local ADDON, ns = ...
 ns.RawGlossary.zh = [=[
-+1制度=+1 시스템=plus one
-14级军衔=최고 계급(14)=rank 14
+++14级军衔=최고 계급(14)=rank 14
+1制度=+1 시스템=plus one
 1我=1 보내줘(초대용)=send 1
 1级=1등급=rank 1
 2 秒钟=2초=2 seconds
@@ -92,6 +92,7 @@ tl=스칼로맨스=Scholomance
 t位=탱커 자리=tank spot
 T套=티어=tier
 ubrs=검은바위 첨탑 상층=Upper Blackrock Spire
+vx=위챗=WeChat
 WoW 退伍軍人=와우 베테랑=WoW veterans
 xd=드루이드=Druid
 yy=YY(음성채팅)=YY voice
@@ -189,6 +190,7 @@ zul=줄파락=Zul'Farrak
 不會=안 할 거야=won't
 不同=다른=different
 不好意思=죄송해요=sorry
+不定期=비정기적으로=occasionally
 不客氣=천만에요=you're welcome
 不屬於=아닌=are not
 不應該=안 해야 한다=should not
@@ -433,6 +435,7 @@ zul=줄파락=Zul'Farrak
 免费附魔=무료 마부=free enchants
 兜帽=두건=cowl
 入会=길드 가입=join guild
+入群=그룹 채팅 가입=join the group chat
 全程=전체 진행=full run
 全缺=모두 구함=looking for all
 全通=전체 클리어=full clear
@@ -612,6 +615,7 @@ zul=줄파락=Zul'Farrak
 加我=초대/추가해 줘=add me
 加我血=힐 줘=heal me
 加油=힘내=good luck
+加绿泡泡=위챗으로 연락하세요=contact on WeChat
 加群=단톡방 입장=join group chat
 加血=힐=heal
 助理=부공대장=assist
@@ -789,6 +793,7 @@ zul=줄파락=Zul'Farrak
 啥=뭐=what
 啦==
 餵養寵物=먹이주기=Feed Pet
+喊话=채팅으로 연락=send a chat message
 喜=축하=congrats
 喜歡=좋아해/~처럼=like
 喝水=마나 회복(물 마시기)=drinking
@@ -924,6 +929,7 @@ zul=줄파락=Zul'Farrak
 增强萨满祭司=고양 주술사=Enhancement Shaman
 增益=버프=buff
 聲望=평판=reputation
+备战=준비하다=prepare
 备有=가능한=available
 備用=보조/예비=backup
 备用v=예비 위챗=backup WeChat
@@ -1218,6 +1224,7 @@ zul=줄파락=Zul'Farrak
 開PvP=PvP 켜기=flag PvP
 開個價=가격 제시해주세요=make an offer
 开冲=돌격 시작=let's go
+开启=시작=open
 開始=시작=start
 開始了=시작했다=started
 开怪=풀링=pull
@@ -1456,6 +1463,7 @@ zul=줄파락=Zul'Farrak
 抓人=학살=gank
 抓人的=학살자=ganker
 投擲武器=투척 무기=thrown
+抖音=더우인=Douyin
 抗寒圖騰=냉기 저항 토템=Frost Resistance Totem
 抗性=저항=resistance
 抗火圖騰=화염 저항 토템=Fire Resistance Totem
@@ -1568,6 +1576,7 @@ zul=줄파락=Zul'Farrak
 插旗=PvP 켜기=flag PvP
 握把=손아귀=grips
 揹包=가방=bag
+搜=검색=search
 搜尋=훔치기=Pick Pocket
 搜索=훔치기=Pick Pocket
 搞什麼=뭐야=what the hell
@@ -1578,6 +1587,7 @@ zul=줄파락=Zul'Farrak
 撞傷=끌어올린=bumped
 擦拭并重新启动=전멸 후 재시작=wipe and restart
 收=삽니다=WTB
+收g出g=골드 삽니다/팝니다=buying/selling gold
 收人=인원 모집=recruiting
 收人中=인원 모집 중=recruiting
 收到=받았어=received
@@ -1728,6 +1738,7 @@ zul=줄파락=Zul'Farrak
 最高出價=최고 제시 가격=best offer
 月=달=month
 月光林地=달의 숲=Moonglade
+月卡=월 정액권=monthly subscription
 月布=달빛매듭 천=mooncloth
 月火術=달빛 섬광=Moonfire
 月牙钥匙=초승달 열쇠=crescent key
@@ -1793,9 +1804,11 @@ zul=줄파락=Zul'Farrak
 束腕=손목띠=bindings
 來=와=come
 来1个=한 명 와요=need one
+来2 dps=딜러 2명 구함=looking for two damage dealers
 来2个=두 명 와요=need two
 来dps=딜러 구함=looking for damage dealers
 来t=탱커 구함=looking for a tank
+来t n=탱커·힐러 구함=looking for a tank and healer
 来一个=한 명 와요=need one
 来个=한 명 와=need one
 来个t=탱커 와요=need tank
@@ -1812,6 +1825,7 @@ zul=줄파락=Zul'Farrak
 来决斗=결투하자=duel me
 來嗎=올래요?=coming?
 来奶=힐러 구함=looking for a healer
+来随便来个dps=딜러 아무나 구함=looking for any damage dealer
 板甲=판금 갑옷=Plate Mail
 極品=최상급=godly item
 槍=총=gun
@@ -1844,6 +1858,7 @@ zul=줄파락=Zul'Farrak
 欢迎小费=팁 주시면 감사=tips appreciated
 歡迎新人=신입 환영=newcomers welcome
 欢迎新手=초보자 환영=new players welcome
+欢迎新老玩家=신규·기존 플레이어 환영=new and returning players welcome
 歐服=유럽 서버=EU server
 歐皇=운 좋은 사람=lucky guy
 正義之怒=정의의 격노=Righteous Fury
@@ -1968,6 +1983,7 @@ zul=줄파락=Zul'Farrak
 治療藥水=치유 물약=health potion
 治疗量=치유량=healing
 治疗链=연쇄 치유=Chain Heal
+沼泽=늪=swamp
 法=마법사=Mage
 法伤=주문력=spell power
 法力=마나=mana
@@ -2012,6 +2028,7 @@ zul=줄파락=Zul'Farrak
 消毒術=해독=Cure Poison
 消耗=소모량=cost
 消耗品=소모품=consumables
+深渊=심연=depths
 清晰预兆=청명의 전조=Omen of Clarity
 清毒圖騰=독 정화 토템=Poison Cleansing Totem
 清潔術=정화=Cleanse
@@ -2079,10 +2096,12 @@ zul=줄파락=Zul'Farrak
 鍊金師=연금술사=alchemist
 鍊金術=연금술=alchemy
 爛透了=별로다=sucks
+烈焰=화염=flame
 烈焰武器=불꽃 마부=fiery weapon
 烈焰震擊=화염 충격=Flame Shock
 烈焰风暴=불기둥=Flamestrike
 燒盡=소각=Incinerate
+热爱魔兽=와우를 좋아하는=WoW enthusiasts
 烹飪=요리=cooking
 焚化者古雷曼格=골레마그=Golemagg
 焦點頭骨=해골 징표를 집중 공격=focus skull
@@ -2248,6 +2267,7 @@ zul=줄파락=Zul'Farrak
 短外套=가죽 조끼=jerkin
 短裙=킬트=kilt
 矮人=드워프=Dwarf
+矮子本=놈리건=Gnomeregan
 石化武器=대지의 무기=Rockbiter Weapon
 石南草=찔레가시=briarthorn
 石頭=돌/생명석=stone
@@ -2424,6 +2444,7 @@ zul=줄파락=Zul'Farrak
 绞喉=목조르기=Garrote
 維護=점검=maintenance
 繃帶=붕대=bandage
+绿泡泡=위챗=WeChat
 绿色=고급(초록)=uncommon
 綠裝=초록 템=green
 缓落术=저속 낙하=Slow Fall
@@ -2463,6 +2484,7 @@ zul=줄파락=Zul'Farrak
 美女=미녀=pretty girl
 美服=미국 서버=US server
 群=단톡방=group chat
+群内=그룹 채팅 내=in the group chat
 群聊=단톡방=group chat
 翡翠龙=에메랄드 용=Emerald dragons
 翻譯=번역=translate
@@ -2588,6 +2610,7 @@ zul=줄파락=Zul'Farrak
 蓝装备=희귀 장비=blue gear
 藏宝=무법항=Booty Bay
 藏寶海灣=무법항=Booty Bay
+藏宝海湾传送=무법항 순간이동=Booty Bay teleport
 虔诚光环=기원의 오라=Devotion Aura
 虛弱之觸=무력의 손길=Touch of Weakness
 虛弱妖術=무력의 주술=Hex of Weakness
@@ -2857,6 +2880,7 @@ zul=줄파락=Zul'Farrak
 通靈學院=스칼로맨스=Scholomance
 通过=통해=through
 速刷=빠른 반복=speed run
+速刷队=빠른 반복 공략 파티=fast farming group
 速度=빨리=quick
 速效毒藥=순간 효과 독=Instant Poison
 速來=빨리 와=come fast

@@ -1,10 +1,10 @@
 -- es source dictionary; term=Korean=English.
 local ADDON, ns = ...
 ns.RawGlossary.es = [=[
-#=퀘스트 완료=turn in
-# Canflor #=노래꽃 버프=songflower
+## Canflor #=노래꽃 버프=songflower
 # Lag spike=렉 튐=lag spike
 # Soulstone me=영혼석 걸어줘=soulstone me
+##=퀘스트 완료=turn in
 ####################################################################################################=딜러 자리=dps spot
 (contra)=개/명=(counter)
 .=특성=spec
@@ -32,6 +32,7 @@ Abalanzarse=암습=Pounce
 Abandonado=포세이큰=Forsaken
 abierto=모집 중/열림=open
 Abrazo vampírico=흡혈의 선물=Vampiric Embrace
+abre=엽니다=opens
 Abrumar=제압=Overpower
 aburrido=지루해=boring
 acabado=끝내다=finish
@@ -88,7 +89,7 @@ Alchemy=연금술=alchemy
 alfombra=재료=mat
 alfombras incluidas=재료 포함=mats included
 algo=뭔가=something
-Alguien=누군가=somebody
+alguien=누군가=someone
 alguien disponible=가능하신 분 있나요=is anyone available
 alguien quiere=~할 사람=anyone want to
 alguien quiere ir=가실 분 구해요=anyone want to go
@@ -164,6 +165,7 @@ Armadura de mago=마법사 갑옷=Mage Armor
 Armadura demoníaca=악마의 갑옷=Demon Armor
 Armadura natural=무쇠 가죽=Natural Armor
 armar=구성하다=form
+armar buenos rosters=좋은 공략 인원 구성을 짜다=build strong rosters
 armar grupo=파티를 구성하다=form a group
 armar raid=공격대를 구성하다=form a raid
 Armario=무기고=armory
@@ -219,6 +221,8 @@ Aura de reprensión=응보의 오라=Retribution Aura
 Aura de Resistencia a la Escarcha=냉기 저항의 오라=Frost Resistance Aura
 Aura de Resistencia a las Sombras=암흑 저항의 오라=Shadow Resistance Aura
 Aura de Resistencia al Fuego=화염 저항의 오라=Fire Resistance Aura
+aventura=모험=adventure
+aventureros=모험가들=adventurers
 ayer.=어제=yesterday
 ayuda=도와줘=help
 ayuda a llevar=좀 도와줘(버스)=help carry
@@ -237,6 +241,7 @@ Azuregos=아주어고스=Azuregos
 añadir=추가 몹=add
 añadir en WeChat=위챗 친구추가=add on WeChat
 año=년=year
+años=년=years
 Añádame=추가해줘=add me
 backup WeChat=예비 위챗=backup WeChat
 Badlands=황야의 땅=Badlands
@@ -363,6 +368,7 @@ Buena suerte.=행운을=good luck
 buena vibración=분위기 좋음=good vibe
 Buenas noches.=좋은 저녁=good evening
 Buenas tardes=안녕하세요=good afternoon
+buenos=좋은=good
 Buenos días.=좋은 아침=good morning
 buenos días/GM=좋은 아침/GM=good morning/GM
 Buff de onyxia=오닉시아 버프(용사의 외침)=Onyxia buff
@@ -377,7 +383,9 @@ bug=버그=bug
 Bugged.=버그 걸림=bugged
 burbuja corazón=무적 귀환=bubble hearth
 Burning Steppes=불타는 평원=Burning Steppes
+buscamos=구합니다=looking for
 buscamos dps=딜러 구함=looking for damage dealers
+buscamos gente=사람을 모집합니다=looking for people
 buscamos jugadores=파티원 구함=looking for more
 buscamos miembros=파티원을 모집합니다=looking for more
 buscamos sanador=힐러 구함=looking for a healer
@@ -566,6 +574,7 @@ Conflagrar=점화=Conflagrate
 conjunto de mazmorras=던전 세트 1=dungeon set 1
 conmigo=나와 함께=with me
 Cono de frío=냉기 돌풍=Cone of Cold
+conocemos=우리는 잘 압니다=we know
 Consagración=신성화=Consecration
 consecución de los objetivos=업적=achievement
 Consejos=팁=tips
@@ -985,6 +994,7 @@ espíritu buff=정신력 버프=spirit buff
 espíritu de liberación=영혼 해방=release spirit
 Espíritu divino=천상의 정신=Divine Spirit
 esquemática=설계도=schematic
+esta bug=버그가 있습니다=is bugged
 Esta noche esta noche=오늘 밤=tonight
 Estaba bien.=~였다=was
 estable=안정적인=stable
@@ -1005,6 +1015,7 @@ estudiante=학생=student
 Estudiar=연구=Study
 estudio de granja de oro=작업장=gold farm studio
 Está bien.=알았어=alright
+está bug=버그가 있습니다=is bugged
 Estás ahí?=있어요?=are you there
 Estás calvo.=너 대머리잖아=you are bald
 Estás listo?=준비됐어?=are you ready
@@ -1221,6 +1232,7 @@ guerrero armas=무기 전사=Arms Warrior
 guerrero furia=분노 전사=Fury Warrior
 guerrero protección=방어 전사=Protection Warrior
 guerreros=전사=warriors
+guild latina=라틴계 길드=Latin American guild
 guild run=길드 런=guild run
 Guillad=길드원=guildie
 ha sido=~였다=been
@@ -1282,6 +1294,7 @@ hierbas=약초=herbs
 hierro oscuro=검은무쇠=dark iron
 Hillsbrad Foothills=힐스브래드 구릉지=Hillsbrad Foothills
 Hinterlands=동부 내륙지=Hinterlands
+historia=역사=history
 hit=적중=hit
 hoja=칼날=blade
 hola=안녕하세요=hello
@@ -1299,6 +1312,7 @@ hora=시간=hour
 Hora estándar oriental=미국 동부 표준시=Eastern Standard Time
 Horado Rajacieno=가시덩굴 우리=Razorfen Kraul
 horas=시간=hours
+horda=호드=Horde
 Horde=호드=Horde
 hostil=적대적=hostile
 HoTs=지속 치유=HoTs
@@ -1392,6 +1406,7 @@ jefe sólo=보스만=boss only
 Jin'do=주술사 진도=Jin'do
 joven=청년=young man
 juego=게임=game
+juego a fondo=게임을 깊이 있게=game in depth
 juego de roles PvP=역할극·플레이어 간 전투=roleplay PvP
 juegos=게임=games
 Jueves=목요일=Thursday
@@ -1444,6 +1459,7 @@ Las Minas de la Muerte=죽음의 폐광=The Deadmines
 lata=주석=tin
 latencia=지연(핑)=latency
 Latigazo doloroso=고통의 채찍=Lash of Pain
+latina=라틴계=Latin American
 lazo=활=bow
 LBRS=검은바위 첨탑 하층=LBRS
 leatherworker=가죽세공사=leatherworker
@@ -1805,6 +1821,7 @@ No lo hará=안 할 거야=won't
 No lo he hecho=없다=don't have
 No lo sé.=몰라=don't know
 No me importa.=상관없어=I don't care
+no me lo dio=받지 못했습니다=did not receive it
 no necesita=필요 없어=no need
 no pasa nada=괜찮아요=no worries
 no puede ganar=못 이김=can't win
@@ -1835,6 +1852,7 @@ novatos=뉴비 버스=carry newbies
 nuestra=우리의=our
 nuevo=새로운=new
 nuevo servidor=신규 서버=new server
+nuevos=새로운=new
 nuevos jugadores=신규 유저=new players
 núcleo básico=핵심 멤버=core
 Núcleo de Magma=화산 심장부=Molten Core
@@ -2108,6 +2126,7 @@ Puedo=내가 할 수 있어=I can
 Puedo hacerlo?=해도 돼요?/가능=may I
 Puedo unirme?=참가해도 되나요?=can I join?
 Puedo?=돼요?=can I?
+puertas=문들=doors
 puerto=순간이동=port
 puerto a=~로 순간이동=port to
 puerto por favor=순간이동 부탁=port please
@@ -2177,6 +2196,7 @@ Ramstein=램스타인=Ramstein
 ranged=원거리=ranged
 rango=사거리=range
 rango 1=1등급=rank 1
+rankear=평점을 올리다=climb the rankings
 ranking=계급 올리기=ranking
 Raptor Mastery=랩터 사냥법=Raptor Mastery
 rara vez=희귀(파랑)=rare
@@ -2298,6 +2318,7 @@ Reúnanse.=집합=gather
 rico.=부자=rich guy
 ricos=부자=rich
 rifle=소총=rifle
+ritmo=속도=pace
 Ritual de fatalidad=파멸의 의식=Ritual of Doom
 Ritual de invocación=소환 의식=Ritual of Summoning
 riéndose=ㅋㅋㅋ=laughing
@@ -2312,6 +2333,7 @@ Rogues buscando=도적 구함=rogues looking for
 rollo para=~ 주사위=roll for
 rollos=주사위=rolls
 root=속박=root
+roster=공략 인원 구성=roster
 roto roto roto roto=고장남=broken
 RU=러시아=RU
 Rugido desafiante=도전의 포효=Challenging Roar
@@ -2434,6 +2456,7 @@ shockadin=신성 충격 성기사=shockadin
 shroud=수의=shroud
 si=만약=if
 si recuerdo correctamente=내 기억이 맞다면=if I recall correctly
+siempre=항상=always
 siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre siempre=항상=always
 Siento que se siente bien.=느껴진다=feels
 sierra=봤다=saw
@@ -2602,6 +2625,7 @@ Tirisfal Glades=티리스팔 숲=Tirisfal Glades
 Tiro=풀링=pull
 Tiro/invitación=풀링/초대=pull/invite
 toda la codicia=전부 차비=greed all
+todas las clases bienvenidas=모든 직업 환영=all classes welcome
 todas las clases/roles bienvenidos=모든 직업/역할 모집=all classes/roles welcome
 todas las misiones=모든 퀘스트=all quests
 todavía=여전히=still
@@ -2762,6 +2786,7 @@ Vigilia de la Luz=빛의 경계=Light's Vigil
 vinculantes=손목띠=bindings
 Visión lejana=천리안=Far Sight
 Visión mental=마음의 눈=Mind Vision
+vive=경험하다=experience
 vivo=살아 있는=alive
 volar aquí.=날아와=fly here
 volved a vuestro cadáver=시체를 찾아 돌아오세요=run back to your corpse

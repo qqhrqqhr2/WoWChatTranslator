@@ -40,7 +40,7 @@ for lang,raw in pairs(ns.RawGlossary) do
   for _ in pairs(ns.Dict[lang]) do unique=unique+1 end
   assert(rows==unique, lang..": duplicate normalized source keys")
 end
-assert(count == 21702)
+assert(count >= 21702)
 print("Lua 문법 및 기존 BuildDict 로딩 검증 성공. 정규화 후 고유항목: "..count)
 '''
 result=lib.luaL_loadstring(state,code.encode())

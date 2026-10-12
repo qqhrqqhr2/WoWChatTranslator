@@ -281,6 +281,23 @@ local function lookup(dicts, key)
 	end
 end
 
+-- Preserve full dictionary phrases first; split slash alternatives only when
+-- every component is a known term. URLs and unknown names remain unchanged.
+local function SlashMeaning(key, lang, target)
+    if not key:find("/", 1, true) or key:find(":", 1, true)
+        or key:sub(1,1) == "/" or key:sub(-1) == "/" or key:find("//",1,true) then return end
+    local meanings = {}
+    for part in key:gmatch("[^/]+") do
+        local entry = lookup({Dict[lang] or {}, Dict.en or {}}, part)
+        local value = entry and Meaning(entry, target) or MatchPattern(part, lang, target)
+        if not value or value == "" then return end
+        meanings[#meanings+1] = value
+        if #meanings > 5 then return end
+    end
+    if #meanings >= 2 then return table.concat(meanings, "/") end
+end
+ns.SlashMeaning = SlashMeaning
+
 -- 반환: { rough = "대략적인 뜻(색 코드 포함)", terms = { {원문, 뜻}, ... }, found = 찾은 개수 }
 -- 한국어 반복 자모 줄이기 (ㅋㅋㅋㅋ → ㅋㅋ)
 local REPEAT_JAMO = { "ㅋ", "ㅎ", "ㅠ", "ㅜ", "ㄷ", "ㅡ" }
@@ -335,8 +352,15 @@ local function Gloss(text, lang, target)
 	local pieces, terms, seen, found = {}, {}, {}, 0
 	local coverHit, coverMiss = 0, 0
 	local unknown = {}
+	local unknownRun = ""
+	local function FlushUnknown()
+		if unknownRun ~= "" then unknown[#unknown + 1] = unknownRun; unknownRun = "" end
+	end
 	local function isNumber(tok) return tok.kind == "word" and tok.key:find("^[%d%p]+$") ~= nil end
-	local function emit(kind, s) pieces[#pieces + 1] = { kind = kind, s = s } end
+	local function emit(kind, s)
+		if kind ~= "miss" then FlushUnknown() end
+		pieces[#pieces + 1] = { kind = kind, s = s }
+	end
 	local function addTerm(term, meaning, len)
 		found = found + 1
 		if meaning ~= "" and not seen[term] and #terms < 14 and len > 0 and meaning:lower() ~= term:lower() then
@@ -399,7 +423,7 @@ local function Gloss(text, lang, target)
 			end
 		end
 		if not matched and t.kind == "word" then
-			local p = MatchPattern(t.key, lang, target)
+			local p = SlashMeaning(t.key, lang, target) or MatchPattern(t.key, lang, target)
 			if p then
 				emit("hit", p)
 				found = found + 1
@@ -415,13 +439,15 @@ local function Gloss(text, lang, target)
 				emit("miss", t.text)
 				if not isNumber(t) then
                     coverMiss = coverMiss + 1
-                    unknown[#unknown + 1] = t.key
+                    if t.kind == "cjk" then unknownRun = unknownRun .. t.key
+                    else FlushUnknown(); unknown[#unknown + 1] = t.key end
                 end
 			end
 			i = i + 1
 		end
 	end
 
+	FlushUnknown()
 	-- 조각 이어 붙이기: 뜻끼리는 띄어 쓰고, 모르는 한자는 붙여서 원문 그대로
 	local out, plain, prev, prevS = {}, {}, nil, nil
 	for _, p in ipairs(pieces) do
@@ -597,6 +623,36 @@ local function NoteError(err)
 	ns.status.lastError = tostring(err)
 end
 
+-- A filter may run before the client rejects a channel for this frame.
+-- Emit a separate translation only after AddMessage receives its original line.
+local function QueueSeparate(frame, out, separate)
+	if not frame or type(frame.AddMessage) ~= "function" then return end
+	local id = out:match("|Hwctcopy:(%d+)") or out:match("|Hwct:(%d+)")
+	if not id then return end
+	local pending = frame.wctSeparatePending
+	if not pending then
+		pending = { values = {}, order = {} }
+		frame.wctSeparatePending = pending
+		local original = frame.AddMessage
+		frame.AddMessage = function(self, text, ...)
+			local key = type(text) == "string" and
+				(text:match("|Hwctcopy:(%d+)") or text:match("|Hwct:(%d+)"))
+			local meaning = key and pending.values[key]
+			if meaning then pending.values[key] = nil end
+			local result = original(self, text, ...)
+			if meaning then original(self, meaning, ...) end
+			return result
+		end
+	end
+	if not pending.values[id] then
+		pending.order[#pending.order + 1] = id
+		if #pending.order > 200 then
+			pending.values[table.remove(pending.order, 1)] = nil
+		end
+	end
+	pending.values[id] = separate
+end
+
 -- 방법 1: 채팅 메시지 필터 (권장)
 local function Filter(self, event, msg, author, ...)
 	local lineID = select(9, ...)
@@ -617,13 +673,7 @@ local function Filter(self, event, msg, author, ...)
 		CacheLine(lineID, { out, separate, msg = msg, author = author, event = event, settings = settings })
 	end
 	if not out then return false end
-	if separate and self and self.AddMessage and C_Timer then
-		-- 원래 메시지가 채팅창에 찍힌 바로 뒤에 같은 색으로 한 줄 더
-		local info = ChatTypeInfo and ChatTypeInfo[(event or ""):sub(10)]
-		C_Timer.After(0, function()
-			pcall(self.AddMessage, self, separate, info and info.r, info and info.g, info and info.b)
-		end)
-	end
+	if separate then QueueSeparate(self, out, separate) end
 	return false, out, author, ...
 end
 
