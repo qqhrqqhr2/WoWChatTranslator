@@ -19,6 +19,17 @@ local _,out=f({},"CHAT_MSG_GUILD","lfg","Other")
 assert(out==nil, "길드 채널은 꺼져 있어야 함")
 local _,out2=filters.CHAT_MSG_SAY({},"CHAT_MSG_SAY","lfg","Other")
 assert(out2 and out2:find("파티 찾음",1,true))
+-- 번역하지 않는 메시지도 클릭 복사 (copyAll)
+ns.db.chat.copyAll=true
+local _,g2=f({},"CHAT_MSG_GUILD","lfg","Other")
+assert(g2 and g2:find("|Hwctcopy:",1,true) and not g2:find("파티 찾음",1,true), "꺼진 채널은 복사 링크만")
+local _,k=filters.CHAT_MSG_SAY({},"CHAT_MSG_SAY","안녕하세요 반가워요","Other")
+assert(k and k:find("|Hwctcopy:%d+|h안녕하세요 반가워요|h"), tostring(k))
+local _,lk=filters.CHAT_MSG_SAY({},"CHAT_MSG_SAY","안녕 |Hitem:1|h[물건]|h 팔아요","Other")
+assert(lk:find("|Hitem:1|h[물건]|h",1,true) and select(2, lk:gsub("|Hwctcopy:",""))==2)
+ns.db.chat.copyAll=false
+local _,k2=filters.CHAT_MSG_SAY({},"CHAT_MSG_SAY","또 안녕하세요","Other")
+assert(k2==nil)
 -- 한자 뒤에 붙은 영문
 assert(ns.Gloss("来T","zh","ko").plain:find("탱커 구함",1,true))
 -- 나만의 단어

@@ -646,26 +646,33 @@ local CHANNEL_KIND = {
 }
 ns.CHANNEL_KIND = CHANNEL_KIND
 
+-- 번역하지 않는 메시지도 클릭하면 복사창이 뜨게 (설정: 모든 메시지 클릭해서 복사)
+local function CopyOnly(msg, author)
+	if not ns.db.chat.copyAll then return nil end
+	if msg:find("|Hwct:", 1, true) or msg:find("|Hwctcopy:", 1, true) then return nil end
+	local id = NewEntry(PlainText(msg), nil, author)
+	return WrapCopyText(msg, id)
+end
+
 -- 메시지 본문 하나를 처리해서 바뀐 본문을 돌려준다 (안 바꿀 땐 nil)
 local function Process(msg, author, event)
 	local db = ns.db
 	if not db or not db.chat.enabled or type(msg) ~= "string" or msg == "" then return nil end
-	local kind = event and CHANNEL_KIND[event]
-	if kind and db.chat.channels and db.chat.channels[kind] == false then return nil end
 	if msg:find("|Hwct:", 1, true) or msg:find("|Hwctcopy:", 1, true) then return nil end
+	local kind = event and CHANNEL_KIND[event]
+	if kind and db.chat.channels and db.chat.channels[kind] == false then return CopyOnly(msg, author) end
 	ns.status.seen = ns.status.seen + 1
 	if db.chat.skipSelf and type(author) == "string" and author ~= "" then
 		myName = myName or UnitName("player")
-		if author:match("^[^%-]+") == myName then return nil end
+		if author:match("^[^%-]+") == myName then return CopyOnly(msg, author) end
 	end
 	local lang = Detect(DetectText(msg))
-	if not lang then return nil end
+	if not lang then return CopyOnly(msg, author) end
 	local target = ns.GetTarget()
-
 
     local clean = DetectText(msg):gsub("||", "|")
     local g = Gloss(clean, lang, target)
-    if g.foreignFound == 0 and (ns.SAME_SOURCE[target] == lang or not db.chat.langs[lang]) then return nil end
+    if g.foreignFound == 0 and (ns.SAME_SOURCE[target] == lang or not db.chat.langs[lang]) then return CopyOnly(msg, author) end
     if not db.chat.langs[lang] or ns.SAME_SOURCE[target] == lang then
         for _, source in ipairs({"en", "es", "ru", "zh", "ja", "ko"}) do
             if g.languages[source] and db.chat.langs[source] and ns.SAME_SOURCE[target] ~= source then lang = source; break end
@@ -747,7 +754,7 @@ local function Filter(self, event, msg, author, ...)
 	local settings = cfg and table.concat({tostring(ns.GetTarget()), tostring(cfg.enabled), tostring(cfg.inline),
 		tostring(cfg.minCover), tostring(cfg.tag), tostring(cfg.hoverAll), tostring(cfg.skipSelf),
 		tostring(cfg.langs.ko), tostring(cfg.langs.zh), tostring(cfg.langs.ja), tostring(cfg.langs.ru), tostring(cfg.langs.en), tostring(cfg.langs.es),
-		tostring(ns.customVersion or 0)}, ":")
+		tostring(ns.customVersion or 0), tostring(cfg.copyAll)}, ":")
 	local cached = lineID and lineCache[lineID]
 	if cached and cached.msg == msg and cached.author == author and cached.event == event and cached.settings == settings then
 		out, separate = cached[1], cached[2]

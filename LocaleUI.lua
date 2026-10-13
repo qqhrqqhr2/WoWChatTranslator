@@ -1,6 +1,7 @@
 -- WoW Chat Translator: 설정창 개편·채널·도구·내 메시지 번역·나만의 단어 문구 (7개 언어)
 local ADDON, ns = ...
 
+ns.DEFAULTS.chat.copyAll = true        -- 번역하지 않는 메시지도 클릭하면 복사창
 ns.DEFAULTS.chat.playerTip = true      -- 채팅 이름에 캐릭터 정보 툴팁 (Shift+클릭 조회)
 ns.DEFAULTS.chat.channels = { public = true, say = true, guild = true, group = true, whisper = true }
 ns.DEFAULTS.minimap = { show = true, angle = 205 }
@@ -8,6 +9,7 @@ ns.DEFAULTS.custom = {}                 -- 나만의 단어: custom[원문 언�
 
 local UI = {
 	ko = {
+		optCopyAll = "모든 메시지 클릭해서 복사 (번역 안 하는 메시지 포함)",
 		secLangs = "번역할 언어", secChannels = "번역할 채널", secMisc = "기타",
 		chPublic = "공개 채널 (거래·파티찾기·공용)", chSay = "일반 대화·외치기", chGuild = "길드·관리자",
 		chGroup = "파티·공격대·인스턴스", chWhisper = "귓속말",
@@ -29,6 +31,7 @@ local UI = {
 		helpTitle = "명령어 목록",
 	},
 	en = {
+		optCopyAll = "Click any message to copy it (even untranslated)",
 		secLangs = "Languages to translate", secChannels = "Channels to translate", secMisc = "Other",
 		chPublic = "Public channels (Trade, LFG, General)", chSay = "Say and yell", chGuild = "Guild and officer",
 		chGroup = "Party, raid and instance", chWhisper = "Whispers",
@@ -51,6 +54,7 @@ local UI = {
 		helpTitle = "Commands",
 	},
 	zhCN = {
+		optCopyAll = "点击任何消息都可复制（包括未翻译的）",
 		secLangs = "要翻译的语言", secChannels = "要翻译的频道", secMisc = "其他",
 		chPublic = "公共频道（交易、寻求组队、综合）", chSay = "说话和大喊", chGuild = "公会和官员",
 		chGroup = "小队、团队和副本", chWhisper = "密语",
@@ -72,6 +76,7 @@ local UI = {
 		helpTitle = "命令列表",
 	},
 	ja = {
+		optCopyAll = "どのメッセージもクリックでコピー（未翻訳も含む）",
 		secLangs = "翻訳する言語", secChannels = "翻訳するチャンネル", secMisc = "その他",
 		chPublic = "公開チャンネル（取引・LFG・全般）", chSay = "発言・叫び", chGuild = "ギルド・オフィサー",
 		chGroup = "パーティ・レイド・インスタンス", chWhisper = "ささやき",
@@ -93,6 +98,7 @@ local UI = {
 		helpTitle = "コマンド一覧",
 	},
 	ru = {
+		optCopyAll = "Копировать любое сообщение щелчком",
 		secLangs = "Переводить с языков", secChannels = "Переводить каналы", secMisc = "Прочее",
 		chPublic = "Общие каналы (торговля, поиск группы)", chSay = "Сказать и крик", chGuild = "Гильдия и офицеры",
 		chGroup = "Группа, рейд, подземелье", chWhisper = "Шёпот",
@@ -117,6 +123,7 @@ local UI = {
 		optHover = "Подсказка при наведении на сообщение",
 	},
 	es = {
+		optCopyAll = "Clic en cualquier mensaje para copiarlo",
 		secLangs = "Idiomas que traducir", secChannels = "Canales que traducir", secMisc = "Otros",
 		chPublic = "Canales públicos (Comercio, Buscar grupo)", chSay = "Decir y gritar", chGuild = "Hermandad y oficiales",
 		chGroup = "Grupo, banda e instancia", chWhisper = "Susurros",
@@ -160,6 +167,7 @@ UI.zhTW.listTitle, UI.zhTW.listEmpty = "你新增的詞語：%d個", "還沒有�
 UI.zhTW.collectedTitle, UI.zhTW.collectedEmpty = "收集的未翻譯提示句子：%d個（Ctrl+C複製）", "還沒有收集到句子。"
 UI.zhTW.help = "/wct - 設定\n/wct en 句子 - 把你的訊息轉換為英語（zh、tw、ru、ja、es、ko）\n/wct add 詞語=意思 - 新增自訂詞語\n/wct del 詞語 - 刪除\n/wct list - 自訂詞語列表\n/wct unknown - 未登記的聊天表達\n/wct collect - 未翻譯的提示句子\n/wct status - 狀態\n/wct test 句子 - 測試"
 UI.zhTW.helpTitle = "指令列表"
+UI.zhTW.optCopyAll = "點擊任何訊息都可複製（包括未翻譯的）"
 
 for lang, strings in pairs(UI) do
 	local t = ns.STR[lang]

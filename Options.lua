@@ -191,6 +191,7 @@ local function Build()
 	Check(frame, function() return L.optTag end, LEFT, y, function() return db.chat.tag end, function(v) db.chat.tag = v end, LW); y = y - ROW
 	Check(frame, function() return L.optHover end, LEFT, y, function() return db.chat.hoverAll end, function(v) db.chat.hoverAll = v end, LW); y = y - ROW
 	Check(frame, function() return L.optSelf end, LEFT, y, function() return db.chat.skipSelf end, function(v) db.chat.skipSelf = v end, LW); y = y - ROW
+	Check(frame, function() return L.optCopyAll end, LEFT, y, function() return db.chat.copyAll end, function(v) db.chat.copyAll = v end, LW); y = y - ROW
 	Check(frame, function() return L.optPlayerTip end, LEFT, y, function() return db.chat.playerTip ~= false end, function(v) db.chat.playerTip = v end, LW); y = y - ROW - 4
 	Note(frame, "chatNote", LEFT + 4, y); y = y - 30
 	local leftBottom = y
