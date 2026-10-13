@@ -6,6 +6,15 @@ local ADDON, ns = ...
 -- 화면 문구는 현지 언어 설정에 따라 바뀌므로 항상 ns.L 을 거쳐서 읽는다
 local L = setmetatable({}, { __index = function(_, k) return ns.L[k] end })
 
+-- 보호된 값(secret value): 전투·인스턴스에서 게임이 주는 값은 읽거나 비교하면 오류가 난다
+local function IsSecret(v)
+	if not issecretvalue then return false end
+	local ok, r = pcall(issecretvalue, v)
+	return not ok or r
+end
+ns.IsSecret = IsSecret
+local function SafeString(v) return type(v) == "string" and not IsSecret(v) end
+
 ------------------------------------------------------------------------
 -- UTF-8 처리
 ------------------------------------------------------------------------
@@ -724,15 +733,25 @@ local function QueueSeparate(frame, out, separate)
 	if not pending then
 		pending = { values = {}, order = {} }
 		frame.wctSeparatePending = pending
-		local original = frame.AddMessage
-		frame.AddMessage = function(self, text, ...)
-			local key = type(text) == "string" and
-				(text:match("|Hwctcopy:(%d+)") or text:match("|Hwct:(%d+)"))
+		-- AddMessage 를 바꿔 끼우지 않고 뒤에 덧붙이기만 한다 (채팅창 오염·보호된 값 오류 방지)
+		local function after(self, text, ...)
+			if not SafeString(text) then return end
+			local key = text:match("|Hwctcopy:(%d+)") or text:match("|Hwct:(%d+)")
 			local meaning = key and pending.values[key]
-			if meaning then pending.values[key] = nil end
-			local result = original(self, text, ...)
-			if meaning then original(self, meaning, ...) end
-			return result
+			if meaning then
+				pending.values[key] = nil
+				self:AddMessage(meaning, ...)
+			end
+		end
+		if hooksecurefunc then
+			hooksecurefunc(frame, "AddMessage", after)
+		else
+			local original = frame.AddMessage
+			frame.AddMessage = function(self, text, ...)
+				local result = original(self, text, ...)
+				after(self, text, ...)
+				return result
+			end
 		end
 	end
 	if not pending.values[id] then
@@ -746,9 +765,11 @@ end
 
 -- 방법 1: 채팅 메시지 필터 (권장)
 local function Filter(self, event, msg, author, ...)
+	-- 보호된 메시지·이름은 건드리지 않고 그대로 통과
+	if not SafeString(msg) or IsSecret(author) or (author ~= nil and type(author) ~= "string") then return false end
 	local lineID = select(9, ...)
 	-- 0/누락 ID는 메시지 식별자가 아니므로 캐시하지 않는다.
-	if type(lineID) ~= "number" or lineID <= 0 then lineID = nil end
+	if IsSecret(lineID) or type(lineID) ~= "number" or lineID <= 0 then lineID = nil end
 	local out, separate
 	local cfg = ns.db and ns.db.chat
 	local settings = cfg and table.concat({tostring(ns.GetTarget()), tostring(cfg.enabled), tostring(cfg.inline),
@@ -820,7 +841,7 @@ local function HookAddMessage(frame)
 	local orig = frame.AddMessage
 	frame.wctOrigAddMessage = orig
 	frame.AddMessage = function(self, text, ...)
-		if type(text) == "string" and text:find("|Hplayer:", 1, true) then
+		if SafeString(text) and text:find("|Hplayer:", 1, true) then
 			local ok, out, separate = pcall(ProcessLine, text)
 			if ok and out then
 				text = out
@@ -888,6 +909,7 @@ local function HookFrame(frame)
 	if not frame or hooked[frame] then return end
 	hooked[frame] = true
 	frame:HookScript("OnHyperlinkEnter", function(self, link)
+		if not SafeString(link) then return end
 		local id = type(link) == "string" and link:match("^wct:(%d+)")
 		local copyID = type(link) == "string" and link:match("^wctcopy:(%d+)")
 		if copyID then
@@ -983,6 +1005,7 @@ end
 local function HookItemRef()
 	local orig = SetItemRef
 	SetItemRef = function(link, text, button, chatFrame, ...)
+		if not SafeString(link) then return orig(link, text, button, chatFrame, ...) end
 		if type(link) == "string" and (link:sub(1, 4) == "wct:" or link:sub(1, 8) == "wctcopy:") then
 			local e = entries[tonumber(link:match("^wct:(%d+)") or link:match("^wctcopy:(%d+)"))]
 			if e then ns.ShowCopy(e.text) end
