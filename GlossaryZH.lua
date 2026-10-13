@@ -3237,4 +3237,5 @@ zul=줄파락=Zul'Farrak
 黑龙公主=오닉시아=Onyxia
 黑龙头buff=오닉시아 버프(용사의 외침)=Onyxia buff
 龍頭=용 머리(월드 버프)=dragon head
+达拉然=달라란=Dalaran
 ]=]

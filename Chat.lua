@@ -337,24 +337,58 @@ local function Gloss(text, lang, target)
 		end
 		tokens = merged
 	end
-	local cjkMode = (lang == "zh" or lang == "ja" or lang == "ko")
-	local cjkOut = (target == "zhCN" or target == "zhTW")
-	local mainDicts
-	if lang == "ja" then mainDicts = { Dict.ja, Dict.zh }
-	elseif lang == "zh" then mainDicts = { Dict.zh }
-	else mainDicts = { Dict[lang] } end
-	local wordDicts = { Dict[lang], Dict.en }
-	local maxLen = 1
-	for _, l in ipairs(cjkMode and { "zh", "ja", "ko" } or { lang }) do
-		if (MaxLen[l] or 1) > maxLen then maxLen = MaxLen[l] end
-	end
+    -- Assign source languages to script runs. Latin runs use the existing
+    -- English/Spanish detector; kana selects Japanese for its adjacent Han run.
+    local tokenLanguages = {}
+    local function Script(t)
+        local cp = t and decode(t.key, 1)
+        if not cp then return end
+        if isHangul(cp) then return "ko" end
+        if isCyr(cp) then return "ru" end
+        if isKana(cp) then return "ja" end
+        if isHan(cp) then return "han" end
+        if isLatin(cp) then return "latin" end
+    end
+    local start = 1
+    while start <= #tokens do
+        local script = Script(tokens[start])
+        if not script then start = start + 1
+        else
+            local finish, text, japanese = start, {}, script == "ja"
+            while finish <= #tokens do
+                local current = Script(tokens[finish])
+                local compatible = current == script or
+                    ((script == "han" or script == "ja") and (current == "han" or current == "ja"))
+                if not compatible and tokens[finish].kind ~= "space" then break end
+                if current == "ja" then japanese = true end
+                text[#text+1] = tokens[finish].text
+                finish = finish + 1
+            end
+            local source = script
+            if source == "latin" then source = Detect(table.concat(text)) or "en" end
+            if source == "han" or source == "ja" then source = japanese and "ja" or "zh" end
+            for index = start, finish - 1 do tokenLanguages[index] = source end
+            start = finish
+        end
+    end
+    local foreignFound = 0
+    local usedLanguages = {}
+    local unknownByLanguage = {}
+    local currentLanguage = lang
+    local cjkOut = (target == "zhCN" or target == "zhTW")
 
 	local pieces, terms, seen, found = {}, {}, {}, 0
 	local coverHit, coverMiss = 0, 0
 	local unknown = {}
 	local unknownRun = ""
+	local unknownLanguage = lang
 	local function FlushUnknown()
-		if unknownRun ~= "" then unknown[#unknown + 1] = unknownRun; unknownRun = "" end
+		if unknownRun ~= "" then
+            unknown[#unknown + 1] = unknownRun
+            unknownByLanguage[unknownLanguage] = unknownByLanguage[unknownLanguage] or {}
+            table.insert(unknownByLanguage[unknownLanguage], unknownRun)
+            unknownRun = ""
+        end
 	end
 	local function isNumber(tok) return tok.kind == "word" and tok.key:find("^[%d%p]+$") ~= nil end
 	local function emit(kind, s)
@@ -373,13 +407,24 @@ local function Gloss(text, lang, target)
 	while i <= n do
 		local t = tokens[i]
 		local matched = false
-		if t.kind == "cjk" or t.kind == "word" then
+        currentLanguage = tokenLanguages[i] or lang
+        local source = currentLanguage
+        local cjkMode = source == "zh" or source == "ja" or source == "ko"
+        local mainDicts = source == "ja" and {Dict.ja, Dict.zh} or {Dict[source] or {}}
+        local wordDicts = {Dict[source] or {}, Dict.en or {}}
+        local maxLen = MaxLen[source] or 1
+        if source == "ja" then maxLen = math.max(maxLen, MaxLen.zh or 1) end
+        local localSource = ns.SAME_SOURCE and ns.SAME_SOURCE[target] == source
+        local disabled = ns.db and ns.db.chat and ns.db.chat.langs and ns.db.chat.langs[source] == false
+        if disabled then mainDicts, wordDicts = {}, {} end
+        if t.kind == "cjk" or t.kind == "word" then
 			-- 가장 긴 표현부터 찾기
 			local keys, last = {}, nil
 			local j, used = i, 0
 			local best, bestJ = nil, nil
 			while j <= n and used < maxLen do
 				local tj = tokens[j]
+                if tokenLanguages[j] and tokenLanguages[j] ~= source then break end
 				if tj.kind == "space" then
 					-- Match explicitly registered names across spaces, including Korean names.
 					local nx = tokens[j + 1]
@@ -413,7 +458,9 @@ local function Gloss(text, lang, target)
 				for x = i, bestJ do
 					if tokens[x].kind ~= "space" and not isNumber(tokens[x]) then coverHit = coverHit + 1 end
 				end
-				local meaning = Meaning(best, target)
+				local meaning = localSource and term or Meaning(best, target)
+                usedLanguages[source] = true
+                if not localSource then foreignFound = foreignFound + 1 end
 				if meaning ~= "" then emit("hit", meaning) end
 				-- 한 글자짜리 영문·러시아어(в, и, g 등)는 목록에서는 뺀다
 				local short = (t.kind == "word" and i == bestJ and #t.key <= 2 and not cjkMode)
@@ -422,10 +469,12 @@ local function Gloss(text, lang, target)
 				matched = true
 			end
 		end
-		if not matched and t.kind == "word" then
-			local p = SlashMeaning(t.key, lang, target) or MatchPattern(t.key, lang, target)
+		if not matched and not disabled and not localSource and t.kind == "word" then
+			local p = SlashMeaning(t.key, source, target) or MatchPattern(t.key, source, target)
 			if p then
 				emit("hit", p)
+                foreignFound = foreignFound + 1
+                usedLanguages[source] = true
 				found = found + 1
 				coverHit = coverHit + 1
 				i = i + 1
@@ -437,10 +486,16 @@ local function Gloss(text, lang, target)
 			elseif t.kind == "other" then emit("other", t.text)
 			else
 				emit("miss", t.text)
-				if not isNumber(t) then
+				if not isNumber(t) and not localSource and not disabled then
                     coverMiss = coverMiss + 1
-                    if t.kind == "cjk" then unknownRun = unknownRun .. t.key
-                    else FlushUnknown(); unknown[#unknown + 1] = t.key end
+                    if t.kind == "cjk" then
+                        if unknownLanguage ~= source then FlushUnknown() end
+                        unknownLanguage = source; unknownRun = unknownRun .. t.key
+                    else
+                        FlushUnknown(); unknown[#unknown + 1] = t.key
+                        unknownByLanguage[source] = unknownByLanguage[source] or {}
+                        table.insert(unknownByLanguage[source], t.key)
+                    end
                 end
 			end
 			i = i + 1
@@ -492,6 +547,9 @@ local function Gloss(text, lang, target)
 		plain = table.concat(plain),
 		terms = terms,
         unknown = unknown,
+        unknownByLanguage = unknownByLanguage,
+        foreignFound = foreignFound,
+        languages = usedLanguages,
 		found = found,
 		cover = total > 0 and floor(coverHit * 100 / total) or 0,
 	}
@@ -581,14 +639,20 @@ local function Process(msg, author)
 		if author:match("^[^%-]+") == myName then return nil end
 	end
 	local lang = Detect(DetectText(msg))
-	if not lang or not db.chat.langs[lang] then return nil end
+	if not lang then return nil end
 	local target = ns.GetTarget()
-	if ns.SAME_SOURCE[target] == lang then return nil end
 
-	local plainText = PlainText(msg)
-	local id = NewEntry(plainText, lang, author)
-	-- 아이템·퀘스트 링크 이름은 게임이 알아서 내 언어로 보여주므로 번역에서 뺀다
-	local g = Gloss(DetectText(msg):gsub("||", "|"), lang, target)
+
+    local clean = DetectText(msg):gsub("||", "|")
+    local g = Gloss(clean, lang, target)
+    if g.foreignFound == 0 and (ns.SAME_SOURCE[target] == lang or not db.chat.langs[lang]) then return nil end
+    if not db.chat.langs[lang] or ns.SAME_SOURCE[target] == lang then
+        for _, source in ipairs({"en", "es", "ru", "zh", "ja", "ko"}) do
+            if g.languages[source] and db.chat.langs[source] and ns.SAME_SOURCE[target] ~= source then lang = source; break end
+        end
+    end
+    local plainText = PlainText(msg)
+    local id = NewEntry(plainText, lang, author)
 	entries[id].gloss = g
 	entries[id].glossTarget = target
 	entries[id].glossText = DetectText(msg):gsub("||", "|")
@@ -605,7 +669,7 @@ local function Process(msg, author)
 	local suffix, separate = "", nil
 	if db.chat.inline and g.found > 0 and g.cover >= (db.chat.minCover or 40) then
 		-- 원문이 한자·가나인데 뜻이 한글(또는 그 반대)이면 한 줄에 섞지 않고 다음 줄에 따로 보여 준다
-		local hanSource = (lang == "zh" or lang == "ja")
+		local hanSource = (lang == "zh" or lang == "ja" or g.languages.zh or g.languages.ja)
 		local conflict = (hanSource and target == "ko") or (lang == "ko" and (target == "zhCN" or target == "zhTW"))
 		if conflict then
 			local meaning = (hanSource and g.plainNoCJK or g.plain):gsub("|", "||")

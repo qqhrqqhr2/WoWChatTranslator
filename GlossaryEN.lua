@@ -1,7 +1,7 @@
 -- en source dictionary; term=Korean=English.
 local ADDON, ns = ...
 ns.RawGlossary.en = [=[
-(((/w=귓속말=whisper
+((((/w=귓속말=whisper
 /whisper=귓속말=whisper
 1 caster needed=주문 딜러 1명 구함=looking for 1 caster
 1 dd needed=딜러 1명 구함=looking for 1 dd
@@ -156,6 +156,7 @@ accept quest=퀘스트 받기=accept quest
 accidental pull=실수로 몬스터를 유인함=accidental pull
 achievement=업적=achievement
 active=활발한=active
+actually=실제로=actually
 add=추가 몹=add
 add me=추가해줘=add me
 add on WeChat=위챗 친구추가=add on WeChat
@@ -814,6 +815,7 @@ class=직업=class
 classes=직업=classes
 classes/roles=직업/역할=classes/roles
 classic server=클래식 서버=classic server
+classic/tbc=클래식/불타는 성전=Classic/The Burning Crusade
 Claw=할퀴기=Claw
 cleanse=해제=cleanse
 cleanse disease=질병을 해제하세요=remove disease
@@ -840,6 +842,7 @@ cod accepted=대금 청구 우편 가능=cash on delivery accepted
 cod available=대금 청구 우편 가능=COD available
 cod only=대금 청구 우편만 가능=cash on delivery only
 coe=원소의 저주=Curse of the Elements
+cold=차가운=cold
 Cold Blood=냉혈=Cold Blood
 Cold Snap=한파=Cold Snap
 combat=전투=combat
@@ -946,6 +949,8 @@ cuffs=소매=cuffs
 cure=치료(해제)=cure
 Cure Disease=질병 치료=Cure Disease
 Cure Poison=해독=Cure Poison
+current=현재의=current
+currently=현재=currently
 curse=저주=curse
 Curse of Agony=고통의 저주=Curse of Agony
 Curse of Exhaustion=피로의 저주=Curse of Exhaustion
@@ -1256,7 +1261,9 @@ dual spec=이중 특성=dual specialization
 Dual Wield=쌍수 무기=Dual Wield
 dude=사람(녀석)=dude
 dudu=드루이드=druid
+due=예정된/때문에 (문맥에 따라)=due
 due to=때문에=due to
+due to lag=렉 때문에=due to lag
 due to server=서버 문제로=due to server issues
 due to server issues=서버 문제로=due to server issues
 due to spam=스팸 때문에=due to spam
@@ -1402,10 +1409,12 @@ exactly=확실해=exactly
 exalted=확고한 동맹=exalted
 excav=발굴 현장: 저습지=Excavation Site: Wetlands
 excav site=발굴 현장: 저습지=Excavation Site: Wetlands
+excavatin=발굴 현장=Excavation
 excavation=발굴 현장: 저습지=Excavation Site: Wetlands
 excavation site=발굴 현장: 저습지=Excavation Site: Wetlands
 Excavation Site: Wetlands=발굴 현장: 저습지=Excavation Site: Wetlands
 excellent=아주 좋아=excellent
+excevation=발굴 현장=Excavation
 excuse me=실례지만=excuse me
 Execute=마무리 일격=Execute
 Exorcism=퇴마술=Exorcism
@@ -1476,6 +1485,7 @@ fh=순간 치유=flash heal
 fiery=불꽃 마부=fiery weapon
 fiery weapon=불꽃 마부=fiery weapon
 fight=싸움(PvP)=fight
+fill=충원하다=fill
 filled=마감=filled
 finally=드디어=finally
 find=찾다=find
@@ -1512,10 +1522,12 @@ fishing skill=낚시 숙련도=fishing skill
 fishing trainer=낚시 전문기술 전문가=fishing trainer
 fist=장착 무기=fist weapon
 fist weapon=장착 무기=fist weapon
+fit right in=잘 어울릴 것입니다=fit right in
 five=5=five
 five second rule=5초 규칙=five second rule
 fix=고치다=fix
 fixed=고쳤다=fixed
+fixing tells=귓속말 오류 수정=fixing whispers
 flag=깃발=flag
 flag carrier=깃발 운반자=flag carrier
 flag carrier/full clear=깃발 운반자/전체 클리어=flag carrier/full clear
@@ -2070,6 +2082,7 @@ ilvl=아이템 레벨=item level
 im=나는=I'm
 im lf=나 ~ 구함=I'm looking for
 imho=내 생각엔=in my humble opinion
+imma=나는 ~할 거야=I am going to
 immol'thar=이몰타르=Immol'thar
 Immolate=제물=Immolate
 Immolation Trap=제물의 덫=Immolation Trap
@@ -2181,6 +2194,7 @@ item level=아이템 레벨=item level
 items=아이템=items
 its=그건=it's
 ive=나는 이미 (I've)=I have
+iwn=승리하다 (win 오타)=win
 jailbreak run=검은바위 나락 탈옥 퀘스트 진행=Blackrock Depths jailbreak quest run
 Japan=일본=Japan
 Japanese=일본인=Japanese
@@ -2204,6 +2218,7 @@ just now=방금=just now
 just takes=걸릴 뿐이에요=just takes
 k=ㅇㅋ=ok
 kazzak=카자크=Kazzak
+keep=유지하다=keep
 kek=ㅋㅋ=lol
 kel'thuzad=켈투자드=Kel'Thuzad
 kelthuzad=켈투자드=Kel'Thuzad
@@ -2276,6 +2291,7 @@ lc=전리품 분배 위원회=loot council
 lead=리더/이끌다=lead
 leader=리더=leader
 Leader of the Pack=무리의 우두머리=Leader of the Pack
+leads=이끕니다=leads
 leather=가죽=leather
 leatherworker=가죽세공사=leatherworker
 leatherworking=가죽세공=leatherworking
@@ -3167,6 +3183,7 @@ linen cloth=리넨 옷감=linen cloth
 link=링크=link
 lip=제한적 무적의 물약=limited invulnerability potion
 little=작은=little
+live=실시간/살다 (문맥에 따라)=live
 live strat=스트라솔름 살아있는 구역=Stratholme Live
 living essence=생명의 정수=living essence
 lm=벌목장=lumber mill
@@ -3508,6 +3525,7 @@ naxxramas full run=낙스라마스 전체 공략=Naxxramas full run
 naxxramas quest run=낙스라마스 퀘스트 공략=Naxxramas quest run
 nbg=입찰 전 차비 금지(필요 우선)=need before greed
 ne1=누구든=anyone
+near=근처=near
 nearby=근처의=nearby
 neck=목걸이=neck
 neck enchant=목걸이 마법부여=neck enchantment
@@ -3939,6 +3957,7 @@ Portal: Thunder Bluff=차원의 문: 썬더 블러프=Portal: Thunder Bluff
 Portal: Undercity=차원의 문: 언더시티=Portal: Undercity
 portals=순간이동=portals
 ports=순간이동=portals
+positions=자리=positions
 pot=물약=potion
 potion=물약=potion
 potions=물약=potions
@@ -3964,6 +3983,7 @@ prebis=공격대 입장 전 최상급 장비=pre-raid best in slot
 premade=사전 구성 전장 파티=premade battleground group
 premade group=사전 구성 전장 파티=premade battleground group
 Premeditation=사전계획=Premeditation
+prep=준비=preparation
 Preparation=마음가짐=Preparation
 prerequisite quest=선행 퀘스트=prerequisite quest
 Presence of Mind=냉정=Presence of Mind
@@ -4078,6 +4098,7 @@ quiver=화살통=quiver
 r=~이다(are)=are
 r u ready=준비됐어?=are you ready
 r14=최고 계급(14)=rank 14
+racials=종족 특성=racial abilities
 rack=선반=rack
 rag=라그나로스=Ragnaros
 rage=분노=rage
@@ -4442,6 +4463,7 @@ selling cheap=싸게 팝니다=selling cheap
 selling in bulk=대량 판매 중=selling in bulk
 selling materials=재료 팝니다=selling materials
 selling mats=재료 팝니다=selling materials
+semi-casual=적당히 여유롭게 즐기는=semi-casual
 semi-hardcore=준하드코어=semi-hardcore
 semi-hc=준하드코어=semi-hardcore
 send 1=1 보내줘(초대용)=send 1
@@ -4527,6 +4549,7 @@ Shifting Power=변신의 힘=Shifting Power
 shockadin=신성 충격 성기사=shockadin
 sholo=스칼로맨스=Scholomance
 shotgun=샷건(총)=shotgun
+should=~해야 합니다=should
 should not=안 해야 한다=should not
 shoulder=어깨=shoulder
 shoulders=어깨=shoulders
@@ -4546,8 +4569,10 @@ silverleaf=은엽수=silverleaf
 silverpine=은빛소나무 숲=Silverpine Forest
 Silverpine Forest=은빛소나무 숲=Silverpine Forest
 sin=암살 도적=assassination
+since=~부터=since
 Sinister Strike=사악한 일격=Sinister Strike
 Siphon Life=생명력 착취=Siphon Life
+site=사이트=site
 six piece=6세트 효과=six-piece set bonus
 skeleton key=해골 열쇠=skeleton key
 skeram=예언자 스케람=Prophet Skeram
@@ -4641,6 +4666,7 @@ soft reserve=사전 희망 아이템 지정=soft reserve
 soft reserved=찜해둠=soft reserved
 soft reset=잠시 비워 몬스터 상태 초기화=soft reset
 sold=팔림=sold
+solid=탄탄한=solid
 some=좀=some
 some1=누군가=someone
 somebody=누군가=somebody
@@ -4704,6 +4730,7 @@ splintertree=쪼개진나무 초소=Splintertree Post
 Splintertree Post=쪼개진나무 초소=Splintertree Post
 split=분배=split
 split evenly=균등 분배=split evenly
+sports fan=스포츠 팬=sports fan
 spot=자리=spot
 spot open=자리 있음=spot open
 spots=자리=spots
@@ -4785,6 +4812,7 @@ strange dust=이상한 가루=strange dust
 stranglekelp=갈래물풀=stranglekelp
 stranglethorn=가시덤불 골짜기=Stranglethorn Vale
 Stranglethorn Vale=가시덤불 골짜기=Stranglethorn Vale
+strangletroen vale=가시덤불 골짜기=Stranglethorn Vale
 strat=스트라솔름=Stratholme
 strat live=스트라솔름 정문 구역=Stratholme living side
 strat live farm=스트라솔름 정문 구역 반복 사냥=Stratholme living side farm
@@ -4864,6 +4892,8 @@ summoning available=소환 가능=summoning available
 summoning stone=집결의 돌=summoning stone
 summons=소환=summons
 summons available=소환 가능=summons available
+summs=소환=summons
+sums=소환=summons
 Sunday=일요일=Sunday
 sunder=방어구 가르기=sunder armor
 Sunder Armor=방어구 가르기=Sunder Armor
@@ -4965,6 +4995,7 @@ Teleport: Thunder Bluff=순간이동: 썬더 블러프=Teleport: Thunder Bluff
 Teleport: Undercity=순간이동: 언더시티=Teleport: Undercity
 tell=귓말=tell
 tell me=알려줘=tell me
+tells=귓속말=whispers
 Templar's Bulwark=기사단의 보루=Templar's Bulwark
 temple=신전=temple
 temple of ahn'qiraj=안퀴라즈 사원=Temple of Ahn'Qiraj
@@ -5111,6 +5142,7 @@ Totemic Projection=토템 재배치=Totemic Projection
 Totemic Recall=토템의 귀환=Totemic Recall
 totems=토템=totems
 Touch of Weakness=무력의 손길=Touch of Weakness
+tourney=토너먼트=tournament
 Track Beasts=야수 추적=Track Beasts
 Track Demons=악마 추적=Track Demons
 Track Dragonkin=용족 추적=Track Dragonkin
@@ -5124,6 +5156,7 @@ trade me=거래 걸어줘=trade me
 trade request=거래 요청=trade request
 trade window=거래 창=trade window
 trading=교환 중=trading
+trainer=기술 전문가=trainer
 tram=지하 철도=deeprun tram
 tranq=평온=tranquility
 Tranquil Air Totem=평온의 토템=Tranquil Air Totem
@@ -5427,7 +5460,8 @@ windfury=질풍=windfury
 Windfury Totem=질풍의 토템=Windfury Totem
 Windfury Weapon=질풍의 무기=Windfury Weapon
 Windwall Totem=바람막이 토템=Windwall Totem
-Wing Clip=날개 절단=Wing Clip
+wing clip=날개 절단=Wing Clip
+wingclip=날개 절단=Wing Clip
 wintersbite=겨울서리풀=wintersbite
 winterspring=여명의 설원=Winterspring
 wipe=전멸=wipe

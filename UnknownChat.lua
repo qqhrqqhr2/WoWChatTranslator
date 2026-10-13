@@ -23,7 +23,12 @@ function ns.RecordUnknownChat(text, lang, gloss)
         else db.words[key] = nil end
     end
     local seen = {}
-    for _, word in ipairs(gloss.unknown) do
+    local sourceWords = {}
+    for source, words in pairs(gloss.unknownByLanguage or {[lang] = gloss.unknown}) do
+        for _, word in ipairs(words) do sourceWords[#sourceWords+1] = {source, word} end
+    end
+    for _, item in ipairs(sourceWords) do
+        local lang, word = item[1], item[2]
         local key = lang .. ":" .. word
         if not seen[key] and UsefulUnknown(lang, word) then
             seen[key] = true
