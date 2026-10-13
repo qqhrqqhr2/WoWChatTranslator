@@ -17,6 +17,7 @@
 
 Locale.lua
 LocaleExtra.lua
+LocaleUI.lua
 TradMap.lua
 Glossary.lua
 GlossaryEN.lua
@@ -35,3 +36,5 @@ Chat.lua
 Tooltip.lua
 Scan.lua
 Options.lua
+Minimap.lua
+Outgoing.lua

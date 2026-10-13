@@ -161,9 +161,13 @@ local function BuildDict()
 end
 BuildDict()
 ns.Dict = Dict
+ns.DictMaxLen = MaxLen
+ns.NormKey = NormKey
 
 -- 사전 항목의 뜻을 현지 언어로 (번역표에 없으면 영어 뜻)
 local function Meaning(e, target)
+	-- 나만의 단어: 추가할 때의 현지 언어 뜻을 그대로 쓴다
+	if e.custom then return e.custom end
 	local ko, en = e[1], e[2]
 	if en == "" and ko == "" then return "" end
 	if target == "ko" then return ko ~= "" and ko or en end
@@ -424,7 +428,9 @@ local function Gloss(text, lang, target)
 			local best, bestJ = nil, nil
 			while j <= n and used < maxLen do
 				local tj = tokens[j]
-                if tokenLanguages[j] and tokenLanguages[j] ~= source then break end
+                -- 언어가 바뀌면 멈추되, 한자 바로 뒤에 붙은 영문(来T, 缺N 등)은 사전에 있을 때만 이어 본다
+                if tokenLanguages[j] and tokenLanguages[j] ~= source
+                    and not ((source == "zh" or source == "ja") and tj.kind == "word" and j > i and tokens[j - 1].kind == "cjk") then break end
 				if tj.kind == "space" then
 					-- Match explicitly registered names across spaces, including Korean names.
 					local nx = tokens[j + 1]
@@ -628,10 +634,24 @@ local myName
 -- 상태 확인용 (/wct 상태)
 ns.status = { method = "none", seen = 0, tagged = 0, lastError = nil, filterEvents = 0 }
 
+-- 이벤트 → 채널 종류 (설정의 "번역할 채널")
+local CHANNEL_KIND = {
+	CHAT_MSG_CHANNEL = "public",
+	CHAT_MSG_SAY = "say", CHAT_MSG_YELL = "say", CHAT_MSG_EMOTE = "say",
+	CHAT_MSG_GUILD = "guild", CHAT_MSG_OFFICER = "guild",
+	CHAT_MSG_PARTY = "group", CHAT_MSG_PARTY_LEADER = "group", CHAT_MSG_RAID = "group",
+	CHAT_MSG_RAID_LEADER = "group", CHAT_MSG_RAID_WARNING = "group",
+	CHAT_MSG_INSTANCE_CHAT = "group", CHAT_MSG_INSTANCE_CHAT_LEADER = "group",
+	CHAT_MSG_WHISPER = "whisper", CHAT_MSG_BN_WHISPER = "whisper",
+}
+ns.CHANNEL_KIND = CHANNEL_KIND
+
 -- 메시지 본문 하나를 처리해서 바뀐 본문을 돌려준다 (안 바꿀 땐 nil)
-local function Process(msg, author)
+local function Process(msg, author, event)
 	local db = ns.db
 	if not db or not db.chat.enabled or type(msg) ~= "string" or msg == "" then return nil end
+	local kind = event and CHANNEL_KIND[event]
+	if kind and db.chat.channels and db.chat.channels[kind] == false then return nil end
 	if msg:find("|Hwct:", 1, true) or msg:find("|Hwctcopy:", 1, true) then return nil end
 	ns.status.seen = ns.status.seen + 1
 	if db.chat.skipSelf and type(author) == "string" and author ~= "" then
@@ -726,12 +746,13 @@ local function Filter(self, event, msg, author, ...)
 	local cfg = ns.db and ns.db.chat
 	local settings = cfg and table.concat({tostring(ns.GetTarget()), tostring(cfg.enabled), tostring(cfg.inline),
 		tostring(cfg.minCover), tostring(cfg.tag), tostring(cfg.hoverAll), tostring(cfg.skipSelf),
-		tostring(cfg.langs.ko), tostring(cfg.langs.zh), tostring(cfg.langs.ja), tostring(cfg.langs.ru), tostring(cfg.langs.en), tostring(cfg.langs.es)}, ":")
+		tostring(cfg.langs.ko), tostring(cfg.langs.zh), tostring(cfg.langs.ja), tostring(cfg.langs.ru), tostring(cfg.langs.en), tostring(cfg.langs.es),
+		tostring(ns.customVersion or 0)}, ":")
 	local cached = lineID and lineCache[lineID]
 	if cached and cached.msg == msg and cached.author == author and cached.event == event and cached.settings == settings then
 		out, separate = cached[1], cached[2]
 	else
-		local ok, o, sep = pcall(Process, msg, author)
+		local ok, o, sep = pcall(Process, msg, author, event)
 		if not ok then NoteError(o) o, sep = nil, nil end
 		out, separate = o, sep
 		CacheLine(lineID, { out, separate, msg = msg, author = author, event = event, settings = settings })
@@ -867,7 +888,7 @@ local function HookFrame(frame)
 			if e and e.lang then ShowGloss(self, tonumber(copyID)) end
 		elseif id then
 			ShowGloss(self, tonumber(id))
-		elseif ns.ShowPlayerTooltip then
+		elseif ns.ShowPlayerTooltip and ns.db and ns.db.chat.playerTip ~= false then
 			ns.ShowPlayerTooltip(self, link)
 		end
 	end)
@@ -960,10 +981,13 @@ local function HookItemRef()
 			if e then ns.ShowCopy(e.text) end
 			return
 		end
-        if type(link) == "string" and link:match("^player:") and button == "LeftButton"
-            and IsShiftKeyDown and IsShiftKeyDown() and ns.RequestPlayerInfo then
-            if ns.RequestPlayerInfo(link) then return end
-        end
+		-- Shift+클릭 캐릭터 조회: 채팅 입력 중이면 게임 원래 동작(이름 넣기)을 그대로 둔다
+		if type(link) == "string" and link:match("^player:") and button == "LeftButton"
+			and IsShiftKeyDown and IsShiftKeyDown() and ns.RequestPlayerInfo
+			and ns.db and ns.db.chat.playerTip ~= false
+			and not (ChatEdit_GetActiveWindow and ChatEdit_GetActiveWindow()) then
+			if ns.RequestPlayerInfo(link) then return end
+		end
 		return orig(link, text, button, chatFrame, ...)
 	end
 end

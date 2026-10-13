@@ -38,6 +38,9 @@ WoW Forever addon. Translates Korean, Chinese, Japanese, Russian and English cha
 - `/wct`, `/번역`, `/외국어` : 설정창 열기
 - `/wct 상태` : 동작 상태 확인 (문제가 있을 때 이 결과를 알려주세요)
 - `/wct 수집` : 모은 미번역 툴팁 문장 개수, `/wct 수집 초기화` : 비우기
+- `/wct en 보낼 문장` : 내 메시지를 영어로 바꿔 채팅 입력창에 넣기 (`zh` `tw` `ru` `ja` `es` `ko`도 가능)
+- `/wct add 단어=뜻` : 나만의 단어 추가, `/wct del 단어` : 삭제, `/wct list` : 목록
+- `/wct help` : 명령어 목록
 - 게임 메뉴 → 설정 → 애드온 → WoW Chat Translator 에서도 열 수 있습니다.
 
 ## 사전

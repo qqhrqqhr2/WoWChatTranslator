@@ -1,4 +1,5 @@
 -- WoW Chat Translator: 설정창 (/wct)
+-- 왼쪽: 현지 언어·채팅 번역 / 오른쪽: 번역할 언어·채널·툴팁·기타 / 아래: 도구 버튼
 -- 현지 언어를 바꾸면 화면 문구도 바로 그 언어로 바뀐다.
 local ADDON, ns = ...
 local L = setmetatable({}, { __index = function(_, k) return ns.L[k] end })
@@ -6,13 +7,14 @@ local L = setmetatable({}, { __index = function(_, k) return ns.L[k] end })
 local frame
 local ICON = "Interface\\AddOns\\" .. ADDON .. "\\Media\\icon"
 
--- 창 너비와 3칸 격자 위치 (긴 러시아어 문구도 넘치지 않게)
-local FRAME_W = 520
-local COL = { 22, 186, 350 }
-local COL_W = 150
+local FRAME_W = 840
+local LEFT, RIGHT = 22, 432      -- 두 칸의 시작 x
+local COL_W = 390                -- 한 칸 너비
+local HALF = 195                 -- 칸 안의 두 줄 배치 간격
+local ROW = 24
+
 local texts = {}      -- { 글자 오브젝트, 문구를 만드는 함수 }
-local checks = {}     -- 체크박스 (창이 열릴 때 값 다시 읽기)
-local targetRadios = {}
+local checks = {}     -- 체크박스·라디오 (창이 열릴 때 값 다시 읽기)
 local langChecks = {}
 
 local function Track(obj, fn)
@@ -21,14 +23,22 @@ local function Track(obj, fn)
 	return obj
 end
 
-local function Check(parent, labelFn, x, y, get, set, maxW)
-	local cb = CreateFrame("CheckButton", nil, parent, "UICheckButtonTemplate")
-	cb:SetSize(26, 26)
-	cb:SetPoint("TOPLEFT", x, y)
-	if cb.text then cb.text:SetText("") end
-	if cb.Text then cb.Text:SetText("") end
+-- 체크박스 (radio=true 이면 동그란 라디오 버튼)
+local function Check(parent, labelFn, x, y, get, set, maxW, radio)
+	local cb
+	if radio then
+		local ok, r = pcall(CreateFrame, "CheckButton", nil, parent, "UIRadioButtonTemplate")
+		if ok and r then cb = r; cb:SetSize(20, 20) end
+	end
+	if not cb then
+		cb = CreateFrame("CheckButton", nil, parent, "UICheckButtonTemplate")
+		cb:SetSize(26, 26)
+	end
+	cb:SetPoint("TOPLEFT", radio and x + 3 or x, radio and y - 3 or y)
+	if type(cb.text) == "table" and cb.text.SetText then cb.text:SetText("") end
+	if type(cb.Text) == "table" and cb.Text.SetText then cb.Text:SetText("") end
 	local fs = cb:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
-	fs:SetPoint("LEFT", cb, "RIGHT", 2, 1)
+	fs:SetPoint("LEFT", cb, "RIGHT", radio and 5 or 2, 1)
 	fs:SetJustifyH("LEFT")
 	if maxW then
 		fs:SetWidth(maxW)
@@ -42,17 +52,21 @@ local function Check(parent, labelFn, x, y, get, set, maxW)
 	return cb
 end
 
-local function Header(parent, key, y)
+local function Header(parent, key, x, y)
 	local fs = parent:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
-	fs:SetPoint("TOPLEFT", 18, y)
+	fs:SetPoint("TOPLEFT", x - 4, y)
+	fs:SetWidth(COL_W)
+	fs:SetJustifyH("LEFT")
+	if fs.SetWordWrap then fs:SetWordWrap(false) end
 	return Track(fs, function() return L[key] end)
 end
 
-local function Note(parent, key, y)
+local function Note(parent, key, x, y)
 	local fs = parent:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
-	fs:SetPoint("TOPLEFT", 22, y)
-	fs:SetWidth(FRAME_W - 50)
+	fs:SetPoint("TOPLEFT", x, y)
+	fs:SetWidth(COL_W - 20)
 	fs:SetJustifyH("LEFT")
+	fs:SetJustifyV("TOP")
 	return Track(fs, function() return L[key] end)
 end
 
@@ -65,14 +79,17 @@ end
 
 local RefreshAll
 
-
--- 번역할 언어 체크박스: 현지 언어와 같은 언어는 흐리게 (배치는 3칸 격자로 고정)
+-- 번역할 언어: 현지 언어와 같은 언어는 끄고 흐리게 (저장된 값은 그대로 둔다)
 local function LayoutLangs()
 	local same = ns.SAME_SOURCE[ns.GetTarget()]
 	for _, lc in ipairs(langChecks) do
 		if lc.lang == same then
-			lc.label:SetTextColor(0.5, 0.5, 0.5)
+			lc:SetChecked(false)
+			if lc.Disable then lc:Disable() end
+			lc.label:SetTextColor(0.45, 0.45, 0.45)
 		else
+			if lc.Enable then lc:Enable() end
+			lc:SetChecked(ns.db.chat.langs[lc.lang] and true or false)
 			lc.label:SetTextColor(1, 1, 1)
 		end
 	end
@@ -86,7 +103,7 @@ end
 
 local function Build()
 	frame = CreateFrame("Frame", "WoWChatTranslatorOptions", UIParent, BackdropTemplateMixin and "BackdropTemplate" or nil)
-	frame:SetSize(FRAME_W, 630)
+	frame:SetSize(FRAME_W, 600)
 	frame:SetPoint("CENTER")
 	frame:SetFrameStrata("DIALOG")
 	frame:SetBackdrop({
@@ -114,90 +131,128 @@ local function Build()
 	local close = CreateFrame("Button", nil, frame, "UIPanelCloseButton")
 	close:SetPoint("TOPRIGHT", -4, -4)
 
-	local db = ns.db
-	local y = -50
+	-- 두 칸 사이 세로 구분선
+	local line = frame:CreateTexture(nil, "ARTWORK")
+	line:SetColorTexture(1, 1, 1, 0.12)
+	line:SetSize(1, 420)
+	line:SetPoint("TOPLEFT", RIGHT - 16, -54)
 
-	-- 현지 언어 ----------------------------------------------------------
-	Header(frame, "secTarget", y); y = y - 26
-	local options = { { "auto" } }
-	for _, t in ipairs(ns.TARGETS) do options[#options + 1] = { t } end
-	local function radio(value, x, yy, maxW)
+	local db = ns.db
+	local LW = COL_W - 40           -- 한 줄짜리 체크박스 글자 너비
+	local HW = HALF - 36            -- 두 줄 배치 체크박스 글자 너비
+
+	-- 왼쪽 칸 ==============================================================
+	local y = -52
+	Header(frame, "secTarget", LEFT, y); y = y - 26
+	local function radio(value, x, yy, w)
 		local labelFn
 		if value == "auto" then
 			labelFn = function() return L.auto:format(ns.TARGET_NAME[ns.CLIENT_TARGET]) end
 		else
 			labelFn = function() return ns.TARGET_NAME[value] end
 		end
-		local cb = Check(frame, labelFn, x, yy,
+		Check(frame, labelFn, x, yy,
 			function() return (db.target or "auto") == value end,
-			function() SetTarget(value) end, maxW)
-		targetRadios[#targetRadios + 1] = cb
-		return cb
+			function() SetTarget(value) end, w, true)
 	end
-	radio("auto", COL[1], y, FRAME_W - 80); y = y - 26
-	radio("ko", COL[1], y, COL_W - 30); radio("en", COL[2], y, COL_W - 30); radio("zhCN", COL[3], y, COL_W - 30); y = y - 26
-	radio("zhTW", COL[1], y, COL_W - 30); radio("ru", COL[2], y, COL_W - 30); radio("ja", COL[3], y, COL_W - 30); y = y - 26
-	radio("es", COL[1], y, COL_W - 30); y = y - 30
-	Note(frame, "targetNote", y); y = y - 38
+	radio("auto", LEFT, y, LW); y = y - ROW
+	local order = { "ko", "en", "zhCN", "zhTW", "ja", "ru", "es" }
+	for i, t in ipairs(order) do
+		radio(t, LEFT + ((i - 1) % 2) * HALF, y - math.floor((i - 1) / 2) * ROW, HW)
+	end
+	y = y - 4 * ROW - 4
+	Note(frame, "targetNote", LEFT + 4, y); y = y - 40
 
-	-- 채팅 번역 ----------------------------------------------------------
-	Header(frame, "secChat", y); y = y - 26
-	Check(frame, function() return L.optEnabled end, 22, y, function() return db.chat.enabled end, function(v) db.chat.enabled = v end, FRAME_W - 80); y = y - 26
-	Check(frame, function() return L.optInline end, 22, y, function() return db.chat.inline end, function(v) db.chat.inline = v end, FRAME_W - 80); y = y - 28
+	Header(frame, "secChat", LEFT, y); y = y - 26
+	Check(frame, function() return L.optEnabled end, LEFT, y, function() return db.chat.enabled end, function(v) db.chat.enabled = v end, LW); y = y - ROW
+	Check(frame, function() return L.optInline end, LEFT, y, function() return db.chat.inline end, function(v) db.chat.inline = v end, LW); y = y - ROW - 2
 
 	-- 최소 풀이 비율 (- / + 버튼)
 	local minus = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
-	minus:SetSize(24, 24); minus:SetText("-")
-	minus:SetPoint("TOPLEFT", 50, y)
+	minus:SetSize(24, 22); minus:SetText("-")
+	minus:SetPoint("TOPLEFT", LEFT + 28, y)
 	minus:SetScript("OnClick", function()
 		db.chat.minCover = math.max(0, (db.chat.minCover or 40) - 10); RefreshAll()
 	end)
 	local plus = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
-	plus:SetSize(24, 24); plus:SetText("+")
+	plus:SetSize(24, 22); plus:SetText("+")
 	plus:SetPoint("LEFT", minus, "RIGHT", 4, 0)
 	plus:SetScript("OnClick", function()
 		db.chat.minCover = math.min(100, (db.chat.minCover or 40) + 10); RefreshAll()
 	end)
 	local cover = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
 	cover:SetPoint("LEFT", plus, "RIGHT", 8, 0)
-	cover:SetWidth(FRAME_W - 150)
+	cover:SetWidth(COL_W - 100)
 	cover:SetJustifyH("LEFT")
+	if cover.SetWordWrap then cover:SetWordWrap(false) end
 	Track(cover, function() return L.optCover:format(db.chat.minCover or 40) end)
-	y = y - 30
+	y = y - ROW - 4
 
-	Check(frame, function() return L.optTag end, 22, y, function() return db.chat.tag end, function(v) db.chat.tag = v end, FRAME_W - 80); y = y - 26
-	Check(frame, function() return L.optHover end, 22, y, function() return db.chat.hoverAll end, function(v) db.chat.hoverAll = v end, FRAME_W - 80); y = y - 26
-	Check(frame, function() return L.optSelf end, 22, y, function() return db.chat.skipSelf end, function(v) db.chat.skipSelf = v end, FRAME_W - 80); y = y - 30
+	Check(frame, function() return L.optTag end, LEFT, y, function() return db.chat.tag end, function(v) db.chat.tag = v end, LW); y = y - ROW
+	Check(frame, function() return L.optHover end, LEFT, y, function() return db.chat.hoverAll end, function(v) db.chat.hoverAll = v end, LW); y = y - ROW
+	Check(frame, function() return L.optSelf end, LEFT, y, function() return db.chat.skipSelf end, function(v) db.chat.skipSelf = v end, LW); y = y - ROW
+	Check(frame, function() return L.optPlayerTip end, LEFT, y, function() return db.chat.playerTip ~= false end, function(v) db.chat.playerTip = v end, LW); y = y - ROW - 4
+	Note(frame, "chatNote", LEFT + 4, y); y = y - 30
+	local leftBottom = y
 
-	local lt = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-	lt:SetPoint("TOPLEFT", 26, y)
-	Track(lt, function() return L.langs end)
-	y = y - 22
+	-- 오른쪽 칸 ============================================================
+	y = -52
+	Header(frame, "secLangs", RIGHT, y); y = y - 26
 	for i, lang in ipairs({ "ko", "zh", "ja", "ru", "en", "es" }) do
-		local col = (i - 1) % 3 + 1
-		local row = math.floor((i - 1) / 3)
-		local cb = Check(frame, function() return L.langName[lang] end, COL[col], y - row * 26,
+		local cb = Check(frame, function() return L.langName[lang] end,
+			RIGHT + ((i - 1) % 2) * HALF, y - math.floor((i - 1) / 2) * ROW,
 			function() return db.chat.langs[lang] end,
-			function(v) db.chat.langs[lang] = v end, COL_W - 30)
+			function(v) db.chat.langs[lang] = v end, HW)
 		cb.lang = lang
 		langChecks[#langChecks + 1] = cb
 	end
-	y = y - 26 * 2 - 6
-	Note(frame, "chatNote", y)
-	y = y - 34
+	y = y - 3 * ROW - 8
 
-	-- 툴팁 번역 ----------------------------------------------------------
-	Header(frame, "secTooltip", y); y = y - 26
-	Check(frame, function() return L.optTooltip end, 22, y, function() return db.tooltip.enabled end, function(v) db.tooltip.enabled = v end, FRAME_W - 80); y = y - 26
-	Check(frame, function() return L.optCollect end, 22, y, function() return db.tooltip.collect end, function(v)
+	Header(frame, "secChannels", RIGHT, y); y = y - 26
+	for _, kind in ipairs({ "public", "say", "guild", "group", "whisper" }) do
+		local key = "ch" .. kind:sub(1, 1):upper() .. kind:sub(2)
+		Check(frame, function() return L[key] end, RIGHT, y,
+			function() return db.chat.channels[kind] ~= false end,
+			function(v) db.chat.channels[kind] = v end, LW)
+		y = y - ROW
+	end
+	y = y - 8
+
+	Header(frame, "secTooltip", RIGHT, y); y = y - 26
+	Check(frame, function() return L.optTooltip end, RIGHT, y, function() return db.tooltip.enabled end, function(v) db.tooltip.enabled = v end, LW); y = y - ROW
+	Check(frame, function() return L.optCollect end, RIGHT, y, function() return db.tooltip.collect end, function(v)
 		db.tooltip.collect = v
 		if ns.ResetScan then ns.ResetScan() end
-	end, FRAME_W - 80); y = y - 30
-	Note(frame, "tooltipNote", y)
-	y = y - 40
+	end, LW); y = y - ROW - 4
+	Note(frame, "tooltipNote", RIGHT + 4, y); y = y - 40
+
+	Header(frame, "secMisc", RIGHT, y); y = y - 26
+	Check(frame, function() return L.optMinimap end, RIGHT, y, function() return db.minimap.show ~= false end, function(v)
+		db.minimap.show = v
+		if ns.UpdateMinimapButton then ns.UpdateMinimapButton() end
+	end, LW); y = y - ROW - 6
+
+	local bottom = math.min(leftBottom, y)
+	line:SetHeight(-bottom - 54)
+
+	-- 도구 버튼 줄 =========================================================
+	bottom = bottom - 10
+	local tools = {
+		{ "btnUnknown", function() if ns.ShowUnknownChat then ns.ShowUnknownChat() end end },
+		{ "btnCollected", function() if ns.ShowCollected then ns.ShowCollected() end end },
+		{ "btnStatus", function() if ns.PrintStatus then ns.PrintStatus() end end },
+		{ "btnHelp", function() if ns.ShowHelp then ns.ShowHelp() end end },
+	}
+	local bw = 140
+	for i, t in ipairs(tools) do
+		local b = Button(frame, t[1], bw)
+		b:SetPoint("TOPLEFT", LEFT + (i - 1) * (bw + 8), bottom)
+		b:SetScript("OnClick", t[2])
+	end
+	bottom = bottom - 24
 
 	-- 창 높이를 내용에 맞춤 (아래 버튼 자리 포함)
-	frame:SetHeight(-y + 56)
+	frame:SetHeight(-bottom + 62)
 
 	local donate = Button(frame, "donate", 120)
 	donate:SetPoint("BOTTOMLEFT", 22, 20)
@@ -227,25 +282,30 @@ end
 SLASH_WOWCHATTRANSLATOR1 = "/wct"
 SLASH_WOWCHATTRANSLATOR2 = "/번역"
 SLASH_WOWCHATTRANSLATOR3 = "/외국어"
-SlashCmdList.WOWCHATTRANSLATOR = function(msg)
-	msg = (msg or ""):lower():gsub("^%s+", ""):gsub("%s+$", "")
+SlashCmdList.WOWCHATTRANSLATOR = function(raw)
+	raw = (raw or ""):gsub("^%s+", ""):gsub("%s+$", "")
+	local msg = raw:lower()
 	if msg == "status" or msg == "상태" or msg == "debug" then
 		if ns.PrintStatus then ns.PrintStatus() end
 		return
 	end
 	if msg == "미등록" or msg == "unknown" then
-        if ns.ShowUnknownChat then ns.ShowUnknownChat() end
-        return
-    end
+		if ns.ShowUnknownChat then ns.ShowUnknownChat() end
+		return
+	end
 	local cmd, rest = msg:match("^(%S+)%s*(.-)$")
 	if cmd == "test" or cmd == "테스트" then
-		if ns.TestChat and rest ~= "" then ns.TestChat(rest) end
+		if ns.TestChat and rest ~= "" then ns.TestChat(raw:match("^%S+%s*(.-)$")) end
 		return
 	end
 	if cmd == "collect" or cmd == "수집" then
-		if ns.CollectCommand then ns.CollectCommand(rest) end
-		return
+		if rest == "" or rest == "clear" or rest == "초기화" or rest == "reset" then
+			if ns.CollectCommand then ns.CollectCommand(rest) end
+			return
+		end
 	end
+	-- 내 메시지 번역·나만의 단어·도움말 (뜻·문장은 대소문자를 그대로 둔다)
+	if ns.ExtraCommand and raw ~= "" and ns.ExtraCommand(raw) then return end
 	ns.ToggleOptions()
 end
 

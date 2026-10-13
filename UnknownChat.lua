@@ -16,12 +16,17 @@ function ns.RecordUnknownChat(text, lang, gloss)
     if not ns.db or not gloss.unknown or #gloss.unknown == 0 then return end
     local db = ns.db.unknownChat
     if type(db) ~= "table" then db = {words = {}, samples = {}}; ns.db.unknownChat = db end
-    local wordCount = 0
-    for key in pairs(db.words) do
-        local source, term = key:match("^([^:]+):(.*)$")
-        if source and UsefulUnknown(source, term) then wordCount = wordCount + 1
-        else db.words[key] = nil end
+    -- 저장된 목록 정리·개수 세기는 접속 후 한 번만 (메시지마다 500개를 다시 세지 않음)
+    if ns.unknownCount == nil or ns.unknownCustom ~= ns.customVersion then
+        local wordCount = 0
+        for key in pairs(db.words) do
+            local source, term = key:match("^([^:]+):(.*)$")
+            if source and UsefulUnknown(source, term) then wordCount = wordCount + 1
+            else db.words[key] = nil end
+        end
+        ns.unknownCount, ns.unknownCustom = wordCount, ns.customVersion
     end
+    local wordCount = ns.unknownCount
     local seen = {}
     local sourceWords = {}
     for source, words in pairs(gloss.unknownByLanguage or {[lang] = gloss.unknown}) do
@@ -36,6 +41,7 @@ function ns.RecordUnknownChat(text, lang, gloss)
             elseif wordCount < 500 then db.words[key], wordCount = 1, wordCount + 1 end
         end
     end
+    ns.unknownCount = wordCount
     if gloss.cover < 70 and #text <= 300 then
         local sample = lang .. ": " .. text
         for i, old in ipairs(db.samples) do

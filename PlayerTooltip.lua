@@ -220,9 +220,9 @@ function ns.ShowPlayerTooltip(owner, link, fromRefresh)
         local title = _G["WoWChatTranslatorPlayerTooltipTextLeft1"]
         if title then
             local nameText = title:GetText()
-            title:SetText("WoWChatTranslator\n" .. (nameText or name))
+            title:SetText("|cff66ccffWoW Chat Translator|r\n" .. (nameText or name))
         else
-            tt:AddLine("WoWChatTranslator", 0.3, 0.8, 1)
+            tt:AddLine("WoW Chat Translator", 0.4, 0.8, 1)
         end
         tt:Show()
         return
@@ -240,7 +240,7 @@ function ns.ShowPlayerTooltip(owner, link, fromRefresh)
             end
         end
     end
-    tt:AddLine("WoWChatTranslator", 0.3, 0.8, 1)
+    tt:AddLine("WoW Chat Translator", 0.4, 0.8, 1)
     tt:AddLine(name, 1, 1, 1)
     if guild and guild ~= "" then tt:AddLine("<" .. guild .. ">", 0.3, 1, 0.3) end
     local details = {}
@@ -331,7 +331,14 @@ events:SetScript("OnUpdate", function(self, dt)
         tooltipDirty = true
     end
     local second = math.floor(now)
-    if tooltipDirty or ns.playerLookupStatus.tooltipDirty or (hoveredOwner and hoveredLink and second ~= lastDisplaySecond) then
+    -- 남은 시간(초)을 보여 주는 동안만 1초마다 다시 그린다. 정보가 다 있으면 그대로 둔다.
+    local needTick = false
+    if hoveredOwner and hoveredLink and second ~= lastDisplaySecond then
+        local hname = hoveredLink:match("^player:([^:]+)")
+        local hinfo = hname and cache[Key(hname)]
+        needTick = not (hinfo and hinfo.level) and (pending ~= nil or now < nextAllowed + 1.5)
+    end
+    if tooltipDirty or ns.playerLookupStatus.tooltipDirty or needTick then
         lastDisplaySecond = second
         tooltipDirty, ns.playerLookupStatus.tooltipDirty = false, false
         RefreshHoveredTooltip()

@@ -33,6 +33,8 @@ Chat on WoW Forever is full of Chinese recruiting posts, Russian trade calls, Ko
 ### Commands
 - `/wct` - open the options
 - `/wct status` - status info for bug reports
+- `/wct en your message` - convert your own message to English and put it in the chat box (also `zh` `tw` `ru` `ja` `es` `ko`)
+- `/wct add word=meaning` - add your own word (`/wct del`, `/wct list`)
 
 ![Options](04_settings.png)
 
@@ -66,6 +68,8 @@ If the addon helps you: https://buymeacoffee.com/qqhrqqhr2 (also in the options 
 ### 명령어
 - `/wct`, `/번역` - 설정창 열기
 - `/wct 상태` - 오류 제보용 상태 정보
+- `/wct en 보낼 문장` - 내 메시지를 영어로 바꿔 입력창에 넣기 (`zh` `tw` `ru` `ja` `es` `ko`)
+- `/wct add 단어=뜻` - 나만의 단어 추가 (`/wct del`, `/wct list`)
 
 ### 후원
 애드온이 도움이 됐다면: https://buymeacoffee.com/qqhrqqhr2 (설정창에도 버튼이 있습니다)
