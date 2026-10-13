@@ -9,6 +9,9 @@ local Key
 local nextAllowed = 0
 local REQUEST_INTERVAL, RESPONSE_TIMEOUT = 3, 2
 local whoMode, ownRequest, ownRouting = 0, false, false
+local function IsSecret(value)
+    return type(issecretvalue) == "function" and issecretvalue(value)
+end
 local function Now() return GetTime and GetTime() or 0 end
 ns.playerLookupStatus = {state = "idle"}
 local function Status(state, detail)
@@ -21,7 +24,7 @@ local function Text(key, ...)
     return string.format(dict[key], ...)
 end
 Key = function(name)
-    if type(name) ~= "string" then return nil end
+    if IsSecret(name) or type(name) ~= "string" then return nil end
     local short, realm = name:match("^([^%-]+)%-(.+)$")
     local localRealm = GetRealmName and GetRealmName()
     if short and localRealm and realm:gsub("%s", ""):lower() == localRealm:gsub("%s", ""):lower() then name = short end
@@ -35,7 +38,7 @@ local function Remember(name, data)
         cache[key], count = {}, count + 1
     end
     for field, value in pairs(data) do
-        if value ~= nil then cache[key][field] = value end
+        if not IsSecret(value) and value ~= nil then cache[key][field] = value end
     end
 end
 local function CollectWho()
@@ -298,9 +301,10 @@ events:SetScript("OnEvent", function(self, event, ...)
         return
     end
     local name, guid = select(2, ...), select(12, ...)
-    if not name or not guid or guid == "" or not GetPlayerInfoByGUID then return end
+    if IsSecret(name) or IsSecret(guid) then return end
+    if type(name) ~= "string" or type(guid) ~= "string" or guid == "" or not GetPlayerInfoByGUID then return end
     local ok, class, _, race = pcall(GetPlayerInfoByGUID, guid)
-    if not ok or not class then return end
+    if not ok or IsSecret(class) or IsSecret(race) or not class then return end
     Remember(name, {class = class, race = race})
 end)
 
