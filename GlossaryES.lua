@@ -300,6 +300,7 @@ beneficio=버프=buff
 Beso calmante=유혹의 입맞춤=Soothing Kiss
 beta=베타=beta
 biblioteca=도서관=library
+bien=좋아=good
 bien hecho=잘했어=well done
 bien jugado=잘하셨습니다=well played
 Bien.=그래 뭐=fine
@@ -456,6 +457,7 @@ Captar demonios=악마 감지=Sense Demons
 Captar no-muertos=언데드 감지=Sense Undead
 capturar la bandera=깃발 탈취=capture the flag
 capucha=두건=hood
+cara=얼굴=face
 Carga feral=야성의 돌진=Feral Charge
 carga libre=무료 버스=free carry
 Cargar=돌진=Charge
@@ -851,6 +853,7 @@ efecto=효과=effect
 efectos=효과=effects
 Ejecutar=마무리 일격=Execute
 ejemplo=던전=instance
+el=그=the
 El azote del caos=대혼란의 파멸=Bane of Havoc
 El pantano de los dolores=슬픔의 늪=Swamp of Sorrows
 El Salón de Señores Feudales=영주의 전당=The Hall of Thanes
@@ -1072,6 +1075,7 @@ flagged=PvP 활성=flagged
 flask=영약=flask
 flechas=화살=arrows
 Fogonazo=불기둥=Flamestrike
+fondo=배경/바닥=bottom
 forma=변신 형태=form
 Forma acuática=바다표범 변신=Aquatic Form
 Forma de las Sombras=어둠의 형상=Shadowform

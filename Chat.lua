@@ -425,6 +425,8 @@ local function Gloss(text, lang, target)
         local cjkMode = source == "zh" or source == "ja" or source == "ko"
         local mainDicts = source == "ja" and {Dict.ja, Dict.zh} or {Dict[source] or {}}
         local wordDicts = {Dict[source] or {}, Dict.en or {}}
+        -- 영어로 감지된 짧은 문장 속 스페인어 단어(siempre, horda 등)는 한 단어씩 스페인어 사전도 본다
+        if source == "en" and Dict.es then wordDicts[3] = Dict.es end
         local maxLen = MaxLen[source] or 1
         if source == "ja" then maxLen = math.max(maxLen, MaxLen.zh or 1) end
         local localSource = ns.SAME_SOURCE and ns.SAME_SOURCE[target] == source

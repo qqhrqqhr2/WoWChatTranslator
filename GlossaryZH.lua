@@ -54,6 +54,7 @@ mm我=귓말 줘=whisper me
 ms=사제=Priest
 mt=메인 탱커=main tank
 m我=귓말 줘=whisper me
+n=힐러=healer
 naxx=낙스라마스=Naxxramas
 nb=대박=awesome
 niubi=대박=awesome
@@ -77,6 +78,7 @@ ss=흑마법사=Warlock
 Strathomme▁不死邊=스트라솔름 후문=Stratholme undead side
 stsm=스트라솔름=Stratholme
 t=탱커=tank
+t+n=탱커+힐러=tank + healer
 T0.5套裝=던전 세트 2(T0.5)=tier 0.5
 T0套裝=던전 세트(T0)=tier 0
 t1=T1 세트=tier 1
@@ -166,6 +168,13 @@ zul=줄파락=Zul'Farrak
 一起=같이=together
 一起做=같이 하자=do together
 一起嗎=같이 할래요?=together?
+低价=싸게=cheap
+峡谷=협곡=gulch
+恢复下=회복 좀 할게요=let me regen
+收号=계정 삽니다=buying accounts
+有一起的么=같이 할 사람?=anyone want to join?
+脱坑=게임 접는=quitting the game
+花钱=돈 주고=for gold
 萬=만(10,000)=10k
 三=3=three
 上buff=버프 걸기=buff up
@@ -676,6 +685,8 @@ zul=줄파락=Zul'Farrak
 去黑石深渊=검은바위 나락 가자=let's go BRD
 友善=약간 우호적=friendly
 友好=친절한=friendly
+雇=고용=hire
+雇个=한 명 고용=hire one
 雙人=2인조=duo
 雙倍=2배=double
 雙倍經驗=경험치 2배=double XP
@@ -792,6 +803,7 @@ zul=줄파락=Zul'Farrak
 啊==
 啥=뭐=what
 啦==
+顾个=한 명 고용=hire one
 餵養寵物=먹이주기=Feed Pet
 喊话=채팅으로 연락=send a chat message
 喜=축하=congrats

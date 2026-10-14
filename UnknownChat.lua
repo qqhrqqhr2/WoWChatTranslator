@@ -10,6 +10,7 @@ local function UsefulUnknown(lang, word)
     local dictionaries = ns.Dict or {}
     if dictionaries[lang] and dictionaries[lang][word] then return false end
     if word:match("^[%w%p%s]+$") and dictionaries.en and dictionaries.en[word] then return false end
+    if lang == "en" and dictionaries.es and dictionaries.es[word] then return false end
     return true
 end
 function ns.RecordUnknownChat(text, lang, gloss)
