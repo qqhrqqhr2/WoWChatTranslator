@@ -148,6 +148,7 @@ arcanita=아케이나이트=arcanite
 arcano=비전=arcane
 Archaedas=아카에다스=Archaedas
 Archmage Arugal=대마법사 아루갈=Archmage Arugal
+arco=활=bow
 arco cruzado=석궁=crossbow
 arena=투기장=arena
 arma=무기=weapon
@@ -384,6 +385,7 @@ bug=버그=bug
 Bugged.=버그 걸림=bugged
 burbuja corazón=무적 귀환=bubble hearth
 Burning Steppes=불타는 평원=Burning Steppes
+busca=찾는다=looks for
 buscamos=구합니다=looking for
 buscamos dps=딜러 구함=looking for damage dealers
 buscamos gente=사람을 모집합니다=looking for people
@@ -435,6 +437,7 @@ Calma mental=평정=Mind Soothe
 Calmar animal=동물 달래기=Soothe Animal
 calvo=대머리=bald
 cama=잠자리=bed
+cambia=바뀐다=changes
 cambiar de opinión=내 생각을 바꿔봐=change my mind
 cambio=교환합니다=want to trade
 Cambio de fase=위상 변화=Phase Shift
@@ -499,6 +502,7 @@ cerca=근처의=nearby
 cerrado=마감=closed
 cerradura=자물쇠 따기=lockpicking
 chaleco=조끼=vest
+chaman=주술사=shaman
 chamán=주술사=shaman
 chamán elemental=정기 주술사=Elemental Shaman
 chamán mejora=고양 주술사=Enhancement Shaman
@@ -534,6 +538,7 @@ cleaver=큰 칼=cleaver
 clic=클릭=click
 clics=클릭 부탁=clicks
 cloak=망토=cloak
+cobran=청구한다=they charge
 cobre=코퍼=copper
 cocina=요리=cooking
 codicia=차비=greed
@@ -2638,6 +2643,7 @@ Tirisfal Glades=티리스팔 숲=Tirisfal Glades
 Tiro=풀링=pull
 Tiro/invitación=풀링/초대=pull/invite
 toda la codicia=전부 차비=greed all
+todas=모두=all
 todas las clases bienvenidas=모든 직업 환영=all classes welcome
 todas las clases/roles bienvenidos=모든 직업/역할 모집=all classes/roles welcome
 todas las misiones=모든 퀘스트=all quests

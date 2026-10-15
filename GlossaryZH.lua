@@ -36,6 +36,7 @@ DOT=지속 피해=DoTs
 dps=딜러=DPS
 dps位=딜러 자리=dps spot
 dz=도적=Rogue
+f=파밍=farm
 Feral 坦克=야성 탱커=Feral Tank
 fs=마법사=Mage
 fz=분노 전사=fury warrior
@@ -173,10 +174,14 @@ zul=줄파락=Zul'Farrak
 低价=싸게=cheap
 听说=듣자 하니=I heard
 峡谷=협곡=gulch
+巡查后方=후방 순찰=patrol the rear
 恢复下=회복 좀 할게요=let me regen
+想f啥=뭘 파밍할래=what do you want to farm
 收号=계정 삽니다=buying accounts
 有一起的么=같이 할 사람?=anyone want to join?
+残暴=잔혹한=brutal
 比=~보다=compare
+点不开=클릭해도 안 열림=can't click open
 目前=현재=currently
 脱坑=게임 접는=quitting the game
 花钱=돈 주고=for gold

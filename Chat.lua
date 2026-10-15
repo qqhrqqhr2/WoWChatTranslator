@@ -297,6 +297,8 @@ end
 -- Preserve full dictionary phrases first; split slash alternatives only when
 -- every component is a known term. URLs and unknown names remain unchanged.
 local function SlashMeaning(key, lang, target)
+    -- 끝에 붙은 슬래시 하나는 무시 (dps/cc/)
+    if key:sub(-1) == "/" and key:sub(-2) ~= "//" then key = key:sub(1, -2) end
     if not key:find("/", 1, true) or key:find(":", 1, true)
         or key:sub(1,1) == "/" or key:sub(-1) == "/" or key:find("//",1,true) then return end
     local meanings = {}
@@ -390,6 +392,7 @@ local function Gloss(text, lang, target)
         end
     end
     local foreignFound = 0
+    local foreignChars = 0   -- 외국어로 풀린 부분의 글자 수 (현지 언어 문장 속 한두 글자 약어 걸러내기용)
     local usedLanguages = {}
     local unknownByLanguage = {}
     local currentLanguage = lang
@@ -446,6 +449,7 @@ local function Gloss(text, lang, target)
                 local fmt = PARTY_COUNT[target] or PARTY_COUNT.en
                 emit("hit", fmt:format(have, need))
                 foreignFound = foreignFound + 1
+                foreignChars = foreignChars + 3
                 usedLanguages[source] = true
                 found = found + 1
                 coverHit = coverHit + 1
@@ -500,7 +504,7 @@ local function Gloss(text, lang, target)
 				end
 				local meaning = localSource and term or Meaning(best, target)
                 usedLanguages[source] = true
-                if not localSource then foreignFound = foreignFound + 1 end
+                if not localSource then foreignFound = foreignFound + 1; foreignChars = foreignChars + #term end
 				if meaning ~= "" then emit("hit", meaning) end
 				-- 한 글자짜리 영문·러시아어(в, и, g 등)는 목록에서는 뺀다
 				local short = (t.kind == "word" and i == bestJ and #t.key <= 2 and not cjkMode)
@@ -514,6 +518,7 @@ local function Gloss(text, lang, target)
 			if p then
 				emit("hit", p)
                 foreignFound = foreignFound + 1
+                foreignChars = foreignChars + #t.key
                 usedLanguages[source] = true
 				found = found + 1
 				coverHit = coverHit + 1
@@ -589,6 +594,7 @@ local function Gloss(text, lang, target)
         unknown = unknown,
         unknownByLanguage = unknownByLanguage,
         foreignFound = foreignFound,
+        foreignChars = foreignChars,
         languages = usedLanguages,
 		found = found,
 		cover = total > 0 and floor(coverHit * 100 / total) or 0,
@@ -707,6 +713,8 @@ local function Process(msg, author, event)
     local clean = DetectText(msg):gsub("||", "|")
     local g = Gloss(clean, lang, target)
     if g.foreignFound == 0 and (ns.SAME_SOURCE[target] == lang or not db.chat.langs[lang]) then return CopyOnly(msg, author) end
+    -- 현지 언어 문장에 섞인 한두 글자 약어(k, ok, ㅇ 등)만으로는 번역 표시를 붙이지 않는다
+    if ns.SAME_SOURCE[target] == lang and (g.foreignChars or 0) < 3 then return CopyOnly(msg, author) end
     if not db.chat.langs[lang] or ns.SAME_SOURCE[target] == lang then
         for _, source in ipairs({"en", "es", "ru", "zh", "ja", "ko"}) do
             if g.languages[source] and db.chat.langs[source] and ns.SAME_SOURCE[target] ~= source then lang = source; break end

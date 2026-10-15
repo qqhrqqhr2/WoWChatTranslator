@@ -100,8 +100,23 @@ def add_pair(en, tgt, lang):
         f[1].setdefault(TARGETS[lang], t)
 
 
+# 레벨별 수치 목록 "163 (below 30) · 180 (below 40) · 200 (above)" → 게임은 내 레벨의 수치 하나만 보여 준다
+TIERS = re.compile(r"(\d+(?:\.\d+)?)\s*[（(][^)）]*[)）](?:\s*·\s*\d+(?:\.\d+)?\s*[（(][^)）]*[)）])+")
+
+
+def collapse_tiers(t):
+    return TIERS.sub(r"\1", t or "")
+
+
 def add_text(en_text, tgt_text, lang):
-    """문단 → 문장 순서로 짝을 맞춘다"""
+    """문단 → 문장 순서로 짝을 맞춘다 (레벨별 수치 목록은 하나로 줄인 문장도 함께)"""
+    add_text_one(en_text, tgt_text, lang)
+    ce, ct = collapse_tiers(en_text), collapse_tiers(tgt_text)
+    if ce != (en_text or "") and ct != (tgt_text or ""):
+        add_text_one(ce, ct, lang)
+
+
+def add_text_one(en_text, tgt_text, lang):
     ep, tp = paragraphs(en_text), paragraphs(tgt_text)
     if not ep or not tp:
         return

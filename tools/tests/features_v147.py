@@ -65,3 +65,13 @@ assert(ns.Gloss("黑上 4=1","zh","ko").plain:find("4명 있음, 1명 구함",1,
 assert(not ns.Gloss("score 2=3","en","ko").plain:find("명 있음",1,true))
 ''')
 print("파티 인원 표기(4=1) 검증 통과")
+run('''
+ns.RawGlossary.en = (ns.RawGlossary.en or "") .. "\\nk=ㅇㅋ=ok"
+ns.db.chat.copyAll=false; ns.db.chat.langs.ko=true; ns.db.chat.langs.en=true; ns.db.chat.channels.guild=true
+assert(loadfile("Chat.lua"))("WoWChatTranslator",ns)
+local _,o=filters.CHAT_MSG_GUILD({},"CHAT_MSG_GUILD","k 누르고 전문기술 탭에 경험치 게이지 오른쪽 끝에","Other")
+assert(o==nil, "현지 언어 문장 속 한 글자 약어만으로는 번역 표시 안 함: "..tostring(o))
+local _,o2=filters.CHAT_MSG_GUILD({},"CHAT_MSG_GUILD","lfg 하실분 있나요","Other")
+assert(o2 and o2:find("파티 찾음",1,true), "세 글자 이상 외국어 표현은 풀이: "..tostring(o2))
+''')
+print("현지 언어 문장 속 한 글자 약어 무시 검증 통과")
