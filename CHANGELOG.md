@@ -1,7 +1,9 @@
 # Changelog
 
-## 다음 버전
+## v1.4.8
 
+- 채팅: 중국 서버 모집 글의 파티 인원 표기 풀이 ("4=1" → 4명 있음, 1명 구함).
+- 사전: wasn't·aren't·couldn't 등 빠져 있던 영어 부정 축약형 추가.
 - 사전: 두 번째 수집 목록 반영 — 퀘스트 이름(Storm, Earth, and Fire / Wrongly Blamed, Justly Corrected), 다크문 축제, 불타는 성전(tbc), 레이어 이동, 길드 초대(ginvite), 달라란(dlr), 타렌 밀농장 오타, GOAT, 독일어 gilde·프랑스어 pour, 스페인어 기본 단어(la, del, de, sus 등), 중국어 听说·目前·都是·TN 등 100여 개.
 - 수집: 확인했지만 사전에 넣지 않는 개인·길드 약어와 이름은 미등록 목록에서 제외.
 

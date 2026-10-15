@@ -334,6 +334,7 @@ are=~이다(are)=are
 are not=아닌=are not
 are you ready=준비됐어?=are you ready
 are you there=있어요?=are you there
+aren't=아니다=aren't
 arena=투기장=arena
 arena event=투기장 이벤트=ring of law
 arena run=검은바위 나락 투기장 공략=Blackrock Depths arena run
@@ -938,6 +939,7 @@ correct=맞아=correct
 corrected=바로잡힌=corrected
 Corruption=부패=Corruption
 cost=소모량=cost
+couldn't=못 했다=couldn't
 council=협의회=council
 counter)=개/명=(counter)
 Counterattack=역습=Counterattack
@@ -1246,6 +1248,7 @@ do you have anyone=누구 있나요=do you have anyone
 dodge=회피=dodge
 does=하나요=does
 does anyone=누구 ~있어?=does anyone
+doesn't=안 한다=doesn't
 doesnt=안 한다=doesn't
 dog=개=dog
 dog whistle=개 호루라기=dog whistle
@@ -1950,6 +1953,7 @@ hard reserve=특정 아이템 고정 예약=hard reserve
 hard reset=던전 초기화=hard reset
 harmonious=화목한=harmonious
 has=가지다=has
+hasn't=안 했다=hasn't
 haste=가속=haste
 hate=싫어=hate
 hated=미움받는=hated
@@ -1960,6 +1964,7 @@ have mats=재료 있음=have mats
 have party=파티 있어=have party
 have summon=소환 가능=summoning available
 have tank=탱커 있음=have tank
+haven't=안 했다=haven't
 having=가지고 있는=having
 hc=영웅=heroic
 he=그=he
@@ -5566,6 +5571,7 @@ warsong gulch fresh run=전쟁노래 협곡 처음부터 공략=Warsong Gulch fr
 warsong gulch full run=전쟁노래 협곡 전체 공략=Warsong Gulch full run
 warsong gulch quest run=전쟁노래 협곡 퀘스트 공략=Warsong Gulch quest run
 was=~였다=was
+wasn't=아니었다=wasn't
 wasted trip=헛걸음=wasted trip
 wat=뭐=what
 watch=봐=watch
@@ -5613,6 +5619,7 @@ well done=잘했어=well done
 well played=잘하셨습니다=well played
 wep=무기=weapon
 were=~였다=were
+weren't=아니었다=weren't
 west=서쪽=west
 Western Plaguelands=서부 역병지대=Western Plaguelands
 westfall=서부 몰락지대=Westfall
@@ -5717,6 +5724,7 @@ worse=더 나쁜=worse
 worst=최악=worst
 wot=뭐=what
 would=~할 것이다=would
+wouldn't=안 할 것이다=wouldn't
 Wound Poison=상처 감염 독=Wound Poison
 WoW=와우=WoW
 WoW veterans=와우 베테랑=WoW veterans

@@ -60,3 +60,8 @@ SetItemRef("player:Someone","[Someone]","LeftButton")
 assert(passed==2 and requested==1)
 ''')
 print("채널별 끄기·한자+영문·나만의 단어·내 메시지 번역·Shift+클릭 입력창 보존 검증 통과")
+run('''
+assert(ns.Gloss("黑上 4=1","zh","ko").plain:find("4명 있음, 1명 구함",1,true))
+assert(not ns.Gloss("score 2=3","en","ko").plain:find("명 있음",1,true))
+''')
+print("파티 인원 표기(4=1) 검증 통과")

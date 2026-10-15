@@ -324,6 +324,11 @@ local function CollapseKo(text)
 	return text
 end
 
+local PARTY_COUNT = {
+	ko = "%d명 있음, %d명 구함", en = "have %d, need %d", zhCN = "已有%d人，缺%d人", zhTW = "已有%d人，缺%d人",
+	ja = "%d人いる・あと%d人", ru = "есть %d, нужно ещё %d", es = "somos %d, faltan %d",
+}
+
 local function Gloss(text, lang, target)
 	target = target or ns.GetTarget()
 	if lang == "ko" then text = CollapseKo(text) end
@@ -432,7 +437,25 @@ local function Gloss(text, lang, target)
         local localSource = ns.SAME_SOURCE and ns.SAME_SOURCE[target] == source
         local disabled = ns.db and ns.db.chat and ns.db.chat.langs and ns.db.chat.langs[source] == false
         if disabled then mainDicts, wordDicts = {}, {} end
-        if t.kind == "cjk" or t.kind == "word" then
+        -- 파티 인원 표기 "4=1"(4명 있음, 1명 더 구함): 중국 서버 모집 글에서 흔함
+        local t2, t3 = tokens[i + 1], tokens[i + 2]
+        if (source == "zh" or source == "ja") and not localSource and not disabled and t.kind == "word" and t.key:find("^%d%d?$")
+            and t2 and t2.key == "=" and t3 and t3.kind == "word" and t3.key:find("^%d%d?$") then
+            local have, need = tonumber(t.key), tonumber(t3.key)
+            if have >= 1 and need >= 1 and have + need <= 40 then
+                local fmt = PARTY_COUNT[target] or PARTY_COUNT.en
+                emit("hit", fmt:format(have, need))
+                foreignFound = foreignFound + 1
+                usedLanguages[source] = true
+                found = found + 1
+                coverHit = coverHit + 1
+                i = i + 3
+                matched = true
+            end
+        end
+        if matched then
+            -- 위에서 처리함
+        elseif t.kind == "cjk" or t.kind == "word" then
 			-- 가장 긴 표현부터 찾기
 			local keys, last = {}, nil
 			local j, used = i, 0
