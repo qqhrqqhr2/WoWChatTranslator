@@ -30,6 +30,7 @@ D1套裝=던전 세트 1=dungeon set 1
 D2套裝=던전 세트 2=dungeon set 2
 Discord=디스코드=Discord
 dkp=DKP=DKP
+dlr=달라란=Dalaran
 dmfbuff=다크문 버프=DMF buff
 DOT=지속 피해=DoTs
 dps=딜러=DPS
@@ -91,6 +92,7 @@ T3套裝=T3 세트=tier 3
 taq=안퀴라즈 사원=Temple of Ahn'Qiraj
 thx=고마워=thx
 tl=스칼로맨스=Scholomance
+tn=탱커+힐러=tank + healer
 t位=탱커 자리=tank spot
 T套=티어=tier
 ubrs=검은바위 첨탑 상층=Upper Blackrock Spire
@@ -169,10 +171,13 @@ zul=줄파락=Zul'Farrak
 一起做=같이 하자=do together
 一起嗎=같이 할래요?=together?
 低价=싸게=cheap
+听说=듣자 하니=I heard
 峡谷=협곡=gulch
 恢复下=회복 좀 할게요=let me regen
 收号=계정 삽니다=buying accounts
 有一起的么=같이 할 사람?=anyone want to join?
+比=~보다=compare
+目前=현재=currently
 脱坑=게임 접는=quitting the game
 花钱=돈 주고=for gold
 萬=만(10,000)=10k
@@ -528,6 +533,7 @@ zul=줄파락=Zul'Farrak
 出血=과다출혈=Hemorrhage
 出货=득템=got loot
 出货了=득템=got loot
+都是=전부=all
 鑿擊=후려치기=Gouge
 刀锋=칼날=blade
 分=분배=split

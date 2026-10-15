@@ -636,6 +636,7 @@ Crecimiento salvaje=급속 성장=Wild Growth
 cristal arcane=비전 수정=arcane crystal
 crit=치명타=crit
 crusader enchant=성전사 마부=crusader enchant
+cual=어떤=which
 cualquier clase=직업 무관=any class
 cualquier cosa=아무거나=anything
 cualquier japonés=일본인 있나요=any Japanese
@@ -694,6 +695,7 @@ Date prisa.=빨리=hurry
 daño=피해=damage
 Daños causados por el hechizo=주문 공격력=spell damage
 daños y perjuicios a lo largo del tiempo=지속 피해=damage over time
+de=~의=of
 de descanso=재시작 중=restarting
 de guerra=흑마법사=warlocks
 de licencia=던전 나가기=leave dungeon
@@ -715,6 +717,7 @@ Deflagración=섬광=Flare
 Deflagración Arcana=신비한 폭발=Arcane Explosion
 Deja que el tanque tire=탱커가 풀링하게 해주세요=let the tank pull
 dejad de atacar=공격을 멈추세요=stop dealing damage
+del=~의=of the
 demasiado=너무/~도=too
 demonología=악마 특성=demonology
 dentro=안=inside
@@ -1437,6 +1440,7 @@ kite=카이팅=kite
 kiting=카이팅=kiting
 Koreans=한국인들=Koreans
 KR server=한국 서버=KR server
+la=그(여성)=the
 la bendición de la salvación=구원의 축복 부탁=need Blessing of Salvation
 La Bestia=짐승=The Beast
 La Capilla Esperanza de la Luz=희망의 빛 예배당=Light's Hope Chapel
@@ -1457,6 +1461,7 @@ lana=양모 천=wool
 lanza=창=spear
 Lanza de hielo=얼음창=Ice Lance
 lanzamiento del servidor=서버 오픈=server launch
+las=그들(여성)=the
 las invitaciones se retrasan=초대가 지연됩니다=invites are delayed
 Las Mazmorras=스톰윈드 지하감옥=The Stockade
 Las Minas de la Muerte=죽음의 폐광=The Deadmines
@@ -1534,6 +1539,7 @@ logout=로그아웃=logout
 Lol=ㅋㅋ=lol
 Loot Council=운영진 합의 전리품 분배=loot council
 Lord Roccor=군주 로코르=Lord Roccor
+los=그들=the
 Los Barrens=불모의 땅=The Barrens
 Los chamanes son sanadores=주술사는 힐러다=shamans are healers
 los hizo mejor=더 좋아지게 했다=made them better
@@ -2408,6 +2414,7 @@ se liga al equipar=착용 시 귀속=bind on equip
 se liga al recoger=획득 시 귀속=bind on pickup
 Se registró=접속 종료=logged off
 Se rompió.=돈 없음=broke
+sea=~이든=be
 Searing Gorge=이글거리는 협곡=Searing Gorge
 sec=잠깐=sec
 Seccionar=무력화=Hamstring
@@ -2512,6 +2519,7 @@ Stratholme Undead=스트라솔름 언데드 구역=Stratholme Undead
 Stratholme zona no-muerta=스트라솔름 후문=Stratholme undead side
 stun=기절=stun
 stuns=기절=stuns
+su=그의=his/her
 suave reservado=찜해둠=soft reserved
 subasta=경매=auction
 subasta casa=경매장=auction house
@@ -2531,6 +2539,7 @@ superior=최고=top
 supervivencia=생존 특성=survival
 Suprimir enfermedad=질병 해제=Abolish Disease
 Suprimir veneno=독 해제=Abolish Poison
+sus=그의/그들의=their
 sus materiales=재료는 구매자가 준비=your materials
 susurro x para invitar=초대 원하면 x 귓말=whisper x for invite
 susurros=귓말=whisper
@@ -2718,6 +2727,7 @@ tóxico=고마워=thx
 Tú.=너=you
 UBRS=검은바위 첨탑 상층=UBRS
 Uldaman=울다만=Uldaman
+un=하나의=a
 Un Goro Crater=운고로 분화구=Un'Goro Crater
 un minuto=잠깐=one minute
 un momento=잠깐=a moment
@@ -2728,6 +2738,7 @@ un punto izquierdo=한 자리 남음=one spot left
 un tanque más=탱커 한 명 더=one more tank
 Un tipo afortunado.=운 좋은 사람=lucky guy
 Un tipo desafortunado=운 없는 사람=unlucky guy
+una=하나의=a
 una mano=한손=one-hand
 una persona=한 명=one person
 Undead=언데드=Undead

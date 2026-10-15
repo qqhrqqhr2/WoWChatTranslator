@@ -195,6 +195,7 @@ ah price=경매장 시세=AH price
 ahn'qiraj=안퀴라즈=Ahn'Qiraj
 ai=신비한 지능=arcane intellect
 Aimed Shot=조준 사격=Aimed Shot
+aint=아니다=ain't
 alch=연금술=alchemy
 alchemist=연금술사=alchemist
 alchemy=연금술=alchemy
@@ -215,6 +216,7 @@ all roles welcome=모든 역할 환영=all roles welcome
 alli=얼라이언스=Alliance
 alliance=얼라이언스=Alliance
 allinace=얼라이언스=Alliance
+allowed=허용된=allowed
 ally=얼라이언스=Alliance
 almost=거의=almost
 almost out of mana=곧 마나 없음=almost out of mana
@@ -240,6 +242,7 @@ alts=부캐=alts
 always=항상=always
 alzzin=알진 와일드쉐이퍼=Alzzin the Wildshaper
 Alzzin the Wildshaper=알진 와일드쉐이퍼=Alzzin the Wildshaper
+am=~이다(나)=am
 amazing=놀라워=amazing
 Ambush=매복=Ambush
 ammo=탄약=ammo
@@ -281,6 +284,7 @@ anyone want to join=같이 할 사람=anyone want to join
 anyone who needs=필요한 분=anyone who needs
 anyone?=누구 있나요?=anyone?
 anything=필요한 것=anything
+anywhere=어디든=anywhere
 aoe=광역=AoE
 aoe farm=광역 사냥=AoE farming
 AoE farming=광역 사냥=AoE farming
@@ -341,6 +345,7 @@ armory=무기고=armory
 arms=무기 특성=arms
 arms war=무기 전사=arms warrior
 arms warrior=무기 전사=arms warrior
+around=주변=around
 arrive=도착=arrive
 arrived=도착=arrived
 arrows=화살=arrows
@@ -375,6 +380,7 @@ at the stone=돌 앞=at the stone
 at your service=도와드립니다=at your service
 atm=지금=at the moment
 atmosphere=분위기=atmosphere
+attack=공격=attack
 attack power=전투력=attack power
 attune=입장 퀘스트=attunement
 attuned=입장 조건 완료=attuned
@@ -493,6 +499,7 @@ best offer=최고 제시 가격=best offer
 Bestial Wrath=야수의 격노=Bestial Wrath
 beta=베타=beta
 better=더 좋은=better
+between=사이=between
 beware=조심하세요=beware
 bfd=검은심연 나락=Blackfathom Deeps
 bfd farm=검은심연 나락 반복 사냥=Blackfathom Deeps farm
@@ -546,6 +553,7 @@ blackwing lair full run=검은날개 둥지 전체 공략=Blackwing Lair full ru
 blackwing lair quest run=검은날개 둥지 퀘스트 공략=Blackwing Lair quest run
 blade=칼날=blade
 Blade Flurry=폭풍의 칼날=Blade Flurry
+blamed=누명 쓴=blamed
 Blast Wave=화염 폭풍=Blast Wave
 blasted lands=저주받은 땅=Blasted Lands
 bless you=복 받으실 거예요=bless you
@@ -571,6 +579,7 @@ blizz forum=블리자드 게시판=Blizzard forum
 Blizzard=눈보라=Blizzard
 Blizzard forum=블리자드 게시판=Blizzard forum
 block=방패 막기=block
+blocked=차단된=blocked
 Blood Pact=피의 서약=Blood Pact
 Bloodlord Mandokir=혈군주 만도키르=Bloodlord Mandokir
 Bloodrage=피의 분노=Bloodrage
@@ -810,6 +819,7 @@ chat=채팅=chat
 cheap=싸게=cheap
 Cheap Shot=비열한 습격=Cheap Shot
 cheaper=더 싸게=cheaper
+check=확인=check
 chest=가슴=chest
 chill=느긋한=chill
 chill casual=부담 없는 캐주얼=chill casual
@@ -925,6 +935,7 @@ corpse=시체=corpse
 corpse camping=시체 지키기=corpse camping
 corpse run=시체를 찾아 이동=corpse run
 correct=맞아=correct
+corrected=바로잡힌=corrected
 Corruption=부패=Corruption
 cost=소모량=cost
 council=협의회=council
@@ -1024,6 +1035,7 @@ Dark Pact=암흑의 계약=Dark Pact
 Dark Sacrifice=어둠의 희생=Dark Sacrifice
 Darkmaster Gandling=암흑스승 간들링=Darkmaster Gandling
 Darkmoon buff=다크문 버프=Darkmoon buff
+darkmoon faire=다크문 축제=Darkmoon Faire
 darkshire=다크샤이어=Darkshire
 darkshire farm=다크샤이어 반복 사냥=Darkshire farm
 darkshire fresh run=다크샤이어 처음부터 공략=Darkshire fresh run
@@ -1047,6 +1059,7 @@ dbm=우두머리 경보 애드온=Deadly Boss Mods
 dc=접속 끊김=disconnected
 dced=접속 끊김=disconnected
 dd=딜러=damage dealer
+dds=딜러들=damage dealers
 de=마력 추출=disenchant
 dead=죽음=dead
 dead zone=공격 사각거리=dead zone
@@ -1085,6 +1098,7 @@ demonology warlock=악마 흑마법사=Demonology Warlock
 Demoralizing Roar=위협의 포효=Demoralizing Roar
 Demoralizing Shout=사기의 외침=Demoralizing Shout
 deposit=보증금=deposit
+designated driver=대리 운전자(술 안 마시는 사람)=designated driver
 desolace=잊혀진 땅=Desolace
 Desperate Prayer=구원의 기도=Desperate Prayer
 destro=파괴 흑마법사=destruction
@@ -1166,6 +1180,7 @@ Divine Shield=천상의 보호막=Divine Shield
 Divine Spirit=천상의 정신=Divine Spirit
 dk=불명예 처치=dishonorable kill
 dkp=공격대 기여도 포인트=dragon kill points
+dlr=달라란=Dalaran
 dm=죽음의 폐광 또는 혈투의 전장(문맥 확인)=Deadmines or Dire Maul
 dm east=혈투의 전장 동쪽=Dire Maul East
 dm east farm=혈투의 전장 동쪽 반복 사냥=Dire Maul East farm
@@ -1231,6 +1246,7 @@ do you have anyone=누구 있나요=do you have anyone
 dodge=회피=dodge
 does=하나요=does
 does anyone=누구 ~있어?=does anyone
+doesnt=안 한다=doesn't
 dog=개=dog
 dog whistle=개 호루라기=dog whistle
 dog whistle farm=개 호루라기 반복 사냥=dog whistle farming
@@ -1283,6 +1299,7 @@ drop threat=위협 수준을 낮추세요=reduce threat
 dropped=드랍됨=dropped
 drops=드랍=drops
 dru=드루이드=Druid
+drugs=약=drugs
 druid=드루이드=druid
 druids=드루이드=druids
 dual spec=이중 특성=dual specialization
@@ -1319,9 +1336,11 @@ Dustwallow Marsh=먼지진흙 습지대=Dustwallow Marsh
 dw=그늘숲=Duskwood
 dwarf=드워프=Dwarf
 each=개당=each
+eachother=서로=each other
 eagle=독수리=eagle
 Eagle Eye=독수리의 눈=Eagle Eye
 early morning=새벽=early morning
+earth=대지=earth
 Earth Shock=대지 충격=Earth Shock
 Earthbind Totem=속박의 토템=Earthbind Totem
 earthroot=뱀뿌리=earthroot
@@ -1458,9 +1477,11 @@ expensive=비싼=expensive
 experienced=숙련된=experienced
 expert=고수=expert
 exploit=버그 악용=exploit
+exploring=탐험=exploring
 Explosive Trap=폭발의 덫=Explosive Trap
 Expose Armor=약점 노출=Expose Armor
 external cooldown=아군에게 주는 생존기=external defensive cooldown
+eye=눈=eye
 Eye of Kilrogg=킬로그의 눈=Eye of Kilrogg
 Eyes of the Beast=야수의 눈=Eyes of the Beast
 ez=쉽네=easy
@@ -1471,6 +1492,7 @@ Fade=소실=Fade
 fadeleaf=미명초=fadeleaf
 Faerie Fire=요정의 불꽃=Faerie Fire
 Faerie Fire (Feral)=요정의 불꽃 (야성)=Faerie Fire (Feral)
+faire=축제(다크문 축제)=Darkmoon Faire
 fake=가짜=fake
 falcon=매=falcon
 family=가족=family
@@ -1503,6 +1525,7 @@ Feint=교란=Feint
 Fel Domination=마의 지배=Fel Domination
 felcloth=악마매듭 천=felcloth
 Feline Grace=살쾡이의 우아함=Feline Grace
+fellow=동료=fellow
 felwood=악령의 숲=Felwood
 female=여자=female
 female players=여성 유저=female players
@@ -1704,6 +1727,7 @@ ganking=학살 중=ganking
 garden=정원=garden
 garr=가르=Garr
 Garrote=목조르기=Garrote
+gate=관문=gate
 gather=집합=gather
 gather up=모여 주세요=gather up
 gathering=채집=gathering
@@ -1725,6 +1749,7 @@ General Angerforge=장군 앵거포지=General Angerforge
 General Drakkisath=대군주 드라키사스=General Drakkisath
 get=얻다=get
 get lost=꺼져=get lost
+getting=얻는 중=getting
 gf=좋은 싸움이었습니다=good fight
 gfpp=상급 화염 보호 물약=greater fire protection potion
 gg=수고했어요=good game
@@ -1735,9 +1760,12 @@ Ghost Wolf=늑대 정령=Ghost Wolf
 Ghostly Strike=그림자 일격=Ghostly Strike
 giants=거인의 비약=elixir of giants
 Gift of the Wild=야생의 선물=Gift of the Wild
+gilde=길드(독일어)=guild
+ginvite=길드 초대=guild invite
 girdle=벨트=girdle
 girl=누나(여성)=girl
 girls=여성 유저=girls
+give=주다=give
 gj=잘했어=good job
 gl=행운을=good luck
 gl hf=행운을 빕니다, 즐겁게 하세요=good luck have fun
@@ -1770,6 +1798,7 @@ go dungeon=던전 가기=go dungeon
 go go=가자 가자=go go
 go go go=가자가자=go go go
 goals=목표=goals
+goat=최고(GOAT)=greatest of all time
 godly item=최상급=godly item
 gogo=가자 가자=go go
 going=가는 중=going
@@ -1797,6 +1826,7 @@ goldthorn=황금가시=goldthorn
 golem lord=골렘 군주 아고마고스=Golem Lord Argelmach
 Golem Lord Argelmach=골렘 군주 아고마고스=Golem Lord Argelmach
 golemagg=골레마그=Golemagg
+gone=사라진=gone
 gonna=~할 거야=going to
 good=좋아=good
 good afternoon=안녕하세요=good afternoon
@@ -1855,6 +1885,7 @@ greed all=전부 차비=greed all
 green=고급(초록)=uncommon
 green gear=고급 장비=green gear
 greens=초록 템=greens
+greetings=안녕하세요=greetings
 grey=잡템(회색)=grey
 grey mob=회색몹=grey mob
 grind=사냥=grind
@@ -1902,6 +1933,7 @@ hack=핵=hack
 haha=하하=haha
 hahaha=하하하=hahaha
 hakkar=학카르=Hakkar
+half=절반=half
 hall of thanes=영주의 전당=The Hall of Thanes
 hammer=망치=hammer
 Hammer of Justice=심판의 망치=Hammer of Justice
@@ -1971,6 +2003,8 @@ heed=주의하다=heed
 Heed My Call=내 부름에 응하라=Heed My Call
 heh=허허(비꼼)=heh
 hehe=헤헤=hehe
+hell=지옥=hell
+hell yeah=당연하지!=hell yeah
 Hellfire=지옥의 불길=Hellfire
 hello=안녕하세요=hello
 hello everyone=모두 안녕하세요=hello everyone
@@ -2003,6 +2037,7 @@ hf=즐겜=have fun
 hi=안녕=hi
 hi all=모두 안녕하세요=hi all
 Hibernate=겨울잠=Hibernate
+high=높은=high
 high latency=높은 통신 지연=high latency
 High Warlord=대장군=High Warlord
 higher=더 높은=higher
@@ -2081,6 +2116,7 @@ huge pvp=대규모 PvP=large-scale PvP
 huh=응?=huh
 huhuran=공주 후후란=Princess Huhuran
 human=인간=Human
+humans=인간들=humans
 hundred=백=hundred
 hunt=사냥꾼=Hunter
 hunt pet=사냥꾼 펫=hunter pet
@@ -2107,6 +2143,7 @@ I know=알아=I know
 I know right=그러니까=I know right
 i need=나 ~ 필요해=I need
 I want=원해요=I want
+i'd=나는 ~할 거야=I'd
 i'll=내가 할게=I'll
 I'll go=갈게요=I'll go
 I'll help=도와드릴게요=I'll help
@@ -2197,6 +2234,7 @@ int buff=지능 버프=intellect buff
 intellect=지능=intellect
 intellect buff=지능 버프=intellect buff
 Intercept=봉쇄=Intercept
+interested=관심 있는=interested
 intermediate=중급=intermediate
 internal cooldown=내부 재사용 대기시간=internal cooldown
 internet=인터넷=internet
@@ -2216,6 +2254,7 @@ inv=초대=invite
 inv me=초대해주세요=invite me
 inv pls=초대 부탁=invite please
 inv plz=초대 부탁=invite please
+invasion=침공=invasion
 invite=초대=invite
 invite me=초대해주세요=invite me
 invite me please=초대해주세요=invite me please
@@ -2242,6 +2281,7 @@ ironforge farm=아이언포지 반복 사냥=Ironforge farm
 ironforge fresh run=아이언포지 처음부터 공략=Ironforge fresh run
 ironforge full run=아이언포지 전체 공략=Ironforge full run
 ironforge quest run=아이언포지 퀘스트 공략=Ironforge quest run
+ironspine=무쇠가시(희귀 몹)=Ironspine
 is=~이다=is
 is a must=필수입니다=is a must
 is available now=지금 가능합니다=available now
@@ -2272,6 +2312,7 @@ join=합류=join
 join group chat=단톡방 입장=join group chat
 join guild=길드 가입=join guild
 join party=파티 와요=join party
+jr=주니어=junior
 Judgement=심판=Judgement
 juju=주주=juju
 jujus=주주=jujus
@@ -2281,6 +2322,7 @@ just a bit=조금만=just a bit
 just kidding=농담이야=just kidding
 just now=방금=just now
 just takes=걸릴 뿐이에요=just takes
+justly=정당하게=justly
 k=ㅇㅋ=ok
 kazzak=카자크=Kazzak
 keep=유지하다=keep
@@ -2323,6 +2365,7 @@ korean=한국어/한국인=Korean
 koreans=한국인들=Koreans
 KR server=한국 서버=KR server
 kral=가시덩굴 우리=Razorfen Kraul
+krol'dok=크롤독=Krol'dok
 kt=켈투자드=Kel'Thuzad
 Lacerate=가르기=Lacerate
 lag=렉=lag
@@ -2346,6 +2389,7 @@ Lava Burst=용암 폭발=Lava Burst
 lava run=검은바위 나락 용암 경로 공략=Blackrock Depths lava route
 Lay on Hands=신의 축복=Lay on Hands
 layer=레이어=layer
+layer swap=레이어 이동=layer swap
 layering=레이어링=layering
 layers=레이어=layers
 lazy=게으른=lazy
@@ -3244,8 +3288,10 @@ lights hope chapel quest run=희망의 빛 예배당 퀘스트 공략=Light's Ho
 Lightwell=빛샘=Lightwell
 like=좋아해/~처럼=like
 like-minded=성향이 비슷한=like-minded
+likes=좋아하다=likes
 lil=작은=little
 limited invulnerability potion=제한적 무적의 물약=limited invulnerability potion
+line=줄/연계=line
 line of sight=시야=line of sight
 line of sight pull=시야를 이용한 풀링=line of sight pull
 linen=리넨 천=linen cloth
@@ -3271,6 +3317,7 @@ lockpick=자물쇠 따기=lockpicking
 lockpicking=자물쇠 따기=lockpicking
 locks=흑마법사=warlocks
 logged off=접속 종료=logged off
+logging=접속 종료=logging off
 logging off=로그아웃합니다=logging off
 login queue=접속 대기=login queue
 logout=로그아웃=logout
@@ -3444,6 +3491,7 @@ materials provided=재료 제공=materials provided
 mats=재료=materials
 mats included=재료 포함=materials included
 mats provided=재료 제공=materials provided
+matter=문제=matter
 Maul=후려치기=Maul
 max level=만렙=max level
 may I=해도 돼요?/가능=may I
@@ -3463,6 +3511,7 @@ mdps=근접 딜러=melee DPS
 me=나=me
 me2=저도요=me too
 mean=의미하다=mean
+meat=고기=meat
 med=명상(마나 회복)=meditate
 meditate=명상(마나 회복)=meditate
 medium leather=일반 가죽=medium leather
@@ -3490,6 +3539,9 @@ middle=중앙=middle
 might=힘의 축복/아마=blessing of might/might
 might/strength=힘=might/strength
 milk=우유=milk
+milked=우려먹은=milked
+milking=우려먹기=milking
+milll=밀농장=Mill
 min=분=minute
 min bid=최소 입찰가=minimum bid
 Mind Blast=정신 분열=Mind Blast
@@ -3719,6 +3771,7 @@ need warrior=전사 와요=need warrior
 need wf=질풍 토템 부탁=need Windfury Totem
 need Windfury Totem=질풍 토템 부탁=need Windfury Totem
 needed=입찰했어=needed
+needs=필요하다=needs
 needtank=탱커 필요=need a tank
 nef=네파리안=Nefarian
 nefarian=네파리안=Nefarian
@@ -3727,6 +3780,7 @@ negotiable=가격 협의 가능=negotiable
 nelf=나이트 엘프=Night Elf
 nerf=하향=nerf
 neutral=중립=neutral
+never=절대 안=never
 never mind=신경 쓰지 마=never mind
 new=새로운=new
 new players=신규 유저=new players
@@ -3746,6 +3800,7 @@ ninja=닌자(무단 루팅)=ninja looter
 ninja looter=전리품 무단 획득자=ninja looter
 ninja looting=닌자 루팅(못 쓰는 템을 주사위로 가져감)=ninja looting
 ninjaed=닌자당함=ninjaed
+nmeed=필요=need
 no=아니/없음=no
 no choice=어쩔 수 없어=no choice
 no drop=안 나왔어=no drop
@@ -3783,6 +3838,7 @@ nothing at all=하나도 없음=nothing at all
 now=지금=now
 np=천만에=no problem
 np bro=괜찮아=no problem
+npc=NPC=NPC
 nr=자연 저항=nature resistance
 ns heal=자연의 신속함으로 즉시 치유=Nature's Swiftness heal
 nvm=신경 쓰지 마=never mind
@@ -3817,6 +3873,7 @@ okay=좋아=okay
 okk=ㅇㅋ=ok
 old=오래된=old
 old friends=오랜 친구=old friends
+older=더 오래된=older
 Omen of Clarity=청명의 전조=Omen of Clarity
 omg=헐=oh my god
 omw=가는 중=on my way
@@ -3986,6 +4043,7 @@ pickup groups=공팟=pickup groups
 picture=사진=picture
 piece=개=piece
 Piercing Howl=날카로운 고함=Piercing Howl
+pizza=피자=pizza
 pl=파티장=party leader
 place=장소=place
 plaguebloom=역병초=plaguebloom
@@ -4055,6 +4113,7 @@ potion=물약=potion
 potions=물약=potions
 pots=물약=potions
 Pounce=암습=Pounce
+pour=~용(프랑스어)=for
 power=힘=power
 Power Infusion=마력 주입=Power Infusion
 Power Word: Fortitude=신의 권능: 인내=Power Word: Fortitude
@@ -4108,6 +4167,7 @@ profs=전문기술=professions
 progressing through raid content=공격대 진도 진행 중=progressing through raid content
 progression=진도 진행=progression
 progression guild=공략 진도를 목표로 하는 길드=progression guild
+prolly=아마=probably
 promote=승급=promote
 Prophet Skeram=예언자 스케람=Prophet Skeram
 prot=방어=protection
@@ -4174,6 +4234,7 @@ quest credit=퀘스트 진행 인정=quest credit
 quest for=~ 퀘스트=quest for
 quest giver=퀘스트 제공 NPC=quest giver
 quest item=퀘스트 아이템=quest item
+quest line=연계 퀘스트=quest line
 quest run=퀘스트 목적 진행=quest run
 quest runs=퀘스트 목적 던전 진행=quest runs
 quest turn in=퀘스트 완료 보고=quest turn in
@@ -4269,6 +4330,7 @@ rbg=평점제 전장=rated battleground
 rc=준비 확인=ready check
 rdps=원거리 딜러=ranged DPS
 rdy=준비됨=ready
+read=읽다=read
 ready=준비 완료=ready
 ready check=준비 확인=ready check
 ready to go=출발 준비 완료=ready to go
@@ -4330,6 +4392,7 @@ reported=신고함=reported
 reputation=평판=reputation
 request=요청=request
 request a group=파티 초대를 요청하세요=request a group
+require=필요하다=require
 res=예약/부활=reserve/resurrect
 res healer first=힐러부터 부활해주세요=resurrect healer first
 res sickness=부활 후유증=resurrection sickness
@@ -4404,6 +4467,7 @@ rfk farm=가시덩굴 우리 반복 사냥=Razorfen Kraul farm
 rfk fresh run=가시덩굴 우리 처음부터 공략=Razorfen Kraul fresh run
 rfk full run=가시덩굴 우리 전체 공략=Razorfen Kraul full run
 rfk quest run=가시덩굴 우리 퀘스트 공략=Razorfen Kraul quest run
+rfkral=가시덩굴 우리=Razorfen Kraul
 rich=부자=rich
 rich guy=부자=rich guy
 riding=탈것 숙련=riding
@@ -4420,7 +4484,9 @@ Riposte=반격=Riposte
 Riptide=성난 해일=Riptide
 Ritual of Doom=파멸의 의식=Ritual of Doom
 Ritual of Summoning=소환 의식=Ritual of Summoning
+rival=겨루다=rival
 rl=공격대장=raid leader
+rly=정말=really
 rn=지금=right now
 rng=운빨=RNG
 robe=로브=robe
@@ -4445,6 +4511,7 @@ root=속박=root
 roots=휘감는 뿌리=Entangling Roots
 roster=공략 인원 구성=roster
 rosters=공략 인원 구성=rosters
+round=라운드=round
 round robin=차례대로 획득=round robin
 rp-pvp=역할극·플레이어 간 전투=roleplay PvP
 RU=러시아=RU
@@ -4491,6 +4558,7 @@ saved=귀속됨=saved
 saved to instance=던전에 귀속됨=saved to instance
 saw=봤다=saw
 say=말하다=say
+saying=말하는=saying
 sb=누군가/어둠의 화살=somebody/shadow bolt
 scale to gear=장비에 비례해 강해짐=scale with gear
 scale with gear=장비에 비례해 강해짐=scale with gear
@@ -4546,6 +4614,7 @@ Seal of Light=빛의 문장=Seal of Light
 Seal of Righteousness=정의의 문장=Seal of Righteousness
 Seal of the Crusader=성전사의 문장=Seal of the Crusader
 Seal of Wisdom=지혜의 문장=Seal of Wisdom
+search=검색=search
 searing gorge=이글거리는 협곡=Searing Gorge
 Searing Pain=불타는 고통=Searing Pain
 Searing Totem=불타는 토템=Searing Totem
@@ -4559,6 +4628,7 @@ see=보다=see
 see you=또 봐=see you
 see you later=나중에 봐요=see you later
 see you tomorrow=내일 봐=see you tomorrow
+seen=본=seen
 sell=팔다=sell
 selling=팝니다=selling
 selling boosts=버스 팝니다=selling boosts
@@ -4575,6 +4645,7 @@ send a tell=귓말 주세요=send a tell
 send invite=초대해 줘=send invite
 send me a tell=귓말 주세요=send me a tell
 send tell=귓말 주세요=send a tell
+sending=보내는 중=sending
 Sense Demons=악마 감지=Sense Demons
 Sense Undead=언데드 감지=Sense Undead
 Sentry Totem=감시의 토템=Sentry Totem
@@ -4588,6 +4659,7 @@ server time=서버 시간=server time
 service=서비스=service
 set=세트=set
 set bonus=세트 효과=set bonus
+sewers=하수도=sewers
 sfk=그림자송곳니 성채=Shadowfang Keep
 sfk farm=그림자송곳니 성채 반복 사냥=Shadowfang Keep farm
 sfk fresh run=그림자송곳니 성채 처음부터 공략=Shadowfang Keep fresh run
@@ -4801,6 +4873,7 @@ soul stone=영혼석=Soulstone
 soulbound=귀속 아이템=soulbound
 soulstone=영혼석=soulstone
 soulstone me=영혼석 걸어줘=soulstone me
+south=남쪽=south
 southshore=사우스쇼어=Southshore
 southshore farm=사우스쇼어 반복 사냥=Southshore farm
 southshore fresh run=사우스쇼어 처음부터 공략=Southshore fresh run
@@ -4912,6 +4985,8 @@ Stonetalon Mountains=돌발톱 산맥=Stonetalon Mountains
 stop=멈춰=stop
 stop dealing damage=공격을 멈추세요=stop dealing damage
 stop dps=공격을 멈추세요=stop dealing damage
+storm=폭풍=storm
+storm, earth, and fire=폭풍, 대지, 그리고 불길(퀘스트)=Storm, Earth, and Fire
 Stormstrike=폭풍의 일격=Stormstrike
 stormwind=스톰윈드=Stormwind
 stormwind city=스톰윈드=Stormwind
@@ -4964,6 +5039,7 @@ strength=힘=strength
 Strength of Earth Totem=대지력 토템=Strength of Earth Totem
 Strider Kick=타조 발차기=Strider Kick
 strong=강한=strong
+stronghold=요새=stronghold
 student=학생=student
 Study=연구=Study
 stun=기절=stun
@@ -5086,6 +5162,7 @@ tank spot=탱커 자리=tank spot
 tanking=탱킹=tanking
 tanks=탱커들=tanks
 taq=안퀴라즈 사원=Temple of Ahn'Qiraj
+taren mill=타렌 밀농장=Tarren Mill
 target=대상=target
 target of target=대상의 대상=target of target
 target swap=대상을 바꾸세요=switch targets
@@ -5102,6 +5179,7 @@ taunt resisted=도발이 저항됨=taunt resisted
 taunted=도발함=taunted
 tauren=타우렌=Tauren
 tb=썬더 블러프=Thunder Bluff
+tbc=불타는 성전=The Burning Crusade
 tbh=솔직히=to be honest
 team=팀=team
 teammate=파티원=teammate
@@ -5242,6 +5320,7 @@ tirisfal=티리스팔 숲=Tirisfal Glades
 Tirisfal Glades=티리스팔 숲=Tirisfal Glades
 titans=거인의 영약=flask of the titans
 tm=타렌 밀농장=Tarren Mill
+tn=탱커+힐러=tank + healer
 tnx=고마워=thanks
 to=~로=to
 to be honest=솔직히=to be honest
@@ -5385,6 +5464,7 @@ unit price=개당 가격=unit price
 united=단합=united
 unlucky=운 없음=unlucky
 unlucky guy=운 없는 사람=unlucky guy
+until=~까지=until
 unwanted loot=아무도 원하지 않는 전리품=unwanted loot
 up=위로=up
 upgrade=장비 성능 향상=gear upgrade
@@ -5412,6 +5492,7 @@ valley=골짜기=valley
 Vampiric Embrace=흡혈의 선물=Vampiric Embrace
 van cleef=에드윈 반클리프=Edwin VanCleef
 vancleef=에드윈 반클리프=Edwin VanCleef
+vanilla=오리지널(바닐라)=vanilla
 Vanish=소멸=Vanish
 various=여러=various
 vc=죽음의 폐광=The Deadmines
@@ -5535,6 +5616,7 @@ were=~였다=were
 west=서쪽=west
 Western Plaguelands=서부 역병지대=Western Plaguelands
 westfall=서부 몰락지대=Westfall
+wetland=저습지=Wetlands
 wetlands=저습지=Wetlands
 wf totem=질풍의 토템=windfury totem
 whale=고래=whale
@@ -5634,6 +5716,7 @@ world pvp=필드 PvP=world PvP
 worse=더 나쁜=worse
 worst=최악=worst
 wot=뭐=what
+would=~할 것이다=would
 Wound Poison=상처 감염 독=Wound Poison
 WoW=와우=WoW
 WoW veterans=와우 베테랑=WoW veterans
@@ -5647,6 +5730,8 @@ Wrath=천벌=Wrath
 wrist=손목=wrist
 wristguards=손목 보호대=wristguards
 wrong=틀린=wrong
+wrongly=부당하게=wrongly
+wrongly blamed, justly corrected=억울한 누명, 정당한 처벌(퀘스트)=Wrongly Blamed, Justly Corrected
 wsg=전쟁노래 협곡=Warsong Gulch
 wsg farm=전쟁노래 협곡 반복 사냥=Warsong Gulch farm
 wsg fresh run=전쟁노래 협곡 처음부터 공략=Warsong Gulch fresh run
@@ -5872,6 +5957,8 @@ yep=응=yep
 yer bald=너 대머리잖아=you are bald
 yes=응=yes
 yesterday=어제=yesterday
+yeti=예티=yeti
+yeti cave=예티 동굴=yeti cave
 yooo=요~=yo
 you=너=you
 you all=너희=you all
@@ -5879,6 +5966,7 @@ you are bald=너 대머리잖아=you are bald
 you can=할 수 있어요=you can
 you there?=있어요?=you there?
 you'll=당신은 ~할 것입니다=you will
+you're=너는=you're
 you're welcome=천만에요=you're welcome
 young man=청년=young man
 your=너의=your

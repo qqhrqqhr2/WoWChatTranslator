@@ -1,7 +1,11 @@
 -- Bounded local collection of untranslated chat expressions.
 local ADDON, ns = ...
+-- 이미 확인했지만 사전에 넣지 않는 것(개인·길드 약어, 이름, 의미 없는 조각)은 목록에서 뺀다
+local NOISE = {}
+for w in ("wzzwjc lxqwzn tdzz mmm ny hanxiao crownless encore ing esw golhamz qjqtk qudtls shiling ou bing oldguard"):gmatch("%S+") do NOISE[w] = true end
 local function UsefulUnknown(lang, word)
     if type(word) ~= "string" or word == "" then return false end
+    if NOISE[word] then return false end
     if word:find("%a") and word:find("%d") then return false end
     if word:find("discord.gg",1,true) or word:find("https?://") then return false end
     -- UTF-8 CJK characters occupy three bytes; one isolated character lacks context.
