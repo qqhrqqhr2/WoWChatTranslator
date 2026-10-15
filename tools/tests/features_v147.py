@@ -75,3 +75,9 @@ local _,o2=filters.CHAT_MSG_GUILD({},"CHAT_MSG_GUILD","lfg 하실분 있나요",
 assert(o2 and o2:find("파티 찾음",1,true), "세 글자 이상 외국어 표현은 풀이: "..tostring(o2))
 ''')
 print("현지 언어 문장 속 한 글자 약어 무시 검증 통과")
+run('''
+assert(ns.KeysToHangul("durldpsms")=="여기에는")
+assert(ns.KeysToHangul("dkssudgktpdy")=="안녕하세요")
+assert(ns.KeysToHangul("hello")==nil and ns.KeysToHangul("great")==nil)
+''')
+print("한/영 전환 실수 글자 복원 검증 통과")

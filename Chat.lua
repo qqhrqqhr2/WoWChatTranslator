@@ -326,6 +326,56 @@ local function CollapseKo(text)
 	return text
 end
 
+------------------------------------------------------------------------
+-- 한/영 전환을 잊고 친 한글 ("durldpsms" → "여기에는") 되살리기 (두벌식 자판)
+------------------------------------------------------------------------
+local KEY_JAMO = {
+	q="ㅂ", w="ㅈ", e="ㄷ", r="ㄱ", t="ㅅ", y="ㅛ", u="ㅕ", i="ㅑ", o="ㅐ", p="ㅔ",
+	a="ㅁ", s="ㄴ", d="ㅇ", f="ㄹ", g="ㅎ", h="ㅗ", j="ㅓ", k="ㅏ", l="ㅣ",
+	z="ㅋ", x="ㅌ", c="ㅊ", v="ㅍ", b="ㅠ", n="ㅜ", m="ㅡ",
+	Q="ㅃ", W="ㅉ", E="ㄸ", R="ㄲ", T="ㅆ", O="ㅒ", P="ㅖ",
+}
+local function Index(list)
+	local t = {}
+	for i, v in ipairs(list) do t[v] = i - 1 end
+	return t
+end
+local CHO = Index({ "ㄱ","ㄲ","ㄴ","ㄷ","ㄸ","ㄹ","ㅁ","ㅂ","ㅃ","ㅅ","ㅆ","ㅇ","ㅈ","ㅉ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ" })
+local JUNG = Index({ "ㅏ","ㅐ","ㅑ","ㅒ","ㅓ","ㅔ","ㅕ","ㅖ","ㅗ","ㅘ","ㅙ","ㅚ","ㅛ","ㅜ","ㅝ","ㅞ","ㅟ","ㅠ","ㅡ","ㅢ","ㅣ" })
+local JONG = Index({ "", "ㄱ","ㄲ","ㄳ","ㄴ","ㄵ","ㄶ","ㄷ","ㄹ","ㄺ","ㄻ","ㄼ","ㄽ","ㄾ","ㄿ","ㅀ","ㅁ","ㅂ","ㅄ","ㅅ","ㅆ","ㅇ","ㅈ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ" })
+local VOWEL_PAIR = { ["ㅗㅏ"]="ㅘ", ["ㅗㅐ"]="ㅙ", ["ㅗㅣ"]="ㅚ", ["ㅜㅓ"]="ㅝ", ["ㅜㅔ"]="ㅞ", ["ㅜㅣ"]="ㅟ", ["ㅡㅣ"]="ㅢ" }
+local FINAL_PAIR = { ["ㄱㅅ"]="ㄳ", ["ㄴㅈ"]="ㄵ", ["ㄴㅎ"]="ㄶ", ["ㄹㄱ"]="ㄺ", ["ㄹㅁ"]="ㄻ", ["ㄹㅂ"]="ㄼ",
+	["ㄹㅅ"]="ㄽ", ["ㄹㅌ"]="ㄾ", ["ㄹㅍ"]="ㄿ", ["ㄹㅎ"]="ㅀ", ["ㅂㅅ"]="ㅄ" }
+
+-- 모든 글자가 온전한 음절(자음+모음[+받침])로 맞아떨어질 때만 돌려준다 (영어 단어 오인 방지)
+local function KeysToHangul(word)
+	local jamo = {}
+	for ch in word:gmatch(".") do
+		local j = KEY_JAMO[ch] or KEY_JAMO[ch:lower()]
+		if not j then return nil end
+		jamo[#jamo + 1] = j
+	end
+	local out, i, n = {}, 1, #jamo
+	local function isV(x) return x and JUNG[x] ~= nil end
+	while i <= n do
+		local c, v = jamo[i], jamo[i + 1]
+		if not CHO[c] or not isV(v) then return nil end
+		i = i + 2
+		if isV(jamo[i]) and VOWEL_PAIR[v .. jamo[i]] then v = VOWEL_PAIR[v .. jamo[i]]; i = i + 1 end
+		local f = ""
+		local a, b = jamo[i], jamo[i + 1]
+		if a and not isV(a) and not isV(b) and JONG[a] then
+			f = a; i = i + 1
+			local c2 = jamo[i]
+			if c2 and not isV(c2) and not isV(jamo[i + 1]) and FINAL_PAIR[f .. c2] then f = FINAL_PAIR[f .. c2]; i = i + 1 end
+		end
+		out[#out + 1] = encode(0xAC00 + (CHO[c] * 21 + JUNG[v]) * 28 + JONG[f])
+	end
+	if #out < 2 then return nil end
+	return table.concat(out)
+end
+ns.KeysToHangul = KeysToHangul
+
 local PARTY_COUNT = {
 	ko = "%d명 있음, %d명 구함", en = "have %d, need %d", zhCN = "已有%d人，缺%d人", zhTW = "已有%d人，缺%d人",
 	ja = "%d人いる・あと%d人", ru = "есть %d, нужно ещё %d", es = "somos %d, faltan %d",
@@ -524,6 +574,25 @@ local function Gloss(text, lang, target)
 				coverHit = coverHit + 1
 				i = i + 1
 				matched = true
+			end
+		end
+		-- 한/영 전환을 잊고 친 한글: 한국어로 보는 사람에겐 한글로, 다른 언어는 한국어 사전으로 풀이
+		if not matched and (source == "en" or source == "es") and t.kind == "word" and #t.text >= 4
+			and t.text:find("^%a+$") and not disabled then
+			local h = KeysToHangul(t.text)
+			if h then
+				local e = Dict.ko and Dict.ko[NormKey(h)]
+				local meaning = (target == "ko") and h or (e and Meaning(e, target))
+				if meaning and meaning ~= "" then
+					emit("hit", meaning)
+					foreignFound = foreignFound + 1
+					foreignChars = foreignChars + #t.text
+					usedLanguages.ko = true
+					found = found + 1
+					coverHit = coverHit + 1
+					i = i + 1
+					matched = true
+				end
 			end
 		end
 		if not matched then

@@ -716,6 +716,7 @@ Deadmines/Dire Maul=죽음의 폐광/혈투의 전장=Deadmines/Dire Maul
 Debe ser=필수=must
 debuffs=디버프=debuffs
 decente=정상적인(매너 있는)=decent
+decir=말하다=to say
 decurse=저주 해제=decurse
 defensa=방어 숙련=defense
 Deflagración=섬광=Flare
@@ -1005,6 +1006,7 @@ espíritu buff=정신력 버프=spirit buff
 espíritu de liberación=영혼 해방=release spirit
 Espíritu divino=천상의 정신=Divine Spirit
 esquemática=설계도=schematic
+esta=이것=this
 esta bug=버그가 있습니다=is bugged
 Esta noche esta noche=오늘 밤=tonight
 Estaba bien.=~였다=was

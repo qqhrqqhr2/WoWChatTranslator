@@ -737,6 +737,7 @@ brothers and sisters=형제자매(여러분)=brothers and sisters
 brought=가져왔다=brought
 brs=검은바위 첨탑=Blackrock Spire
 brt=곧 갈게=be right there
+bruder=형제(독일어)=brother
 bruh=헐=bruh
 bruiseweed=생채기풀=bruiseweed
 bs=대장기술=blacksmithing
@@ -755,6 +756,7 @@ buff up=강화 효과를 걸어주세요=apply buffs
 buffs=버프=buffs
 buffs please=버프 부탁=buffs please
 buffs pls=버프 부탁=buffs please
+buffz=버프=buffs
 bug=버그=bug
 bugged=버그 걸림=bugged
 build=특성 빌드=build
@@ -865,6 +867,7 @@ Challenging Roar=도전의 포효=Challenging Roar
 Challenging Shout=도전의 외침=Challenging Shout
 chaman=주술사(프랑스어)=shaman
 chamber=방=chamber
+champions=챔피언=champions
 chance=확률=chance
 change=변경=change
 change my mind=내 생각을 바꿔봐=change my mind
@@ -1106,13 +1109,16 @@ damage mitigation=피해 감소=damage mitigation
 damage over time=지속 피해=damage over time
 damage taken=받은 피해=damage taken
 damn=헐=damn
+damnit=젠장=damn it
 Dampen Magic=마법 감쇠=Dampen Magic
+dang=젠장=dang
 dark=어두운=dark
 dark iron=검은무쇠=dark iron
 dark keepers=어둠의 문지기=dark keepers
 Dark Pact=암흑의 계약=Dark Pact
 Dark Sacrifice=어둠의 희생=Dark Sacrifice
 Darkmaster Gandling=암흑스승 간들링=Darkmaster Gandling
+darkmoon=다크문=Darkmoon
 Darkmoon buff=다크문 버프=Darkmoon buff
 darkmoon faire=다크문 축제=Darkmoon Faire
 darkshire=다크샤이어=Darkshire
@@ -1121,6 +1127,7 @@ darkshire fresh run=다크샤이어 처음부터 공략=Darkshire fresh run
 darkshire full run=다크샤이어 전체 공략=Darkshire full run
 darkshire quest run=다크샤이어 퀘스트 공략=Darkshire quest run
 darkshore=어둠의 해안=Darkshore
+darkspear=검은창=Darkspear
 darn=다르나서스=Darnassus
 darn farm=다르나서스 반복 사냥=Darnassus farm
 darn fresh run=다르나서스 처음부터 공략=Darnassus fresh run
@@ -1132,6 +1139,7 @@ darnassus fresh run=다르나서스 처음부터 공략=Darnassus fresh run
 darnassus full run=다르나서스 전체 공략=Darnassus full run
 darnassus quest run=다르나서스 퀘스트 공략=Darnassus quest run
 Dash=질주=Dash
+dat=저거=that
 day=날=day
 days=날들=days
 dbm=우두머리 경보 애드온=Deadly Boss Mods
@@ -1167,8 +1175,10 @@ def=방어도(방어 숙련)=defense
 defend flag=깃발을 지키세요=defend the flag
 defense=방어 숙련=defense
 Defensive Stance=방어 태세=Defensive Stance
+definitely=확실히=definitely
 delay=지연=delay
 delayed=지연됨=delayed
+delaying=지연=delaying
 delays=지연=delays
 demo=악마 흑마법사=demonology
 demo lock=악마 흑마법사=demonology warlock
@@ -1180,6 +1190,8 @@ demonology warlock=악마 흑마법사=Demonology Warlock
 Demoralizing Roar=위협의 포효=Demoralizing Roar
 Demoralizing Shout=사기의 외침=Demoralizing Shout
 deposit=보증금=deposit
+des=~의(프랑스어/독일어)=of the
+designated=지정된=designated
 designated driver=대리 운전자(술 안 마시는 사람)=designated driver
 desolace=잊혀진 땅=Desolace
 Desperate Prayer=구원의 기도=Desperate Prayer
@@ -1192,6 +1204,8 @@ Detect Invisibility=투명체 감지=Detect Invisibility
 Detect Magic=마법 감지=Detect Magic
 Detect Traps=함정 감지=Detect Traps
 Deterrence=공격 저지=Deterrence
+deutschssprachige=독일어 사용자(독일어)=German-speaking
+dev=개발자=developer
 devilsaur=데빌사우루스 가죽=devilsaur leather
 devilsaur leather=데빌사우루스 가죽=devilsaur leather
 Devotion Aura=기원의 오라=Devotion Aura
@@ -1204,6 +1218,7 @@ didn't drop=안 나왔다=didn't drop
 didnt=안 했다=didn't
 die=죽다=die
 died=죽었다=died
+diff=차이=difference
 different=다른=different
 diminishing returns=점감 효과=diminishing returns
 ding=레벨업!=level up!
@@ -1241,6 +1256,7 @@ discord required=디스코드 필수=Discord required
 discount=할인=discount
 disease=질병=disease
 Disease Cleansing Totem=질병 정화 토템=Disease Cleansing Totem
+diseases=질병=diseases
 disenchant=마력 추출=disenchant
 disenchant loot=전리품 마력 추출=disenchant loot
 Disengage=철수=Disengage
@@ -1336,6 +1352,8 @@ dog whistle farm=개 호루라기 반복 사냥=dog whistle farming
 dog whistle farming=개 호루라기 반복 사냥=dog whistle farming
 doing=하는 중=doing
 doing quests=퀘스트 진행 중=doing quests
+dominate=지배하다=dominate
+dominated=지배함=dominated
 domo=청지기 이그젝큐투스=Majordomo Executus
 don't=하지 마/안 해=don't
 don't break cc=군중 제어를 풀지 마세요=do not break crowd control
@@ -1355,6 +1373,7 @@ dots=지속 피해=DoTs
 double=2배=double
 double XP=경험치 2배=double XP
 down=아래=down
+download=다운로드=download
 downranking=낮은 등급 주문 사용=spell downranking
 downtime=공격 또는 효과가 중단된 시간=downtime
 dps=딜러=DPS
@@ -1362,13 +1381,16 @@ dps check=딜 체크=DPS check
 dps spot=딜러 자리=dps spot
 dps/heal=딜러/힐러=damage dealer/healer
 dr=점감 효과=diminishing returns
+dragon=용=dragon
 dragon head=용 머리(월드 버프)=dragon head
+dragonling=새끼용=dragonling
 dragons=에메랄드 용=Emerald dragons
 Drain Life=생명력 흡수=Drain Life
 Drain Mana=마나 흡수=Drain Mana
 Drain Soul=영혼 흡수=Drain Soul
 drakk=대군주 드라키사스=General Drakkisath
 drakkisath=대군주 드라키사스=General Drakkisath
+drama=드라마=drama
 draw=그리다=draw
 dream=꿈=dream
 dream dust=꿈가루=dream dust
@@ -1378,6 +1400,7 @@ drinking=마나 회복 중=drinking
 drinking for mana=마나 회복 중=drinking for mana
 drinking mana=마나 회복 중=drinking for mana
 drive=운전하다=drive
+driver=드라이버=driver
 droo=드루이드=druid
 drop=드랍=drop
 drop rate=드랍률=drop rate
@@ -1385,6 +1408,7 @@ drop threat=위협 수준을 낮추세요=reduce threat
 dropped=드랍됨=dropped
 drops=드랍=drops
 dru=드루이드=Druid
+drug=약물=drug
 drugs=약=drugs
 druid=드루이드=druid
 druids=드루이드=druids
@@ -1403,6 +1427,7 @@ duel=결투=duel
 duel me=결투해주세요=duel me
 duel tournament=결투 대회=duel tournament
 dueling=결투=dueling
+duell=결투(독일어)=duel
 duels=결투=duels
 dun morogh=던 모로=Dun Morogh
 dung=던전=dungeon
@@ -1422,6 +1447,7 @@ dustwallow=먼지진흙 습지대=Dustwallow Marsh
 Dustwallow Marsh=먼지진흙 습지대=Dustwallow Marsh
 dw=그늘숲=Duskwood
 dwarf=드워프=Dwarf
+dying=죽어감=dying
 each=개당=each
 eachother=서로=each other
 eagle=독수리=eagle
@@ -1437,6 +1463,7 @@ Eastern Plaguelands=동부 역병지대=Eastern Plaguelands
 Eastern Standard Time=미국 동부 표준시=Eastern Standard Time
 easy=쉬움=easy
 eat=먹다=eat
+eatin=먹는 중=eating
 eating=먹는 중=eating
 echo=메아리=echo
 Edwin VanCleef=에드윈 반클리프=Edwin VanCleef
@@ -1446,6 +1473,7 @@ effective healing=유효 치유량=effective healing
 effects=효과=effects
 effort=노력=effort
 eight piece=8세트 효과=eight-piece set bonus
+einen=하나(독일어)=a, one
 either=둘 중 하나=either
 either is fine=다 괜찮아=either is fine
 ele=정기 주술사=elemental
@@ -1471,6 +1499,7 @@ emperor=황제 다그란 타우릿산=Emperor Thaurissan
 emperor run=검은바위 나락 제왕 공략=Blackrock Depths emperor run
 Emperor Thaurissan=황제 다그란 타우릿산=Emperor Thaurissan
 ench=마부=enchant
+enchancer=마법부여사=enchanter
 enchant=마법부여=enchant
 Enchanted Flare=마력 깃든 섬광=Enchanted Flare
 enchanter=마법부여사=enchanter
@@ -1484,6 +1513,7 @@ enchanting services=마법부여 서비스=enchanting services
 enchanting skill=마법부여 숙련도=enchanting skill
 enchanting trainer=마법부여 전문기술 전문가=enchanting trainer
 enchants=마법부여=enchants
+encjamter=마법부여사=enchanter
 end=끝=end
 end boss=막보=end boss
 ends=끝나다=ends
@@ -1513,13 +1543,18 @@ Entangling Roots=휘감는 뿌리=Entangling Roots
 enter dungeon=던전 입장=enter dungeon
 entire=전체의=entire
 entrance=입구=entrance
+entspannte=느긋한(독일어)=relaxed
+eots=폭풍의 눈=Eye of the Storm
 epgp=기여도와 장비 점수 분배=effort points and gear points
 epic=영웅=epic
 epic gear=영웅 장비=epic gear
 epic mount=전문 탈것=epic mount
 epics=영웅 템=epics
+episode=에피소드=episode
 epl=동부 역병지대=Eastern Plaguelands
+epée=검(프랑스어)=sword
 eranikus=에라니쿠스의 사령=Shade of Eranikus
+esc=ESC 키=Esc key
 escort=호위 퀘스트=escort quest
 escort quest=호위 퀘스트=escort quest
 especially=특히=especially
@@ -1530,6 +1565,7 @@ essence of fire=불의 정수=essence of fire
 essence of undeath=죽음의 정수=essence of undeath
 essence of water=물의 정수=essence of water
 est=미국 동부 표준시=Eastern Standard Time
+eu=유럽 서버=EU
 EU server=유럽 서버=EU server
 Evasion=회피=Evasion
 even=심지어=even
@@ -1548,6 +1584,7 @@ every night=매일 밤=every night
 every week=매주=every week
 every1=모두=everyone
 everybody=모두=everybody
+everyday=매일=everyday
 everyone=모두=everyone
 everyone's here=다 모였어=everyone's here
 everything=전부=everything
@@ -1557,16 +1594,19 @@ Evocation=환기=Evocation
 exactly=확실해=exactly
 exalted=확고한 동맹=exalted
 example=예시=example
+exavation=발굴=excavation
 excav=발굴 현장: 저습지=Excavation Site: Wetlands
 excav site=발굴 현장: 저습지=Excavation Site: Wetlands
 excavatin=발굴 현장=Excavation
 excavation=발굴 현장: 저습지=Excavation Site: Wetlands
 excavation site=발굴 현장: 저습지=Excavation Site: Wetlands
 Excavation Site: Wetlands=발굴 현장: 저습지=Excavation Site: Wetlands
+excavatoin=발굴=excavation
 excellent=아주 좋아=excellent
 excevation=발굴 현장=Excavation
 excuse me=실례지만=excuse me
 Execute=마무리 일격=Execute
+exit=나가기=exit
 Exorcism=퇴마술=Exorcism
 exp=경험치=XP
 expensive=비싼=expensive
@@ -1586,6 +1626,7 @@ face=얼굴=face
 face away from group=파티 반대쪽으로 적의 머리를 돌리세요=face the enemy away from the group
 face pull=몸으로 몬스터를 유인=body pull
 fact=사실=fact
+facts=사실=facts
 Fade=소실=Fade
 fadeleaf=미명초=fadeleaf
 Faerie Fire=요정의 불꽃=Faerie Fire
@@ -1597,6 +1638,7 @@ falcon=매=falcon
 fall=떨어지다=fall
 family=가족=family
 fan=팬=fan
+fans=팬=fans
 fap=자유 행동의 물약=free action potion
 far=멀리=far
 Far Sight=천리안=Far Sight
@@ -1605,6 +1647,8 @@ farm runs=반복 런=farm runs
 farming=파밍 중=farming
 fast=빠른=fast
 father=아버지=father
+fatter=더 뚱뚱한=fatter
+favorite=좋아하는=favorite
 fc=깃발 운반자=flag carrier
 fd=죽은 척하기=feign death
 Fear=공포=Fear
@@ -1616,6 +1660,7 @@ feathermoon stronghold farm=페더문 요새 반복 사냥=Feathermoon Stronghol
 feathermoon stronghold fresh run=페더문 요새 처음부터 공략=Feathermoon Stronghold fresh run
 feathermoon stronghold full run=페더문 요새 전체 공략=Feathermoon Stronghold full run
 feathermoon stronghold quest run=페더문 요새 퀘스트 공략=Feathermoon Stronghold quest run
+feed=죽어주기=feed
 Feed Pet=먹이주기=Feed Pet
 Feedback=역순환=Feedback
 feel=느껴=feel
@@ -1687,10 +1732,12 @@ fist=장착 무기=fist weapon
 fist weapon=장착 무기=fist weapon
 fit=맞다=fit
 fit right in=잘 어울릴 것입니다=fit right in
+fitting=어울리는=fitting
 five=5=five
 five second rule=5초 규칙=five second rule
 fix=고치다=fix
 fixed=고쳤다=fixed
+fixing=수정 중=fixing
 fixing tells=귓속말 오류 수정=fixing whispers
 fking=빌어먹을=freaking
 flag=깃발=flag
@@ -1710,6 +1757,7 @@ flask of distilled wisdom=증류된 지혜의 영약=flask of distilled wisdom
 flask of supreme power=최상의 마력의 영약=flask of supreme power
 flask of the titans=거인의 영약=flask of the titans
 flasks=영약=flasks
+flavor=맛=flavor
 flex role=역할 변경 가능=flexible role
 flight=비행=flight
 flight master=비행 조련사=flight master
@@ -1742,15 +1790,18 @@ for your information=참고로=for your information
 force=힘=force
 foreigner=외국인=foreigner
 forever=포에버(서버)=Forever
+foreverlfg=포에버 파티찾기=ForeverLFG channel
 foreverpvp=포에버 PvP=Forever PvP
 forget=잊다=forget
 form=변신 형태=form
+former=이전의=former
 former gladiator=전 검투사=former gladiator
 forming group=파티 구하는 중=forming group
 formula=마법부여 문서=formula
 forsaken=포세이큰=Forsaken
 fort=신의 권능: 인내=power word: fortitude
 fortitude=인내/체력=fortitude
+fortschritt=진행도(독일어)=progress
 forum=게시판=forum
 found=찾았다=found
 four=4=four
@@ -1758,6 +1809,7 @@ Four Horsemen=4기사단=Four Horsemen
 four piece=4세트 효과=four-piece set bonus
 fp=비행 경로=flight path
 fpp=화염 보호 물약=fire protection potion
+fps=프레임=FPS
 fr=화염 저항=fire resistance
 free=무료=free
 free action potion=자유 행동의 물약=free action potion
@@ -1807,6 +1859,7 @@ full group=파티 인원 꽉 참=full group
 full health=피 가득=full health
 full party=풀파티=full party
 full run=전체 진행=full run
+fumble=실수=fumble
 fun=재밌다=fun
 funny=웃기다=funny
 fury=분노 특성=fury
@@ -1854,9 +1907,12 @@ geared=장비 갖춤=geared
 geddon=남작 게돈=Baron Geddon
 gehennas=게헨나스=Gehennas
 gem=보석=gem
+gemeinsamer=공동의(독일어)=shared
+gemeinschaft=커뮤니티(독일어)=community
 gems=보석=gems
 General Angerforge=장군 앵거포지=General Angerforge
 General Drakkisath=대군주 드라키사스=General Drakkisath
+gens=사람들(프랑스어)=people
 get=얻다=get
 get lost=꺼져=get lost
 getting=얻는 중=getting
@@ -2437,6 +2493,7 @@ jailbreak run=검은바위 나락 탈옥 퀘스트 진행=Blackrock Depths jailb
 Japan=일본=Japan
 Japanese=일본인=Japanese
 Japanese players=일본인 분=Japanese players
+jemand=누군가(독일어)=someone
 jerkin=가죽 조끼=jerkin
 jin'do=주술사 진도=Jin'do
 jindo=주술사 진도=Jin'do
@@ -3672,6 +3729,8 @@ me=나=me
 me2=저도요=me too
 mean=의미하다=mean
 meat=고기=meat
+mechanical=기계의=mechanical
+mechanical dragonling=기계용 새끼용=mechanical dragonling
 med=명상(마나 회복)=meditate
 meditate=명상(마나 회복)=meditate
 medium leather=일반 가죽=medium leather
@@ -5434,6 +5493,7 @@ tarren mill farm=타렌 밀농장 반복 사냥=Tarren Mill farm
 tarren mill fresh run=타렌 밀농장 처음부터 공략=Tarren Mill fresh run
 tarren mill full run=타렌 밀농장 전체 공략=Tarren Mill full run
 tarren mill quest run=타렌 밀농장 퀘스트 공략=Tarren Mill quest run
+taschen=가방(독일어)=bags
 Taunt=도발=Taunt
 taunt immune=도발 면역=immune to taunt
 taunt off me=제게 붙은 적을 도발해주세요=taunt the enemy off me
@@ -6336,4 +6396,5 @@ zulgurub fresh run=줄구룹 처음부터 공략=Zul'Gurub fresh run
 zulgurub full run=줄구룹 전체 공략=Zul'Gurub full run
 zulgurub quest run=줄구룹 퀘스트 공략=Zul'Gurub quest run
 zz=쿨쿨=sleeping
+über=여분(독일어)=over, spare
 ]=]

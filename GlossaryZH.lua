@@ -172,11 +172,15 @@ zul=줄파락=Zul'Farrak
 一起做=같이 하자=do together
 一起嗎=같이 할래요?=together?
 低价=싸게=cheap
+再无=더 이상 없음=no longer has
 听说=듣자 하니=I heard
+失守=함락됨=fell
 峡谷=협곡=gulch
 巡查后方=후방 순찰=patrol the rear
+开搞=시작하자=let's start
 恢复下=회복 좀 할게요=let me regen
 想f啥=뭘 파밍할래=what do you want to farm
+挖掘场=발굴 현장=excavation site
 收号=계정 삽니다=buying accounts
 有一起的么=같이 할 사람?=anyone want to join?
 残暴=잔혹한=brutal
@@ -184,6 +188,7 @@ zul=줄파락=Zul'Farrak
 点不开=클릭해도 안 열림=can't click open
 目前=현재=currently
 脱坑=게임 접는=quitting the game
+自从=~ 이후로=since
 花钱=돈 주고=for gold
 萬=만(10,000)=10k
 三=3=three
@@ -538,6 +543,7 @@ zul=줄파락=Zul'Farrak
 出血=과다출혈=Hemorrhage
 出货=득템=got loot
 出货了=득템=got loot
+还手之力=반격할 힘=strength to fight back
 都是=전부=all
 鑿擊=후려치기=Gouge
 刀锋=칼날=blade
