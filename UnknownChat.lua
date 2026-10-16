@@ -2,7 +2,7 @@
 local ADDON, ns = ...
 -- 이미 확인했지만 사전에 넣지 않는 것(개인·길드 약어, 이름, 의미 없는 조각)은 목록에서 뺀다
 local NOISE = {}
-for w in ("wzzwjc lxqwzn tdzz mmm ny hanxiao crownless encore ing esw golhamz qjqtk qudtls shiling ou bing oldguard"):gmatch("%S+") do NOISE[w] = true end
+for w in ("wzzwjc lxqwzn tdzz mmm ny hanxiao crownless encore ing esw golhamz qjqtk qudtls shiling ou bing oldguard vae victis azerothcompendium dungeonjournal"):gmatch("%S+") do NOISE[w] = true end
 local function UsefulUnknown(lang, word)
     if type(word) ~= "string" or word == "" then return false end
     if NOISE[word] then return false end
@@ -11,12 +11,23 @@ local function UsefulUnknown(lang, word)
     -- UTF-8 CJK characters occupy three bytes; one isolated character lacks context.
     if #word <= 1 or (#word == 3 and word:byte(1) >= 224) then return false end
     if ns.SlashMeaning and ns.SlashMeaning(word, lang, "ko") then return false end
+    if ns.MatchPattern and ns.MatchPattern(word, lang, "ko") then return false end
     local dictionaries = ns.Dict or {}
     if dictionaries[lang] and dictionaries[lang][word] then return false end
     if word:match("^[%w%p%s]+$") and dictionaries.en and dictionaries.en[word] then return false end
     if lang == "en" and dictionaries.es and dictionaries.es[word] then return false end
     return true
 end
+local function HasUsefulUnknown(lang, gloss)
+    if not gloss then return false end
+    for source, words in pairs(gloss.unknownByLanguage or {[lang] = gloss.unknown or {}}) do
+        for _, word in ipairs(words) do
+            if UsefulUnknown(source, word) then return true end
+        end
+    end
+    return false
+end
+
 function ns.RecordUnknownChat(text, lang, gloss)
     if not ns.db or not gloss.unknown or #gloss.unknown == 0 then return end
     local db = ns.db.unknownChat
@@ -47,7 +58,7 @@ function ns.RecordUnknownChat(text, lang, gloss)
         end
     end
     ns.unknownCount = wordCount
-    if gloss.cover < 70 and #text <= 300 then
+    if HasUsefulUnknown(lang, gloss) and gloss.cover < 70 and #text <= 300 then
         local sample = lang .. ": " .. text
         for i, old in ipairs(db.samples) do
             if old == sample then table.remove(db.samples, i); break end
@@ -68,6 +79,18 @@ function ns.ShowUnknownChat()
     local lines = {"Untranslated chat expressions / 미등록 채팅 표현"}
     for i = 1, math.min(#sorted, 100) do lines[#lines + 1] = sorted[i][2] .. "  " .. sorted[i][1] end
     lines[#lines + 1] = "\nSamples / 문장 예시"
-    for _, sample in ipairs(db.samples) do lines[#lines + 1] = sample end
+    local retained = {}
+    for _, sample in ipairs(db.samples) do
+        local source, text = sample:match("^([^:]+):%s*(.*)$")
+        -- Recheck older samples against the current dictionary. Link-only samples
+        -- contain no chat expressions and must not be recollected as English.
+        local body = text and text:gsub("%b[]", "")
+        local g = source and body and ns.Gloss and ns.Gloss(body, source, ns.GetTarget(), {outgoing=true})
+        if g and HasUsefulUnknown(source, g) then
+            retained[#retained + 1] = sample
+            lines[#lines + 1] = sample
+        end
+    end
+    db.samples = retained
     ns.ShowCopy(table.concat(lines, "\n"), GetLocale() == "koKR" and "미등록 표현 전체 복사: Ctrl+C" or "Copy unknown expressions: Ctrl+C")
 end

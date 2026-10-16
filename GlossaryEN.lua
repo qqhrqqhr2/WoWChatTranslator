@@ -6397,4 +6397,123 @@ zulgurub full run=줄구룹 전체 공략=Zul'Gurub full run
 zulgurub quest run=줄구룹 퀘스트 공략=Zul'Gurub quest run
 zz=쿨쿨=sleeping
 über=여분(독일어)=over, spare
+
+lordaeron=로데론=Lordaeron
+alternative=대안=alternative
+balder=더 대머리가 된=balder
+giant=거대한=giant
+gladiator=검투사=gladiator
+globe=구체=globe
+guide=안내=guide
+guts=배짱=guts
+hardest=가장 어려운=hardest
+havent=아직 ~하지 않았다=have not
+heading=향하는 중=heading
+heaven=천국=heaven
+helpful=도움이 되는=helpful
+helpfull=도움이 되는=helpful
+hexagonal=육각형의=hexagonal
+hidden=숨겨진=hidden
+hound=사냥개=hound
+ice=얼음=ice
+ideally=이상적으로는=ideally
+ima=나는 ~할 거야=I am going to
+imps=임프들=imps
+increase=증가=increase
+insane=엄청난=insane
+january=1월=January
+juggled=번갈아 다뤄진=juggled
+languages=언어들=languages
+lasts=지속된다=lasts
+learning=배우는 중=learning
+levels=레벨=levels
+locked=잠긴=locked
+logged=접속했다=logged
+longer=더 오래=longer
+lookin=찾는 중=looking
+lore=세계관 설정=lore
+lv=레벨=level
+fart=방귀=fart
+coooooowl=멋진=cool
+gnomeran=놈리건=Gnomeregan
+dmf=다크문 축제=Darkmoon Faire
+thunderbluff=썬더 블러프=Thunder Bluff
+lfga=파티 구함=looking for group
+
+inviting=초대 중=inviting
+racial=종족 특성=racial ability
+racial hit=종족 특성 적중 보너스=racial hit bonus
+clicker=클릭해 줄 사람=someone to click
+need clicker=클릭해 줄 사람 구함=need someone to click
+easily=쉽게=easily
+itemization=아이템 능력치 구성=itemization
+ruleset=규칙 체계=ruleset
+speaking=말하는 중=speaking
+anymore=더 이상=anymore
+anyway=어쨌든=anyway
+baby=아기=baby
+babies=아기들=babies
+bolt=화살=bolt
+hides=가죽들=hides
+lets=~하게 해준다=allows
+making=만드는 중=making
+max=최대=max
+presets=사전 설정=presets
+putting=놓는 중=putting
+remove=제거하다=remove
+sorrow=슬픔=sorrow
+streamers=방송인들=streamers
+swamp=늪=swamp
+wasted=낭비된=wasted
+ye=응=yes
+aw=아이고=aw
+aaaw=아이고=aw
+bein=~인 상태=being
+blanket=전반적인=across the board
+blanket crit=전반적인 치명타율=across-the-board critical strike chance
+blast=폭발=blast
+buffed=강화된=buffed
+card=카드=card
+cell=칸=cell
+charges=충전 횟수=charges
+company=동료들=company
+cry=울다=cry
+dawg=친구=friend
+decreased=감소한=decreased
+dense=빽빽한/둔한(문맥 확인)=dense
+dependent=의존하는=dependent
+depends=달려 있다=depends
+dies=죽는다=dies
+dungo=던전=dungeon
+dg=던전=dungeon
+frost bolt=얼음 화살=Frostbolt
+frost blast=냉기 폭발=frost blast
+known bug=알려진 버그=known bug
+procing=발동하는=proccing
+youre=너는/당신은=you are
+whatd=무엇을 ~했나=what did
+yall=너희 모두=you all
+prioritze=우선시하다=prioritize
+versatile=다양하게 활용 가능한=versatile
+sarcasm=비꼬는 말=sarcasm
+whining=징징대는=whining
+yawn=하품=yawn
+rigged=조작된=rigged
+hutner=사냥꾼=hunter
+speacially=특히=especially
+shunder armor=방어구 가르기=Sunder Armor
+moron=멍청이=moron
+dumbass=멍청이=dumbass
+retarded=멍청한(비하 표현)=stupid (derogatory)
+wank=자위/헛소리(문맥 확인)=wank
+cope=감당하다/정신승리(문맥 확인)=cope
+bitte=부탁합니다=please
+druiden=드루이드=druid
+reisegestalt=날쌘 동물 변신=Travel Form
+volksfähigkeit=종족 능력=racial ability
+stackt=중첩되나요=does it stack
+mag mir jmd 10g leihen bitte=누가 10골드 빌려줄 수 있나요=can someone lend me 10 gold please
+ich zahle es die tage zurück=며칠 안에 갚을게요=I will pay it back in a few days
+ehrenwort=약속할게요=I give you my word
+hab das falsche teil gecraftet und nun kein gold mehr=잘못된 물건을 제작해서 이제 골드가 없어요=I crafted the wrong item and now have no gold left
 ]=]

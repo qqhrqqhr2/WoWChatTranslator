@@ -3267,4 +3267,235 @@ zul=줄파락=Zul'Farrak
 黑龙头buff=오닉시아 버프(용사의 외침)=Onyxia buff
 龍頭=용 머리(월드 버프)=dragon head
 达拉然=달라란=Dalaran
+
+FM=마법부여사=an enchanter
+有FM吗=마법부여사 계신가요?=is there an enchanter?
+有FM大师吗=마법부여 장인 계신가요?=is there a master enchanter?
+有FM大师 吗=마법부여 장인 계신가요?=is there a master enchanter?
+有FM 吗=마법부여사 계신가요?=is there an enchanter?
+有FM 大师吗=마법부여 장인 계신가요?=is there a master enchanter?
+有FM 大师 吗=마법부여 장인 계신가요?=is there a master enchanter?
+有 FM吗=마법부여사 계신가요?=is there an enchanter?
+有 FM大师吗=마법부여 장인 계신가요?=is there a master enchanter?
+有 FM大师 吗=마법부여 장인 계신가요?=is there a master enchanter?
+有 FM 吗=마법부여사 계신가요?=is there an enchanter?
+有 FM 大师吗=마법부여 장인 계신가요?=is there a master enchanter?
+有 FM 大师 吗=마법부여 장인 계신가요?=is there a master enchanter?
+有FM么=마법부여사 계신가요?=is there an enchanter?
+有FM大师么=마법부여 장인 계신가요?=is there a master enchanter?
+有FM大师 么=마법부여 장인 계신가요?=is there a master enchanter?
+有FM 么=마법부여사 계신가요?=is there an enchanter?
+有FM 大师么=마법부여 장인 계신가요?=is there a master enchanter?
+有FM 大师 么=마법부여 장인 계신가요?=is there a master enchanter?
+有 FM么=마법부여사 계신가요?=is there an enchanter?
+有 FM大师么=마법부여 장인 계신가요?=is there a master enchanter?
+有 FM大师 么=마법부여 장인 계신가요?=is there a master enchanter?
+有 FM 么=마법부여사 계신가요?=is there an enchanter?
+有 FM 大师么=마법부여 장인 계신가요?=is there a master enchanter?
+有 FM 大师 么=마법부여 장인 계신가요?=is there a master enchanter?
+求FM=마법부여사 구함=looking for an enchanter
+求 FM=마법부여사 구함=looking for an enchanter
+找FM=마법부여사 찾음=looking for an enchanter
+找 FM=마법부여사 찾음=looking for an enchanter
+来FM=마법부여사 구함=need an enchanter
+来 FM=마법부여사 구함=need an enchanter
+缺FM=마법부여사 필요=need an enchanter
+缺 FM=마법부여사 필요=need an enchanter
+有T吗=탱커 계신가요?=is there a tank?
+有T 吗=탱커 계신가요?=is there a tank?
+有 T吗=탱커 계신가요?=is there a tank?
+有 T 吗=탱커 계신가요?=is there a tank?
+有T么=탱커 계신가요?=is there a tank?
+有T 么=탱커 계신가요?=is there a tank?
+有 T么=탱커 계신가요?=is there a tank?
+有 T 么=탱커 계신가요?=is there a tank?
+求 T=탱커 구함=looking for a tank
+找T=탱커 찾음=looking for a tank
+找 T=탱커 찾음=looking for a tank
+来 T=탱커 구함=need a tank
+缺 T=탱커 필요=need a tank
+有N吗=힐러 계신가요?=is there a healer?
+有N 吗=힐러 계신가요?=is there a healer?
+有 N吗=힐러 계신가요?=is there a healer?
+有 N 吗=힐러 계신가요?=is there a healer?
+有N么=힐러 계신가요?=is there a healer?
+有N 么=힐러 계신가요?=is there a healer?
+有 N么=힐러 계신가요?=is there a healer?
+有 N 么=힐러 계신가요?=is there a healer?
+求N=힐러 구함=looking for a healer
+求 N=힐러 구함=looking for a healer
+找N=힐러 찾음=looking for a healer
+找 N=힐러 찾음=looking for a healer
+来N=힐러 구함=need a healer
+来 N=힐러 구함=need a healer
+缺N=힐러 필요=need a healer
+缺 N=힐러 필요=need a healer
+有DPS吗=딜러 계신가요?=is there a damage dealer?
+有DPS 吗=딜러 계신가요?=is there a damage dealer?
+有 DPS吗=딜러 계신가요?=is there a damage dealer?
+有 DPS 吗=딜러 계신가요?=is there a damage dealer?
+有DPS么=딜러 계신가요?=is there a damage dealer?
+有DPS 么=딜러 계신가요?=is there a damage dealer?
+有 DPS么=딜러 계신가요?=is there a damage dealer?
+有 DPS 么=딜러 계신가요?=is there a damage dealer?
+求DPS=딜러 구함=looking for a damage dealer
+求 DPS=딜러 구함=looking for a damage dealer
+找DPS=딜러 찾음=looking for a damage dealer
+找 DPS=딜러 찾음=looking for a damage dealer
+来 DPS=딜러 구함=need a damage dealer
+缺 DPS=딜러 필요=need a damage dealer
+FM大师=마법부여 장인=master enchanter
+FM 大师=마법부여 장인=master enchanter
+求附魔=마법부여사 구함=looking for an enchanter
+找附魔=마법부여사 구함=looking for an enchanter
+
+有dz吗=도적 계신가요?=is there a rogue?
+有dz 吗=도적 계신가요?=is there a rogue?
+有 dz吗=도적 계신가요?=is there a rogue?
+有 dz 吗=도적 계신가요?=is there a rogue?
+有dz么=도적 계신가요?=is there a rogue?
+有dz 么=도적 계신가요?=is there a rogue?
+有 dz么=도적 계신가요?=is there a rogue?
+有 dz 么=도적 계신가요?=is there a rogue?
+求dz=도적 구함=looking for a rogue
+求 dz=도적 구함=looking for a rogue
+找dz=도적 구함=looking for a rogue
+找 dz=도적 구함=looking for a rogue
+来dz=도적 구함=looking for a rogue
+来 dz=도적 구함=looking for a rogue
+缺dz=도적 구함=looking for a rogue
+缺 dz=도적 구함=looking for a rogue
+有fs吗=마법사 계신가요?=is there a mage?
+有fs 吗=마법사 계신가요?=is there a mage?
+有 fs吗=마법사 계신가요?=is there a mage?
+有 fs 吗=마법사 계신가요?=is there a mage?
+有fs么=마법사 계신가요?=is there a mage?
+有fs 么=마법사 계신가요?=is there a mage?
+有 fs么=마법사 계신가요?=is there a mage?
+有 fs 么=마법사 계신가요?=is there a mage?
+求fs=마법사 구함=looking for a mage
+求 fs=마법사 구함=looking for a mage
+找fs=마법사 구함=looking for a mage
+找 fs=마법사 구함=looking for a mage
+来fs=마법사 구함=looking for a mage
+来 fs=마법사 구함=looking for a mage
+缺fs=마법사 구함=looking for a mage
+缺 fs=마법사 구함=looking for a mage
+有lr吗=사냥꾼 계신가요?=is there a hunter?
+有lr 吗=사냥꾼 계신가요?=is there a hunter?
+有 lr吗=사냥꾼 계신가요?=is there a hunter?
+有 lr 吗=사냥꾼 계신가요?=is there a hunter?
+有lr么=사냥꾼 계신가요?=is there a hunter?
+有lr 么=사냥꾼 계신가요?=is there a hunter?
+有 lr么=사냥꾼 계신가요?=is there a hunter?
+有 lr 么=사냥꾼 계신가요?=is there a hunter?
+求lr=사냥꾼 구함=looking for a hunter
+求 lr=사냥꾼 구함=looking for a hunter
+找lr=사냥꾼 구함=looking for a hunter
+找 lr=사냥꾼 구함=looking for a hunter
+来lr=사냥꾼 구함=looking for a hunter
+来 lr=사냥꾼 구함=looking for a hunter
+缺lr=사냥꾼 구함=looking for a hunter
+缺 lr=사냥꾼 구함=looking for a hunter
+有ms吗=사제 계신가요?=is there a priest?
+有ms 吗=사제 계신가요?=is there a priest?
+有 ms吗=사제 계신가요?=is there a priest?
+有 ms 吗=사제 계신가요?=is there a priest?
+有ms么=사제 계신가요?=is there a priest?
+有ms 么=사제 계신가요?=is there a priest?
+有 ms么=사제 계신가요?=is there a priest?
+有 ms 么=사제 계신가요?=is there a priest?
+求ms=사제 구함=looking for a priest
+求 ms=사제 구함=looking for a priest
+找ms=사제 구함=looking for a priest
+找 ms=사제 구함=looking for a priest
+来ms=사제 구함=looking for a priest
+来 ms=사제 구함=looking for a priest
+缺ms=사제 구함=looking for a priest
+缺 ms=사제 구함=looking for a priest
+有qs吗=성기사 계신가요?=is there a paladin?
+有qs 吗=성기사 계신가요?=is there a paladin?
+有 qs吗=성기사 계신가요?=is there a paladin?
+有 qs 吗=성기사 계신가요?=is there a paladin?
+有qs么=성기사 계신가요?=is there a paladin?
+有qs 么=성기사 계신가요?=is there a paladin?
+有 qs么=성기사 계신가요?=is there a paladin?
+有 qs 么=성기사 계신가요?=is there a paladin?
+求qs=성기사 구함=looking for a paladin
+求 qs=성기사 구함=looking for a paladin
+找qs=성기사 구함=looking for a paladin
+找 qs=성기사 구함=looking for a paladin
+来qs=성기사 구함=looking for a paladin
+来 qs=성기사 구함=looking for a paladin
+缺qs=성기사 구함=looking for a paladin
+缺 qs=성기사 구함=looking for a paladin
+有sm吗=주술사 계신가요?=is there a shaman?
+有sm 吗=주술사 계신가요?=is there a shaman?
+有 sm吗=주술사 계신가요?=is there a shaman?
+有 sm 吗=주술사 계신가요?=is there a shaman?
+有sm么=주술사 계신가요?=is there a shaman?
+有sm 么=주술사 계신가요?=is there a shaman?
+有 sm么=주술사 계신가요?=is there a shaman?
+有 sm 么=주술사 계신가요?=is there a shaman?
+求sm=주술사 구함=looking for a shaman
+求 sm=주술사 구함=looking for a shaman
+找sm=주술사 구함=looking for a shaman
+找 sm=주술사 구함=looking for a shaman
+来sm=주술사 구함=looking for a shaman
+来 sm=주술사 구함=looking for a shaman
+缺sm=주술사 구함=looking for a shaman
+缺 sm=주술사 구함=looking for a shaman
+有ss吗=흑마법사 계신가요?=is there a warlock?
+有ss 吗=흑마법사 계신가요?=is there a warlock?
+有 ss吗=흑마법사 계신가요?=is there a warlock?
+有 ss 吗=흑마법사 계신가요?=is there a warlock?
+有ss么=흑마법사 계신가요?=is there a warlock?
+有ss 么=흑마법사 계신가요?=is there a warlock?
+有 ss么=흑마법사 계신가요?=is there a warlock?
+有 ss 么=흑마법사 계신가요?=is there a warlock?
+求ss=흑마법사 구함=looking for a warlock
+求 ss=흑마법사 구함=looking for a warlock
+找ss=흑마법사 구함=looking for a warlock
+找 ss=흑마법사 구함=looking for a warlock
+来ss=흑마법사 구함=looking for a warlock
+来 ss=흑마법사 구함=looking for a warlock
+缺ss=흑마법사 구함=looking for a warlock
+缺 ss=흑마법사 구함=looking for a warlock
+有xd吗=드루이드 계신가요?=is there a druid?
+有xd 吗=드루이드 계신가요?=is there a druid?
+有 xd吗=드루이드 계신가요?=is there a druid?
+有 xd 吗=드루이드 계신가요?=is there a druid?
+有xd么=드루이드 계신가요?=is there a druid?
+有xd 么=드루이드 계신가요?=is there a druid?
+有 xd么=드루이드 계신가요?=is there a druid?
+有 xd 么=드루이드 계신가요?=is there a druid?
+求xd=드루이드 구함=looking for a druid
+求 xd=드루이드 구함=looking for a druid
+找xd=드루이드 구함=looking for a druid
+找 xd=드루이드 구함=looking for a druid
+来xd=드루이드 구함=looking for a druid
+来 xd=드루이드 구함=looking for a druid
+缺xd=드루이드 구함=looking for a druid
+缺 xd=드루이드 구함=looking for a druid
+有zs吗=전사 계신가요?=is there a warrior?
+有zs 吗=전사 계신가요?=is there a warrior?
+有 zs吗=전사 계신가요?=is there a warrior?
+有 zs 吗=전사 계신가요?=is there a warrior?
+有zs么=전사 계신가요?=is there a warrior?
+有zs 么=전사 계신가요?=is there a warrior?
+有 zs么=전사 계신가요?=is there a warrior?
+有 zs 么=전사 계신가요?=is there a warrior?
+求zs=전사 구함=looking for a warrior
+求 zs=전사 구함=looking for a warrior
+找zs=전사 구함=looking for a warrior
+找 zs=전사 구함=looking for a warrior
+来zs=전사 구함=looking for a warrior
+来 zs=전사 구함=looking for a warrior
+缺zs=전사 구함=looking for a warrior
+缺 zs=전사 구함=looking for a warrior
+
+信箱咋打不开了=우편함이 왜 안 열리죠=why won't the mailbox open
+信箱打不开=우편함이 안 열려요=the mailbox won't open
+邮箱打不开=우편함이 안 열려요=the mailbox won't open
+打不开了=이제 안 열려요=it won't open anymore
 ]=]

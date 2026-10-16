@@ -47,6 +47,8 @@ local function Remove(lang, key)
 	backup[id] = nil
 end
 
+local RefreshCustomIndex
+
 function ns.ApplyCustom()
 	local db = ns.db
 	if not db or not ns.Dict or not ns.NormKey then return end
@@ -57,7 +59,22 @@ function ns.ApplyCustom()
 			Put(lang, key, len, w[1], w[2])
 		end
 	end
+	RefreshCustomIndex()
 	ns.customVersion = (ns.customVersion or 0) + 1
+end
+
+-- Explicit custom phrases may span script boundaries. Rebuild only on edits/login.
+RefreshCustomIndex = function()
+	local entries, prefixes, maxLen = {}, {}, 0
+	for _, words in pairs(ns.db.custom or {}) do
+		for key, w in pairs(words) do
+			local _, len = ns.NormKey(w[1])
+			entries[key] = { "", "", w[1], custom = w[2] }
+			maxLen = math.max(maxLen, len)
+			for i = 1, #key do prefixes[key:sub(1, i)] = true end
+		end
+	end
+	ns.CustomEntries, ns.CustomPrefixes, ns.CustomMaxLen = entries, prefixes, maxLen
 end
 
 local function AddWord(arg)
@@ -74,6 +91,7 @@ local function AddWord(arg)
 		ns.db.custom[lang][key] = { term, meaning }
 		Put(lang, key, len, term, meaning)
 	end
+	RefreshCustomIndex()
 	ns.customVersion = (ns.customVersion or 0) + 1
 	Print(L.addDone:format(term, meaning))
 end
@@ -90,6 +108,7 @@ local function DelWord(arg)
 			found = true
 		end
 	end
+	RefreshCustomIndex()
 	ns.customVersion = (ns.customVersion or 0) + 1
 	Print((found and L.delDone or L.delNone):format(term))
 end
@@ -141,8 +160,8 @@ function ns.TranslateOutgoing(text, target)
 	text = trim(text or "")
 	if text == "" then return nil end
 	local src = (ns.Detect and ns.Detect(text)) or ScriptLang(text) or ns.SAME_SOURCE[ns.CLIENT_TARGET]
-	if ns.SAME_SOURCE[target] == src then return text, 100, {} end
-	local g = ns.Gloss(text, src, target)
+	local g = ns.Gloss(text, src, target, { outgoing = true })
+	if g and g.coverageTotal == 0 then return Tidy(g.plain, target), 100, {} end
 	if not g or g.found == 0 then return nil, 0, {} end
 	return Tidy(g.plain, target), g.cover or 0, g.unknown or {}
 end

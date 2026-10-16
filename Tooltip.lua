@@ -315,7 +315,13 @@ local function TranslateLine(text, target)
 	text = trim(StripCodes(text))
 	if EnglishWords(text) == 0 then cache[original] = false return nil end
 
-	local prefix, body = SplitPrefix(text)
+	-- Set counts belong to the label, not to the spell's numeric placeholders.
+	local setCount, setBody
+	for _, label in ipairs({ "세트 효과", "Set", "set" }) do
+		setCount, setBody = text:match("^%((%d+)%)%s*" .. label .. ":%s*(.+)$")
+		if setCount then break end
+	end
+	local prefix, body = SplitPrefix(setBody or text)
 	local parts, full = {}, true
 	local wholeKey, wholeNums = KeyOf(Canon(body))
 	local whole = (ns.TipText and ns.TipText[wholeKey]) or (ns.TipDBText and ns.TipDBText[wholeKey])
@@ -380,6 +386,10 @@ local function TranslateLine(text, target)
 			local localPrefix = (prefix == "use" and L.tipUse) or (prefix == "equip" and L.tipEquip) or L.tipProc
 			joined = localPrefix .. " " .. joined
 		end
+		if setCount then
+            local labels = {ko="세트 효과", en="Set", zhCN="套装", zhTW="套裝", ru="Комплект", ja="セット効果", es="Conjunto"}
+            joined = "(" .. setCount .. ") " .. (labels[target] or "Set") .. ": " .. joined
+        end
 		result = { text = joined, full = full }
 	end
 	cache[original] = result
@@ -390,11 +400,42 @@ ns.TranslateTooltipLine = TranslateLine
 ------------------------------------------------------------------------
 -- 툴팁에 붙이기
 ------------------------------------------------------------------------
+-- Match complete installed addon names/titles, never individual English words.
+local addonLabels
+local function IsAddonLabel(text)
+    local label = trim(StripCodes(text)):lower():gsub("%s+", " ")
+    if label == "wow smart fishing" then return true end
+    if not addonLabels then
+        addonLabels = {}
+        local api = C_AddOns or {}
+        local count = api.GetNumAddOns or GetNumAddOns
+        local info = api.GetAddOnInfo or GetAddOnInfo
+        if count and info then
+            local ok, total = pcall(count)
+            if ok and type(total) == "number" then
+                for i = 1, total do
+                    local success, name, title = pcall(info, i)
+                    if success then
+                        if type(name) == "table" then name, title = name.name, name.title end
+                        for _, value in ipairs({name or "", title or ""}) do
+                            if Readable(value) then
+                                value = trim(StripCodes(value)):lower():gsub("%s+", " ")
+                                if #value >= 4 then addonLabels[value] = true end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+    return addonLabels[label] == true
+end
 -- 기본 설명의 요구 레벨/가격 아래는 다른 애드온의 정보 영역으로 취급한다.
 function ns.IsTooltipBoundary(text)
 	if not Readable(text) then return false end
 	text = trim(StripCodes(text))
 	local lower = text:lower()
+    if IsAddonLabel(text) then return true end
 	for _, key in ipairs({ "ITEM_MIN_LEVEL", "SELL_PRICE", "SELL_PRICE_COLON", "ITEM_SELL_PRICE", "ITEM_REQ_SKILL", "ITEM_REQ_SKILL_RANK" }) do
 		local fmt = _G[key]
 		if Readable(fmt) then
@@ -411,6 +452,7 @@ function ns.IsTooltipBoundary(text)
 	-- 요구 레벨이나 가격이 없는 툴팁도 애드온 구역에 들어가면 중단한다.
 	return lower:match("^att%s*>") ~= nil or lower:match("^all the things") ~= nil
 		or lower:match("^best gear finder") ~= nil or lower:match("^item%s*id") ~= nil
+		or lower:match("^added with patch") ~= nil
 		or lower:match("^icon%s*id") ~= nil or lower:match("^itemlevel") ~= nil or text == HEADER
 end
 
@@ -433,7 +475,15 @@ local function Process(tooltip)
 		local fs = _G[name .. "TextLeft" .. i]
 		local ok, text = pcall(function() return fs and fs:GetText() end)
 		if ok and Readable(text) then text = trim(StripCodes(text)) end
-		if ok and ns.IsTooltipBoundary(text) then break end
+		if ok and ns.IsTooltipBoundary(text) then
+            -- Translate a known skill requirement before stopping at metadata.
+            if Readable(text) and text:lower():match("^requires ") then
+                local key, nums = KeyOf(Canon(text))
+                local entry = ns.TipText and ns.TipText[key]
+                if entry and entry[target] then out[#out + 1] = {text=Fill(entry[target], nums), full=true} end
+            end
+            break
+        end
 		if i == 1 and ok and Readable(text) and text ~= "" then
 			-- 첫 줄은 이름: 영어 이름이면 번역해서 "번역 (원문)" 으로
 			local okc, cnt = pcall(EnglishWords, text)

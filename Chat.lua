@@ -217,7 +217,7 @@ local function Detect(text)
 	if lat >= 2 and hangul == 0 then
         local key = NormKey(text)
         if Dict.es and Dict.es[key] and not Dict.en[key] then return "es" end
-        local strong = {busco=true,buscamos=true,vendo=true,compro=true,necesito=true,necesitamos=true,puedes=true,tienes=true,tenemos=true,quiero=true,queremos=true,invitarme=true,["invítame"]=true,sanador=true,sanadores=true,tanque=true,mazmorra=true,hermandad=true,gracias=true,hola=true}
+        local strong = {buscas=true,busques=true,prepararte=true,lanzamiento=true,recluta=true,latinos=true,unite=true,preparate=true,busco=true,buscamos=true,vendo=true,compro=true,necesito=true,necesitamos=true,puedes=true,tienes=true,tenemos=true,quiero=true,queremos=true,invitarme=true,["invítame"]=true,sanador=true,sanadores=true,tanque=true,mazmorra=true,hermandad=true,gracias=true,hola=true}
         local markers = {para=true,quiero=true,con=true,por=true,favor=true,grupo=true,["misión"]=true,misiones=true,["maná"]=true,["raíz"]=true,terrenal=true,alguien=true,puedo=true}
         local score = 0
         for _, token in ipairs(Tokenize(text)) do
@@ -278,6 +278,12 @@ local PATTERNS = {
 
 local function MatchPattern(key, lang, target)
 	target = target or ns.GetTarget()
+    -- Only familiar chat emphasis forms; never collapse arbitrary player names.
+    if lang == "en" then
+        local base = key:match("^invv+$") and "inv" or key:match("^anyyy+$") and "any"
+        local entry = base and Dict.en and Dict.en[base]
+        if entry then return Meaning(entry, target) end
+    end
 	for _, p in ipairs(PATTERNS) do
 		if not p[3] or p[3] == lang then
 			local out, n = key:gsub(p[1], p[2][target] or p[2].en)
@@ -381,7 +387,7 @@ local PARTY_COUNT = {
 	ja = "%d人いる・あと%d人", ru = "есть %d, нужно ещё %d", es = "somos %d, faltan %d",
 }
 
-local function Gloss(text, lang, target)
+local function Gloss(text, lang, target, options)
 	target = target or ns.GetTarget()
 	if lang == "ko" then text = CollapseKo(text) end
 	local tokens = Tokenize(text)
@@ -480,6 +486,11 @@ local function Gloss(text, lang, target)
 		local matched = false
         currentLanguage = tokenLanguages[i] or lang
         local source = currentLanguage
+        -- Chinese recruitment abbreviations are contextual; English FM stays untouched.
+        if lang == "zh" and t.kind == "word" and ({fm=true,t=true,n=true,dps=true,dz=true,fs=true,lr=true,ms=true,qs=true,sm=true,ss=true,xd=true,zs=true})[t.key] then
+            source = "zh"
+            currentLanguage = source
+        end
         local cjkMode = source == "zh" or source == "ja" or source == "ko"
         local mainDicts = source == "ja" and {Dict.ja, Dict.zh} or {Dict[source] or {}}
         local wordDicts = {Dict[source] or {}, Dict.en or {}}
@@ -488,7 +499,7 @@ local function Gloss(text, lang, target)
         local maxLen = MaxLen[source] or 1
         if source == "ja" then maxLen = math.max(maxLen, MaxLen.zh or 1) end
         local localSource = ns.SAME_SOURCE and ns.SAME_SOURCE[target] == source
-        local disabled = ns.db and ns.db.chat and ns.db.chat.langs and ns.db.chat.langs[source] == false
+        local disabled = not (options and options.outgoing) and ns.db and ns.db.chat and ns.db.chat.langs and ns.db.chat.langs[source] == false
         if disabled then mainDicts, wordDicts = {}, {} end
         -- 파티 인원 표기 "4=1"(4명 있음, 1명 더 구함): 중국 서버 모집 글에서 흔함
         local t2, t3 = tokens[i + 1], tokens[i + 2]
@@ -517,8 +528,10 @@ local function Gloss(text, lang, target)
 			while j <= n and used < maxLen do
 				local tj = tokens[j]
                 -- 언어가 바뀌면 멈추되, 한자 바로 뒤에 붙은 영문(来T, 缺N 등)은 사전에 있을 때만 이어 본다
-                if tokenLanguages[j] and tokenLanguages[j] ~= source
-                    and not ((source == "zh" or source == "ja") and tj.kind == "word" and j > i and tokens[j - 1].kind == "cjk") then break end
+                if tj.kind ~= "space" and tokenLanguages[j] and tokenLanguages[j] ~= source
+                    and not ((source == "zh" or source == "ja") and tj.kind == "word" and j > i
+                        and (tokens[j - 1].kind == "cjk" or (source == "zh" and lang == "zh")))
+                    and not (source == "zh" and lang == "zh" and j == i) then break end
 				if tj.kind == "space" then
 					-- Match explicitly registered names across spaces, including Korean names.
 					local nx = tokens[j + 1]
@@ -545,16 +558,33 @@ local function Gloss(text, lang, target)
 				if not cjkMode and tj.kind == "cjk" then break end
 				j = j + 1
 			end
+            -- Only explicitly saved custom phrases may cross arbitrary languages.
+            if not disabled and ns.CustomEntries then
+                local parts = {}
+                for x = i, math.min(n, i + (ns.CustomMaxLen or 0) - 1) do
+                    local tx = tokens[x]
+                    if tx.kind ~= "space" and tx.kind ~= "word" and tx.kind ~= "cjk"
+                        and not (tx.kind == "other" and tx.key:match("^[%p]$")) then break end
+                    local xl = tokenLanguages[x]
+                    if not (options and options.outgoing) and xl and ns.db and ns.db.chat
+                        and ns.db.chat.langs and ns.db.chat.langs[xl] == false then break end
+                    parts[#parts + 1] = tx.key
+                    local key = table.concat(parts)
+                    if not ns.CustomPrefixes[key] then break end
+                    if ns.CustomEntries[key] then best, bestJ = ns.CustomEntries[key], x end
+                end
+            end
 			if best then
 				local orig = {}
 				for x = i, bestJ do orig[#orig + 1] = tokens[x].text end
 				local term = table.concat(orig)
 				for x = i, bestJ do
-					if tokens[x].kind ~= "space" and not isNumber(tokens[x]) then coverHit = coverHit + 1 end
+					if tokens[x].kind ~= "space" and not isNumber(tokens[x])
+                        and (not localSource or best.custom) then coverHit = coverHit + 1 end
 				end
-				local meaning = localSource and term or Meaning(best, target)
+				local meaning = (localSource and not best.custom) and term or Meaning(best, target)
                 usedLanguages[source] = true
-                if not localSource then foreignFound = foreignFound + 1; foreignChars = foreignChars + #term end
+                if not localSource or best.custom then foreignFound = foreignFound + 1; foreignChars = foreignChars + #term end
 				if meaning ~= "" then emit("hit", meaning) end
 				-- 한 글자짜리 영문·러시아어(в, и, g 등)는 목록에서는 뺀다
 				local short = (t.kind == "word" and i == bestJ and #t.key <= 2 and not cjkMode)
@@ -577,7 +607,7 @@ local function Gloss(text, lang, target)
 			end
 		end
 		-- 한/영 전환을 잊고 친 한글: 한국어로 보는 사람에겐 한글로, 다른 언어는 한국어 사전으로 풀이
-		if not matched and (source == "en" or source == "es") and t.kind == "word" and #t.text >= 4
+		if not matched and source == "en" and t.text == t.text:lower() and t.kind == "word" and #t.text >= 4
 			and t.text:find("^%a+$") and not disabled then
 			local h = KeysToHangul(t.text)
 			if h then
@@ -666,6 +696,7 @@ local function Gloss(text, lang, target)
         foreignChars = foreignChars,
         languages = usedLanguages,
 		found = found,
+		coverageTotal = total,
 		cover = total > 0 and floor(coverHit * 100 / total) or 0,
 	}
 end
@@ -877,7 +908,10 @@ local function Filter(self, event, msg, author, ...)
 	local settings = cfg and table.concat({tostring(ns.GetTarget()), tostring(cfg.enabled), tostring(cfg.inline),
 		tostring(cfg.minCover), tostring(cfg.tag), tostring(cfg.hoverAll), tostring(cfg.skipSelf),
 		tostring(cfg.langs.ko), tostring(cfg.langs.zh), tostring(cfg.langs.ja), tostring(cfg.langs.ru), tostring(cfg.langs.en), tostring(cfg.langs.es),
-		tostring(ns.customVersion or 0), tostring(cfg.copyAll)}, ":")
+		tostring(ns.customVersion or 0), tostring(cfg.copyAll),
+        tostring((cfg.channels or {}).public), tostring((cfg.channels or {}).say),
+        tostring((cfg.channels or {}).guild), tostring((cfg.channels or {}).group),
+        tostring((cfg.channels or {}).whisper)}, ":")
 	local cached = lineID and lineCache[lineID]
 	if cached and cached.msg == msg and cached.author == author and cached.event == event and cached.settings == settings then
 		out, separate = cached[1], cached[2]
